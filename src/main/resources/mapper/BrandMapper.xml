@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.BrandMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Brand">
+    <id column="BRAND_ID" jdbcType="DECIMAL" property="brandId" />
+    <result column="BRAND_NAME" jdbcType="VARCHAR" property="brandName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    BRAND_ID, BRAND_NAME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_BRAND
+    where BRAND_ID = #{brandId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from TB_BRAND
+    where BRAND_ID = #{brandId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Brand">
+    insert into TB_BRAND (BRAND_ID, BRAND_NAME)
+    values (#{brandId,jdbcType=DECIMAL}, #{brandName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Brand">
+    insert into TB_BRAND
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="brandId != null">
+        BRAND_ID,
+      </if>
+      <if test="brandName != null">
+        BRAND_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="brandId != null">
+        #{brandId,jdbcType=DECIMAL},
+      </if>
+      <if test="brandName != null">
+        #{brandName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Brand">
+    update TB_BRAND
+    <set>
+      <if test="brandName != null">
+        BRAND_NAME = #{brandName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where BRAND_ID = #{brandId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Brand">
+    update TB_BRAND
+    set BRAND_NAME = #{brandName,jdbcType=VARCHAR}
+    where BRAND_ID = #{brandId,jdbcType=DECIMAL}
+  </update>
+</mapper>

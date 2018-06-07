@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.CouponMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Coupon">
+    <id column="COUPON_ID" jdbcType="DECIMAL" property="couponId" />
+    <result column="COUPON_DISCOUNT" jdbcType="DECIMAL" property="couponDiscount" />
+    <result column="COUPON_RULE" jdbcType="VARCHAR" property="couponRule" />
+    <result column="COUPON_START_TIME" jdbcType="TIMESTAMP" property="couponStartTime" />
+    <result column="COUPON_END_TIME" jdbcType="TIMESTAMP" property="couponEndTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    COUPON_ID, COUPON_DISCOUNT, COUPON_RULE, COUPON_START_TIME, COUPON_END_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_COUPON
+    where COUPON_ID = #{couponId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from TB_COUPON
+    where COUPON_ID = #{couponId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Coupon">
+    insert into TB_COUPON (COUPON_ID, COUPON_DISCOUNT, COUPON_RULE, 
+      COUPON_START_TIME, COUPON_END_TIME)
+    values (#{couponId,jdbcType=DECIMAL}, #{couponDiscount,jdbcType=DECIMAL}, #{couponRule,jdbcType=VARCHAR}, 
+      #{couponStartTime,jdbcType=TIMESTAMP}, #{couponEndTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Coupon">
+    insert into TB_COUPON
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="couponId != null">
+        COUPON_ID,
+      </if>
+      <if test="couponDiscount != null">
+        COUPON_DISCOUNT,
+      </if>
+      <if test="couponRule != null">
+        COUPON_RULE,
+      </if>
+      <if test="couponStartTime != null">
+        COUPON_START_TIME,
+      </if>
+      <if test="couponEndTime != null">
+        COUPON_END_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="couponId != null">
+        #{couponId,jdbcType=DECIMAL},
+      </if>
+      <if test="couponDiscount != null">
+        #{couponDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="couponRule != null">
+        #{couponRule,jdbcType=VARCHAR},
+      </if>
+      <if test="couponStartTime != null">
+        #{couponStartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="couponEndTime != null">
+        #{couponEndTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Coupon">
+    update TB_COUPON
+    <set>
+      <if test="couponDiscount != null">
+        COUPON_DISCOUNT = #{couponDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="couponRule != null">
+        COUPON_RULE = #{couponRule,jdbcType=VARCHAR},
+      </if>
+      <if test="couponStartTime != null">
+        COUPON_START_TIME = #{couponStartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="couponEndTime != null">
+        COUPON_END_TIME = #{couponEndTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where COUPON_ID = #{couponId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Coupon">
+    update TB_COUPON
+    set COUPON_DISCOUNT = #{couponDiscount,jdbcType=DECIMAL},
+      COUPON_RULE = #{couponRule,jdbcType=VARCHAR},
+      COUPON_START_TIME = #{couponStartTime,jdbcType=TIMESTAMP},
+      COUPON_END_TIME = #{couponEndTime,jdbcType=TIMESTAMP}
+    where COUPON_ID = #{couponId,jdbcType=DECIMAL}
+  </update>
+</mapper>

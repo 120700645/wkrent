@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.CarMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Car">
+    <id column="CAR_ID" jdbcType="DECIMAL" property="carId" />
+    <result column="CAR_NAME" jdbcType="VARCHAR" property="carName" />
+    <result column="CAR_DESC" jdbcType="VARCHAR" property="carDesc" />
+    <result column="CAR_IMG" jdbcType="VARCHAR" property="carImg" />
+    <result column="TYPE_ID" jdbcType="DECIMAL" property="typeId" />
+    <result column="BRAND_ID" jdbcType="DECIMAL" property="brandId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    CAR_ID, CAR_NAME, CAR_DESC, CAR_IMG, TYPE_ID, BRAND_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_CAR
+    where CAR_ID = #{carId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from TB_CAR
+    where CAR_ID = #{carId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Car">
+    insert into TB_CAR (CAR_ID, CAR_NAME, CAR_DESC, 
+      CAR_IMG, TYPE_ID, BRAND_ID
+      )
+    values (#{carId,jdbcType=DECIMAL}, #{carName,jdbcType=VARCHAR}, #{carDesc,jdbcType=VARCHAR}, 
+      #{carImg,jdbcType=VARCHAR}, #{typeId,jdbcType=DECIMAL}, #{brandId,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Car">
+    insert into TB_CAR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="carId != null">
+        CAR_ID,
+      </if>
+      <if test="carName != null">
+        CAR_NAME,
+      </if>
+      <if test="carDesc != null">
+        CAR_DESC,
+      </if>
+      <if test="carImg != null">
+        CAR_IMG,
+      </if>
+      <if test="typeId != null">
+        TYPE_ID,
+      </if>
+      <if test="brandId != null">
+        BRAND_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="carId != null">
+        #{carId,jdbcType=DECIMAL},
+      </if>
+      <if test="carName != null">
+        #{carName,jdbcType=VARCHAR},
+      </if>
+      <if test="carDesc != null">
+        #{carDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="carImg != null">
+        #{carImg,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=DECIMAL},
+      </if>
+      <if test="brandId != null">
+        #{brandId,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Car">
+    update TB_CAR
+    <set>
+      <if test="carName != null">
+        CAR_NAME = #{carName,jdbcType=VARCHAR},
+      </if>
+      <if test="carDesc != null">
+        CAR_DESC = #{carDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="carImg != null">
+        CAR_IMG = #{carImg,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        TYPE_ID = #{typeId,jdbcType=DECIMAL},
+      </if>
+      <if test="brandId != null">
+        BRAND_ID = #{brandId,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where CAR_ID = #{carId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Car">
+    update TB_CAR
+    set CAR_NAME = #{carName,jdbcType=VARCHAR},
+      CAR_DESC = #{carDesc,jdbcType=VARCHAR},
+      CAR_IMG = #{carImg,jdbcType=VARCHAR},
+      TYPE_ID = #{typeId,jdbcType=DECIMAL},
+      BRAND_ID = #{brandId,jdbcType=DECIMAL}
+    where CAR_ID = #{carId,jdbcType=DECIMAL}
+  </update>
+</mapper>

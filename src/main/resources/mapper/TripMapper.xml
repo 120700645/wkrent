@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.TripMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Trip">
+    <id column="TRIP_ID" jdbcType="DECIMAL" property="tripId" />
+    <result column="TRIP_NAME" jdbcType="VARCHAR" property="tripName" />
+    <result column="TRIP_TAKE" jdbcType="VARCHAR" property="tripTake" />
+    <result column="TRIP_BACK" jdbcType="VARCHAR" property="tripBack" />
+    <result column="TRIP_KM" jdbcType="DECIMAL" property="tripKm" />
+    <result column="TRIP_TIME" jdbcType="DECIMAL" property="tripTime" />
+    <result column="TRIP_ROUTE" jdbcType="VARCHAR" property="tripRoute" />
+    <result column="SCENIC_ID" jdbcType="DECIMAL" property="scenicId" />
+    <result column="HOTEL_ID" jdbcType="DECIMAL" property="hotelId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    TRIP_ID, TRIP_NAME, TRIP_TAKE, TRIP_BACK, TRIP_KM, TRIP_TIME, TRIP_ROUTE, SCENIC_ID, 
+    HOTEL_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_TRIP
+    where TRIP_ID = #{tripId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from TB_TRIP
+    where TRIP_ID = #{tripId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Trip">
+    insert into TB_TRIP (TRIP_ID, TRIP_NAME, TRIP_TAKE, 
+      TRIP_BACK, TRIP_KM, TRIP_TIME, 
+      TRIP_ROUTE, SCENIC_ID, HOTEL_ID
+      )
+    values (#{tripId,jdbcType=DECIMAL}, #{tripName,jdbcType=VARCHAR}, #{tripTake,jdbcType=VARCHAR}, 
+      #{tripBack,jdbcType=VARCHAR}, #{tripKm,jdbcType=DECIMAL}, #{tripTime,jdbcType=DECIMAL}, 
+      #{tripRoute,jdbcType=VARCHAR}, #{scenicId,jdbcType=DECIMAL}, #{hotelId,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Trip">
+    insert into TB_TRIP
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tripId != null">
+        TRIP_ID,
+      </if>
+      <if test="tripName != null">
+        TRIP_NAME,
+      </if>
+      <if test="tripTake != null">
+        TRIP_TAKE,
+      </if>
+      <if test="tripBack != null">
+        TRIP_BACK,
+      </if>
+      <if test="tripKm != null">
+        TRIP_KM,
+      </if>
+      <if test="tripTime != null">
+        TRIP_TIME,
+      </if>
+      <if test="tripRoute != null">
+        TRIP_ROUTE,
+      </if>
+      <if test="scenicId != null">
+        SCENIC_ID,
+      </if>
+      <if test="hotelId != null">
+        HOTEL_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tripId != null">
+        #{tripId,jdbcType=DECIMAL},
+      </if>
+      <if test="tripName != null">
+        #{tripName,jdbcType=VARCHAR},
+      </if>
+      <if test="tripTake != null">
+        #{tripTake,jdbcType=VARCHAR},
+      </if>
+      <if test="tripBack != null">
+        #{tripBack,jdbcType=VARCHAR},
+      </if>
+      <if test="tripKm != null">
+        #{tripKm,jdbcType=DECIMAL},
+      </if>
+      <if test="tripTime != null">
+        #{tripTime,jdbcType=DECIMAL},
+      </if>
+      <if test="tripRoute != null">
+        #{tripRoute,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicId != null">
+        #{scenicId,jdbcType=DECIMAL},
+      </if>
+      <if test="hotelId != null">
+        #{hotelId,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Trip">
+    update TB_TRIP
+    <set>
+      <if test="tripName != null">
+        TRIP_NAME = #{tripName,jdbcType=VARCHAR},
+      </if>
+      <if test="tripTake != null">
+        TRIP_TAKE = #{tripTake,jdbcType=VARCHAR},
+      </if>
+      <if test="tripBack != null">
+        TRIP_BACK = #{tripBack,jdbcType=VARCHAR},
+      </if>
+      <if test="tripKm != null">
+        TRIP_KM = #{tripKm,jdbcType=DECIMAL},
+      </if>
+      <if test="tripTime != null">
+        TRIP_TIME = #{tripTime,jdbcType=DECIMAL},
+      </if>
+      <if test="tripRoute != null">
+        TRIP_ROUTE = #{tripRoute,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicId != null">
+        SCENIC_ID = #{scenicId,jdbcType=DECIMAL},
+      </if>
+      <if test="hotelId != null">
+        HOTEL_ID = #{hotelId,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where TRIP_ID = #{tripId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Trip">
+    update TB_TRIP
+    set TRIP_NAME = #{tripName,jdbcType=VARCHAR},
+      TRIP_TAKE = #{tripTake,jdbcType=VARCHAR},
+      TRIP_BACK = #{tripBack,jdbcType=VARCHAR},
+      TRIP_KM = #{tripKm,jdbcType=DECIMAL},
+      TRIP_TIME = #{tripTime,jdbcType=DECIMAL},
+      TRIP_ROUTE = #{tripRoute,jdbcType=VARCHAR},
+      SCENIC_ID = #{scenicId,jdbcType=DECIMAL},
+      HOTEL_ID = #{hotelId,jdbcType=DECIMAL}
+    where TRIP_ID = #{tripId,jdbcType=DECIMAL}
+  </update>
+</mapper>

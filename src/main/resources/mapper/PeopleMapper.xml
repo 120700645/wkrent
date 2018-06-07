@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.PeopleMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.People">
+    <id column="PEOPLE_ID" jdbcType="DECIMAL" property="peopleId" />
+    <result column="PEOPLE_NAME" jdbcType="VARCHAR" property="peopleName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PEOPLE_ID, PEOPLE_NAME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_PEOPLE
+    where PEOPLE_ID = #{peopleId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from TB_PEOPLE
+    where PEOPLE_ID = #{peopleId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.People">
+    insert into TB_PEOPLE (PEOPLE_ID, PEOPLE_NAME)
+    values (#{peopleId,jdbcType=DECIMAL}, #{peopleName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.People">
+    insert into TB_PEOPLE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="peopleId != null">
+        PEOPLE_ID,
+      </if>
+      <if test="peopleName != null">
+        PEOPLE_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="peopleId != null">
+        #{peopleId,jdbcType=DECIMAL},
+      </if>
+      <if test="peopleName != null">
+        #{peopleName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.People">
+    update TB_PEOPLE
+    <set>
+      <if test="peopleName != null">
+        PEOPLE_NAME = #{peopleName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PEOPLE_ID = #{peopleId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.People">
+    update TB_PEOPLE
+    set PEOPLE_NAME = #{peopleName,jdbcType=VARCHAR}
+    where PEOPLE_ID = #{peopleId,jdbcType=DECIMAL}
+  </update>
+</mapper>

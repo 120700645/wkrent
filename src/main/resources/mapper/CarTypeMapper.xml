@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.CarTypeMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.CarType">
+    <id column="TYPE_ID" jdbcType="DECIMAL" property="typeId" />
+    <result column="TYPE_NAME" jdbcType="VARCHAR" property="typeName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    TYPE_ID, TYPE_NAME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_CAR_TYPE
+    where TYPE_ID = #{typeId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from TB_CAR_TYPE
+    where TYPE_ID = #{typeId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.CarType">
+    insert into TB_CAR_TYPE (TYPE_ID, TYPE_NAME)
+    values (#{typeId,jdbcType=DECIMAL}, #{typeName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.CarType">
+    insert into TB_CAR_TYPE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="typeId != null">
+        TYPE_ID,
+      </if>
+      <if test="typeName != null">
+        TYPE_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="typeId != null">
+        #{typeId,jdbcType=DECIMAL},
+      </if>
+      <if test="typeName != null">
+        #{typeName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.CarType">
+    update TB_CAR_TYPE
+    <set>
+      <if test="typeName != null">
+        TYPE_NAME = #{typeName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where TYPE_ID = #{typeId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.CarType">
+    update TB_CAR_TYPE
+    set TYPE_NAME = #{typeName,jdbcType=VARCHAR}
+    where TYPE_ID = #{typeId,jdbcType=DECIMAL}
+  </update>
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.TagMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Tag">
+    <id column="TAG_ID" jdbcType="DECIMAL" property="tagId" />
+    <result column="TAG_NAME" jdbcType="VARCHAR" property="tagName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    TAG_ID, TAG_NAME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_TAG
+    where TAG_ID = #{tagId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from TB_TAG
+    where TAG_ID = #{tagId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Tag">
+    insert into TB_TAG (TAG_ID, TAG_NAME)
+    values (#{tagId,jdbcType=DECIMAL}, #{tagName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Tag">
+    insert into TB_TAG
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tagId != null">
+        TAG_ID,
+      </if>
+      <if test="tagName != null">
+        TAG_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tagId != null">
+        #{tagId,jdbcType=DECIMAL},
+      </if>
+      <if test="tagName != null">
+        #{tagName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Tag">
+    update TB_TAG
+    <set>
+      <if test="tagName != null">
+        TAG_NAME = #{tagName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where TAG_ID = #{tagId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Tag">
+    update TB_TAG
+    set TAG_NAME = #{tagName,jdbcType=VARCHAR}
+    where TAG_ID = #{tagId,jdbcType=DECIMAL}
+  </update>
+</mapper>

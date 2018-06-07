@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.AreaMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Area">
+    <result column="AREA_ID" jdbcType="DECIMAL" property="areaId" />
+    <result column="CITY_ID" jdbcType="DECIMAL" property="cityId" />
+    <result column="AREA_NAME" jdbcType="VARCHAR" property="areaName" />
+  </resultMap>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Area">
+    insert into TB_AREA (AREA_ID, CITY_ID, AREA_NAME
+      )
+    values (#{areaId,jdbcType=DECIMAL}, #{cityId,jdbcType=DECIMAL}, #{areaName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Area">
+    insert into TB_AREA
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="areaId != null">
+        AREA_ID,
+      </if>
+      <if test="cityId != null">
+        CITY_ID,
+      </if>
+      <if test="areaName != null">
+        AREA_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="areaId != null">
+        #{areaId,jdbcType=DECIMAL},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=DECIMAL},
+      </if>
+      <if test="areaName != null">
+        #{areaName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

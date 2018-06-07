@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.PermissionMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Permission">
+    <id column="PERMISSION_ID" jdbcType="DECIMAL" property="permissionId" />
+    <result column="PERMISSION_NAME" jdbcType="VARCHAR" property="permissionName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERMISSION_ID, PERMISSION_NAME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_PERMISSION
+    where PERMISSION_ID = #{permissionId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from TB_PERMISSION
+    where PERMISSION_ID = #{permissionId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Permission">
+    insert into TB_PERMISSION (PERMISSION_ID, PERMISSION_NAME)
+    values (#{permissionId,jdbcType=DECIMAL}, #{permissionName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Permission">
+    insert into TB_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permissionId != null">
+        PERMISSION_ID,
+      </if>
+      <if test="permissionName != null">
+        PERMISSION_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permissionId != null">
+        #{permissionId,jdbcType=DECIMAL},
+      </if>
+      <if test="permissionName != null">
+        #{permissionName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Permission">
+    update TB_PERMISSION
+    <set>
+      <if test="permissionName != null">
+        PERMISSION_NAME = #{permissionName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERMISSION_ID = #{permissionId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Permission">
+    update TB_PERMISSION
+    set PERMISSION_NAME = #{permissionName,jdbcType=VARCHAR}
+    where PERMISSION_ID = #{permissionId,jdbcType=DECIMAL}
+  </update>
+</mapper>

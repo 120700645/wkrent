@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.TicketMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Ticket">
+    <id column="TICKET_ID" jdbcType="DECIMAL" property="ticketId" />
+    <result column="TRIP_ID" jdbcType="DECIMAL" property="tripId" />
+    <result column="TICKET_NAME" jdbcType="VARCHAR" property="ticketName" />
+    <result column="TICKET_NUM" jdbcType="DECIMAL" property="ticketNum" />
+    <result column="TICKET_PRICE" jdbcType="DECIMAL" property="ticketPrice" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    TICKET_ID, TRIP_ID, TICKET_NAME, TICKET_NUM, TICKET_PRICE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_TICKET
+    where TICKET_ID = #{ticketId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from TB_TICKET
+    where TICKET_ID = #{ticketId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Ticket">
+    insert into TB_TICKET (TICKET_ID, TRIP_ID, TICKET_NAME, 
+      TICKET_NUM, TICKET_PRICE)
+    values (#{ticketId,jdbcType=DECIMAL}, #{tripId,jdbcType=DECIMAL}, #{ticketName,jdbcType=VARCHAR}, 
+      #{ticketNum,jdbcType=DECIMAL}, #{ticketPrice,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Ticket">
+    insert into TB_TICKET
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ticketId != null">
+        TICKET_ID,
+      </if>
+      <if test="tripId != null">
+        TRIP_ID,
+      </if>
+      <if test="ticketName != null">
+        TICKET_NAME,
+      </if>
+      <if test="ticketNum != null">
+        TICKET_NUM,
+      </if>
+      <if test="ticketPrice != null">
+        TICKET_PRICE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ticketId != null">
+        #{ticketId,jdbcType=DECIMAL},
+      </if>
+      <if test="tripId != null">
+        #{tripId,jdbcType=DECIMAL},
+      </if>
+      <if test="ticketName != null">
+        #{ticketName,jdbcType=VARCHAR},
+      </if>
+      <if test="ticketNum != null">
+        #{ticketNum,jdbcType=DECIMAL},
+      </if>
+      <if test="ticketPrice != null">
+        #{ticketPrice,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Ticket">
+    update TB_TICKET
+    <set>
+      <if test="tripId != null">
+        TRIP_ID = #{tripId,jdbcType=DECIMAL},
+      </if>
+      <if test="ticketName != null">
+        TICKET_NAME = #{ticketName,jdbcType=VARCHAR},
+      </if>
+      <if test="ticketNum != null">
+        TICKET_NUM = #{ticketNum,jdbcType=DECIMAL},
+      </if>
+      <if test="ticketPrice != null">
+        TICKET_PRICE = #{ticketPrice,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where TICKET_ID = #{ticketId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Ticket">
+    update TB_TICKET
+    set TRIP_ID = #{tripId,jdbcType=DECIMAL},
+      TICKET_NAME = #{ticketName,jdbcType=VARCHAR},
+      TICKET_NUM = #{ticketNum,jdbcType=DECIMAL},
+      TICKET_PRICE = #{ticketPrice,jdbcType=DECIMAL}
+    where TICKET_ID = #{ticketId,jdbcType=DECIMAL}
+  </update>
+</mapper>

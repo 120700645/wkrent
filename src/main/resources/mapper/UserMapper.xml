@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.User">
+    <id column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="USER_TEL" jdbcType="VARCHAR" property="userTel" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="USER_CARD" jdbcType="VARCHAR" property="userCard" />
+    <result column="USER_COUNT" jdbcType="DECIMAL" property="userCount" />
+    <result column="USER_FREEZE" jdbcType="DECIMAL" property="userFreeze" />
+    <result column="USER_USEABLE" jdbcType="DECIMAL" property="userUseable" />
+    <result column="USER_WKB" jdbcType="DECIMAL" property="userWkb" />
+    <result column="USER_NUM" jdbcType="DECIMAL" property="userNum" />
+    <result column="USER_LEAVEL" jdbcType="DECIMAL" property="userLeavel" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    USER_ID, USER_TEL, USER_NAME, USER_CARD, USER_COUNT, USER_FREEZE, USER_USEABLE, USER_WKB, 
+    USER_NUM, USER_LEAVEL
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_USER
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from TB_USER
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.User">
+    insert into TB_USER (USER_ID, USER_TEL, USER_NAME, 
+      USER_CARD, USER_COUNT, USER_FREEZE, 
+      USER_USEABLE, USER_WKB, USER_NUM, 
+      USER_LEAVEL)
+    values (#{userId,jdbcType=DECIMAL}, #{userTel,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{userCard,jdbcType=VARCHAR}, #{userCount,jdbcType=DECIMAL}, #{userFreeze,jdbcType=DECIMAL}, 
+      #{userUseable,jdbcType=DECIMAL}, #{userWkb,jdbcType=DECIMAL}, #{userNum,jdbcType=DECIMAL}, 
+      #{userLeavel,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.User">
+    insert into TB_USER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="userTel != null">
+        USER_TEL,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="userCard != null">
+        USER_CARD,
+      </if>
+      <if test="userCount != null">
+        USER_COUNT,
+      </if>
+      <if test="userFreeze != null">
+        USER_FREEZE,
+      </if>
+      <if test="userUseable != null">
+        USER_USEABLE,
+      </if>
+      <if test="userWkb != null">
+        USER_WKB,
+      </if>
+      <if test="userNum != null">
+        USER_NUM,
+      </if>
+      <if test="userLeavel != null">
+        USER_LEAVEL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="userTel != null">
+        #{userTel,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userCard != null">
+        #{userCard,jdbcType=VARCHAR},
+      </if>
+      <if test="userCount != null">
+        #{userCount,jdbcType=DECIMAL},
+      </if>
+      <if test="userFreeze != null">
+        #{userFreeze,jdbcType=DECIMAL},
+      </if>
+      <if test="userUseable != null">
+        #{userUseable,jdbcType=DECIMAL},
+      </if>
+      <if test="userWkb != null">
+        #{userWkb,jdbcType=DECIMAL},
+      </if>
+      <if test="userNum != null">
+        #{userNum,jdbcType=DECIMAL},
+      </if>
+      <if test="userLeavel != null">
+        #{userLeavel,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.User">
+    update TB_USER
+    <set>
+      <if test="userTel != null">
+        USER_TEL = #{userTel,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userCard != null">
+        USER_CARD = #{userCard,jdbcType=VARCHAR},
+      </if>
+      <if test="userCount != null">
+        USER_COUNT = #{userCount,jdbcType=DECIMAL},
+      </if>
+      <if test="userFreeze != null">
+        USER_FREEZE = #{userFreeze,jdbcType=DECIMAL},
+      </if>
+      <if test="userUseable != null">
+        USER_USEABLE = #{userUseable,jdbcType=DECIMAL},
+      </if>
+      <if test="userWkb != null">
+        USER_WKB = #{userWkb,jdbcType=DECIMAL},
+      </if>
+      <if test="userNum != null">
+        USER_NUM = #{userNum,jdbcType=DECIMAL},
+      </if>
+      <if test="userLeavel != null">
+        USER_LEAVEL = #{userLeavel,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.User">
+    update TB_USER
+    set USER_TEL = #{userTel,jdbcType=VARCHAR},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      USER_CARD = #{userCard,jdbcType=VARCHAR},
+      USER_COUNT = #{userCount,jdbcType=DECIMAL},
+      USER_FREEZE = #{userFreeze,jdbcType=DECIMAL},
+      USER_USEABLE = #{userUseable,jdbcType=DECIMAL},
+      USER_WKB = #{userWkb,jdbcType=DECIMAL},
+      USER_NUM = #{userNum,jdbcType=DECIMAL},
+      USER_LEAVEL = #{userLeavel,jdbcType=DECIMAL}
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </update>
+</mapper>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.RentOrderMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.RentOrder">
+    <id column="ORDER_ID" jdbcType="DECIMAL" property="orderId" />
+    <result column="CAR_ID" jdbcType="DECIMAL" property="carId" />
+    <result column="ORDER_NUM" jdbcType="VARCHAR" property="orderNum" />
+    <result column="ORDER_TAKE_TIME" jdbcType="TIMESTAMP" property="orderTakeTime" />
+    <result column="ORDER_TAKE_PLACE" jdbcType="VARCHAR" property="orderTakePlace" />
+    <result column="ORDER_RETURN_TIME" jdbcType="TIMESTAMP" property="orderReturnTime" />
+    <result column="ORDER_RETURN_PLACE" jdbcType="VARCHAR" property="orderReturnPlace" />
+    <result column="ORDER_PRICE" jdbcType="DECIMAL" property="orderPrice" />
+    <result column="ORDER_INSURANCE" jdbcType="DECIMAL" property="orderInsurance" />
+    <result column="ORDER_CHARGE" jdbcType="DECIMAL" property="orderCharge" />
+    <result column="ORDER_DISCOUNT" jdbcType="DECIMAL" property="orderDiscount" />
+    <result column="ORDER_TOTAL" jdbcType="DECIMAL" property="orderTotal" />
+    <result column="ORDER_STATUS" jdbcType="VARCHAR" property="orderStatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ORDER_ID, CAR_ID, ORDER_NUM, ORDER_TAKE_TIME, ORDER_TAKE_PLACE, ORDER_RETURN_TIME, 
+    ORDER_RETURN_PLACE, ORDER_PRICE, ORDER_INSURANCE, ORDER_CHARGE, ORDER_DISCOUNT, ORDER_TOTAL, 
+    ORDER_STATUS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_RENT_ORDER
+    where ORDER_ID = #{orderId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from TB_RENT_ORDER
+    where ORDER_ID = #{orderId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.RentOrder">
+    insert into TB_RENT_ORDER (ORDER_ID, CAR_ID, ORDER_NUM, 
+      ORDER_TAKE_TIME, ORDER_TAKE_PLACE, ORDER_RETURN_TIME, 
+      ORDER_RETURN_PLACE, ORDER_PRICE, ORDER_INSURANCE, 
+      ORDER_CHARGE, ORDER_DISCOUNT, ORDER_TOTAL, 
+      ORDER_STATUS)
+    values (#{orderId,jdbcType=DECIMAL}, #{carId,jdbcType=DECIMAL}, #{orderNum,jdbcType=VARCHAR}, 
+      #{orderTakeTime,jdbcType=TIMESTAMP}, #{orderTakePlace,jdbcType=VARCHAR}, #{orderReturnTime,jdbcType=TIMESTAMP}, 
+      #{orderReturnPlace,jdbcType=VARCHAR}, #{orderPrice,jdbcType=DECIMAL}, #{orderInsurance,jdbcType=DECIMAL}, 
+      #{orderCharge,jdbcType=DECIMAL}, #{orderDiscount,jdbcType=DECIMAL}, #{orderTotal,jdbcType=DECIMAL}, 
+      #{orderStatus,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.RentOrder">
+    insert into TB_RENT_ORDER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        ORDER_ID,
+      </if>
+      <if test="carId != null">
+        CAR_ID,
+      </if>
+      <if test="orderNum != null">
+        ORDER_NUM,
+      </if>
+      <if test="orderTakeTime != null">
+        ORDER_TAKE_TIME,
+      </if>
+      <if test="orderTakePlace != null">
+        ORDER_TAKE_PLACE,
+      </if>
+      <if test="orderReturnTime != null">
+        ORDER_RETURN_TIME,
+      </if>
+      <if test="orderReturnPlace != null">
+        ORDER_RETURN_PLACE,
+      </if>
+      <if test="orderPrice != null">
+        ORDER_PRICE,
+      </if>
+      <if test="orderInsurance != null">
+        ORDER_INSURANCE,
+      </if>
+      <if test="orderCharge != null">
+        ORDER_CHARGE,
+      </if>
+      <if test="orderDiscount != null">
+        ORDER_DISCOUNT,
+      </if>
+      <if test="orderTotal != null">
+        ORDER_TOTAL,
+      </if>
+      <if test="orderStatus != null">
+        ORDER_STATUS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        #{orderId,jdbcType=DECIMAL},
+      </if>
+      <if test="carId != null">
+        #{carId,jdbcType=DECIMAL},
+      </if>
+      <if test="orderNum != null">
+        #{orderNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTakeTime != null">
+        #{orderTakeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderTakePlace != null">
+        #{orderTakePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="orderReturnTime != null">
+        #{orderReturnTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderReturnPlace != null">
+        #{orderReturnPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="orderPrice != null">
+        #{orderPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="orderInsurance != null">
+        #{orderInsurance,jdbcType=DECIMAL},
+      </if>
+      <if test="orderCharge != null">
+        #{orderCharge,jdbcType=DECIMAL},
+      </if>
+      <if test="orderDiscount != null">
+        #{orderDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="orderTotal != null">
+        #{orderTotal,jdbcType=DECIMAL},
+      </if>
+      <if test="orderStatus != null">
+        #{orderStatus,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.RentOrder">
+    update TB_RENT_ORDER
+    <set>
+      <if test="carId != null">
+        CAR_ID = #{carId,jdbcType=DECIMAL},
+      </if>
+      <if test="orderNum != null">
+        ORDER_NUM = #{orderNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTakeTime != null">
+        ORDER_TAKE_TIME = #{orderTakeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderTakePlace != null">
+        ORDER_TAKE_PLACE = #{orderTakePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="orderReturnTime != null">
+        ORDER_RETURN_TIME = #{orderReturnTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderReturnPlace != null">
+        ORDER_RETURN_PLACE = #{orderReturnPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="orderPrice != null">
+        ORDER_PRICE = #{orderPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="orderInsurance != null">
+        ORDER_INSURANCE = #{orderInsurance,jdbcType=DECIMAL},
+      </if>
+      <if test="orderCharge != null">
+        ORDER_CHARGE = #{orderCharge,jdbcType=DECIMAL},
+      </if>
+      <if test="orderDiscount != null">
+        ORDER_DISCOUNT = #{orderDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="orderTotal != null">
+        ORDER_TOTAL = #{orderTotal,jdbcType=DECIMAL},
+      </if>
+      <if test="orderStatus != null">
+        ORDER_STATUS = #{orderStatus,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ORDER_ID = #{orderId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.RentOrder">
+    update TB_RENT_ORDER
+    set CAR_ID = #{carId,jdbcType=DECIMAL},
+      ORDER_NUM = #{orderNum,jdbcType=VARCHAR},
+      ORDER_TAKE_TIME = #{orderTakeTime,jdbcType=TIMESTAMP},
+      ORDER_TAKE_PLACE = #{orderTakePlace,jdbcType=VARCHAR},
+      ORDER_RETURN_TIME = #{orderReturnTime,jdbcType=TIMESTAMP},
+      ORDER_RETURN_PLACE = #{orderReturnPlace,jdbcType=VARCHAR},
+      ORDER_PRICE = #{orderPrice,jdbcType=DECIMAL},
+      ORDER_INSURANCE = #{orderInsurance,jdbcType=DECIMAL},
+      ORDER_CHARGE = #{orderCharge,jdbcType=DECIMAL},
+      ORDER_DISCOUNT = #{orderDiscount,jdbcType=DECIMAL},
+      ORDER_TOTAL = #{orderTotal,jdbcType=DECIMAL},
+      ORDER_STATUS = #{orderStatus,jdbcType=VARCHAR}
+    where ORDER_ID = #{orderId,jdbcType=DECIMAL}
+  </update>
+</mapper>
