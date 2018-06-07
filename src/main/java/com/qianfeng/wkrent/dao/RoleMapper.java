@@ -1,10 +1,17 @@
 package com.qianfeng.wkrent.dao;
 
 import com.qianfeng.wkrent.dto.Role;
-import org.mybatis.spring.annotation.MapperScan;
 
-@MapperScan
 public interface RoleMapper {
+    int deleteByPrimaryKey(Short roleId);
 
-    Role selectById(int id);
+    int insert(Role record);
+
+    int insertSelective(Role record);
+
+    Role selectByPrimaryKey(Short roleId);
+
+    int updateByPrimaryKeySelective(Role record);
+
+    int updateByPrimaryKey(Role record);
 }

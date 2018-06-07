@@ -1,16 +1,16 @@
 package com.qianfeng.wkrent.dto;
 
 public class Role {
+    private Short roleId;
 
-    private Integer id;
     private String roleName;
 
-    public Integer getId() {
-        return id;
+    public Short getRoleId() {
+        return roleId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setRoleId(Short roleId) {
+        this.roleId = roleId;
     }
 
     public String getRoleName() {
@@ -18,6 +18,6 @@ public class Role {
     }
 
     public void setRoleName(String roleName) {
-        this.roleName = roleName;
+        this.roleName = roleName == null ? null : roleName.trim();
     }
 }
