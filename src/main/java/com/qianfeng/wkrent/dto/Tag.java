@@ -1,15 +1,15 @@
 package com.qianfeng.wkrent.dto;
 
 public class Tag {
-    private Short tagId;
+    private Integer tagId;
 
     private String tagName;
 
-    public Short getTagId() {
+    public Integer getTagId() {
         return tagId;
     }
 
-    public void setTagId(Short tagId) {
+    public void setTagId(Integer tagId) {
         this.tagId = tagId;
     }
 

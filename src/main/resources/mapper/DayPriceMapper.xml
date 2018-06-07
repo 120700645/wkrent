@@ -11,13 +11,13 @@
   <sql id="Base_Column_List">
     DP_ID, PC_ID, DB_MONTH, DP_DATE, DB_PRICE
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from TB_DAY_PRICE
     where DP_ID = #{dpId,jdbcType=DECIMAL}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_DAY_PRICE
     where DP_ID = #{dpId,jdbcType=DECIMAL}
   </delete>

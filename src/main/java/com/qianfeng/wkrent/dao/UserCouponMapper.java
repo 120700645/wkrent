@@ -3,13 +3,13 @@ package com.qianfeng.wkrent.dao;
 import com.qianfeng.wkrent.dto.UserCoupon;
 
 public interface UserCouponMapper {
-    int deleteByPrimaryKey(Short ucId);
+    int deleteByPrimaryKey(Integer ucId);
 
     int insert(UserCoupon record);
 
     int insertSelective(UserCoupon record);
 
-    UserCoupon selectByPrimaryKey(Short ucId);
+    UserCoupon selectByPrimaryKey(Integer ucId);
 
     int updateByPrimaryKeySelective(UserCoupon record);
 

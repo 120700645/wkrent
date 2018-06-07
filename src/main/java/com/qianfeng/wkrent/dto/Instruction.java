@@ -1,15 +1,15 @@
 package com.qianfeng.wkrent.dto;
 
 public class Instruction {
-    private Short instructionId;
+    private Integer instructionId;
 
     private String instructionContent;
 
-    public Short getInstructionId() {
+    public Integer getInstructionId() {
         return instructionId;
     }
 
-    public void setInstructionId(Short instructionId) {
+    public void setInstructionId(Integer instructionId) {
         this.instructionId = instructionId;
     }
 

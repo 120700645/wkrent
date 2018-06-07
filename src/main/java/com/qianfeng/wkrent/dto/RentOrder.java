@@ -3,9 +3,9 @@ package com.qianfeng.wkrent.dto;
 import java.util.Date;
 
 public class RentOrder {
-    private Short orderId;
+    private Integer orderId;
 
-    private Short carId;
+    private Integer carId;
 
     private String orderNum;
 
@@ -17,31 +17,31 @@ public class RentOrder {
 
     private String orderReturnPlace;
 
-    private Short orderPrice;
+    private Integer orderPrice;
 
-    private Short orderInsurance;
+    private Integer orderInsurance;
 
-    private Short orderCharge;
+    private Integer orderCharge;
 
-    private Short orderDiscount;
+    private Integer orderDiscount;
 
-    private Short orderTotal;
+    private Integer orderTotal;
 
     private String orderStatus;
 
-    public Short getOrderId() {
+    public Integer getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(Short orderId) {
+    public void setOrderId(Integer orderId) {
         this.orderId = orderId;
     }
 
-    public Short getCarId() {
+    public Integer getCarId() {
         return carId;
     }
 
-    public void setCarId(Short carId) {
+    public void setCarId(Integer carId) {
         this.carId = carId;
     }
 
@@ -85,43 +85,43 @@ public class RentOrder {
         this.orderReturnPlace = orderReturnPlace == null ? null : orderReturnPlace.trim();
     }
 
-    public Short getOrderPrice() {
+    public Integer getOrderPrice() {
         return orderPrice;
     }
 
-    public void setOrderPrice(Short orderPrice) {
+    public void setOrderPrice(Integer orderPrice) {
         this.orderPrice = orderPrice;
     }
 
-    public Short getOrderInsurance() {
+    public Integer getOrderInsurance() {
         return orderInsurance;
     }
 
-    public void setOrderInsurance(Short orderInsurance) {
+    public void setOrderInsurance(Integer orderInsurance) {
         this.orderInsurance = orderInsurance;
     }
 
-    public Short getOrderCharge() {
+    public Integer getOrderCharge() {
         return orderCharge;
     }
 
-    public void setOrderCharge(Short orderCharge) {
+    public void setOrderCharge(Integer orderCharge) {
         this.orderCharge = orderCharge;
     }
 
-    public Short getOrderDiscount() {
+    public Integer getOrderDiscount() {
         return orderDiscount;
     }
 
-    public void setOrderDiscount(Short orderDiscount) {
+    public void setOrderDiscount(Integer orderDiscount) {
         this.orderDiscount = orderDiscount;
     }
 
-    public Short getOrderTotal() {
+    public Integer getOrderTotal() {
         return orderTotal;
     }
 
-    public void setOrderTotal(Short orderTotal) {
+    public void setOrderTotal(Integer orderTotal) {
         this.orderTotal = orderTotal;
     }
 

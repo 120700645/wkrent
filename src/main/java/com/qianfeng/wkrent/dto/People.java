@@ -1,15 +1,15 @@
 package com.qianfeng.wkrent.dto;
 
 public class People {
-    private Short peopleId;
+    private Integer peopleId;
 
     private String peopleName;
 
-    public Short getPeopleId() {
+    public Integer getPeopleId() {
         return peopleId;
     }
 
-    public void setPeopleId(Short peopleId) {
+    public void setPeopleId(Integer peopleId) {
         this.peopleId = peopleId;
     }
 

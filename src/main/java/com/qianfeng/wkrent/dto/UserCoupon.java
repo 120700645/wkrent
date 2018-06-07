@@ -1,43 +1,43 @@
 package com.qianfeng.wkrent.dto;
 
 public class UserCoupon {
-    private Short ucId;
+    private Integer ucId;
 
-    private Short userId;
+    private Integer userId;
 
-    private Short couponId;
+    private Integer couponId;
 
-    private Short ucStatus;
+    private Integer ucStatus;
 
-    public Short getUcId() {
+    public Integer getUcId() {
         return ucId;
     }
 
-    public void setUcId(Short ucId) {
+    public void setUcId(Integer ucId) {
         this.ucId = ucId;
     }
 
-    public Short getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(Short userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    public Short getCouponId() {
+    public Integer getCouponId() {
         return couponId;
     }
 
-    public void setCouponId(Short couponId) {
+    public void setCouponId(Integer couponId) {
         this.couponId = couponId;
     }
 
-    public Short getUcStatus() {
+    public Integer getUcStatus() {
         return ucStatus;
     }
 
-    public void setUcStatus(Short ucStatus) {
+    public void setUcStatus(Integer ucStatus) {
         this.ucStatus = ucStatus;
     }
 }

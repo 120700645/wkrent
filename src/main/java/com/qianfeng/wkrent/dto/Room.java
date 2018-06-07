@@ -1,7 +1,7 @@
 package com.qianfeng.wkrent.dto;
 
 public class Room {
-    private Short roomId;
+    private Integer roomId;
 
     private String roomName;
 
@@ -9,17 +9,17 @@ public class Room {
 
     private String roomBreakfast;
 
-    private Short roomArea;
+    private Integer roomArea;
 
-    private Short roomPrice;
+    private Integer roomPrice;
 
-    private Short hotelId;
+    private Integer hotelId;
 
-    public Short getRoomId() {
+    public Integer getRoomId() {
         return roomId;
     }
 
-    public void setRoomId(Short roomId) {
+    public void setRoomId(Integer roomId) {
         this.roomId = roomId;
     }
 
@@ -47,27 +47,27 @@ public class Room {
         this.roomBreakfast = roomBreakfast == null ? null : roomBreakfast.trim();
     }
 
-    public Short getRoomArea() {
+    public Integer getRoomArea() {
         return roomArea;
     }
 
-    public void setRoomArea(Short roomArea) {
+    public void setRoomArea(Integer roomArea) {
         this.roomArea = roomArea;
     }
 
-    public Short getRoomPrice() {
+    public Integer getRoomPrice() {
         return roomPrice;
     }
 
-    public void setRoomPrice(Short roomPrice) {
+    public void setRoomPrice(Integer roomPrice) {
         this.roomPrice = roomPrice;
     }
 
-    public Short getHotelId() {
+    public Integer getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(Short hotelId) {
+    public void setHotelId(Integer hotelId) {
         this.hotelId = hotelId;
     }
 }

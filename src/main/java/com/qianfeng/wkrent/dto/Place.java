@@ -1,7 +1,7 @@
 package com.qianfeng.wkrent.dto;
 
 public class Place {
-    private Short placeId;
+    private Integer placeId;
 
     private String placeName;
 
@@ -17,11 +17,11 @@ public class Place {
 
     private String placeTel;
 
-    public Short getPlaceId() {
+    public Integer getPlaceId() {
         return placeId;
     }
 
-    public void setPlaceId(Short placeId) {
+    public void setPlaceId(Integer placeId) {
         this.placeId = placeId;
     }
 

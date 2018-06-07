@@ -15,13 +15,13 @@
     PLACE_ID, PLACE_NAME, PLACE_ADDRESS, PLACE_LONGITUDE, PLACE_LATITUDE, PLACE_START_TIME, 
     PLACE_END_TIME, PLACE_TEL
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from TB_PLACE
     where PLACE_ID = #{placeId,jdbcType=DECIMAL}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_PLACE
     where PLACE_ID = #{placeId,jdbcType=DECIMAL}
   </delete>

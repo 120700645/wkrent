@@ -1,7 +1,7 @@
 package com.qianfeng.wkrent.dto;
 
 public class Scenic {
-    private Short scenicId;
+    private Integer scenicId;
 
     private String scenicName;
 
@@ -15,11 +15,11 @@ public class Scenic {
 
     private String scenicLatitude;
 
-    public Short getScenicId() {
+    public Integer getScenicId() {
         return scenicId;
     }
 
-    public void setScenicId(Short scenicId) {
+    public void setScenicId(Integer scenicId) {
         this.scenicId = scenicId;
     }
 

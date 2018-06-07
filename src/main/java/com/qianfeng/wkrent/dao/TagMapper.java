@@ -3,13 +3,13 @@ package com.qianfeng.wkrent.dao;
 import com.qianfeng.wkrent.dto.Tag;
 
 public interface TagMapper {
-    int deleteByPrimaryKey(Short tagId);
+    int deleteByPrimaryKey(Integer tagId);
 
     int insert(Tag record);
 
     int insertSelective(Tag record);
 
-    Tag selectByPrimaryKey(Short tagId);
+    Tag selectByPrimaryKey(Integer tagId);
 
     int updateByPrimaryKeySelective(Tag record);
 

@@ -1,21 +1,21 @@
 package com.qianfeng.wkrent.dto;
 
 public class Combo {
-    private Short comboId;
+    private Integer comboId;
 
     private String comboName;
 
-    private Short comboPrice;
+    private Integer comboPrice;
 
     private String comboSite;
 
     private String comboType;
 
-    private Short comboDays;
+    private Integer comboDays;
 
-    private Short instructionId;
+    private Integer instructionId;
 
-    private Short noticeId;
+    private Integer noticeId;
 
     private String comboImg1;
 
@@ -29,11 +29,11 @@ public class Combo {
 
     private String comboLight;
 
-    public Short getComboId() {
+    public Integer getComboId() {
         return comboId;
     }
 
-    public void setComboId(Short comboId) {
+    public void setComboId(Integer comboId) {
         this.comboId = comboId;
     }
 
@@ -45,11 +45,11 @@ public class Combo {
         this.comboName = comboName == null ? null : comboName.trim();
     }
 
-    public Short getComboPrice() {
+    public Integer getComboPrice() {
         return comboPrice;
     }
 
-    public void setComboPrice(Short comboPrice) {
+    public void setComboPrice(Integer comboPrice) {
         this.comboPrice = comboPrice;
     }
 
@@ -69,27 +69,27 @@ public class Combo {
         this.comboType = comboType == null ? null : comboType.trim();
     }
 
-    public Short getComboDays() {
+    public Integer getComboDays() {
         return comboDays;
     }
 
-    public void setComboDays(Short comboDays) {
+    public void setComboDays(Integer comboDays) {
         this.comboDays = comboDays;
     }
 
-    public Short getInstructionId() {
+    public Integer getInstructionId() {
         return instructionId;
     }
 
-    public void setInstructionId(Short instructionId) {
+    public void setInstructionId(Integer instructionId) {
         this.instructionId = instructionId;
     }
 
-    public Short getNoticeId() {
+    public Integer getNoticeId() {
         return noticeId;
     }
 
-    public void setNoticeId(Short noticeId) {
+    public void setNoticeId(Integer noticeId) {
         this.noticeId = noticeId;
     }
 

@@ -10,13 +10,13 @@
   <sql id="Base_Column_List">
     UC_ID, USER_ID, COUPON_ID, UC_STATUS
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from TB_USER_COUPON
     where UC_ID = #{ucId,jdbcType=DECIMAL}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_USER_COUPON
     where UC_ID = #{ucId,jdbcType=DECIMAL}
   </delete>

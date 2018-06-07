@@ -1,15 +1,15 @@
 package com.qianfeng.wkrent.dto;
 
 public class CarType {
-    private Short typeId;
+    private Integer typeId;
 
     private String typeName;
 
-    public Short getTypeId() {
+    public Integer getTypeId() {
         return typeId;
     }
 
-    public void setTypeId(Short typeId) {
+    public void setTypeId(Integer typeId) {
         this.typeId = typeId;
     }
 

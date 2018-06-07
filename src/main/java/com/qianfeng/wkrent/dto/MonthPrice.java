@@ -1,53 +1,53 @@
 package com.qianfeng.wkrent.dto;
 
 public class MonthPrice {
-    private Short mpId;
+    private Integer mpId;
 
-    private Short pcId;
+    private Integer pcId;
 
-    private Short dpMonth;
+    private Integer dpMonth;
 
-    private Short dpDate;
+    private Integer dpDate;
 
-    private Short dpPrice;
+    private Integer dpPrice;
 
-    public Short getMpId() {
+    public Integer getMpId() {
         return mpId;
     }
 
-    public void setMpId(Short mpId) {
+    public void setMpId(Integer mpId) {
         this.mpId = mpId;
     }
 
-    public Short getPcId() {
+    public Integer getPcId() {
         return pcId;
     }
 
-    public void setPcId(Short pcId) {
+    public void setPcId(Integer pcId) {
         this.pcId = pcId;
     }
 
-    public Short getDpMonth() {
+    public Integer getDpMonth() {
         return dpMonth;
     }
 
-    public void setDpMonth(Short dpMonth) {
+    public void setDpMonth(Integer dpMonth) {
         this.dpMonth = dpMonth;
     }
 
-    public Short getDpDate() {
+    public Integer getDpDate() {
         return dpDate;
     }
 
-    public void setDpDate(Short dpDate) {
+    public void setDpDate(Integer dpDate) {
         this.dpDate = dpDate;
     }
 
-    public Short getDpPrice() {
+    public Integer getDpPrice() {
         return dpPrice;
     }
 
-    public void setDpPrice(Short dpPrice) {
+    public void setDpPrice(Integer dpPrice) {
         this.dpPrice = dpPrice;
     }
 }

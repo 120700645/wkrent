@@ -1,15 +1,15 @@
 package com.qianfeng.wkrent.dto;
 
 public class Permission {
-    private Short permissionId;
+    private Integer permissionId;
 
     private String permissionName;
 
-    public Short getPermissionId() {
+    public Integer getPermissionId() {
         return permissionId;
     }
 
-    public void setPermissionId(Short permissionId) {
+    public void setPermissionId(Integer permissionId) {
         this.permissionId = permissionId;
     }
 

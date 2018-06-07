@@ -1,15 +1,15 @@
 package com.qianfeng.wkrent.dto;
 
 public class Brand {
-    private Short brandId;
+    private Integer brandId;
 
     private String brandName;
 
-    public Short getBrandId() {
+    public Integer getBrandId() {
         return brandId;
     }
 
-    public void setBrandId(Short brandId) {
+    public void setBrandId(Integer brandId) {
         this.brandId = brandId;
     }
 

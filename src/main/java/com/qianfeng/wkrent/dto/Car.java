@@ -1,7 +1,7 @@
 package com.qianfeng.wkrent.dto;
 
 public class Car {
-    private Short carId;
+    private Integer carId;
 
     private String carName;
 
@@ -9,15 +9,15 @@ public class Car {
 
     private String carImg;
 
-    private Short typeId;
+    private Integer typeId;
 
-    private Short brandId;
+    private Integer brandId;
 
-    public Short getCarId() {
+    public Integer getCarId() {
         return carId;
     }
 
-    public void setCarId(Short carId) {
+    public void setCarId(Integer carId) {
         this.carId = carId;
     }
 
@@ -45,19 +45,19 @@ public class Car {
         this.carImg = carImg == null ? null : carImg.trim();
     }
 
-    public Short getTypeId() {
+    public Integer getTypeId() {
         return typeId;
     }
 
-    public void setTypeId(Short typeId) {
+    public void setTypeId(Integer typeId) {
         this.typeId = typeId;
     }
 
-    public Short getBrandId() {
+    public Integer getBrandId() {
         return brandId;
     }
 
-    public void setBrandId(Short brandId) {
+    public void setBrandId(Integer brandId) {
         this.brandId = brandId;
     }
 }

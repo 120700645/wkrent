@@ -1,29 +1,29 @@
 package com.qianfeng.wkrent.dto;
 
 public class Ticket {
-    private Short ticketId;
+    private Integer ticketId;
 
-    private Short tripId;
+    private Integer tripId;
 
     private String ticketName;
 
-    private Short ticketNum;
+    private Integer ticketNum;
 
-    private Short ticketPrice;
+    private Integer ticketPrice;
 
-    public Short getTicketId() {
+    public Integer getTicketId() {
         return ticketId;
     }
 
-    public void setTicketId(Short ticketId) {
+    public void setTicketId(Integer ticketId) {
         this.ticketId = ticketId;
     }
 
-    public Short getTripId() {
+    public Integer getTripId() {
         return tripId;
     }
 
-    public void setTripId(Short tripId) {
+    public void setTripId(Integer tripId) {
         this.tripId = tripId;
     }
 
@@ -35,19 +35,19 @@ public class Ticket {
         this.ticketName = ticketName == null ? null : ticketName.trim();
     }
 
-    public Short getTicketNum() {
+    public Integer getTicketNum() {
         return ticketNum;
     }
 
-    public void setTicketNum(Short ticketNum) {
+    public void setTicketNum(Integer ticketNum) {
         this.ticketNum = ticketNum;
     }
 
-    public Short getTicketPrice() {
+    public Integer getTicketPrice() {
         return ticketPrice;
     }
 
-    public void setTicketPrice(Short ticketPrice) {
+    public void setTicketPrice(Integer ticketPrice) {
         this.ticketPrice = ticketPrice;
     }
 }

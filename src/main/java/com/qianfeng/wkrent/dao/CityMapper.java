@@ -3,13 +3,13 @@ package com.qianfeng.wkrent.dao;
 import com.qianfeng.wkrent.dto.City;
 
 public interface CityMapper {
-    int deleteByPrimaryKey(Short cityId);
+    int deleteByPrimaryKey(Integer cityId);
 
     int insert(City record);
 
     int insertSelective(City record);
 
-    City selectByPrimaryKey(Short cityId);
+    City selectByPrimaryKey(Integer cityId);
 
     int updateByPrimaryKeySelective(City record);
 

@@ -21,13 +21,13 @@
     ORDER_RETURN_PLACE, ORDER_PRICE, ORDER_INSURANCE, ORDER_CHARGE, ORDER_DISCOUNT, ORDER_TOTAL, 
     ORDER_STATUS
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from TB_RENT_ORDER
     where ORDER_ID = #{orderId,jdbcType=DECIMAL}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_RENT_ORDER
     where ORDER_ID = #{orderId,jdbcType=DECIMAL}
   </delete>

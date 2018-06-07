@@ -3,13 +3,13 @@ package com.qianfeng.wkrent.dao;
 import com.qianfeng.wkrent.dto.Complaint;
 
 public interface ComplaintMapper {
-    int deleteByPrimaryKey(Short complaintId);
+    int deleteByPrimaryKey(Integer complaintId);
 
     int insert(Complaint record);
 
     int insertSelective(Complaint record);
 
-    Complaint selectByPrimaryKey(Short complaintId);
+    Complaint selectByPrimaryKey(Integer complaintId);
 
     int updateByPrimaryKeySelective(Complaint record);
 

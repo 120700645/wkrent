@@ -3,13 +3,13 @@ package com.qianfeng.wkrent.dao;
 import com.qianfeng.wkrent.dto.Hotel;
 
 public interface HotelMapper {
-    int deleteByPrimaryKey(Short hotelId);
+    int deleteByPrimaryKey(Integer hotelId);
 
     int insert(Hotel record);
 
     int insertSelective(Hotel record);
 
-    Hotel selectByPrimaryKey(Short hotelId);
+    Hotel selectByPrimaryKey(Integer hotelId);
 
     int updateByPrimaryKeySelective(Hotel record);
 

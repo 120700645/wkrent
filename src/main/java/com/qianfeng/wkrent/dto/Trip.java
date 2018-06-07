@@ -1,7 +1,7 @@
 package com.qianfeng.wkrent.dto;
 
 public class Trip {
-    private Short tripId;
+    private Integer tripId;
 
     private String tripName;
 
@@ -9,21 +9,21 @@ public class Trip {
 
     private String tripBack;
 
-    private Short tripKm;
+    private Integer tripKm;
 
-    private Short tripTime;
+    private Integer tripTime;
 
     private String tripRoute;
 
-    private Short scenicId;
+    private Integer scenicId;
 
-    private Short hotelId;
+    private Integer hotelId;
 
-    public Short getTripId() {
+    public Integer getTripId() {
         return tripId;
     }
 
-    public void setTripId(Short tripId) {
+    public void setTripId(Integer tripId) {
         this.tripId = tripId;
     }
 
@@ -51,19 +51,19 @@ public class Trip {
         this.tripBack = tripBack == null ? null : tripBack.trim();
     }
 
-    public Short getTripKm() {
+    public Integer getTripKm() {
         return tripKm;
     }
 
-    public void setTripKm(Short tripKm) {
+    public void setTripKm(Integer tripKm) {
         this.tripKm = tripKm;
     }
 
-    public Short getTripTime() {
+    public Integer getTripTime() {
         return tripTime;
     }
 
-    public void setTripTime(Short tripTime) {
+    public void setTripTime(Integer tripTime) {
         this.tripTime = tripTime;
     }
 
@@ -75,19 +75,19 @@ public class Trip {
         this.tripRoute = tripRoute == null ? null : tripRoute.trim();
     }
 
-    public Short getScenicId() {
+    public Integer getScenicId() {
         return scenicId;
     }
 
-    public void setScenicId(Short scenicId) {
+    public void setScenicId(Integer scenicId) {
         this.scenicId = scenicId;
     }
 
-    public Short getHotelId() {
+    public Integer getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(Short hotelId) {
+    public void setHotelId(Integer hotelId) {
         this.hotelId = hotelId;
     }
 }

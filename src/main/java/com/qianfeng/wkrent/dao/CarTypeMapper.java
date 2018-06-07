@@ -3,13 +3,13 @@ package com.qianfeng.wkrent.dao;
 import com.qianfeng.wkrent.dto.CarType;
 
 public interface CarTypeMapper {
-    int deleteByPrimaryKey(Short typeId);
+    int deleteByPrimaryKey(Integer typeId);
 
     int insert(CarType record);
 
     int insertSelective(CarType record);
 
-    CarType selectByPrimaryKey(Short typeId);
+    CarType selectByPrimaryKey(Integer typeId);
 
     int updateByPrimaryKeySelective(CarType record);
 

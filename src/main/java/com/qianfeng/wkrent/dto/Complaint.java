@@ -3,27 +3,27 @@ package com.qianfeng.wkrent.dto;
 import java.util.Date;
 
 public class Complaint {
-    private Short complaintId;
+    private Integer complaintId;
 
-    private Short userId;
+    private Integer userId;
 
     private String complaintContent;
 
     private Date complaintTime;
 
-    public Short getComplaintId() {
+    public Integer getComplaintId() {
         return complaintId;
     }
 
-    public void setComplaintId(Short complaintId) {
+    public void setComplaintId(Integer complaintId) {
         this.complaintId = complaintId;
     }
 
-    public Short getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(Short userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 

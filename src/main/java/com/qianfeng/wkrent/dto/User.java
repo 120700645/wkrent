@@ -1,7 +1,7 @@
 package com.qianfeng.wkrent.dto;
 
 public class User {
-    private Short userId;
+    private Integer userId;
 
     private String userTel;
 
@@ -9,23 +9,23 @@ public class User {
 
     private String userCard;
 
-    private Short userCount;
+    private Integer userCount;
 
-    private Short userFreeze;
+    private Integer userFreeze;
 
-    private Short userUseable;
+    private Integer userUseable;
 
-    private Short userWkb;
+    private Integer userWkb;
 
-    private Short userNum;
+    private Integer userNum;
 
-    private Short userLeavel;
+    private Integer userLeavel;
 
-    public Short getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(Short userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -53,51 +53,51 @@ public class User {
         this.userCard = userCard == null ? null : userCard.trim();
     }
 
-    public Short getUserCount() {
+    public Integer getUserCount() {
         return userCount;
     }
 
-    public void setUserCount(Short userCount) {
+    public void setUserCount(Integer userCount) {
         this.userCount = userCount;
     }
 
-    public Short getUserFreeze() {
+    public Integer getUserFreeze() {
         return userFreeze;
     }
 
-    public void setUserFreeze(Short userFreeze) {
+    public void setUserFreeze(Integer userFreeze) {
         this.userFreeze = userFreeze;
     }
 
-    public Short getUserUseable() {
+    public Integer getUserUseable() {
         return userUseable;
     }
 
-    public void setUserUseable(Short userUseable) {
+    public void setUserUseable(Integer userUseable) {
         this.userUseable = userUseable;
     }
 
-    public Short getUserWkb() {
+    public Integer getUserWkb() {
         return userWkb;
     }
 
-    public void setUserWkb(Short userWkb) {
+    public void setUserWkb(Integer userWkb) {
         this.userWkb = userWkb;
     }
 
-    public Short getUserNum() {
+    public Integer getUserNum() {
         return userNum;
     }
 
-    public void setUserNum(Short userNum) {
+    public void setUserNum(Integer userNum) {
         this.userNum = userNum;
     }
 
-    public Short getUserLeavel() {
+    public Integer getUserLeavel() {
         return userLeavel;
     }
 
-    public void setUserLeavel(Short userLeavel) {
+    public void setUserLeavel(Integer userLeavel) {
         this.userLeavel = userLeavel;
     }
 }

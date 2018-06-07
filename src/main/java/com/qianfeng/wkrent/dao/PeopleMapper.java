@@ -3,13 +3,13 @@ package com.qianfeng.wkrent.dao;
 import com.qianfeng.wkrent.dto.People;
 
 public interface PeopleMapper {
-    int deleteByPrimaryKey(Short peopleId);
+    int deleteByPrimaryKey(Integer peopleId);
 
     int insert(People record);
 
     int insertSelective(People record);
 
-    People selectByPrimaryKey(Short peopleId);
+    People selectByPrimaryKey(Integer peopleId);
 
     int updateByPrimaryKeySelective(People record);
 

@@ -8,13 +8,13 @@
   <sql id="Base_Column_List">
     TYPE_ID, TYPE_NAME
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from TB_CAR_TYPE
     where TYPE_ID = #{typeId,jdbcType=DECIMAL}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_CAR_TYPE
     where TYPE_ID = #{typeId,jdbcType=DECIMAL}
   </delete>

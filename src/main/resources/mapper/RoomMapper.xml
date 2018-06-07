@@ -13,13 +13,13 @@
   <sql id="Base_Column_List">
     ROOM_ID, ROOM_NAME, ROOM_BED, ROOM_BREAKFAST, ROOM_AREA, ROOM_PRICE, HOTEL_ID
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from TB_ROOM
     where ROOM_ID = #{roomId,jdbcType=DECIMAL}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_ROOM
     where ROOM_ID = #{roomId,jdbcType=DECIMAL}
   </delete>

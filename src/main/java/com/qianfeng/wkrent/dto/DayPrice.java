@@ -1,53 +1,53 @@
 package com.qianfeng.wkrent.dto;
 
 public class DayPrice {
-    private Short dpId;
+    private Integer dpId;
 
-    private Short pcId;
+    private Integer pcId;
 
-    private Short dbMonth;
+    private Integer dbMonth;
 
-    private Short dpDate;
+    private Integer dpDate;
 
-    private Short dbPrice;
+    private Integer dbPrice;
 
-    public Short getDpId() {
+    public Integer getDpId() {
         return dpId;
     }
 
-    public void setDpId(Short dpId) {
+    public void setDpId(Integer dpId) {
         this.dpId = dpId;
     }
 
-    public Short getPcId() {
+    public Integer getPcId() {
         return pcId;
     }
 
-    public void setPcId(Short pcId) {
+    public void setPcId(Integer pcId) {
         this.pcId = pcId;
     }
 
-    public Short getDbMonth() {
+    public Integer getDbMonth() {
         return dbMonth;
     }
 
-    public void setDbMonth(Short dbMonth) {
+    public void setDbMonth(Integer dbMonth) {
         this.dbMonth = dbMonth;
     }
 
-    public Short getDpDate() {
+    public Integer getDpDate() {
         return dpDate;
     }
 
-    public void setDpDate(Short dpDate) {
+    public void setDpDate(Integer dpDate) {
         this.dpDate = dpDate;
     }
 
-    public Short getDbPrice() {
+    public Integer getDbPrice() {
         return dbPrice;
     }
 
-    public void setDbPrice(Short dbPrice) {
+    public void setDbPrice(Integer dbPrice) {
         this.dbPrice = dbPrice;
     }
 }

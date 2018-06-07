@@ -10,13 +10,13 @@
   <sql id="Base_Column_List">
     COMPLAINT_ID, USER_ID, COMPLAINT_CONTENT, COMPLAINT_TIME
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from TB_COMPLAINT
     where COMPLAINT_ID = #{complaintId,jdbcType=DECIMAL}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_COMPLAINT
     where COMPLAINT_ID = #{complaintId,jdbcType=DECIMAL}
   </delete>

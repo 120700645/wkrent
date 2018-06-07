@@ -1,7 +1,7 @@
 package com.qianfeng.wkrent.dto;
 
 public class City {
-    private Short cityId;
+    private Integer cityId;
 
     private String cityName;
 
@@ -9,11 +9,11 @@ public class City {
 
     private String cityHot;
 
-    public Short getCityId() {
+    public Integer getCityId() {
         return cityId;
     }
 
-    public void setCityId(Short cityId) {
+    public void setCityId(Integer cityId) {
         this.cityId = cityId;
     }
 

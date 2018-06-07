@@ -14,13 +14,13 @@
     SCENIC_ID, SCENIC_NAME, SCENIC_IMG, SCENIC_DESC, SCENIC_DINING, SCENIC_LONGITUDE, 
     SCENIC_LATITUDE
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from TB_SCENIC
     where SCENIC_ID = #{scenicId,jdbcType=DECIMAL}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_SCENIC
     where SCENIC_ID = #{scenicId,jdbcType=DECIMAL}
   </delete>

@@ -1,25 +1,25 @@
 package com.qianfeng.wkrent.dto;
 
 public class Area {
-    private Short areaId;
+    private Integer areaId;
 
-    private Short cityId;
+    private Integer cityId;
 
     private String areaName;
 
-    public Short getAreaId() {
+    public Integer getAreaId() {
         return areaId;
     }
 
-    public void setAreaId(Short areaId) {
+    public void setAreaId(Integer areaId) {
         this.areaId = areaId;
     }
 
-    public Short getCityId() {
+    public Integer getCityId() {
         return cityId;
     }
 
-    public void setCityId(Short cityId) {
+    public void setCityId(Integer cityId) {
         this.cityId = cityId;
     }
 

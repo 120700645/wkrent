@@ -17,7 +17,7 @@ public class OracleTest {
 
     @Test
     public void testCase(){
-        Role role = roleMapper.selectById(1);
-        System.out.println(role.getId()+role.getRoleName());
+        Role role = roleMapper.selectByPrimaryKey(1);
+        System.out.println(role.getRoleId()+role.getRoleName());
     }
 }

@@ -3,9 +3,9 @@ package com.qianfeng.wkrent.dto;
 import java.util.Date;
 
 public class Coupon {
-    private Short couponId;
+    private Integer couponId;
 
-    private Short couponDiscount;
+    private Integer couponDiscount;
 
     private String couponRule;
 
@@ -13,19 +13,19 @@ public class Coupon {
 
     private Date couponEndTime;
 
-    public Short getCouponId() {
+    public Integer getCouponId() {
         return couponId;
     }
 
-    public void setCouponId(Short couponId) {
+    public void setCouponId(Integer couponId) {
         this.couponId = couponId;
     }
 
-    public Short getCouponDiscount() {
+    public Integer getCouponDiscount() {
         return couponDiscount;
     }
 
-    public void setCouponDiscount(Short couponDiscount) {
+    public void setCouponDiscount(Integer couponDiscount) {
         this.couponDiscount = couponDiscount;
     }
 

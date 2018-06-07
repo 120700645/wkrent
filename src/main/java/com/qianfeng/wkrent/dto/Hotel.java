@@ -1,7 +1,7 @@
 package com.qianfeng.wkrent.dto;
 
 public class Hotel {
-    private Short hotelId;
+    private Integer hotelId;
 
     private String hotelName;
 
@@ -9,7 +9,7 @@ public class Hotel {
 
     private String hotelAddress;
 
-    private Short hotelStar;
+    private Integer hotelStar;
 
     private String hotelService;
 
@@ -19,11 +19,11 @@ public class Hotel {
 
     private String hotelImg3;
 
-    public Short getHotelId() {
+    public Integer getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(Short hotelId) {
+    public void setHotelId(Integer hotelId) {
         this.hotelId = hotelId;
     }
 
@@ -51,11 +51,11 @@ public class Hotel {
         this.hotelAddress = hotelAddress == null ? null : hotelAddress.trim();
     }
 
-    public Short getHotelStar() {
+    public Integer getHotelStar() {
         return hotelStar;
     }
 
-    public void setHotelStar(Short hotelStar) {
+    public void setHotelStar(Integer hotelStar) {
         this.hotelStar = hotelStar;
     }
 
