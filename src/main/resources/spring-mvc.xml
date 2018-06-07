@@ -19,12 +19,16 @@
     	即spring的核心处理机制，如果需要自定义，可以手动配置HandleMapping和HandleAdapter -->
     <mvc:annotation-driven/>
 
-    <!-- 配置视图的位置（即前缀和后缀） -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-          id="internalResourceViewResolver">
-        <!-- 前缀 -->
-        <property name="prefix" value="/WEB-INF/pages/"/>
-        <!-- 后缀 -->
-        <property name="suffix" value=".jsp"/>
+    <!-- 配置freeMarker的模板路径 -->
+    <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/ftl" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
+    <!-- freemarker视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="suffix" value=".html" />
+        <property name="contentType" value="text/html;charset=UTF-8" />
+        <!-- 此变量值为pageContext.request, 页面使用方法：rc.contextPath -->
+        <property name="requestContextAttribute" value="rc" />
     </bean>
 </beans>
