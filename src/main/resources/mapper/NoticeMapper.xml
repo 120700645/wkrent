@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.NoticeMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Notice">
+    <id column="NOTICE_ID" jdbcType="DECIMAL" property="noticeId" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.qianfeng.wkrent.dto.Notice">
+    <result column="NOTICE_CONTENT" jdbcType="CLOB" property="noticeContent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    NOTICE_ID
+  </sql>
+  <sql id="Blob_Column_List">
+    NOTICE_CONTENT
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from TB_NOTICE
+    where NOTICE_ID = #{noticeId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from TB_NOTICE
+    where NOTICE_ID = #{noticeId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Notice">
+    insert into TB_NOTICE (NOTICE_ID, NOTICE_CONTENT)
+    values (#{noticeId,jdbcType=DECIMAL}, #{noticeContent,jdbcType=CLOB})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Notice">
+    insert into TB_NOTICE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="noticeId != null">
+        NOTICE_ID,
+      </if>
+      <if test="noticeContent != null">
+        NOTICE_CONTENT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="noticeId != null">
+        #{noticeId,jdbcType=DECIMAL},
+      </if>
+      <if test="noticeContent != null">
+        #{noticeContent,jdbcType=CLOB},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Notice">
+    update TB_NOTICE
+    <set>
+      <if test="noticeContent != null">
+        NOTICE_CONTENT = #{noticeContent,jdbcType=CLOB},
+      </if>
+    </set>
+    where NOTICE_ID = #{noticeId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.qianfeng.wkrent.dto.Notice">
+    update TB_NOTICE
+    set NOTICE_CONTENT = #{noticeContent,jdbcType=CLOB}
+    where NOTICE_ID = #{noticeId,jdbcType=DECIMAL}
+  </update>
+</mapper>
