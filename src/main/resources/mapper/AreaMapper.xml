@@ -9,7 +9,7 @@
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Area">
     insert into TB_AREA (AREA_ID, CITY_ID, AREA_NAME
       )
-    values (#{areaId,jdbcType=DECIMAL}, #{cityId,jdbcType=DECIMAL}, #{areaName,jdbcType=VARCHAR}
+    values (#{areaId}, #{cityId}, #{areaName}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Area">
@@ -27,13 +27,13 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="areaId != null">
-        #{areaId,jdbcType=DECIMAL},
+        #{areaId},
       </if>
       <if test="cityId != null">
-        #{cityId,jdbcType=DECIMAL},
+        #{cityId},
       </if>
       <if test="areaName != null">
-        #{areaName,jdbcType=VARCHAR},
+        #{areaName},
       </if>
     </trim>
   </insert>

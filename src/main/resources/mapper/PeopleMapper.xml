@@ -12,15 +12,15 @@
     select 
     <include refid="Base_Column_List" />
     from TB_PEOPLE
-    where PEOPLE_ID = #{peopleId,jdbcType=DECIMAL}
+    where PEOPLE_ID = #{peopleId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_PEOPLE
-    where PEOPLE_ID = #{peopleId,jdbcType=DECIMAL}
+    where PEOPLE_ID = #{peopleId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.People">
     insert into TB_PEOPLE (PEOPLE_ID, PEOPLE_NAME)
-    values (#{peopleId,jdbcType=DECIMAL}, #{peopleName,jdbcType=VARCHAR})
+    values (#{peopleId}, #{peopleName})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.People">
     insert into TB_PEOPLE
@@ -34,10 +34,10 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="peopleId != null">
-        #{peopleId,jdbcType=DECIMAL},
+        #{peopleId},
       </if>
       <if test="peopleName != null">
-        #{peopleName,jdbcType=VARCHAR},
+        #{peopleName},
       </if>
     </trim>
   </insert>
@@ -45,14 +45,14 @@
     update TB_PEOPLE
     <set>
       <if test="peopleName != null">
-        PEOPLE_NAME = #{peopleName,jdbcType=VARCHAR},
+        PEOPLE_NAME = #{peopleName},
       </if>
     </set>
-    where PEOPLE_ID = #{peopleId,jdbcType=DECIMAL}
+    where PEOPLE_ID = #{peopleId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.People">
     update TB_PEOPLE
-    set PEOPLE_NAME = #{peopleName,jdbcType=VARCHAR}
-    where PEOPLE_ID = #{peopleId,jdbcType=DECIMAL}
+    set PEOPLE_NAME = #{peopleName}
+    where PEOPLE_ID = #{peopleId}
   </update>
 </mapper>

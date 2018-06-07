@@ -15,17 +15,17 @@
     select 
     <include refid="Base_Column_List" />
     from TB_MONTH_PRICE
-    where MP_ID = #{mpId,jdbcType=DECIMAL}
+    where MP_ID = #{mpId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_MONTH_PRICE
-    where MP_ID = #{mpId,jdbcType=DECIMAL}
+    where MP_ID = #{mpId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.MonthPrice">
     insert into TB_MONTH_PRICE (MP_ID, PC_ID, DP_MONTH, 
       DP_DATE, DP_PRICE)
-    values (#{mpId,jdbcType=DECIMAL}, #{pcId,jdbcType=DECIMAL}, #{dpMonth,jdbcType=DECIMAL}, 
-      #{dpDate,jdbcType=DECIMAL}, #{dpPrice,jdbcType=DECIMAL})
+    values (#{mpId}, #{pcId}, #{dpMonth}, 
+      #{dpDate}, #{dpPrice})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.MonthPrice">
     insert into TB_MONTH_PRICE
@@ -48,19 +48,19 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="mpId != null">
-        #{mpId,jdbcType=DECIMAL},
+        #{mpId},
       </if>
       <if test="pcId != null">
-        #{pcId,jdbcType=DECIMAL},
+        #{pcId},
       </if>
       <if test="dpMonth != null">
-        #{dpMonth,jdbcType=DECIMAL},
+        #{dpMonth},
       </if>
       <if test="dpDate != null">
-        #{dpDate,jdbcType=DECIMAL},
+        #{dpDate},
       </if>
       <if test="dpPrice != null">
-        #{dpPrice,jdbcType=DECIMAL},
+        #{dpPrice},
       </if>
     </trim>
   </insert>
@@ -68,26 +68,26 @@
     update TB_MONTH_PRICE
     <set>
       <if test="pcId != null">
-        PC_ID = #{pcId,jdbcType=DECIMAL},
+        PC_ID = #{pcId},
       </if>
       <if test="dpMonth != null">
-        DP_MONTH = #{dpMonth,jdbcType=DECIMAL},
+        DP_MONTH = #{dpMonth},
       </if>
       <if test="dpDate != null">
-        DP_DATE = #{dpDate,jdbcType=DECIMAL},
+        DP_DATE = #{dpDate},
       </if>
       <if test="dpPrice != null">
-        DP_PRICE = #{dpPrice,jdbcType=DECIMAL},
+        DP_PRICE = #{dpPrice},
       </if>
     </set>
-    where MP_ID = #{mpId,jdbcType=DECIMAL}
+    where MP_ID = #{mpId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.MonthPrice">
     update TB_MONTH_PRICE
-    set PC_ID = #{pcId,jdbcType=DECIMAL},
-      DP_MONTH = #{dpMonth,jdbcType=DECIMAL},
-      DP_DATE = #{dpDate,jdbcType=DECIMAL},
-      DP_PRICE = #{dpPrice,jdbcType=DECIMAL}
-    where MP_ID = #{mpId,jdbcType=DECIMAL}
+    set PC_ID = #{pcId},
+      DP_MONTH = #{dpMonth},
+      DP_DATE = #{dpDate},
+      DP_PRICE = #{dpPrice}
+    where MP_ID = #{mpId}
   </update>
 </mapper>

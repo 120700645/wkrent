@@ -12,15 +12,15 @@
     select 
     <include refid="Base_Column_List" />
     from TB_TAG
-    where TAG_ID = #{tagId,jdbcType=DECIMAL}
+    where TAG_ID = #{tagId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_TAG
-    where TAG_ID = #{tagId,jdbcType=DECIMAL}
+    where TAG_ID = #{tagId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Tag">
     insert into TB_TAG (TAG_ID, TAG_NAME)
-    values (#{tagId,jdbcType=DECIMAL}, #{tagName,jdbcType=VARCHAR})
+    values (#{tagId}, #{tagName})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Tag">
     insert into TB_TAG
@@ -34,10 +34,10 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="tagId != null">
-        #{tagId,jdbcType=DECIMAL},
+        #{tagId},
       </if>
       <if test="tagName != null">
-        #{tagName,jdbcType=VARCHAR},
+        #{tagName},
       </if>
     </trim>
   </insert>
@@ -45,14 +45,14 @@
     update TB_TAG
     <set>
       <if test="tagName != null">
-        TAG_NAME = #{tagName,jdbcType=VARCHAR},
+        TAG_NAME = #{tagName},
       </if>
     </set>
-    where TAG_ID = #{tagId,jdbcType=DECIMAL}
+    where TAG_ID = #{tagId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Tag">
     update TB_TAG
-    set TAG_NAME = #{tagName,jdbcType=VARCHAR}
-    where TAG_ID = #{tagId,jdbcType=DECIMAL}
+    set TAG_NAME = #{tagName}
+    where TAG_ID = #{tagId}
   </update>
 </mapper>

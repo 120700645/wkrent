@@ -12,15 +12,15 @@
     select 
     <include refid="Base_Column_List" />
     from TB_CAR_TYPE
-    where TYPE_ID = #{typeId,jdbcType=DECIMAL}
+    where TYPE_ID = #{typeId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_CAR_TYPE
-    where TYPE_ID = #{typeId,jdbcType=DECIMAL}
+    where TYPE_ID = #{typeId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.CarType">
     insert into TB_CAR_TYPE (TYPE_ID, TYPE_NAME)
-    values (#{typeId,jdbcType=DECIMAL}, #{typeName,jdbcType=VARCHAR})
+    values (#{typeId}, #{typeName})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.CarType">
     insert into TB_CAR_TYPE
@@ -34,10 +34,10 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="typeId != null">
-        #{typeId,jdbcType=DECIMAL},
+        #{typeId},
       </if>
       <if test="typeName != null">
-        #{typeName,jdbcType=VARCHAR},
+        #{typeName},
       </if>
     </trim>
   </insert>
@@ -45,14 +45,14 @@
     update TB_CAR_TYPE
     <set>
       <if test="typeName != null">
-        TYPE_NAME = #{typeName,jdbcType=VARCHAR},
+        TYPE_NAME = #{typeName},
       </if>
     </set>
-    where TYPE_ID = #{typeId,jdbcType=DECIMAL}
+    where TYPE_ID = #{typeId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.CarType">
     update TB_CAR_TYPE
-    set TYPE_NAME = #{typeName,jdbcType=VARCHAR}
-    where TYPE_ID = #{typeId,jdbcType=DECIMAL}
+    set TYPE_NAME = #{typeName}
+    where TYPE_ID = #{typeId}
   </update>
 </mapper>

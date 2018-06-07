@@ -12,15 +12,15 @@
     select 
     <include refid="Base_Column_List" />
     from TB_BRAND
-    where BRAND_ID = #{brandId,jdbcType=DECIMAL}
+    where BRAND_ID = #{brandId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_BRAND
-    where BRAND_ID = #{brandId,jdbcType=DECIMAL}
+    where BRAND_ID = #{brandId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Brand">
     insert into TB_BRAND (BRAND_ID, BRAND_NAME)
-    values (#{brandId,jdbcType=DECIMAL}, #{brandName,jdbcType=VARCHAR})
+    values (#{brandId}, #{brandName})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Brand">
     insert into TB_BRAND
@@ -34,10 +34,10 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="brandId != null">
-        #{brandId,jdbcType=DECIMAL},
+        #{brandId},
       </if>
       <if test="brandName != null">
-        #{brandName,jdbcType=VARCHAR},
+        #{brandName},
       </if>
     </trim>
   </insert>
@@ -45,14 +45,14 @@
     update TB_BRAND
     <set>
       <if test="brandName != null">
-        BRAND_NAME = #{brandName,jdbcType=VARCHAR},
+        BRAND_NAME = #{brandName},
       </if>
     </set>
-    where BRAND_ID = #{brandId,jdbcType=DECIMAL}
+    where BRAND_ID = #{brandId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Brand">
     update TB_BRAND
-    set BRAND_NAME = #{brandName,jdbcType=VARCHAR}
-    where BRAND_ID = #{brandId,jdbcType=DECIMAL}
+    set BRAND_NAME = #{brandName}
+    where BRAND_ID = #{brandId}
   </update>
 </mapper>

@@ -19,15 +19,15 @@
     ,
     <include refid="Blob_Column_List" />
     from TB_INSTRUCTION
-    where INSTRUCTION_ID = #{instructionId,jdbcType=DECIMAL}
+    where INSTRUCTION_ID = #{instructionId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_INSTRUCTION
-    where INSTRUCTION_ID = #{instructionId,jdbcType=DECIMAL}
+    where INSTRUCTION_ID = #{instructionId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Instruction">
     insert into TB_INSTRUCTION (INSTRUCTION_ID, INSTRUCTION_CONTENT)
-    values (#{instructionId,jdbcType=DECIMAL}, #{instructionContent,jdbcType=CLOB})
+    values (#{instructionId}, #{instructionContent})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Instruction">
     insert into TB_INSTRUCTION
@@ -41,10 +41,10 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="instructionId != null">
-        #{instructionId,jdbcType=DECIMAL},
+        #{instructionId},
       </if>
       <if test="instructionContent != null">
-        #{instructionContent,jdbcType=CLOB},
+        #{instructionContent},
       </if>
     </trim>
   </insert>
@@ -52,14 +52,14 @@
     update TB_INSTRUCTION
     <set>
       <if test="instructionContent != null">
-        INSTRUCTION_CONTENT = #{instructionContent,jdbcType=CLOB},
+        INSTRUCTION_CONTENT = #{instructionContent},
       </if>
     </set>
-    where INSTRUCTION_ID = #{instructionId,jdbcType=DECIMAL}
+    where INSTRUCTION_ID = #{instructionId}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.qianfeng.wkrent.dto.Instruction">
     update TB_INSTRUCTION
-    set INSTRUCTION_CONTENT = #{instructionContent,jdbcType=CLOB}
-    where INSTRUCTION_ID = #{instructionId,jdbcType=DECIMAL}
+    set INSTRUCTION_CONTENT = #{instructionContent}
+    where INSTRUCTION_ID = #{instructionId}
   </update>
 </mapper>

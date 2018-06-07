@@ -21,21 +21,29 @@
     select 
     <include refid="Base_Column_List" />
     from TB_USER
-    where USER_ID = #{userId,jdbcType=DECIMAL}
+    where USER_ID = #{userId}
   </select>
+  
+  <select id="selectByTel" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from TB_USER
+    WHERE USER_TEL = #{userTel}
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_USER
-    where USER_ID = #{userId,jdbcType=DECIMAL}
+    where USER_ID = #{userId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.User">
     insert into TB_USER (USER_ID, USER_TEL, USER_NAME, 
       USER_CARD, USER_COUNT, USER_FREEZE, 
       USER_USEABLE, USER_WKB, USER_NUM, 
       USER_LEAVEL)
-    values (#{userId,jdbcType=DECIMAL}, #{userTel,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
-      #{userCard,jdbcType=VARCHAR}, #{userCount,jdbcType=DECIMAL}, #{userFreeze,jdbcType=DECIMAL}, 
-      #{userUseable,jdbcType=DECIMAL}, #{userWkb,jdbcType=DECIMAL}, #{userNum,jdbcType=DECIMAL}, 
-      #{userLeavel,jdbcType=DECIMAL})
+    values (#{userId}, #{userTel}, #{userName}, 
+      #{userCard}, #{userCount}, #{userFreeze}, 
+      #{userUseable}, #{userWkb}, #{userNum}, 
+      #{userLeavel})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.User">
     insert into TB_USER
@@ -73,34 +81,34 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="userId != null">
-        #{userId,jdbcType=DECIMAL},
+        #{userId},
       </if>
       <if test="userTel != null">
-        #{userTel,jdbcType=VARCHAR},
+        #{userTel},
       </if>
       <if test="userName != null">
-        #{userName,jdbcType=VARCHAR},
+        #{userName},
       </if>
       <if test="userCard != null">
-        #{userCard,jdbcType=VARCHAR},
+        #{userCard},
       </if>
       <if test="userCount != null">
-        #{userCount,jdbcType=DECIMAL},
+        #{userCount},
       </if>
       <if test="userFreeze != null">
-        #{userFreeze,jdbcType=DECIMAL},
+        #{userFreeze},
       </if>
       <if test="userUseable != null">
-        #{userUseable,jdbcType=DECIMAL},
+        #{userUseable},
       </if>
       <if test="userWkb != null">
-        #{userWkb,jdbcType=DECIMAL},
+        #{userWkb},
       </if>
       <if test="userNum != null">
-        #{userNum,jdbcType=DECIMAL},
+        #{userNum},
       </if>
       <if test="userLeavel != null">
-        #{userLeavel,jdbcType=DECIMAL},
+        #{userLeavel},
       </if>
     </trim>
   </insert>
@@ -108,46 +116,46 @@
     update TB_USER
     <set>
       <if test="userTel != null">
-        USER_TEL = #{userTel,jdbcType=VARCHAR},
+        USER_TEL = #{userTel},
       </if>
       <if test="userName != null">
-        USER_NAME = #{userName,jdbcType=VARCHAR},
+        USER_NAME = #{userName},
       </if>
       <if test="userCard != null">
-        USER_CARD = #{userCard,jdbcType=VARCHAR},
+        USER_CARD = #{userCard},
       </if>
       <if test="userCount != null">
-        USER_COUNT = #{userCount,jdbcType=DECIMAL},
+        USER_COUNT = #{userCount},
       </if>
       <if test="userFreeze != null">
-        USER_FREEZE = #{userFreeze,jdbcType=DECIMAL},
+        USER_FREEZE = #{userFreeze},
       </if>
       <if test="userUseable != null">
-        USER_USEABLE = #{userUseable,jdbcType=DECIMAL},
+        USER_USEABLE = #{userUseable},
       </if>
       <if test="userWkb != null">
-        USER_WKB = #{userWkb,jdbcType=DECIMAL},
+        USER_WKB = #{userWkb},
       </if>
       <if test="userNum != null">
-        USER_NUM = #{userNum,jdbcType=DECIMAL},
+        USER_NUM = #{userNum},
       </if>
       <if test="userLeavel != null">
-        USER_LEAVEL = #{userLeavel,jdbcType=DECIMAL},
+        USER_LEAVEL = #{userLeavel},
       </if>
     </set>
-    where USER_ID = #{userId,jdbcType=DECIMAL}
+    where USER_ID = #{userId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.User">
     update TB_USER
-    set USER_TEL = #{userTel,jdbcType=VARCHAR},
-      USER_NAME = #{userName,jdbcType=VARCHAR},
-      USER_CARD = #{userCard,jdbcType=VARCHAR},
-      USER_COUNT = #{userCount,jdbcType=DECIMAL},
-      USER_FREEZE = #{userFreeze,jdbcType=DECIMAL},
-      USER_USEABLE = #{userUseable,jdbcType=DECIMAL},
-      USER_WKB = #{userWkb,jdbcType=DECIMAL},
-      USER_NUM = #{userNum,jdbcType=DECIMAL},
-      USER_LEAVEL = #{userLeavel,jdbcType=DECIMAL}
-    where USER_ID = #{userId,jdbcType=DECIMAL}
+    set USER_TEL = #{userTel},
+      USER_NAME = #{userName},
+      USER_CARD = #{userCard},
+      USER_COUNT = #{userCount},
+      USER_FREEZE = #{userFreeze},
+      USER_USEABLE = #{userUseable},
+      USER_WKB = #{userWkb},
+      USER_NUM = #{userNum},
+      USER_LEAVEL = #{userLeavel}
+    where USER_ID = #{userId}
   </update>
 </mapper>

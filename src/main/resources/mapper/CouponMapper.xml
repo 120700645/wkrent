@@ -15,17 +15,17 @@
     select 
     <include refid="Base_Column_List" />
     from TB_COUPON
-    where COUPON_ID = #{couponId,jdbcType=DECIMAL}
+    where COUPON_ID = #{couponId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_COUPON
-    where COUPON_ID = #{couponId,jdbcType=DECIMAL}
+    where COUPON_ID = #{couponId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Coupon">
     insert into TB_COUPON (COUPON_ID, COUPON_DISCOUNT, COUPON_RULE, 
       COUPON_START_TIME, COUPON_END_TIME)
-    values (#{couponId,jdbcType=DECIMAL}, #{couponDiscount,jdbcType=DECIMAL}, #{couponRule,jdbcType=VARCHAR}, 
-      #{couponStartTime,jdbcType=TIMESTAMP}, #{couponEndTime,jdbcType=TIMESTAMP})
+    values (#{couponId}, #{couponDiscount}, #{couponRule}, 
+      #{couponStartTime}, #{couponEndTime})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Coupon">
     insert into TB_COUPON
@@ -48,19 +48,19 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="couponId != null">
-        #{couponId,jdbcType=DECIMAL},
+        #{couponId},
       </if>
       <if test="couponDiscount != null">
-        #{couponDiscount,jdbcType=DECIMAL},
+        #{couponDiscount},
       </if>
       <if test="couponRule != null">
-        #{couponRule,jdbcType=VARCHAR},
+        #{couponRule},
       </if>
       <if test="couponStartTime != null">
-        #{couponStartTime,jdbcType=TIMESTAMP},
+        #{couponStartTime},
       </if>
       <if test="couponEndTime != null">
-        #{couponEndTime,jdbcType=TIMESTAMP},
+        #{couponEndTime},
       </if>
     </trim>
   </insert>
@@ -68,26 +68,26 @@
     update TB_COUPON
     <set>
       <if test="couponDiscount != null">
-        COUPON_DISCOUNT = #{couponDiscount,jdbcType=DECIMAL},
+        COUPON_DISCOUNT = #{couponDiscount},
       </if>
       <if test="couponRule != null">
-        COUPON_RULE = #{couponRule,jdbcType=VARCHAR},
+        COUPON_RULE = #{couponRule},
       </if>
       <if test="couponStartTime != null">
-        COUPON_START_TIME = #{couponStartTime,jdbcType=TIMESTAMP},
+        COUPON_START_TIME = #{couponStartTime},
       </if>
       <if test="couponEndTime != null">
-        COUPON_END_TIME = #{couponEndTime,jdbcType=TIMESTAMP},
+        COUPON_END_TIME = #{couponEndTime},
       </if>
     </set>
-    where COUPON_ID = #{couponId,jdbcType=DECIMAL}
+    where COUPON_ID = #{couponId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Coupon">
     update TB_COUPON
-    set COUPON_DISCOUNT = #{couponDiscount,jdbcType=DECIMAL},
-      COUPON_RULE = #{couponRule,jdbcType=VARCHAR},
-      COUPON_START_TIME = #{couponStartTime,jdbcType=TIMESTAMP},
-      COUPON_END_TIME = #{couponEndTime,jdbcType=TIMESTAMP}
-    where COUPON_ID = #{couponId,jdbcType=DECIMAL}
+    set COUPON_DISCOUNT = #{couponDiscount},
+      COUPON_RULE = #{couponRule},
+      COUPON_START_TIME = #{couponStartTime},
+      COUPON_END_TIME = #{couponEndTime}
+    where COUPON_ID = #{couponId}
   </update>
 </mapper>

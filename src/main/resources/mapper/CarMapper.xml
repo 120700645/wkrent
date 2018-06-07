@@ -16,18 +16,18 @@
     select 
     <include refid="Base_Column_List" />
     from TB_CAR
-    where CAR_ID = #{carId,jdbcType=DECIMAL}
+    where CAR_ID = #{carId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_CAR
-    where CAR_ID = #{carId,jdbcType=DECIMAL}
+    where CAR_ID = #{carId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Car">
     insert into TB_CAR (CAR_ID, CAR_NAME, CAR_DESC, 
       CAR_IMG, TYPE_ID, BRAND_ID
       )
-    values (#{carId,jdbcType=DECIMAL}, #{carName,jdbcType=VARCHAR}, #{carDesc,jdbcType=VARCHAR}, 
-      #{carImg,jdbcType=VARCHAR}, #{typeId,jdbcType=DECIMAL}, #{brandId,jdbcType=DECIMAL}
+    values (#{carId}, #{carName}, #{carDesc}, 
+      #{carImg}, #{typeId}, #{brandId}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Car">
@@ -54,22 +54,22 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="carId != null">
-        #{carId,jdbcType=DECIMAL},
+        #{carId},
       </if>
       <if test="carName != null">
-        #{carName,jdbcType=VARCHAR},
+        #{carName},
       </if>
       <if test="carDesc != null">
-        #{carDesc,jdbcType=VARCHAR},
+        #{carDesc},
       </if>
       <if test="carImg != null">
-        #{carImg,jdbcType=VARCHAR},
+        #{carImg},
       </if>
       <if test="typeId != null">
-        #{typeId,jdbcType=DECIMAL},
+        #{typeId},
       </if>
       <if test="brandId != null">
-        #{brandId,jdbcType=DECIMAL},
+        #{brandId},
       </if>
     </trim>
   </insert>
@@ -77,30 +77,30 @@
     update TB_CAR
     <set>
       <if test="carName != null">
-        CAR_NAME = #{carName,jdbcType=VARCHAR},
+        CAR_NAME = #{carName},
       </if>
       <if test="carDesc != null">
-        CAR_DESC = #{carDesc,jdbcType=VARCHAR},
+        CAR_DESC = #{carDesc},
       </if>
       <if test="carImg != null">
-        CAR_IMG = #{carImg,jdbcType=VARCHAR},
+        CAR_IMG = #{carImg},
       </if>
       <if test="typeId != null">
-        TYPE_ID = #{typeId,jdbcType=DECIMAL},
+        TYPE_ID = #{typeId},
       </if>
       <if test="brandId != null">
-        BRAND_ID = #{brandId,jdbcType=DECIMAL},
+        BRAND_ID = #{brandId},
       </if>
     </set>
-    where CAR_ID = #{carId,jdbcType=DECIMAL}
+    where CAR_ID = #{carId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Car">
     update TB_CAR
-    set CAR_NAME = #{carName,jdbcType=VARCHAR},
-      CAR_DESC = #{carDesc,jdbcType=VARCHAR},
-      CAR_IMG = #{carImg,jdbcType=VARCHAR},
-      TYPE_ID = #{typeId,jdbcType=DECIMAL},
-      BRAND_ID = #{brandId,jdbcType=DECIMAL}
-    where CAR_ID = #{carId,jdbcType=DECIMAL}
+    set CAR_NAME = #{carName},
+      CAR_DESC = #{carDesc},
+      CAR_IMG = #{carImg},
+      TYPE_ID = #{typeId},
+      BRAND_ID = #{brandId}
+    where CAR_ID = #{carId}
   </update>
 </mapper>

@@ -14,17 +14,17 @@
     select 
     <include refid="Base_Column_List" />
     from TB_CITY
-    where CITY_ID = #{cityId,jdbcType=DECIMAL}
+    where CITY_ID = #{cityId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_CITY
-    where CITY_ID = #{cityId,jdbcType=DECIMAL}
+    where CITY_ID = #{cityId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.City">
     insert into TB_CITY (CITY_ID, CITY_NAME, CITY_FIRST_WORD, 
       CITY_HOT)
-    values (#{cityId,jdbcType=DECIMAL}, #{cityName,jdbcType=VARCHAR}, #{cityFirstWord,jdbcType=CHAR}, 
-      #{cityHot,jdbcType=CHAR})
+    values (#{cityId}, #{cityName}, #{cityFirstWord}, 
+      #{cityHot})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.City">
     insert into TB_CITY
@@ -44,16 +44,16 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="cityId != null">
-        #{cityId,jdbcType=DECIMAL},
+        #{cityId},
       </if>
       <if test="cityName != null">
-        #{cityName,jdbcType=VARCHAR},
+        #{cityName},
       </if>
       <if test="cityFirstWord != null">
-        #{cityFirstWord,jdbcType=CHAR},
+        #{cityFirstWord},
       </if>
       <if test="cityHot != null">
-        #{cityHot,jdbcType=CHAR},
+        #{cityHot},
       </if>
     </trim>
   </insert>
@@ -61,22 +61,22 @@
     update TB_CITY
     <set>
       <if test="cityName != null">
-        CITY_NAME = #{cityName,jdbcType=VARCHAR},
+        CITY_NAME = #{cityName},
       </if>
       <if test="cityFirstWord != null">
-        CITY_FIRST_WORD = #{cityFirstWord,jdbcType=CHAR},
+        CITY_FIRST_WORD = #{cityFirstWord},
       </if>
       <if test="cityHot != null">
-        CITY_HOT = #{cityHot,jdbcType=CHAR},
+        CITY_HOT = #{cityHot},
       </if>
     </set>
-    where CITY_ID = #{cityId,jdbcType=DECIMAL}
+    where CITY_ID = #{cityId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.City">
     update TB_CITY
-    set CITY_NAME = #{cityName,jdbcType=VARCHAR},
-      CITY_FIRST_WORD = #{cityFirstWord,jdbcType=CHAR},
-      CITY_HOT = #{cityHot,jdbcType=CHAR}
-    where CITY_ID = #{cityId,jdbcType=DECIMAL}
+    set CITY_NAME = #{cityName},
+      CITY_FIRST_WORD = #{cityFirstWord},
+      CITY_HOT = #{cityHot}
+    where CITY_ID = #{cityId}
   </update>
 </mapper>

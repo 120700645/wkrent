@@ -20,20 +20,20 @@
     select 
     <include refid="Base_Column_List" />
     from TB_TRIP
-    where TRIP_ID = #{tripId,jdbcType=DECIMAL}
+    where TRIP_ID = #{tripId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_TRIP
-    where TRIP_ID = #{tripId,jdbcType=DECIMAL}
+    where TRIP_ID = #{tripId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Trip">
     insert into TB_TRIP (TRIP_ID, TRIP_NAME, TRIP_TAKE, 
       TRIP_BACK, TRIP_KM, TRIP_TIME, 
       TRIP_ROUTE, SCENIC_ID, HOTEL_ID
       )
-    values (#{tripId,jdbcType=DECIMAL}, #{tripName,jdbcType=VARCHAR}, #{tripTake,jdbcType=VARCHAR}, 
-      #{tripBack,jdbcType=VARCHAR}, #{tripKm,jdbcType=DECIMAL}, #{tripTime,jdbcType=DECIMAL}, 
-      #{tripRoute,jdbcType=VARCHAR}, #{scenicId,jdbcType=DECIMAL}, #{hotelId,jdbcType=DECIMAL}
+    values (#{tripId}, #{tripName}, #{tripTake}, 
+      #{tripBack}, #{tripKm}, #{tripTime}, 
+      #{tripRoute}, #{scenicId}, #{hotelId}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Trip">
@@ -69,31 +69,31 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="tripId != null">
-        #{tripId,jdbcType=DECIMAL},
+        #{tripId},
       </if>
       <if test="tripName != null">
-        #{tripName,jdbcType=VARCHAR},
+        #{tripName},
       </if>
       <if test="tripTake != null">
-        #{tripTake,jdbcType=VARCHAR},
+        #{tripTake},
       </if>
       <if test="tripBack != null">
-        #{tripBack,jdbcType=VARCHAR},
+        #{tripBack},
       </if>
       <if test="tripKm != null">
-        #{tripKm,jdbcType=DECIMAL},
+        #{tripKm},
       </if>
       <if test="tripTime != null">
-        #{tripTime,jdbcType=DECIMAL},
+        #{tripTime},
       </if>
       <if test="tripRoute != null">
-        #{tripRoute,jdbcType=VARCHAR},
+        #{tripRoute},
       </if>
       <if test="scenicId != null">
-        #{scenicId,jdbcType=DECIMAL},
+        #{scenicId},
       </if>
       <if test="hotelId != null">
-        #{hotelId,jdbcType=DECIMAL},
+        #{hotelId},
       </if>
     </trim>
   </insert>
@@ -101,42 +101,42 @@
     update TB_TRIP
     <set>
       <if test="tripName != null">
-        TRIP_NAME = #{tripName,jdbcType=VARCHAR},
+        TRIP_NAME = #{tripName},
       </if>
       <if test="tripTake != null">
-        TRIP_TAKE = #{tripTake,jdbcType=VARCHAR},
+        TRIP_TAKE = #{tripTake},
       </if>
       <if test="tripBack != null">
-        TRIP_BACK = #{tripBack,jdbcType=VARCHAR},
+        TRIP_BACK = #{tripBack},
       </if>
       <if test="tripKm != null">
-        TRIP_KM = #{tripKm,jdbcType=DECIMAL},
+        TRIP_KM = #{tripKm},
       </if>
       <if test="tripTime != null">
-        TRIP_TIME = #{tripTime,jdbcType=DECIMAL},
+        TRIP_TIME = #{tripTime},
       </if>
       <if test="tripRoute != null">
-        TRIP_ROUTE = #{tripRoute,jdbcType=VARCHAR},
+        TRIP_ROUTE = #{tripRoute},
       </if>
       <if test="scenicId != null">
-        SCENIC_ID = #{scenicId,jdbcType=DECIMAL},
+        SCENIC_ID = #{scenicId},
       </if>
       <if test="hotelId != null">
-        HOTEL_ID = #{hotelId,jdbcType=DECIMAL},
+        HOTEL_ID = #{hotelId},
       </if>
     </set>
-    where TRIP_ID = #{tripId,jdbcType=DECIMAL}
+    where TRIP_ID = #{tripId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Trip">
     update TB_TRIP
-    set TRIP_NAME = #{tripName,jdbcType=VARCHAR},
-      TRIP_TAKE = #{tripTake,jdbcType=VARCHAR},
-      TRIP_BACK = #{tripBack,jdbcType=VARCHAR},
-      TRIP_KM = #{tripKm,jdbcType=DECIMAL},
-      TRIP_TIME = #{tripTime,jdbcType=DECIMAL},
-      TRIP_ROUTE = #{tripRoute,jdbcType=VARCHAR},
-      SCENIC_ID = #{scenicId,jdbcType=DECIMAL},
-      HOTEL_ID = #{hotelId,jdbcType=DECIMAL}
-    where TRIP_ID = #{tripId,jdbcType=DECIMAL}
+    set TRIP_NAME = #{tripName},
+      TRIP_TAKE = #{tripTake},
+      TRIP_BACK = #{tripBack},
+      TRIP_KM = #{tripKm},
+      TRIP_TIME = #{tripTime},
+      TRIP_ROUTE = #{tripRoute},
+      SCENIC_ID = #{scenicId},
+      HOTEL_ID = #{hotelId}
+    where TRIP_ID = #{tripId}
   </update>
 </mapper>

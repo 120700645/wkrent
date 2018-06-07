@@ -14,17 +14,17 @@
     select 
     <include refid="Base_Column_List" />
     from TB_USER_COUPON
-    where UC_ID = #{ucId,jdbcType=DECIMAL}
+    where UC_ID = #{ucId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_USER_COUPON
-    where UC_ID = #{ucId,jdbcType=DECIMAL}
+    where UC_ID = #{ucId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.UserCoupon">
     insert into TB_USER_COUPON (UC_ID, USER_ID, COUPON_ID, 
       UC_STATUS)
-    values (#{ucId,jdbcType=DECIMAL}, #{userId,jdbcType=DECIMAL}, #{couponId,jdbcType=DECIMAL}, 
-      #{ucStatus,jdbcType=DECIMAL})
+    values (#{ucId}, #{userId}, #{couponId}, 
+      #{ucStatus})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.UserCoupon">
     insert into TB_USER_COUPON
@@ -44,16 +44,16 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="ucId != null">
-        #{ucId,jdbcType=DECIMAL},
+        #{ucId},
       </if>
       <if test="userId != null">
-        #{userId,jdbcType=DECIMAL},
+        #{userId},
       </if>
       <if test="couponId != null">
-        #{couponId,jdbcType=DECIMAL},
+        #{couponId},
       </if>
       <if test="ucStatus != null">
-        #{ucStatus,jdbcType=DECIMAL},
+        #{ucStatus},
       </if>
     </trim>
   </insert>
@@ -61,22 +61,22 @@
     update TB_USER_COUPON
     <set>
       <if test="userId != null">
-        USER_ID = #{userId,jdbcType=DECIMAL},
+        USER_ID = #{userId},
       </if>
       <if test="couponId != null">
-        COUPON_ID = #{couponId,jdbcType=DECIMAL},
+        COUPON_ID = #{couponId},
       </if>
       <if test="ucStatus != null">
-        UC_STATUS = #{ucStatus,jdbcType=DECIMAL},
+        UC_STATUS = #{ucStatus},
       </if>
     </set>
-    where UC_ID = #{ucId,jdbcType=DECIMAL}
+    where UC_ID = #{ucId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.UserCoupon">
     update TB_USER_COUPON
-    set USER_ID = #{userId,jdbcType=DECIMAL},
-      COUPON_ID = #{couponId,jdbcType=DECIMAL},
-      UC_STATUS = #{ucStatus,jdbcType=DECIMAL}
-    where UC_ID = #{ucId,jdbcType=DECIMAL}
+    set USER_ID = #{userId},
+      COUPON_ID = #{couponId},
+      UC_STATUS = #{ucStatus}
+    where UC_ID = #{ucId}
   </update>
 </mapper>

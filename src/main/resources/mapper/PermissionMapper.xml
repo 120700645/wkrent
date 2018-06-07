@@ -12,15 +12,15 @@
     select 
     <include refid="Base_Column_List" />
     from TB_PERMISSION
-    where PERMISSION_ID = #{permissionId,jdbcType=DECIMAL}
+    where PERMISSION_ID = #{permissionId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_PERMISSION
-    where PERMISSION_ID = #{permissionId,jdbcType=DECIMAL}
+    where PERMISSION_ID = #{permissionId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Permission">
     insert into TB_PERMISSION (PERMISSION_ID, PERMISSION_NAME)
-    values (#{permissionId,jdbcType=DECIMAL}, #{permissionName,jdbcType=VARCHAR})
+    values (#{permissionId}, #{permissionName})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Permission">
     insert into TB_PERMISSION
@@ -34,10 +34,10 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="permissionId != null">
-        #{permissionId,jdbcType=DECIMAL},
+        #{permissionId},
       </if>
       <if test="permissionName != null">
-        #{permissionName,jdbcType=VARCHAR},
+        #{permissionName},
       </if>
     </trim>
   </insert>
@@ -45,14 +45,14 @@
     update TB_PERMISSION
     <set>
       <if test="permissionName != null">
-        PERMISSION_NAME = #{permissionName,jdbcType=VARCHAR},
+        PERMISSION_NAME = #{permissionName},
       </if>
     </set>
-    where PERMISSION_ID = #{permissionId,jdbcType=DECIMAL}
+    where PERMISSION_ID = #{permissionId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Permission">
     update TB_PERMISSION
-    set PERMISSION_NAME = #{permissionName,jdbcType=VARCHAR}
-    where PERMISSION_ID = #{permissionId,jdbcType=DECIMAL}
+    set PERMISSION_NAME = #{permissionName}
+    where PERMISSION_ID = #{permissionId}
   </update>
 </mapper>

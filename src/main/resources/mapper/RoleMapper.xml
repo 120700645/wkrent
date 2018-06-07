@@ -14,17 +14,17 @@
         select
         <include refid="Base_Column_List" />
         from TB_ROLE
-        where ROLE_ID = #{roleId,jdbcType=DECIMAL}
+        where ROLE_ID = #{roleId}
     </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_ROLE
-    where ROLE_ID = #{roleId,jdbcType=DECIMAL}
+    where ROLE_ID = #{roleId}
   </delete>
 
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Role">
     insert into TB_ROLE (ROLE_ID, ROLE_NAME)
-    values (#{roleId,jdbcType=DECIMAL}, #{roleName,jdbcType=VARCHAR})
+    values (#{roleId}, #{roleName})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Role">
     insert into TB_ROLE
@@ -38,10 +38,10 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="roleId != null">
-        #{roleId,jdbcType=DECIMAL},
+        #{roleId},
       </if>
       <if test="roleName != null">
-        #{roleName,jdbcType=VARCHAR},
+        #{roleName},
       </if>
     </trim>
   </insert>
@@ -49,15 +49,15 @@
     update TB_ROLE
     <set>
       <if test="roleName != null">
-        ROLE_NAME = #{roleName,jdbcType=VARCHAR},
+        ROLE_NAME = #{roleName},
       </if>
     </set>
-    where ROLE_ID = #{roleId,jdbcType=DECIMAL}
+    where ROLE_ID = #{roleId}
   </update>
 
     <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Role">
         update TB_ROLE
-        set ROLE_NAME = #{roleName,jdbcType=VARCHAR}
-        where ROLE_ID = #{roleId,jdbcType=DECIMAL}
+        set ROLE_NAME = #{roleName}
+        where ROLE_ID = #{roleId}
      </update>
 </mapper>

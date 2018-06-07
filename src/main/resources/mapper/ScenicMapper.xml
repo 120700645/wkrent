@@ -18,19 +18,19 @@
     select 
     <include refid="Base_Column_List" />
     from TB_SCENIC
-    where SCENIC_ID = #{scenicId,jdbcType=DECIMAL}
+    where SCENIC_ID = #{scenicId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_SCENIC
-    where SCENIC_ID = #{scenicId,jdbcType=DECIMAL}
+    where SCENIC_ID = #{scenicId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Scenic">
     insert into TB_SCENIC (SCENIC_ID, SCENIC_NAME, SCENIC_IMG, 
       SCENIC_DESC, SCENIC_DINING, SCENIC_LONGITUDE, 
       SCENIC_LATITUDE)
-    values (#{scenicId,jdbcType=DECIMAL}, #{scenicName,jdbcType=VARCHAR}, #{scenicImg,jdbcType=VARCHAR}, 
-      #{scenicDesc,jdbcType=VARCHAR}, #{scenicDining,jdbcType=VARCHAR}, #{scenicLongitude,jdbcType=VARCHAR}, 
-      #{scenicLatitude,jdbcType=VARCHAR})
+    values (#{scenicId}, #{scenicName}, #{scenicImg}, 
+      #{scenicDesc}, #{scenicDining}, #{scenicLongitude}, 
+      #{scenicLatitude})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Scenic">
     insert into TB_SCENIC
@@ -59,25 +59,25 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="scenicId != null">
-        #{scenicId,jdbcType=DECIMAL},
+        #{scenicId},
       </if>
       <if test="scenicName != null">
-        #{scenicName,jdbcType=VARCHAR},
+        #{scenicName},
       </if>
       <if test="scenicImg != null">
-        #{scenicImg,jdbcType=VARCHAR},
+        #{scenicImg},
       </if>
       <if test="scenicDesc != null">
-        #{scenicDesc,jdbcType=VARCHAR},
+        #{scenicDesc},
       </if>
       <if test="scenicDining != null">
-        #{scenicDining,jdbcType=VARCHAR},
+        #{scenicDining},
       </if>
       <if test="scenicLongitude != null">
-        #{scenicLongitude,jdbcType=VARCHAR},
+        #{scenicLongitude},
       </if>
       <if test="scenicLatitude != null">
-        #{scenicLatitude,jdbcType=VARCHAR},
+        #{scenicLatitude},
       </if>
     </trim>
   </insert>
@@ -85,34 +85,34 @@
     update TB_SCENIC
     <set>
       <if test="scenicName != null">
-        SCENIC_NAME = #{scenicName,jdbcType=VARCHAR},
+        SCENIC_NAME = #{scenicName},
       </if>
       <if test="scenicImg != null">
-        SCENIC_IMG = #{scenicImg,jdbcType=VARCHAR},
+        SCENIC_IMG = #{scenicImg},
       </if>
       <if test="scenicDesc != null">
-        SCENIC_DESC = #{scenicDesc,jdbcType=VARCHAR},
+        SCENIC_DESC = #{scenicDesc},
       </if>
       <if test="scenicDining != null">
-        SCENIC_DINING = #{scenicDining,jdbcType=VARCHAR},
+        SCENIC_DINING = #{scenicDining},
       </if>
       <if test="scenicLongitude != null">
-        SCENIC_LONGITUDE = #{scenicLongitude,jdbcType=VARCHAR},
+        SCENIC_LONGITUDE = #{scenicLongitude},
       </if>
       <if test="scenicLatitude != null">
-        SCENIC_LATITUDE = #{scenicLatitude,jdbcType=VARCHAR},
+        SCENIC_LATITUDE = #{scenicLatitude},
       </if>
     </set>
-    where SCENIC_ID = #{scenicId,jdbcType=DECIMAL}
+    where SCENIC_ID = #{scenicId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Scenic">
     update TB_SCENIC
-    set SCENIC_NAME = #{scenicName,jdbcType=VARCHAR},
-      SCENIC_IMG = #{scenicImg,jdbcType=VARCHAR},
-      SCENIC_DESC = #{scenicDesc,jdbcType=VARCHAR},
-      SCENIC_DINING = #{scenicDining,jdbcType=VARCHAR},
-      SCENIC_LONGITUDE = #{scenicLongitude,jdbcType=VARCHAR},
-      SCENIC_LATITUDE = #{scenicLatitude,jdbcType=VARCHAR}
-    where SCENIC_ID = #{scenicId,jdbcType=DECIMAL}
+    set SCENIC_NAME = #{scenicName},
+      SCENIC_IMG = #{scenicImg},
+      SCENIC_DESC = #{scenicDesc},
+      SCENIC_DINING = #{scenicDining},
+      SCENIC_LONGITUDE = #{scenicLongitude},
+      SCENIC_LATITUDE = #{scenicLatitude}
+    where SCENIC_ID = #{scenicId}
   </update>
 </mapper>

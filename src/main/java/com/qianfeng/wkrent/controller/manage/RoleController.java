@@ -21,6 +21,6 @@ public class RoleController {
         role.setRoleName("zhangsan");
         role.setRoleId(1);
         model.addAttribute("role",role);
-        return "/index";
+        return "index";
     }
 }
