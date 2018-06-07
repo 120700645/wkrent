@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MessageUtil {
-    public static void sendMessage(String code,String phone,String sign){
+    public static void sendMessage(String code,String phone,String skin){
         String host = "https://feginesms.market.alicloudapi.com";
         String path = "/codeNotice";
         String method = "GET";
@@ -18,8 +18,8 @@ public class MessageUtil {
         Map<String, String> querys = new HashMap<String, String>();
         querys.put("param", code);
         querys.put("phone", phone);
-        querys.put("sign", sign);
-        querys.put("skin", "1");
+        querys.put("sign", "1");
+        querys.put("skin", skin);
 
 
         try {
