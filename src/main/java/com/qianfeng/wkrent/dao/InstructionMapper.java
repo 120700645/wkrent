@@ -3,7 +3,8 @@ package com.qianfeng.wkrent.dao;
 import com.qianfeng.wkrent.dto.Instruction;
 
 public interface InstructionMapper {
-    int deleteByPrimaryKey(Integer instructionId);
+
+    int deleteByPrimaryKey( Integer instructionId);
 
     int insert(Instruction record);
 

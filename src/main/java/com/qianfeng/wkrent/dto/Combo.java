@@ -29,6 +29,26 @@ public class Combo {
 
     private String comboLight;
 
+    private Instruction instruction;
+
+    private Notice notice;
+
+    public Instruction getInstruction() {
+        return instruction;
+    }
+
+    public void setInstruction(Instruction instruction) {
+        this.instruction = instruction;
+    }
+
+    public Notice getNotice() {
+        return notice;
+    }
+
+    public void setNotice(Notice notice) {
+        this.notice = notice;
+    }
+
     public Integer getComboId() {
         return comboId;
     }

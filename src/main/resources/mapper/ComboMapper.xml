@@ -1,43 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qianfeng.wkrent.dao.ComboMapper">
-  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Combo">
-    <id column="COMBO_ID" jdbcType="DECIMAL" property="comboId" />
-    <result column="COMBO_NAME" jdbcType="VARCHAR" property="comboName" />
-    <result column="COMBO_PRICE" jdbcType="DECIMAL" property="comboPrice" />
-    <result column="COMBO_SITE" jdbcType="VARCHAR" property="comboSite" />
-    <result column="COMBO_TYPE" jdbcType="VARCHAR" property="comboType" />
-    <result column="COMBO_DAYS" jdbcType="DECIMAL" property="comboDays" />
-    <result column="INSTRUCTION_ID" jdbcType="DECIMAL" property="instructionId" />
-    <result column="NOTICE_ID" jdbcType="DECIMAL" property="noticeId" />
-    <result column="COMBO_IMG1" jdbcType="VARCHAR" property="comboImg1" />
-    <result column="COMBO_IMG2" jdbcType="VARCHAR" property="comboImg2" />
-    <result column="COMBO_IMG3" jdbcType="VARCHAR" property="comboImg3" />
-    <result column="COMBO_IMG4" jdbcType="VARCHAR" property="comboImg4" />
-    <result column="COMBO_IMG5" jdbcType="VARCHAR" property="comboImg5" />
-  </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.qianfeng.wkrent.dto.Combo">
-    <result column="COMBO_LIGHT" jdbcType="CLOB" property="comboLight" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    COMBO_ID, COMBO_NAME, COMBO_PRICE, COMBO_SITE, COMBO_TYPE, COMBO_DAYS, INSTRUCTION_ID, 
-    NOTICE_ID, COMBO_IMG1, COMBO_IMG2, COMBO_IMG3, COMBO_IMG4, COMBO_IMG5
-  </sql>
-  <sql id="Blob_Column_List">
-    COMBO_LIGHT
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from TB_COMBO
-    where COMBO_ID = #{comboId}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from TB_COMBO
-    where COMBO_ID = #{comboId}
-  </delete>
+
+    <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Combo">
+        <id column="COMBO_ID" jdbcType="DECIMAL" property="comboId" />
+        <result column="COMBO_NAME" jdbcType="VARCHAR" property="comboName" />
+        <result column="COMBO_PRICE" jdbcType="DECIMAL" property="comboPrice" />
+        <result column="COMBO_SITE" jdbcType="VARCHAR" property="comboSite" />
+        <result column="COMBO_TYPE" jdbcType="VARCHAR" property="comboType" />
+        <result column="COMBO_DAYS" jdbcType="DECIMAL" property="comboDays" />
+        <result column="COMBO_IMG1" jdbcType="VARCHAR" property="comboImg1" />
+        <result column="COMBO_IMG2" jdbcType="VARCHAR" property="comboImg2" />
+        <result column="COMBO_IMG3" jdbcType="VARCHAR" property="comboImg3" />
+        <result column="COMBO_IMG4" jdbcType="VARCHAR" property="comboImg4" />
+        <result column="COMBO_IMG5" jdbcType="VARCHAR" property="comboImg5" />
+        <result column="INSTRUCTION_ID"  property="instructionId" />
+        <result column="NOTICE_ID"  property="noticeId" />
+        <association property="instruction" column="INSTRUCTION_ID" select="com.qianfeng.wkrent.dao.InstructionMapper.selectByPrimaryKey"></association>
+        <association property="notice" column="NOTICE_ID" select="com.qianfeng.wkrent.dao.NoticeMapper.selectByPrimaryKey"></association>
+    </resultMap>
+
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.qianfeng.wkrent.dto.Combo">
+        <result column="COMBO_LIGHT" jdbcType="CLOB" property="comboLight" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        COMBO_ID, COMBO_NAME, COMBO_PRICE, COMBO_SITE, COMBO_TYPE, COMBO_DAYS, INSTRUCTION_ID,
+        NOTICE_ID, COMBO_IMG1, COMBO_IMG2, COMBO_IMG3, COMBO_IMG4, COMBO_IMG5
+    </sql>
+
+    <sql id="Blob_Column_List">
+        COMBO_LIGHT
+    </sql>
+    <!--通过combo_id 查找自驾游组合-->
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from TB_COMBO
+        where COMBO_ID = #{comboId}
+    </select>
+
+    <select id="selectAllCombo" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from TB_COMBO
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from TB_COMBO
+        where COMBO_ID = #{comboId}
+    </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Combo">
     insert into TB_COMBO (COMBO_ID, COMBO_NAME, COMBO_PRICE, 
       COMBO_SITE, COMBO_TYPE, COMBO_DAYS, 
