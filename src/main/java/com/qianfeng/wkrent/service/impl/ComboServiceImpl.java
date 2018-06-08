@@ -8,9 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Create  by mjw on 2018/6/8
- */
 @Service
 public class ComboServiceImpl implements IComboService {
 

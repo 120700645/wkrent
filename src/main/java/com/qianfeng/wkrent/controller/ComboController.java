@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-/**
- * Create  by mjw on 2018/6/8
- */
 @Controller
 @RequestMapping("/combo")
 public class ComboController {
