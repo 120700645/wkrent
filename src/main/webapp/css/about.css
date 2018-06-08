@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: "Hiragino Sans GB", "微软雅黑", "华文细黑", "STHeiti", "Microsoft YaHei", SimHei, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    box-sizing: border-box;
+}
+
+.about_us {
+    width: 1200px;
+    background: #fff;
+    margin: 0 auto;
+    margin-top: 29px;
+    padding-top: 13px;
+    overflow: hidden;
+}
+
+.about_us .about_us_left {
+    width: 170px;
+    // height: 600px;
+    border-right: 1px solid #d9d9d9;
+    float: left;
+    padding-bottom: 1px;
+}
+
+.about_us .about_us_left ul {
+    position: relative;
+}
+
+.about_us .about_us_left ul li {
+    width: 169px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 16px;
+    color: #6e6e6e;
+    cursor: pointer;
+}
+
+
+.about_us .about_us_left ul li a {
+    width: 169px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 16px;
+    color: #6e6e6e;
+    cursor: pointer;
+}
+
+.about_us .about_us_left ul li:first-child {
+    width: 153px;
+    height: 44px;
+    background: #d62b1f;
+    color: #fff;
+    line-height: 44px;
+    text-indent: 44px;
+    font-size: 20px;
+    float: left;
+}
+
+.about_us .about_us_left ul li:first-child a {
+    width: 153px;
+    height: 44px;
+    background: #d62b1f;
+    color: #fff;
+    line-height: 44px;
+    text-indent: 44px;
+    font-size: 20px;
+    float: left;
+}
+
+.about_us .about_us_left ul span {
+    float: left;
+    width: 16px;
+    height: 44px;
+    display: inline-block;
+    background: url(../../images/about/y.png) no-repeat center;
+}
+
+.about_us .about_us_left ol {
+    position: relative;
+}
+
+.about_us .about_us_left ol li {
+    width: 169px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 16px;
+    color: #6e6e6e;
+}
+
+.about_us .about_us_left ol li a {
+    width: 169px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 16px;
+    color: #6e6e6e;
+}
+
+.about_us .about_us_left ol li:first-child {
+    width: 153px;
+    height: 44px;
+    background: #d62b1f;
+    color: #fff;
+    line-height: 44px;
+    text-indent: 44px;
+    font-size: 20px;
+    float: left;
+}
+
+.about_us .about_us_left ol li:first-child a {
+    width: 153px;
+    height: 44px;
+    background: #d62b1f;
+    color: #fff;
+    line-height: 44px;
+    text-indent: 44px;
+    font-size: 20px;
+    float: left;
+}
+
+.about_us .about_us_left ol span {
+    float: left;
+    width: 16px;
+    height: 44px;
+    display: inline-block;
+    background: url(../../images/about/y.png) no-repeat center;
+}
+
+.about_us_right {
+    width: 1004px;
+    padding-left: 39px;
+}
+
+.about_us_right h4 {
+    width: 1004px;
+    text-align: center;
+    font-size: 19.5px;
+    color: #2f2f39;
+}

@@ -1,0 +1,79 @@
+.arrow {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000000;
+}
+
+.arrow:before, .arrow:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 40px;
+    left: 109px;
+    border: 10px solid transparent;
+    border-left-color: #ffffff;
+}
+
+.arrow:before {
+    top: 39px;
+    border: 11px solid transparent;
+    border-left-color: #000000;
+}
+
+.triangle_border {
+    display: none;
+    margin: 0 auto;
+    position: relative;
+}
+
+.triangle_border .popup {
+    padding: 5px 20px;
+    color: #939096;
+    background: #FFF;
+    border-radius: 4px;
+    line-height: 20px;
+    position: absolute;
+    top: 10px;
+    border: 1px solid #dedbdd;
+}
+
+.triangle_border .left1 {
+    left: 130px;
+}
+
+.triangle_border .left2 {
+    left: 185px;
+}
+
+.triangle_border .left3 {
+    left: 200px;
+}
+
+.triangle_border .left4 {
+    left: 155px;
+}
+
+.triangle_border .popup span {
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent #dedbdd transparent transparent;
+    position: absolute;
+    top: 8px;
+    left: -13px;
+}
+
+.triangle_border .popup em {
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #FFF transparent transparent;
+    position: absolute;
+    top: -10px;
+    left: -9px;
+}
