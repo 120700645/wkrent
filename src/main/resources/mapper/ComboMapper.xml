@@ -32,11 +32,11 @@
     ,
     <include refid="Blob_Column_List" />
     from TB_COMBO
-    where COMBO_ID = #{comboId,jdbcType=DECIMAL}
+    where COMBO_ID = #{comboId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_COMBO
-    where COMBO_ID = #{comboId,jdbcType=DECIMAL}
+    where COMBO_ID = #{comboId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Combo">
     insert into TB_COMBO (COMBO_ID, COMBO_NAME, COMBO_PRICE, 
@@ -44,11 +44,11 @@
       INSTRUCTION_ID, NOTICE_ID, COMBO_IMG1, 
       COMBO_IMG2, COMBO_IMG3, COMBO_IMG4, 
       COMBO_IMG5, COMBO_LIGHT)
-    values (#{comboId,jdbcType=DECIMAL}, #{comboName,jdbcType=VARCHAR}, #{comboPrice,jdbcType=DECIMAL}, 
-      #{comboSite,jdbcType=VARCHAR}, #{comboType,jdbcType=VARCHAR}, #{comboDays,jdbcType=DECIMAL}, 
-      #{instructionId,jdbcType=DECIMAL}, #{noticeId,jdbcType=DECIMAL}, #{comboImg1,jdbcType=VARCHAR}, 
-      #{comboImg2,jdbcType=VARCHAR}, #{comboImg3,jdbcType=VARCHAR}, #{comboImg4,jdbcType=VARCHAR}, 
-      #{comboImg5,jdbcType=VARCHAR}, #{comboLight,jdbcType=CLOB})
+    values (#{comboId}, #{comboName}, #{comboPrice}, 
+      #{comboSite}, #{comboType}, #{comboDays}, 
+      #{instructionId}, #{noticeId}, #{comboImg1}, 
+      #{comboImg2}, #{comboImg3}, #{comboImg4}, 
+      #{comboImg5}, #{comboLight,jdbcType=CLOB})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Combo">
     insert into TB_COMBO
@@ -98,43 +98,43 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="comboId != null">
-        #{comboId,jdbcType=DECIMAL},
+        #{comboId},
       </if>
       <if test="comboName != null">
-        #{comboName,jdbcType=VARCHAR},
+        #{comboName},
       </if>
       <if test="comboPrice != null">
-        #{comboPrice,jdbcType=DECIMAL},
+        #{comboPrice},
       </if>
       <if test="comboSite != null">
-        #{comboSite,jdbcType=VARCHAR},
+        #{comboSite},
       </if>
       <if test="comboType != null">
-        #{comboType,jdbcType=VARCHAR},
+        #{comboType},
       </if>
       <if test="comboDays != null">
-        #{comboDays,jdbcType=DECIMAL},
+        #{comboDays},
       </if>
       <if test="instructionId != null">
-        #{instructionId,jdbcType=DECIMAL},
+        #{instructionId},
       </if>
       <if test="noticeId != null">
-        #{noticeId,jdbcType=DECIMAL},
+        #{noticeId},
       </if>
       <if test="comboImg1 != null">
-        #{comboImg1,jdbcType=VARCHAR},
+        #{comboImg1},
       </if>
       <if test="comboImg2 != null">
-        #{comboImg2,jdbcType=VARCHAR},
+        #{comboImg2},
       </if>
       <if test="comboImg3 != null">
-        #{comboImg3,jdbcType=VARCHAR},
+        #{comboImg3},
       </if>
       <if test="comboImg4 != null">
-        #{comboImg4,jdbcType=VARCHAR},
+        #{comboImg4},
       </if>
       <if test="comboImg5 != null">
-        #{comboImg5,jdbcType=VARCHAR},
+        #{comboImg5},
       </if>
       <if test="comboLight != null">
         #{comboLight,jdbcType=CLOB},
@@ -145,78 +145,78 @@
     update TB_COMBO
     <set>
       <if test="comboName != null">
-        COMBO_NAME = #{comboName,jdbcType=VARCHAR},
+        COMBO_NAME = #{comboName},
       </if>
       <if test="comboPrice != null">
-        COMBO_PRICE = #{comboPrice,jdbcType=DECIMAL},
+        COMBO_PRICE = #{comboPrice},
       </if>
       <if test="comboSite != null">
-        COMBO_SITE = #{comboSite,jdbcType=VARCHAR},
+        COMBO_SITE = #{comboSite},
       </if>
       <if test="comboType != null">
-        COMBO_TYPE = #{comboType,jdbcType=VARCHAR},
+        COMBO_TYPE = #{comboType},
       </if>
       <if test="comboDays != null">
-        COMBO_DAYS = #{comboDays,jdbcType=DECIMAL},
+        COMBO_DAYS = #{comboDays},
       </if>
       <if test="instructionId != null">
-        INSTRUCTION_ID = #{instructionId,jdbcType=DECIMAL},
+        INSTRUCTION_ID = #{instructionId},
       </if>
       <if test="noticeId != null">
-        NOTICE_ID = #{noticeId,jdbcType=DECIMAL},
+        NOTICE_ID = #{noticeId},
       </if>
       <if test="comboImg1 != null">
-        COMBO_IMG1 = #{comboImg1,jdbcType=VARCHAR},
+        COMBO_IMG1 = #{comboImg1},
       </if>
       <if test="comboImg2 != null">
-        COMBO_IMG2 = #{comboImg2,jdbcType=VARCHAR},
+        COMBO_IMG2 = #{comboImg2},
       </if>
       <if test="comboImg3 != null">
-        COMBO_IMG3 = #{comboImg3,jdbcType=VARCHAR},
+        COMBO_IMG3 = #{comboImg3},
       </if>
       <if test="comboImg4 != null">
-        COMBO_IMG4 = #{comboImg4,jdbcType=VARCHAR},
+        COMBO_IMG4 = #{comboImg4},
       </if>
       <if test="comboImg5 != null">
-        COMBO_IMG5 = #{comboImg5,jdbcType=VARCHAR},
+        COMBO_IMG5 = #{comboImg5},
       </if>
       <if test="comboLight != null">
         COMBO_LIGHT = #{comboLight,jdbcType=CLOB},
       </if>
     </set>
-    where COMBO_ID = #{comboId,jdbcType=DECIMAL}
+    where COMBO_ID = #{comboId}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.qianfeng.wkrent.dto.Combo">
     update TB_COMBO
-    set COMBO_NAME = #{comboName,jdbcType=VARCHAR},
-      COMBO_PRICE = #{comboPrice,jdbcType=DECIMAL},
-      COMBO_SITE = #{comboSite,jdbcType=VARCHAR},
-      COMBO_TYPE = #{comboType,jdbcType=VARCHAR},
-      COMBO_DAYS = #{comboDays,jdbcType=DECIMAL},
-      INSTRUCTION_ID = #{instructionId,jdbcType=DECIMAL},
-      NOTICE_ID = #{noticeId,jdbcType=DECIMAL},
-      COMBO_IMG1 = #{comboImg1,jdbcType=VARCHAR},
-      COMBO_IMG2 = #{comboImg2,jdbcType=VARCHAR},
-      COMBO_IMG3 = #{comboImg3,jdbcType=VARCHAR},
-      COMBO_IMG4 = #{comboImg4,jdbcType=VARCHAR},
-      COMBO_IMG5 = #{comboImg5,jdbcType=VARCHAR},
+    set COMBO_NAME = #{comboName},
+      COMBO_PRICE = #{comboPrice},
+      COMBO_SITE = #{comboSite},
+      COMBO_TYPE = #{comboType},
+      COMBO_DAYS = #{comboDays},
+      INSTRUCTION_ID = #{instructionId},
+      NOTICE_ID = #{noticeId},
+      COMBO_IMG1 = #{comboImg1},
+      COMBO_IMG2 = #{comboImg2},
+      COMBO_IMG3 = #{comboImg3},
+      COMBO_IMG4 = #{comboImg4},
+      COMBO_IMG5 = #{comboImg5},
       COMBO_LIGHT = #{comboLight,jdbcType=CLOB}
-    where COMBO_ID = #{comboId,jdbcType=DECIMAL}
+    where COMBO_ID = #{comboId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Combo">
     update TB_COMBO
-    set COMBO_NAME = #{comboName,jdbcType=VARCHAR},
-      COMBO_PRICE = #{comboPrice,jdbcType=DECIMAL},
-      COMBO_SITE = #{comboSite,jdbcType=VARCHAR},
-      COMBO_TYPE = #{comboType,jdbcType=VARCHAR},
-      COMBO_DAYS = #{comboDays,jdbcType=DECIMAL},
-      INSTRUCTION_ID = #{instructionId,jdbcType=DECIMAL},
-      NOTICE_ID = #{noticeId,jdbcType=DECIMAL},
-      COMBO_IMG1 = #{comboImg1,jdbcType=VARCHAR},
-      COMBO_IMG2 = #{comboImg2,jdbcType=VARCHAR},
-      COMBO_IMG3 = #{comboImg3,jdbcType=VARCHAR},
-      COMBO_IMG4 = #{comboImg4,jdbcType=VARCHAR},
-      COMBO_IMG5 = #{comboImg5,jdbcType=VARCHAR}
-    where COMBO_ID = #{comboId,jdbcType=DECIMAL}
+    set COMBO_NAME = #{comboName},
+      COMBO_PRICE = #{comboPrice},
+      COMBO_SITE = #{comboSite},
+      COMBO_TYPE = #{comboType},
+      COMBO_DAYS = #{comboDays},
+      INSTRUCTION_ID = #{instructionId},
+      NOTICE_ID = #{noticeId},
+      COMBO_IMG1 = #{comboImg1},
+      COMBO_IMG2 = #{comboImg2},
+      COMBO_IMG3 = #{comboImg3},
+      COMBO_IMG4 = #{comboImg4},
+      COMBO_IMG5 = #{comboImg5}
+    where COMBO_ID = #{comboId}
   </update>
 </mapper>

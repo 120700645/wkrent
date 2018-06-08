@@ -14,16 +14,16 @@
     select 
     <include refid="Base_Column_List" />
     from TB_COMPLAINT
-    where COMPLAINT_ID = #{complaintId,jdbcType=DECIMAL}
+    where COMPLAINT_ID = #{complaintId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_COMPLAINT
-    where COMPLAINT_ID = #{complaintId,jdbcType=DECIMAL}
+    where COMPLAINT_ID = #{complaintId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Complaint">
     insert into TB_COMPLAINT (COMPLAINT_ID, USER_ID, COMPLAINT_CONTENT, 
       COMPLAINT_TIME)
-    values (#{complaintId,jdbcType=DECIMAL}, #{userId,jdbcType=DECIMAL}, #{complaintContent,jdbcType=VARCHAR}, 
+    values (#{complaintId}, #{userId}, #{complaintContent}, 
       #{complaintTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Complaint">
@@ -44,13 +44,13 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="complaintId != null">
-        #{complaintId,jdbcType=DECIMAL},
+        #{complaintId},
       </if>
       <if test="userId != null">
-        #{userId,jdbcType=DECIMAL},
+        #{userId},
       </if>
       <if test="complaintContent != null">
-        #{complaintContent,jdbcType=VARCHAR},
+        #{complaintContent},
       </if>
       <if test="complaintTime != null">
         #{complaintTime,jdbcType=TIMESTAMP},
@@ -61,22 +61,22 @@
     update TB_COMPLAINT
     <set>
       <if test="userId != null">
-        USER_ID = #{userId,jdbcType=DECIMAL},
+        USER_ID = #{userId},
       </if>
       <if test="complaintContent != null">
-        COMPLAINT_CONTENT = #{complaintContent,jdbcType=VARCHAR},
+        COMPLAINT_CONTENT = #{complaintContent},
       </if>
       <if test="complaintTime != null">
         COMPLAINT_TIME = #{complaintTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where COMPLAINT_ID = #{complaintId,jdbcType=DECIMAL}
+    where COMPLAINT_ID = #{complaintId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Complaint">
     update TB_COMPLAINT
-    set USER_ID = #{userId,jdbcType=DECIMAL},
-      COMPLAINT_CONTENT = #{complaintContent,jdbcType=VARCHAR},
+    set USER_ID = #{userId},
+      COMPLAINT_CONTENT = #{complaintContent},
       COMPLAINT_TIME = #{complaintTime,jdbcType=TIMESTAMP}
-    where COMPLAINT_ID = #{complaintId,jdbcType=DECIMAL}
+    where COMPLAINT_ID = #{complaintId}
   </update>
 </mapper>

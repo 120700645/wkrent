@@ -15,17 +15,17 @@
     select 
     <include refid="Base_Column_List" />
     from TB_TICKET
-    where TICKET_ID = #{ticketId,jdbcType=DECIMAL}
+    where TICKET_ID = #{ticketId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_TICKET
-    where TICKET_ID = #{ticketId,jdbcType=DECIMAL}
+    where TICKET_ID = #{ticketId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Ticket">
     insert into TB_TICKET (TICKET_ID, TRIP_ID, TICKET_NAME, 
       TICKET_NUM, TICKET_PRICE)
-    values (#{ticketId,jdbcType=DECIMAL}, #{tripId,jdbcType=DECIMAL}, #{ticketName,jdbcType=VARCHAR}, 
-      #{ticketNum,jdbcType=DECIMAL}, #{ticketPrice,jdbcType=DECIMAL})
+    values (#{ticketId}, #{tripId}, #{ticketName}, 
+      #{ticketNum}, #{ticketPrice})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Ticket">
     insert into TB_TICKET
@@ -48,19 +48,19 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="ticketId != null">
-        #{ticketId,jdbcType=DECIMAL},
+        #{ticketId},
       </if>
       <if test="tripId != null">
-        #{tripId,jdbcType=DECIMAL},
+        #{tripId},
       </if>
       <if test="ticketName != null">
-        #{ticketName,jdbcType=VARCHAR},
+        #{ticketName},
       </if>
       <if test="ticketNum != null">
-        #{ticketNum,jdbcType=DECIMAL},
+        #{ticketNum},
       </if>
       <if test="ticketPrice != null">
-        #{ticketPrice,jdbcType=DECIMAL},
+        #{ticketPrice},
       </if>
     </trim>
   </insert>
@@ -68,26 +68,26 @@
     update TB_TICKET
     <set>
       <if test="tripId != null">
-        TRIP_ID = #{tripId,jdbcType=DECIMAL},
+        TRIP_ID = #{tripId},
       </if>
       <if test="ticketName != null">
-        TICKET_NAME = #{ticketName,jdbcType=VARCHAR},
+        TICKET_NAME = #{ticketName},
       </if>
       <if test="ticketNum != null">
-        TICKET_NUM = #{ticketNum,jdbcType=DECIMAL},
+        TICKET_NUM = #{ticketNum},
       </if>
       <if test="ticketPrice != null">
-        TICKET_PRICE = #{ticketPrice,jdbcType=DECIMAL},
+        TICKET_PRICE = #{ticketPrice},
       </if>
     </set>
-    where TICKET_ID = #{ticketId,jdbcType=DECIMAL}
+    where TICKET_ID = #{ticketId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Ticket">
     update TB_TICKET
-    set TRIP_ID = #{tripId,jdbcType=DECIMAL},
-      TICKET_NAME = #{ticketName,jdbcType=VARCHAR},
-      TICKET_NUM = #{ticketNum,jdbcType=DECIMAL},
-      TICKET_PRICE = #{ticketPrice,jdbcType=DECIMAL}
-    where TICKET_ID = #{ticketId,jdbcType=DECIMAL}
+    set TRIP_ID = #{tripId},
+      TICKET_NAME = #{ticketName},
+      TICKET_NUM = #{ticketNum},
+      TICKET_PRICE = #{ticketPrice}
+    where TICKET_ID = #{ticketId}
   </update>
 </mapper>

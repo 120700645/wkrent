@@ -19,15 +19,15 @@
     ,
     <include refid="Blob_Column_List" />
     from TB_NOTICE
-    where NOTICE_ID = #{noticeId,jdbcType=DECIMAL}
+    where NOTICE_ID = #{noticeId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_NOTICE
-    where NOTICE_ID = #{noticeId,jdbcType=DECIMAL}
+    where NOTICE_ID = #{noticeId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Notice">
     insert into TB_NOTICE (NOTICE_ID, NOTICE_CONTENT)
-    values (#{noticeId,jdbcType=DECIMAL}, #{noticeContent,jdbcType=CLOB})
+    values (#{noticeId}, #{noticeContent})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Notice">
     insert into TB_NOTICE
@@ -41,10 +41,10 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="noticeId != null">
-        #{noticeId,jdbcType=DECIMAL},
+        #{noticeId},
       </if>
       <if test="noticeContent != null">
-        #{noticeContent,jdbcType=CLOB},
+        #{noticeContent},
       </if>
     </trim>
   </insert>
@@ -52,14 +52,14 @@
     update TB_NOTICE
     <set>
       <if test="noticeContent != null">
-        NOTICE_CONTENT = #{noticeContent,jdbcType=CLOB},
+        NOTICE_CONTENT = #{noticeContent},
       </if>
     </set>
-    where NOTICE_ID = #{noticeId,jdbcType=DECIMAL}
+    where NOTICE_ID = #{noticeId}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.qianfeng.wkrent.dto.Notice">
     update TB_NOTICE
-    set NOTICE_CONTENT = #{noticeContent,jdbcType=CLOB}
-    where NOTICE_ID = #{noticeId,jdbcType=DECIMAL}
+    set NOTICE_CONTENT = #{noticeContent}
+    where NOTICE_ID = #{noticeId}
   </update>
 </mapper>

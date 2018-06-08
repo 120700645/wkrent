@@ -17,19 +17,19 @@
     select 
     <include refid="Base_Column_List" />
     from TB_ROOM
-    where ROOM_ID = #{roomId,jdbcType=DECIMAL}
+    where ROOM_ID = #{roomId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_ROOM
-    where ROOM_ID = #{roomId,jdbcType=DECIMAL}
+    where ROOM_ID = #{roomId}
   </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Room">
     insert into TB_ROOM (ROOM_ID, ROOM_NAME, ROOM_BED, 
       ROOM_BREAKFAST, ROOM_AREA, ROOM_PRICE, 
       HOTEL_ID)
-    values (#{roomId,jdbcType=DECIMAL}, #{roomName,jdbcType=VARCHAR}, #{roomBed,jdbcType=VARCHAR}, 
-      #{roomBreakfast,jdbcType=VARCHAR}, #{roomArea,jdbcType=DECIMAL}, #{roomPrice,jdbcType=DECIMAL}, 
-      #{hotelId,jdbcType=DECIMAL})
+    values (#{roomId}, #{roomName}, #{roomBed}, 
+      #{roomBreakfast}, #{roomArea}, #{roomPrice}, 
+      #{hotelId})
   </insert>
   <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Room">
     insert into TB_ROOM
@@ -58,25 +58,25 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="roomId != null">
-        #{roomId,jdbcType=DECIMAL},
+        #{roomId},
       </if>
       <if test="roomName != null">
-        #{roomName,jdbcType=VARCHAR},
+        #{roomName},
       </if>
       <if test="roomBed != null">
-        #{roomBed,jdbcType=VARCHAR},
+        #{roomBed},
       </if>
       <if test="roomBreakfast != null">
-        #{roomBreakfast,jdbcType=VARCHAR},
+        #{roomBreakfast},
       </if>
       <if test="roomArea != null">
-        #{roomArea,jdbcType=DECIMAL},
+        #{roomArea},
       </if>
       <if test="roomPrice != null">
-        #{roomPrice,jdbcType=DECIMAL},
+        #{roomPrice},
       </if>
       <if test="hotelId != null">
-        #{hotelId,jdbcType=DECIMAL},
+        #{hotelId},
       </if>
     </trim>
   </insert>
@@ -84,34 +84,34 @@
     update TB_ROOM
     <set>
       <if test="roomName != null">
-        ROOM_NAME = #{roomName,jdbcType=VARCHAR},
+        ROOM_NAME = #{roomName},
       </if>
       <if test="roomBed != null">
-        ROOM_BED = #{roomBed,jdbcType=VARCHAR},
+        ROOM_BED = #{roomBed},
       </if>
       <if test="roomBreakfast != null">
-        ROOM_BREAKFAST = #{roomBreakfast,jdbcType=VARCHAR},
+        ROOM_BREAKFAST = #{roomBreakfast},
       </if>
       <if test="roomArea != null">
-        ROOM_AREA = #{roomArea,jdbcType=DECIMAL},
+        ROOM_AREA = #{roomArea},
       </if>
       <if test="roomPrice != null">
-        ROOM_PRICE = #{roomPrice,jdbcType=DECIMAL},
+        ROOM_PRICE = #{roomPrice},
       </if>
       <if test="hotelId != null">
-        HOTEL_ID = #{hotelId,jdbcType=DECIMAL},
+        HOTEL_ID = #{hotelId},
       </if>
     </set>
-    where ROOM_ID = #{roomId,jdbcType=DECIMAL}
+    where ROOM_ID = #{roomId}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Room">
     update TB_ROOM
-    set ROOM_NAME = #{roomName,jdbcType=VARCHAR},
-      ROOM_BED = #{roomBed,jdbcType=VARCHAR},
-      ROOM_BREAKFAST = #{roomBreakfast,jdbcType=VARCHAR},
-      ROOM_AREA = #{roomArea,jdbcType=DECIMAL},
-      ROOM_PRICE = #{roomPrice,jdbcType=DECIMAL},
-      HOTEL_ID = #{hotelId,jdbcType=DECIMAL}
-    where ROOM_ID = #{roomId,jdbcType=DECIMAL}
+    set ROOM_NAME = #{roomName},
+      ROOM_BED = #{roomBed},
+      ROOM_BREAKFAST = #{roomBreakfast},
+      ROOM_AREA = #{roomArea},
+      ROOM_PRICE = #{roomPrice},
+      HOTEL_ID = #{hotelId}
+    where ROOM_ID = #{roomId}
   </update>
 </mapper>
