@@ -29,8 +29,8 @@
     <![endif]-->
 		<link rel="stylesheet" type="text/css" href="./css/pricecalendar_ie10.css">
 		<link rel="stylesheet" type="text/css" href="./css/cartype.css">
-		<script charset="utf-8" src="./js/lxb.js.下载"></script>
-		<script charset="utf-8" src="./js/v.js.下载"></script>
+		<script charset="utf-8" src="js/lxb.js"></script>
+		<script charset="utf-8" src="js/v.js"></script>
 		<link rel="stylesheet" type="text/css" href="./css/bmap_autocomplete.css">
 		<style></style>
 		<style type="text/css">
@@ -2257,13 +2257,13 @@
 							<a href="index.html">首页</a>
 						</li>
 						<li class="homecur">
-							<a href="renting.html">租车自驾</a>
+							<a href="renting.ftl">租车自驾</a>
 						</li>
 						<li>
 							<a href="site.html">全国网点</a>
 						</li>
 						<li>
-							<a href="driving.html" target="_blank">自驾嗨游</a>
+							<a href="ftl/driving.ftl" target="_blank">自驾嗨游</a>
 						</li>
 						<li>
 							<a href="join.html">加盟悟空</a>
@@ -2273,11 +2273,11 @@
 			</div>
 		</div>
 		<div class="spaceDiv"></div>
-		<script type="text/javascript" async="" src="js/66c0b3fb.js.下载"></script>
-		<script src="js/hm.js.下载"></script>
-		<script type="text/javascript" src="js/jquery-1.9.0.min.js.下载"></script>
-		<script type="text/javascript" src="js/public.js.下载"></script>
-		<script type="text/javascript" src="js/header.js.下载"></script>
+		<script type="text/javascript" async="" src="js/66c0b3fb.js"></script>
+		<script src="js/hm.js"></script>
+		<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/header.js"></script>
 		<script type="text/javascript">
 			var CONTEXT_PATH = "";
 			var HeaderUid = "null";
@@ -3124,7 +3124,7 @@
 			<div class="foot_cover zc_main">
 				<p class="html_link" style="border-top: none;">
 					<a href="story.html">关于我们<span>|</span></a>
-					<a href="renting.html">短租自驾<span>|</span></a>
+					<a href="renting.ftl">短租自驾<span>|</span></a>
 					<a href="question.html">帮助中心<span>|</span></a>
 					<a href="media.html">媒体报道<span>|</span></a>
 					<a href="recruitment.html">加入我们</a>
@@ -3144,14 +3144,14 @@
 			</div>
 		</div>
 
-		<script type="text/javascript" src="js/jquery-1.11.2.js.下载"></script>
-		<script type="text/javascript" src="js/mk-browsing.js.下载"></script>
-		<script type="text/javascript" src="js/public.js.下载"></script>
-		<script type="text/javascript" src="js/baidu.js.下载"></script>
-		<script type="text/javascript" src="js/tingyun-rum.js.下载"></script>
-		<script type="text/javascript" src="js/174750.js.下载" async="" defer=""></script>
-		<script type="text/javascript" src="js/ssyh.js.下载"></script>
-		<script type="text/javascript" src="js/jquery.cookie.js.下载"></script>
+		<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+		<script type="text/javascript" src="js/mk-browsing.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/baidu.js"></script>
+		<script type="text/javascript" src="js/tingyun-rum.js"></script>
+		<script type="text/javascript" src="js/174750.js" async="" defer=""></script>
+		<script type="text/javascript" src="js/ssyh.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
 
 		<style>
 			.zc_wallettooltipe {
@@ -3244,7 +3244,7 @@
 			</ul>
 		</div>
 
-		<script type="text/javascript" src="js/tool.js.下载"></script>
+		<script type="text/javascript" src="js/tool.js"></script>
 		<script type="text/javascript">
 			$(function() {
 				//初始化智齿咨询组件实例
@@ -3260,16 +3260,16 @@
 				});
 			});
 		</script>
-		<script type="text/javascript" src="js/map.js.下载"></script>
-		<script type="text/javascript" src="js/pricecalendar.js.下载"></script>
-		<script type="text/javascript" src="js/sitesearch.js.下载"></script>
-		<script type="text/javascript" src="js/get-citys.js.下载"></script>
+		<script type="text/javascript" src="js/map.js"></script>
+		<script type="text/javascript" src="js/pricecalendar.js"></script>
+		<script type="text/javascript" src="js/sitesearch.js"></script>
+		<script type="text/javascript" src="js/get-citys.js"></script>
 		<script type="text/javascript" src="js/api"></script>
 		<script type="text/javascript" src="js/getscript"></script>
-		<script type="text/javascript" src="js/cartypesearch.js.下载"></script>
-		<script type="text/javascript" src="js/searchpage.js.下载"></script>
-		<script type="text/javascript" src="js/timepicker.js.下载"></script>
-		<script src="js/entrance.js.下载" id="zhichiScript" class="customService"></script>
+		<script type="text/javascript" src="js/cartypesearch.js"></script>
+		<script type="text/javascript" src="js/searchpage.js"></script>
+		<script type="text/javascript" src="js/timepicker.js"></script>
+		<script src="js/entrance.js" id="zhichiScript" class="customService"></script>
 
 		<script type="text/javascript">
 			var static_webserver = "//static.wkzuche.com/www";

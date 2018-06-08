@@ -1,4 +1,4 @@
-package com.qianfeng.wkrent.controller;
+package com.qianfeng.wkrent.controller.other;
 
 import com.qianfeng.wkrent.dto.Combo;
 import com.qianfeng.wkrent.service.IComboService;
@@ -25,7 +25,7 @@ public class ComboController {
     public String comboList(Model model){
         List<Combo> comboList = comboService.findAllCombo();
         model.addAttribute("comboList",comboList);
-        return "comboList";
+        return "/driving.ftl";
     }
 
     /**

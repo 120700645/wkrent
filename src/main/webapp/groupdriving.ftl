@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0031)https://www.wktrip.com/carplusx -->
+<!-- saved from url=(0032)https://www.wktrip.com/motorcade -->
 <html>
 
 	<head>
@@ -8,7 +8,7 @@
 		<meta name="description" content="悟空自驾游是一家立足云南、面向全国、辐射东南亚的自驾游服务平台！为全国旅游爱好者提供吃、住、行、游、购、 娱等在内的高品质服务。依托于移动互联网技术，将云南省16个地州、15个机场、火车站、高铁站、公交枢纽、酒店、旅游景点、自驾游营地、 餐饮、购物、娱乐等旅游目的地、服务点和连接点打通，打造&quot;租车+旅游&quot;全新模式。">
 		<title>悟空自驾游 云南自驾游 自驾租车 云南租车 云南旅游 自驾游</title>
 		<link rel="icon" href="https://static.wkzuche.com/www/images/facicon.ico">
-		<script src="js/hm.js.下载"></script>
+		<script src="js/hm.js"></script>
 		<script type="text/javascript">
 			var _hmt = _hmt || [];
 			(function() {
@@ -268,7 +268,7 @@
 				color: #f2f2f2;
 			}
 		</style>
-		<script type="text/javascript" charset="utf-8" async="" src="js/0.f6e92aef6c71e3f85cb8.js.下载"></script>
+		<script type="text/javascript" charset="utf-8" async="" src="js/0.f6e92aef6c71e3f85cb8.js"></script>
 		<style type="text/css">
 			.slider {
 				margin-top: 55px
@@ -716,27 +716,27 @@
 			<div class="reuse_top">
 				<div class="top-main">
 					<div class="top-logo">
-						<a href="driving.html"><img src="img/logo.74f8c8e.png" alt=""></a>
+						<a href="ftl/driving.ftl"><img src="img/logo.74f8c8e.png" alt=""></a>
 					</div>
 					<div class="nav">
 						<ul>
 							<li class="active">
-								<a href="driving.html" class="">首页</a>
+								<a href="ftl/driving.ftl" class="">首页</a>
 							</li>
 							<li>
-								<a href="selfdriving.html" class="">自助自驾</a>
+								<a href="selfdriving.ftl" class="">自助自驾</a>
 							</li>
 							<li>
-								<a href="cardriving.html" class="router-link-exact-active router-link-active">车+X</a>
+								<a href="cardriving.ftl" class="">车+X</a>
 							</li>
 							<li>
-								<a href="groupdriving.html" class="">跟团自驾</a>
+								<a href="groupdriving.ftl" class="router-link-exact-active router-link-active">跟团自驾</a>
 							</li>
 							<li>
-								<a href="freedesign.html" class="">自由定制</a>
+								<a href="freedesign.ftl" class="">自由定制</a>
 							</li>
 							<li>
-								<a href="renting.html" target="_blank">自驾租车</a>
+								<a href="renting.ftl" target="_blank">自驾租车</a>
 							</li>
 						</ul> <span hidden="hidden"></span>
 						<div class="user">
@@ -747,127 +747,116 @@
 					</div>
 				</div>
 			</div>
-			<div data-v-80dd999e="" class="self">
-				<div data-v-80dd999e="" class="cf-top"></div>
-				<div data-v-80dd999e="" style="height: 36px; background-color: rgb(243, 243, 243);"></div>
-				<div data-v-80dd999e="" class="classify-cf">
-					<div data-v-80dd999e="" class="cf cf-one cf-choose">
-						<div data-v-80dd999e="" class="tit tit-1">游玩城市:</div> <span data-v-80dd999e="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-80dd999e="" class="selected">全部</span> <span data-v-80dd999e="" class="">昆明</span><span data-v-80dd999e="" class="">大理</span><span data-v-80dd999e="" class="">西双版纳</span><span data-v-80dd999e="" class="">瑞丽</span><span data-v-80dd999e="" class="">普洱</span><span data-v-80dd999e="" class="">腾冲</span><span data-v-80dd999e="" class="">玉溪</span><span data-v-80dd999e="" class="">丽江</span><span data-v-80dd999e="" class="">香格里拉</span><span data-v-80dd999e="" class="">红河</span><span data-v-80dd999e="" class="">楚雄</span><span data-v-80dd999e="" class="">文山</span><span data-v-80dd999e="" class="">怒江</span><span data-v-80dd999e="" class="">临沧</span><span data-v-80dd999e="" class="">曲靖</span><span data-v-80dd999e="" class="">昭通</span></div>
-					<div data-v-80dd999e="" class="cf cf-choose">
-						<div data-v-80dd999e="" class="tit">出行天数:</div> <span data-v-80dd999e="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-80dd999e="" class="selected">全部</span> <span data-v-80dd999e="" class="">3天以下</span><span data-v-80dd999e="" class="">3~5天</span><span data-v-80dd999e="" class="">6~9天</span><span data-v-80dd999e="" class="">10~15天</span><span data-v-80dd999e="" class="">15天以上</span></div>
-					<div data-v-80dd999e="" class="cf cf-choose">
-						<div data-v-80dd999e="" class="tit">价格区间:</div> <span data-v-80dd999e="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-80dd999e="" class="selected">全部</span> <span data-v-80dd999e="" class="">3千元以下</span><span data-v-80dd999e="" class="">3千~5千元</span><span data-v-80dd999e="" class="">5千~1万元</span><span data-v-80dd999e="" class="">1万~2万元</span><span data-v-80dd999e="" class="">2万元以上</span></div>
-					<div data-v-80dd999e="" class="cf cf-choose">
-						<div data-v-80dd999e="" class="tit">适合人群:</div> <span data-v-80dd999e="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-80dd999e="" class="selected">全部</span> <span data-v-80dd999e="" class="">家庭游</span><span data-v-80dd999e="" class="">商务人士</span><span data-v-80dd999e="" class="">茶友</span><span data-v-80dd999e="" class="">同学会</span><span data-v-80dd999e="" class="">公司团建</span><span data-v-80dd999e="" class="">定制团队</span><span data-v-80dd999e="" class="">亲子游</span><span data-v-80dd999e="" class="">朋友</span><span data-v-80dd999e="" class="">情侣游</span><span data-v-80dd999e="" class="">驴友</span><span data-v-80dd999e="" class="">爸妈游</span><span data-v-80dd999e="" class="">资深旅行家</span><span data-v-80dd999e="" class="">摄影爱好者</span><span data-v-80dd999e="" class="">学生团体</span></div>
+			<div data-v-794526fd="" class="motorcade">
+				<div data-v-794526fd="" class="cf-top"></div>
+				<div data-v-794526fd="" style="height: 36px; background-color: rgb(243, 243, 243);"></div>
+				<div data-v-794526fd="" class="classify-cf">
+					<div data-v-794526fd="" class="cf cf-one">
+						<div data-v-794526fd="" class="tit tit-1">游玩城市:</div> <span data-v-794526fd="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-794526fd="" class="selected">全部</span> <span data-v-794526fd="" class="">昆明</span><span data-v-794526fd="" class="">大理</span><span data-v-794526fd="" class="">西双版纳</span><span data-v-794526fd="" class="">瑞丽</span><span data-v-794526fd="" class="">普洱</span><span data-v-794526fd="" class="">腾冲</span><span data-v-794526fd="" class="">玉溪</span><span data-v-794526fd="" class="">丽江</span><span data-v-794526fd="" class="">香格里拉</span><span data-v-794526fd="" class="">红河</span><span data-v-794526fd="" class="">楚雄</span><span data-v-794526fd="" class="">文山</span><span data-v-794526fd="" class="">怒江</span><span data-v-794526fd="" class="">临沧</span><span data-v-794526fd="" class="">曲靖</span><span data-v-794526fd="" class="">昭通</span></div>
+					<div data-v-794526fd="" class="cf">
+						<div data-v-794526fd="" class="tit">出行天数:</div> <span data-v-794526fd="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-794526fd="" class="selected">全部</span> <span data-v-794526fd="" class="">3天以下</span><span data-v-794526fd="" class="">3~5天</span><span data-v-794526fd="" class="">6~9天</span><span data-v-794526fd="" class="">10~15天</span><span data-v-794526fd="" class="">15天以上</span></div>
+					<div data-v-794526fd="" class="cf">
+						<div data-v-794526fd="" class="tit">价格区间:</div> <span data-v-794526fd="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-794526fd="" class="selected">全部</span> <span data-v-794526fd="" class="">3千元以下</span><span data-v-794526fd="" class="">3千~5千元</span><span data-v-794526fd="" class="">5千~1万元</span><span data-v-794526fd="" class="">1万~2万元</span><span data-v-794526fd="" class="">2万元以上</span></div>
+					<div data-v-794526fd="" class="cf">
+						<div data-v-794526fd="" class="tit">适合人群:</div> <span data-v-794526fd="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-794526fd="" class="selected">全部</span> <span data-v-794526fd="" class="">家庭游</span><span data-v-794526fd="" class="">商务人士</span><span data-v-794526fd="" class="">茶友</span><span data-v-794526fd="" class="">同学会</span><span data-v-794526fd="" class="">公司团建</span><span data-v-794526fd="" class="">定制团队</span><span data-v-794526fd="" class="">亲子游</span><span data-v-794526fd="" class="">朋友</span><span data-v-794526fd="" class="">情侣游</span><span data-v-794526fd="" class="">驴友</span><span data-v-794526fd="" class="">爸妈游</span><span data-v-794526fd="" class="">资深旅行家</span><span data-v-794526fd="" class="">摄影爱好者</span><span data-v-794526fd="" class="">学生团体</span></div>
 				</div>
-				<div data-v-80dd999e="" class="cf-sort">
-					<div data-v-80dd999e="" class="hover hover_active" style="padding-left: 4px;">默认排序</div>
-					<div data-v-80dd999e="" class="">价格
-						<p data-v-80dd999e="" class="arrows"><span data-v-80dd999e="" class="arr-top hover"></span> <span data-v-80dd999e="" class="arr-bottom hover"></span></p>
+				<div data-v-794526fd="" class="cf-sort">
+					<div data-v-794526fd="" class="hover hover_active" style="padding-left: 4px;">默认排序</div>
+					<div data-v-794526fd="" class="">价格
+						<p data-v-794526fd="" class="arrows"><span data-v-794526fd="" class="arr-top hover"></span> <span data-v-794526fd="" class="arr-bottom hover"></span></p>
 					</div>
 				</div>
-				<div data-v-80dd999e="">
-					<div data-v-80dd999e="" class="all-list">
-						<div data-v-80dd999e="" class="classify-list">
-							<div data-v-80dd999e="" class="classify-li">
-								<div data-v-80dd999e="" class="cd-list-img">
-									<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100011" class=""><img data-v-80dd999e="" src="img/cd07d77d-9e52-4c19-b5bf-cc3964e3b984.jpg" alt=""></a> <span data-v-80dd999e="" class="tags tags_7"><span data-v-80dd999e="" class="test" style="margin-right: 38px;">紫-地热农特</span></span>
-									<div data-v-80dd999e=""></div>
+				<div data-v-794526fd="">
+					<div data-v-794526fd="" class="all-list">
+						<div data-v-794526fd="" class="classify-list">
+							<div data-v-794526fd="" class="classify-li">
+								<div data-v-794526fd="" class="cd-list-img">
+									<a data-v-794526fd="" href="https://www.wktrip.com/self_driving/100024" class=""><img data-v-794526fd="" src="img/3ccb837e-633f-42cf-8a98-370b39424338.jpg" alt=""></a> <span data-v-794526fd="" class="tags"><span data-v-794526fd="" class="test" style="margin-right: 38px;"></span></span>
+									<div data-v-794526fd=""></div>
 								</div>
-								<div data-v-80dd999e="" class="cd-list-text">
-									<p data-v-80dd999e="" class="cd-list-title">
-										<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100011" class="">&lt;昆明、弥勒3天2晚休闲游&gt; (昆明进出） 帐篷酒店、半山温泉、红酒庄园</a>
+								<div data-v-794526fd="" class="cd-list-text">
+									<p data-v-794526fd="" class="cd-list-title">
+										<a data-v-794526fd="" href="https://www.wktrip.com/self_driving/100024" class="">
+											昆曼国际大通道17日自驾之旅
+										</a>
 									</p>
-									<p data-v-80dd999e="" class="cd-list-type"><span data-v-80dd999e="">自助自驾</span> <span data-v-80dd999e="">昆明出发</span> <span data-v-80dd999e="">3天2晚</span></p>
-									<p data-v-80dd999e="" class="cd-list-description advantage">恍若隔世美景、群山环抱、绿树成荫、漫步沙滩、养生SPA，领略红酒的魅力，让红酒的热烈冲击味蕾，让葡萄的芬芳沁透脾肺，天然温泉舒缓疲劳，自然是这里唯一的主题。 ——简易行程—— Day1：九乡风景名胜区、入住弥勒湖泉酒店、弥勒半山温泉 Day2：云南红酒庄、法邑基督圣恩大教堂、可邑小镇、入住帐篷酒店 Day3：锦屏山“弥勒大佛”-返回昆明
+									<p data-v-794526fd="" class="cd-list-type"><span data-v-794526fd="">跟团自驾</span> <span data-v-794526fd="">昆明出发</span> <span data-v-794526fd="">17天16晚</span></p>
+									<p data-v-794526fd="" class="advantage">一日跨三国 横跨泰国南北两地，从内陆到海滨 玩转老挝、泰国两地 森林、湖泊、高山、大海一网打尽 —— 简易行程 —— Day1:落地昆明机场、取车 Day2:中国最美公路之一——思小公路、集结“东盟大通道”边境口岸小镇“磨憨” Day3:老泰友谊大桥、金三角、清莱府 Day4:白庙、金三角牌坊、金三角金佛、美斯乐村 Day5:“泰北玫瑰”——清迈、双龙寺、大象营、夜市 Day6:自由活动、冬阴功汤、泰式菠萝炒饭、泰式炒河粉、青木瓜沙拉 Day7:自由活动 Day8:素可泰（世界文化遗产） Day9:大城 Day10:东方夏威夷——芭堤亚 Day11:蓝天、白云、沙滩、酒吧、嗨翻芭堤亚 Day12:孔敬 Day13:老挝首都——万象、凯旋门、塔銮 Day14:“山水小桂林”——万荣、躺吧 Day15:琅勃拉邦、肉未沙拉、嘟嘟车 Day16:普西山、老挝国家博物馆、香通寺 Day17:僧侣化缘、返程回国
 									</p>
-									<p data-v-80dd999e="" class="cd-list-label"><span data-v-80dd999e="">温泉</span><span data-v-80dd999e="">民俗</span><span data-v-80dd999e="">亲子优选</span></p>
-									<p data-v-80dd999e="" class="cd-list-money"><span data-v-80dd999e="">¥<b data-v-80dd999e="">1280</b></span>起 / 人</p>
-									<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100011" class="">
-										<div data-v-80dd999e="" class="cd-list-btn">查看详情</div>
+									<p data-v-794526fd="" class="cd-list-label"><span data-v-794526fd="">世界文化遗产</span><span data-v-794526fd="">东方夏威夷</span><span data-v-794526fd="">山水小桂林</span></p>
+									<p data-v-794526fd="" class="cd-list-money"><span data-v-794526fd="">¥<b data-v-794526fd="">7999</b></span>起 / 人</p>
+									<a data-v-794526fd="" href="https://www.wktrip.com/self_driving/100024" class="">
+										<div data-v-794526fd="" class="cd-list-btn">查看详情</div>
 									</a>
 								</div>
 							</div>
-							<div data-v-80dd999e="" class="classify-li">
-								<div data-v-80dd999e="" class="cd-list-img">
-									<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100021" class=""><img data-v-80dd999e="" src="img/fa65feb3-cf20-4011-ac00-53d9d63352f3.jpg" alt=""></a> <span data-v-80dd999e="" class="tags tags_2"><span data-v-80dd999e="" class="test" style="margin-right: 38px;">橙-民俗节庆</span></span>
-									<div data-v-80dd999e=""></div>
+							<div data-v-794526fd="" class="classify-li">
+								<div data-v-794526fd="" class="cd-list-img">
+									<a data-v-794526fd="" href="https://www.wktrip.com/self_driving/100023" class=""><img data-v-794526fd="" src="img/e2484d92-584b-4387-9013-7e340b4be0bc.jpg" alt=""></a> <span data-v-794526fd="" class="tags"><span data-v-794526fd="" class="test" style="margin-right: 38px;"></span></span>
+									<div data-v-794526fd=""></div>
 								</div>
-								<div data-v-80dd999e="" class="cd-list-text">
-									<p data-v-80dd999e="" class="cd-list-title">
-										<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100021" class="">&lt;普者黑、坝美4天3晚休闲游&gt;(丘北进出）十里桃花林、穿越喀斯特地貌群、湿身水仗、世外桃源、坝美云端</a>
+								<div data-v-794526fd="" class="cd-list-text">
+									<p data-v-794526fd="" class="cd-list-title">
+										<a data-v-794526fd="" href="https://www.wktrip.com/self_driving/100023" class="">
+											湄公河密码系列之中、老、泰、柬四国16天穿越之旅
+										</a>
 									</p>
-									<p data-v-80dd999e="" class="cd-list-type"><span data-v-80dd999e="">自助自驾</span> <span data-v-80dd999e="">普者黑出发</span> <span data-v-80dd999e="">4天3晚</span></p>
-									<p data-v-80dd999e="" class="cd-list-description advantage">青龙山观日出，菜花箐-探寻剧版《三生三世十里花》“水墨丹青山水意境”，穿过神秘溶洞寻找桃花园，途径“三天三夜、三明三暗”发现秘境坝美探寻世外桃源的秘密。 ——简易行程—— Day1：前往“爸爸去哪儿”、“三生三世”拍摄地，住丘北天成太合酒店 Day2：登青龙山观日出、普者黑喀斯特地貌全景、乘柳叶小舟游览仙人湖、普者黑湖，住八宝贡酒店 Day3：体验坝美“三天三夜、三明三暗”豁然开朗的意境，住八宝贡酒店 Day4：早餐后驾车返回普者黑高铁站交还车辆
+									<p data-v-794526fd="" class="cd-list-type"><span data-v-794526fd="">跟团自驾</span> <span data-v-794526fd="">西双版纳出发</span> <span data-v-794526fd="">16天15晚</span></p>
+									<p data-v-794526fd="" class="advantage">穿越中、老、泰、柬四国 四国美景深度游玩 版纳进出不走回头路 —— 简易行程 —— Day1:“东盟大通道”边境小镇磨憨集结 Day2:世界文化遗产——琅勃拉邦、老挝啤酒、自助小火锅、湄公河夜景 Day3:普西山、香通寺、老挝国家博物馆、达关西瀑布 Day4:老挝首都——万象、凯旋门、塔銮 Day5:泰国（孔敬府） Day6:泰国第二大国家公园——考艾国家公园、“不夜城”芭堤亚 Day7:蓝天、白云，沙滩，酒吧、嗨翻芭堤亚 Day8:柬埔寨、世界文化遗产——吴哥窟 Day9:大小吴哥、巴绒寺、战象台 Day10:前往泰国——大城 Day11:世界文化遗产——素可泰 Day12:“泰北玫瑰”——清迈、素贴山、手工艺品村、夜间动物园 Day13:双龙寺，自由活动 Day14:全天自由活动、冬阴功汤、泰式肉松炒饭、泰式炒河粉、青木瓜沙拉 Day15:马尼信温泉、白庙（龙坤艺术神庙）、美赛 Day16:金三角牌坊、金三角金佛、泰老缅三国交界地，回国。
 									</p>
-									<p data-v-80dd999e="" class="cd-list-label"><span data-v-80dd999e="">田园风光</span><span data-v-80dd999e="">三生三世</span><span data-v-80dd999e="">打水仗</span></p>
-									<p data-v-80dd999e="" class="cd-list-money"><span data-v-80dd999e="">¥<b data-v-80dd999e="">1360</b></span>起 / 人</p>
-									<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100021" class="">
-										<div data-v-80dd999e="" class="cd-list-btn">查看详情</div>
+									<p data-v-794526fd="" class="cd-list-label"><span data-v-794526fd="">白庙</span><span data-v-794526fd="">吴哥窟日出</span><span data-v-794526fd="">四国同游</span></p>
+									<p data-v-794526fd="" class="cd-list-money"><span data-v-794526fd="">¥<b data-v-794526fd="">10240</b></span>起 / 人</p>
+									<a data-v-794526fd="" href="https://www.wktrip.com/self_driving/100023" class="">
+										<div data-v-794526fd="" class="cd-list-btn">查看详情</div>
 									</a>
 								</div>
 							</div>
-							<div data-v-80dd999e="" class="classify-li">
-								<div data-v-80dd999e="" class="cd-list-img">
-									<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100029" class=""><img data-v-80dd999e="" src="img/305578a7-67c3-4ac8-abeb-83e9eddc72f6.jpg" alt=""></a> <span data-v-80dd999e="" class="tags tags_4"><span data-v-80dd999e="" class="test" style="margin-right: 38px;">绿-亲子研学</span></span>
-									<div data-v-80dd999e=""></div>
+							<div data-v-794526fd="" class="classify-li">
+								<div data-v-794526fd="" class="cd-list-img">
+									<a data-v-794526fd="" href="https://www.wktrip.com/self_driving/100019" class=""><img data-v-794526fd="" src="img/0dc1337b-596a-40a0-a445-117e1814ec3d.jpg" alt=""></a> <span data-v-794526fd="" class="tags"><span data-v-794526fd="" class="test" style="margin-right: 38px;"></span></span>
+									<div data-v-794526fd=""></div>
 								</div>
-								<div data-v-80dd999e="" class="cd-list-text">
-									<p data-v-80dd999e="" class="cd-list-title">
-										<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100029" class="">&lt;Hello版纳，热带风情，轻享勐巴拉那西5天4晚傣乡体验之旅&gt;（版纳进出）赏五光十色傣乡风情、热带雨林、奢享秘境</a>
+								<div data-v-794526fd="" class="cd-list-text">
+									<p data-v-794526fd="" class="cd-list-title">
+										<a data-v-794526fd="" href="https://www.wktrip.com/self_driving/100019" class="">
+											“佛之净地”老挝9日之旅
+										</a>
 									</p>
-									<p data-v-80dd999e="" class="cd-list-type"><span data-v-80dd999e="">自助自驾</span> <span data-v-80dd999e="">西双版纳出发</span> <span data-v-80dd999e="">5天4晚</span></p>
-									<p data-v-80dd999e="" class="cd-list-description advantage">西双版纳，古代傣语为“勐巴拉娜西”，意思是“理想而神奇的乐土”，这里以神奇的热带雨林自然景观和少数民族风情而闻名于世，每年的泼水节于4月13-15日举行，被誉为“东方狂欢节”。如果说西藏是离天堂最近的地方，那西双版纳就是天堂遗漏在人间的最后一颗宝石。驾车旅途中，我们或穿梭于茂密的原始森林，呼吸着大自然最纯洁的空气，或驻足小憩，欣赏竹楼间炊烟袅袅的田园生活。走走停停中，感受大自然馈赠的一切。 —— 简易行程 —— Day1：漫步昔日的傣王御花园、触摸傣式古老建筑、感受灵魂之园 Day2：领略热带风光、体验激情漂流、自行车观光傣家村寨、感知大自然神奇、露天烧烤party、放飞祈福孔明灯 Day3：深入雨林，奢享秘境，探秘天人合一的热带雨林，挑战世界最高树冠空中走廊 Day4：享受惊险刺激的滑行，体验跨时空的神奇之旅。领略热带雨林的乐趣，观赏世界顶级魔幻秀“傣秀 Day5：结束本次旅行
+									<p data-v-794526fd="" class="cd-list-type"><span data-v-794526fd="">跟团自驾</span> <span data-v-794526fd="">昆明出发</span> <span data-v-794526fd="">9天8晚</span></p>
+									<p data-v-794526fd="" class="advantage">您想到在东南亚地区自驾车旅游吗？ 您想了解充满神秘色彩的小乘佛教文化吗？ 您想用相机镜头捕捉晨曦日落中的佛塔寺庙吗？ 您想领略湄公河畔绚丽多彩的热带丛林的风光吗？ —— 简易行程 —— Day1:落地昆明长水机场，取车。 Day2:穿越中国最美的原始森林景观高速公路——思小高速，前往“东盟大通道”边境小镇磨憨 Day3:世界文化遗产——琅勃拉邦、老挝啤酒、自助小火锅、湄公河夜景 Day4:普西山、香通寺、老挝国家博物馆、达关西瀑布 Day5:“自由之城”——万荣，感受最具特色的酒吧文化——躺吧 Day6:放飞日，挑战极限，体验无限 Day7:琅勃拉邦，体验老挝传统按摩、SPA Day8:观“僧侣化斋特色民俗”，返程回国 Day9:景洪散团，自由回昆
 									</p>
-									<p data-v-80dd999e="" class="cd-list-label"><span data-v-80dd999e="">最美公路</span><span data-v-80dd999e="">佛教文化</span><span data-v-80dd999e="">热带雨林</span></p>
-									<p data-v-80dd999e="" class="cd-list-money"><span data-v-80dd999e="">¥<b data-v-80dd999e="">2450</b></span>起 / 人</p>
-									<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100029" class="">
-										<div data-v-80dd999e="" class="cd-list-btn">查看详情</div>
+									<p data-v-794526fd="" class="cd-list-label"><span data-v-794526fd="">世界文化遗产</span><span data-v-794526fd="">僧侣化缘</span><span data-v-794526fd="">湄公河夜景</span></p>
+									<p data-v-794526fd="" class="cd-list-money"><span data-v-794526fd="">¥<b data-v-794526fd="">3280</b></span>起 / 人</p>
+									<a data-v-794526fd="" href="https://www.wktrip.com/self_driving/100019" class="">
+										<div data-v-794526fd="" class="cd-list-btn">查看详情</div>
 									</a>
 								</div>
 							</div>
-							<div data-v-80dd999e="" class="classify-li">
-								<div data-v-80dd999e="" class="cd-list-img">
-									<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100008" class=""><img data-v-80dd999e="" src="img/9037a480-6482-4a1e-bca6-b7e8d53a9516.jpg" alt=""></a> <span data-v-80dd999e="" class="tags tags_6"><span data-v-80dd999e="" class="test" style="margin-right: 38px;">蓝-山海之间</span></span>
-									<div data-v-80dd999e=""></div>
+							<div data-v-794526fd="" class="classify-li">
+								<div data-v-794526fd="" class="cd-list-img">
+									<a data-v-794526fd="" href="https://www.wktrip.com/self_driving/100004" class=""><img data-v-794526fd="" src="img/12850d54-5849-47f3-85e5-d0a103c2fa0d.jpg" alt=""></a> <span data-v-794526fd="" class="tags tags_2"><span data-v-794526fd="" class="test" style="margin-right: 38px;">橙-民俗节庆</span></span>
+									<div data-v-794526fd=""></div>
 								</div>
-								<div data-v-80dd999e="" class="cd-list-text">
-									<p data-v-80dd999e="" class="cd-list-title">
-										<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100008" class="">&lt;香格里拉、梅里雪山 5天4晚自在休闲游&gt; (香格里拉进出) 特色精品酒店，享受悠闲自驾</a>
+								<div data-v-794526fd="" class="cd-list-text">
+									<p data-v-794526fd="" class="cd-list-title">
+										<a data-v-794526fd="" href="https://www.wktrip.com/self_driving/100004" class="">
+											湄公河密码老挝泰国双世界文化遗产自驾之旅
+										</a>
 									</p>
-									<p data-v-80dd999e="" class="cd-list-type"><span data-v-80dd999e="">自助自驾</span> <span data-v-80dd999e="">香格里拉出发</span> <span data-v-80dd999e="">5天4晚</span></p>
-									<p data-v-80dd999e="" class="cd-list-description advantage">【一场真正的美景体验】独克宗古城、松赞林寺、普达措、金沙江大拐弯、梅里雪山飞来寺、白马雪山、纳帕海 【一夜无忧的舒适好梦】精选当地特色精品酒店 【一段悠闲的午后时光】在纳帕海边享受懒懒的阳光 【一趟轻松的自驾旅程】赠送氧气瓶、每日轻松景点安排 【一路关注的贴心管家】专属客服管家全程为您提供咨询服务 —— 简易行程 —— Day1：抵达香格里拉、取车、独克宗古城、入住香格里拉独克宗古城特色酒店 Day2：松赞林寺、白马雪山、梅里雪山飞来寺、入住德钦梅里观景酒店 Day3：赏“日照金山”、观梅里十三峰、入住香格里拉普达措景区内酒店 Day4：普达措、环纳帕海依拉草原、入住香格里拉纳帕海畔度假村、赠送下午茶 Day5：结束旅程、还车、返程
+									<p data-v-794526fd="" class="cd-list-type"><span data-v-794526fd="">跟团自驾</span> <span data-v-794526fd="">昆明出发</span> <span data-v-794526fd="">11天10晚</span></p>
+									<p data-v-794526fd="" class="advantage">沿昆曼国际大通道始发点，昆明出发，穿越北回归线及中国唯一景观公路—思小公路，抵达西双版纳勐腊县磨憨镇思小公路：穿越中国唯一原始森林的景观高速公路一思小高速公路，在这样的高速公路上行驶，让你能时刻感受到与莽莽雨林随行、与万项碧波相伴、人与自然和谐相处的美好画卷，是一条真正的“车在路上行，人在画中游”的高速公路。 —— 简易行程 —— Day1:中国最美公路之一——思小公路、集结“东盟大通道”边境口岸小镇“磨憨” Day2:泰国、缅甸、老挝三国交界之地：“金三角（Golden Triangle）” Day3:白庙——泰国首席艺术家设计建造献给诗吉丽皇后的礼物 Day4:泰国第二大城市—“泰北玫瑰”清迈 Day5:自由活动：丛林飞索、河边餐厅、大象营、夜间动物园、夜市 Day6:泰国古都——素可泰（世界文化遗产） Day7:黎府-清康小镇 Day8:世界文化遗产——琅勃拉邦、老挝啤酒、自助小火锅、湄公河夜景 Day9:普希山、香通寺、老挝国家博物馆、达关西瀑布 Day10:僧侣化缘、返程回国 Day11:景洪散团，自由返回昆明
 									</p>
-									<p data-v-80dd999e="" class="cd-list-label"><span data-v-80dd999e="">日照金山</span><span data-v-80dd999e="">圣洁</span><span data-v-80dd999e="">精品特色客栈</span></p>
-									<p data-v-80dd999e="" class="cd-list-money"><span data-v-80dd999e="">¥<b data-v-80dd999e="">2280</b></span>起 / 人</p>
-									<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100008" class="">
-										<div data-v-80dd999e="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
-							<div data-v-80dd999e="" class="classify-li">
-								<div data-v-80dd999e="" class="cd-list-img">
-									<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100049" class=""><img data-v-80dd999e="" src="img/89d82442-4abc-42b8-a736-499cf2750398.jpg" alt=""></a> <span data-v-80dd999e="" class="tags tags_7"><span data-v-80dd999e="" class="test" style="margin-right: 38px;">紫-地热农特</span></span>
-									<div data-v-80dd999e=""></div>
-								</div>
-								<div data-v-80dd999e="" class="cd-list-text">
-									<p data-v-80dd999e="" class="cd-list-title">
-										<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100049" class="">&lt;丝绸碧玉，醉美腾冲 5天4晚轻奢之旅&gt;(腾冲进芒市出）</a>
-									</p>
-									<p data-v-80dd999e="" class="cd-list-type"><span data-v-80dd999e="">自助自驾</span> <span data-v-80dd999e="">腾冲出发</span> <span data-v-80dd999e="">5天4晚</span></p>
-									<p data-v-80dd999e="" class="cd-list-description advantage">这个世界太快了，以至于人们没有时间放慢脚步来好好看看周围的美景，慢一点，世界都在你眼中。如果慢不下来，就来云南，云南很慢，慢得你可以在这里享受最闲适的生活，看世间最美的风景。卸下你的烦恼与苦闷，在这里找寻你的初心。 ——简易行程—— Day1：马帮重镇、古“西南丝绸之路”的必经之地，大型歌舞视觉盛宴 Day2：观赏被誉为“火山地质博物馆”，北海沼泽湿地，神奇景观 Day3：走进历史、了解历史、牢记历史、缅怀英雄、踏寻金色国度 Day4：热带雨林、自行车环湖、高尔夫练习 Day5：结束本次旅程返回
-									</p>
-									<p data-v-80dd999e="" class="cd-list-label"><span data-v-80dd999e="">休闲</span><span data-v-80dd999e="">落地自驾</span><span data-v-80dd999e="">湿地</span></p>
-									<p data-v-80dd999e="" class="cd-list-money"><span data-v-80dd999e="">¥<b data-v-80dd999e="">5800</b></span>起 / 人</p>
-									<a data-v-80dd999e="" href="https://www.wktrip.com/self_driving/100049" class="">
-										<div data-v-80dd999e="" class="cd-list-btn">查看详情</div>
+									<p data-v-794526fd="" class="cd-list-label"><span data-v-794526fd="">鬼节</span><span data-v-794526fd="">东盟大通道</span><span data-v-794526fd="">世界文化遗产</span></p>
+									<p data-v-794526fd="" class="cd-list-money"><span data-v-794526fd="">¥<b data-v-794526fd="">6050</b></span>起 / 人</p>
+									<a data-v-794526fd="" href="https://www.wktrip.com/self_driving/100004" class="">
+										<div data-v-794526fd="" class="cd-list-btn">查看详情</div>
 									</a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<p data-v-80dd999e="" class="classify-more">
-						<!----><span data-v-80dd999e="" class="no-more">没有更多了</span></p>
+					<div data-v-794526fd="" class="classify-more">
+						<!----><span data-v-794526fd="" class="no-more">没有更多了</span></div>
 				</div>
 				<!---->
 			</div>
@@ -941,8 +930,8 @@
 			</div>
 		</div>
 		<!--<script type="text/javascript" src="js/manifest.fb5239f97ae874448f44.js.下载"></script>-->
-		<script type="text/javascript" src="js/vendor.434b2f13fc4d603f30a3.js.下载"></script>
-		<script type="text/javascript" src="js/app.6d0a0c8dac82bcb8212b.js.下载"></script>
+		<script type="text/javascript" src="js/vendor.434b2f13fc4d603f30a3.js"></script>
+		<script type="text/javascript" src="js/app.6d0a0c8dac82bcb8212b.js"></script>
 	</body>
 
 </html>

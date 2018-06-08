@@ -3,12 +3,15 @@
 <html>
 
 	<head>
+        <#assign base=request.contextPath />
+        <base id="base" href="${base}">
+        <base href="<%=request.getContextPath();%>/"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="description" content="悟空自驾游是一家立足云南、面向全国、辐射东南亚的自驾游服务平台！为全国旅游爱好者提供吃、住、行、游、购、 娱等在内的高品质服务。依托于移动互联网技术，将云南省16个地州、15个机场、火车站、高铁站、公交枢纽、酒店、旅游景点、自驾游营地、 餐饮、购物、娱乐等旅游目的地、服务点和连接点打通，打造&quot;租车+旅游&quot;全新模式。">
 		<title>悟空自驾游 云南自驾游 自驾租车 云南租车 云南旅游 自驾游</title>
 		<link rel="icon" href="https://static.wkzuche.com/www/images/facicon.ico">
-		<script src="js/hm.js.下载"></script>
+		<script src="../js/hm.js"></script>
 		<script type="text/javascript">
 			var _hmt = _hmt || [];
 			(function() {
@@ -18,7 +21,7 @@
 				s.parentNode.insertBefore(hm, s);
 			})();
 		</script>
-		<link href="css/app.1e82d5e3d6f6affba7436d4c5b5588a5.css" rel="stylesheet">
+		<link href="../css/app.1e82d5e3d6f6affba7436d4c5b5588a5.css" rel="stylesheet">
 		<style type="text/css">
 			.comp-full-calendar {
 				padding: 20px;
@@ -268,7 +271,7 @@
 				color: #f2f2f2;
 			}
 		</style>
-		<script type="text/javascript" charset="utf-8" async="" src="js/0.f6e92aef6c71e3f85cb8.js.下载"></script>
+		<script type="text/javascript" charset="utf-8" async="" src="../js/0.f6e92aef6c71e3f85cb8.js"></script>
 		<style type="text/css">
 			.slider {
 				margin-top: 55px
@@ -709,7 +712,7 @@
 				right: 111px
 			}
 		</style>
-		<script src="js/pc.min.js.下载" id="zhichiload" class="customService"></script>
+		<script src="../js/pc.min.js" id="zhichiload" class="customService"></script>
 	</head>
 
 	<body>
@@ -717,27 +720,27 @@
 			<div class="reuse_top">
 				<div class="top-main">
 					<div class="top-logo">
-						<a href="driving.html"><img src="img/logo.74f8c8e.png" alt=""></a>
+						<a href="driving.ftl"><img src="../img/logo.74f8c8e.png" alt=""></a>
 					</div>
 					<div class="nav">
 						<ul>
 							<li class="active">
-								<a href="driving.html" class="router-link-exact-active router-link-active">首页</a>
+								<a href="driving.ftl" class="router-link-exact-active router-link-active">首页</a>
 							</li>
 							<li>
-								<a href="selfdriving.html" class="">自助自驾</a>
+								<a href="../selfdriving.ftl" class="">自助自驾</a>
 							</li>
 							<li>
-								<a href="cardriving.html" class="">车+X</a>
+								<a href="../cardriving.ftl" class="">车+X</a>
 							</li>
 							<li>
-								<a href="groupdriving.html" class="">跟团自驾</a>
+								<a href="../groupdriving.ftl" class="">跟团自驾</a>
 							</li>
 							<li>
-								<a href="freedesign.html" class="">自由定制</a>
+								<a href="../freedesign.ftl" class="">自由定制</a>
 							</li>
 							<li>
-								<a href="renting.html" target="_blank">自驾租车</a>
+								<a href="../renting.ftl" target="_blank">自驾租车</a>
 							</li>
 						</ul> <span hidden="hidden"></span>
 						<div class="user">
@@ -755,7 +758,7 @@
 					</ol>
 					<div role="listbox" class="carousel-inner">
 						<div class="item active">
-							<a href="http://www.wktrip.com/self_driving/100002"><img src="img/b6cafeb9-7fb2-4c2f-a224-9c6c34326f09.jpg" alt=""></a>
+							<a href="http://www.wktrip.com/self_driving/100002"><img src="../img/b6cafeb9-7fb2-4c2f-a224-9c6c34326f09.jpg" alt=""></a>
 						</div>
 					</div>
 				</div>
@@ -765,19 +768,24 @@
 						<div class="sh-list">
 							<h3>自助自驾</h3>
 							<p>感悟生命本源，自在畅游旷野美景。</p>
-							<a href="selfdriving.html" class="">更多&gt;</a>
+							<a href="../selfdriving.ftl" class="">更多&gt;</a>
+                       <#-- <#list comboList as combo>
+                        ${combo.comboName}.${combo.comboSite},${combo.notice.noticeContent}
+                        </#list>-->
 							<ul class="sh-nav-list">
+                                <#list comboList as combo>
 								<li>
 									<a href="https://www.wktrip.com/self_driving/100011" class=""><span style="display: none;">100011</span>
-										<div class="vessel-img"><img src="img/cd07d77d-9e52-4c19-b5bf-cc3964e3b984.jpg" alt=""> <span class="tags tags_7"><span class="test">紫-地热农特</span></span>
+										<div class="vessel-img"><img src="../img/cd07d77d-9e52-4c19-b5bf-cc3964e3b984.jpg" alt=""> <span class="tags tags_7"><span class="test">紫-地热农特</span></span>
 										</div>
-										<div class="mess-border"><span class="name">&lt;昆明、弥勒3天2晚休闲游&gt; (昆明进出） 帐篷酒店、半山温泉、红酒庄园</span>
-											<p class="message"><i class="qizi"></i><span>自助自驾</span><i class="weizhi"></i><span>昆明出发</span></p>
-											<p class="money"><span>¥<span class="money2">1280</span></span>起 / 人</p>
+										<div class="mess-border"><span class="name">${combo.comboName}</span>
+											<p class="message"><i class="qizi"></i><span>${combo.comboType}</span><i class="weizhi"></i><span>${combo.comboSite}</span></p>
+											<p class="money"><span>¥<span class="money2">${combo.comboPrice}</span></span>起 / 人</p>
 										</div>
 									</a>
 								</li>
-								<li>
+                                </#list>
+								<#--<li>
 									<a href="https://www.wktrip.com/self_driving/100021" class=""><span style="display: none;">100021</span>
 										<div class="vessel-img"><img src="img/fa65feb3-cf20-4011-ac00-53d9d63352f3.jpg" alt=""> <span class="tags tags_2"><span class="test">橙-民俗节庆</span></span>
 										</div>
@@ -790,7 +798,7 @@
 								<li>
 									<a href="https://www.wktrip.com/self_driving/100055" class=""><span style="display: none;">100055</span>
 										<div class="vessel-img"><img src="img/8eeed621-b64a-48a9-bf2c-630ee2ce3ba9.jpg" alt="">
-											<!---->
+											<!--&ndash;&gt;
 										</div>
 										<div class="mess-border"><span class="name">【Jeep专线】遇见梅里 香格里拉-梅里雪山 5天4晚 转山朝圣之旅</span>
 											<p class="message"><i class="qizi"></i><span>自助自驾</span><i class="weizhi"></i><span>香格里拉出发</span></p>
@@ -801,24 +809,24 @@
 								<li>
 									<a href="https://www.wktrip.com/self_driving/100054" class=""><span style="display: none;">100054</span>
 										<div class="vessel-img"><img src="img/e73672bd-88ff-41a2-8a72-187f8dd50c11.jpg" alt="">
-											<!---->
+											<!--&ndash;&gt;
 										</div>
 										<div class="mess-border"><span class="name">【Jeep专线】寻觅世外桃源  昆明-红河元阳-普者黑坝美  8天7晚  自驾之旅</span>
 											<p class="message"><i class="qizi"></i><span>自助自驾</span><i class="weizhi"></i><span>昆明出发</span></p>
 											<p class="money"><span>¥<span class="money2">2990</span></span>起 / 人</p>
 										</div>
 									</a>
-								</li>
+								</li>-->
 							</ul>
 						</div>
 						<div class="sh-list">
 							<h3>跟团自驾</h3>
 							<p>因专业领队，你只需专注自然之美。</p>
-							<a href="groupdriving.html" class="">更多&gt;</a>
+							<a href="../groupdriving.ftl" class="">更多&gt;</a>
 							<ul class="sh-nav-list">
 								<li>
 									<a href="https://www.wktrip.com/self_driving/100024" class=""><span style="display: none;">100024</span>
-										<div class="vessel-img"><img src="img/3ccb837e-633f-42cf-8a98-370b39424338.jpg" alt="">
+										<div class="vessel-img"><img src="../img/3ccb837e-633f-42cf-8a98-370b39424338.jpg" alt="">
 											<!---->
 										</div>
 										<div class="mess-border"><span class="name">昆曼国际大通道17日自驾之旅</span>
@@ -829,7 +837,7 @@
 								</li>
 								<li>
 									<a href="https://www.wktrip.com/self_driving/100023" class=""><span style="display: none;">100023</span>
-										<div class="vessel-img"><img src="img/e2484d92-584b-4387-9013-7e340b4be0bc.jpg" alt="">
+										<div class="vessel-img"><img src="../img/e2484d92-584b-4387-9013-7e340b4be0bc.jpg" alt="">
 											<!---->
 										</div>
 										<div class="mess-border"><span class="name">湄公河密码系列之中、老、泰、柬四国16天穿越之旅</span>
@@ -840,7 +848,7 @@
 								</li>
 								<li>
 									<a href="https://www.wktrip.com/self_driving/100019" class=""><span style="display: none;">100019</span>
-										<div class="vessel-img"><img src="img/0dc1337b-596a-40a0-a445-117e1814ec3d.jpg" alt="">
+										<div class="vessel-img"><img src="../img/0dc1337b-596a-40a0-a445-117e1814ec3d.jpg" alt="">
 											<!---->
 										</div>
 										<div class="mess-border"><span class="name">“佛之净地”老挝9日之旅</span>
@@ -851,7 +859,7 @@
 								</li>
 								<li>
 									<a href="https://www.wktrip.com/self_driving/100004" class=""><span style="display: none;">100004</span>
-										<div class="vessel-img"><img src="img/12850d54-5849-47f3-85e5-d0a103c2fa0d.jpg" alt=""> <span class="tags tags_2"><span class="test">橙-民俗节庆</span></span>
+										<div class="vessel-img"><img src="../img/12850d54-5849-47f3-85e5-d0a103c2fa0d.jpg" alt=""> <span class="tags tags_2"><span class="test">橙-民俗节庆</span></span>
 										</div>
 										<div class="mess-border"><span class="name">湄公河密码老挝泰国双世界文化遗产自驾之旅</span>
 											<p class="message"><i class="qizi"></i><span>跟团自驾</span><i class="weizhi"></i><span>昆明出发</span></p>
@@ -901,11 +909,11 @@
 						<div class="bottom">
 							<div class="wkxm-client">
 								<a href="javascript:void(0);"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAA5CAMAAAB3X0lcAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0RDkwNDUwMjU4QUQxMUU3OUMxNUJEMTU4QzhEMDlDMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0RDkwNDUwMzU4QUQxMUU3OUMxNUJEMTU4QzhEMDlDMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjdDNzc5Njc1NTg4QjExRTc5QzE1QkQxNThDOEQwOUMxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjdDNzc5Njc2NTg4QjExRTc5QzE1QkQxNThDOEQwOUMxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+n3dbDgAAAMBQTFRF9ZkA/////vDZ/ezQ+cZx+s6F/vLf+cJm/e/X/e3R+b9f+cdy/e/W/N2p/N+w+LpT+sh1/Nyn/e/Y/ebB+LhN/vXm/e3S+9ec/vHb/erL/N2r+b9e9qUd/vbo+sdz+cNo9qcj/OW9/e7U96st/e7V/vXl/vTk/OW++LVH96ss/efD+LpS96or+LxY/OK2+cFl96419682/OO6/vXn+LNC/ejG/vDa97A6/vbp//78/enJ/vPg/e3T/vju/vPi+s+GXiN3IAAAALhJREFUeNrs1ccOgkAQgGEGEXeXJtXee++9vf9bqUhiCBkkHM3+F8jMdyCbbBAEHi9VTZN4lFzbRFXVLqXUs8wqQm14pdwG09Vy1AI/HaH39/J8qmm6Xt586B6hIhQcozFjdUlSmGFMHA0oSll4kIcMSpXw4BFDpfAgyymnf0IrSS+MBRrLfVuwOUoJRPpJdzQptd+fHU/lYF88DI/Bq4ieQKQxQrclV/br9f3HxV13+P+Bl66nAAMAIT4LhxvhtooAAAAASUVORK5CYII=" alt=""></a>
-								<div class="appc"><img src="img/appc.fd9965f.jpg" alt=""></div>
+								<div class="appc"><img src="../img/appc.fd9965f.jpg" alt=""></div>
 							</div>
 							<div class="wkxm-wx">
 								<a href="javascript:void(0)"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAABACAMAAABbchVVAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0RDkwNDUwNjU4QUQxMUU3OUMxNUJEMTU4QzhEMDlDMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0RDkwNDUwNzU4QUQxMUU3OUMxNUJEMTU4QzhEMDlDMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjREOTA0NTA0NThBRDExRTc5QzE1QkQxNThDOEQwOUMxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjREOTA0NTA1NThBRDExRTc5QzE1QkQxNThDOEQwOUMxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+bgRg0gAAAVlQTFRF9ZkA////+9qj/enH//v0+sdz/vPi/OK3+cVt/e/X+cFk///++9id9qIW+b5c/evM/vfq/evN/vnx9qck+sd0/N+v+syA/vLf//369Z0J/vXm+cNp/N2r+LNC96st+s2C/vXn+LNA9682+LVG9ZwI+cdy/OG0/vHc+tGM9683/vju+LxY97E8/e7V/efC/OCx97I/960y+LpS+9WW+LRD/OO6+cVu+sh19ZwH9Z0L96419ZsG//78/OO5960x//35/vbp9p4N/vnw+9mg/e/W/Nyo+9mf/e3T+sl5+LZJ/N+w+cNo+LlP+sh2+LdK+LhO/N6t9p8P+LtW/vHd/vHb+b9e/vTk//v2/N+u+9WX9ZsF/vLe/vry/N2q+LNB/N2p+LxX/OCy96ko97E9/efD960z//rz/vPh+LhN+s6E+9ie+9ea/OW/+cZw/vDa/ezP+sl4/OO4/e3SwCUzWwAAAUVJREFUeNpiYBgFo2AU0B74ZUbw56Uw+SoRUsilywgD7Mr4FEqKMiIDDTxKixhRQTxOlUxAWSlVERYglSZmpgCkxHCo1AQZxMHAYAukshkYCkDcJOxK3UBygnEmIOPE/ZOlGBnDBLmwK3VBdWi0CCtrrrw21kCTQFHJoaPKDxbh9JDEUMqGpNBe0ZMFzkmXRVcqg6Q0lA/FCkU0pcoIqYAMICHA4w4kmZ2dGBlteNHUqsGVJoBskGcwBJK8DJFA0hhNaZQ6VCWbNzfIP6zsQNLVHOSHYHTXBuZwg5XqS6PFMGM4ZoAJgSX0MJRqYaiUY2T0inVgZOETQlPKjK7SOqsQGIQWwnaWpmhKfdCVqsjBWKmoKnnwpXIjZJWi+LOOATNcJRPBDBnElC8QI57IxBhCTPZVcQQSVmrCowXZKBgFgwYABBgAs74dx7Hp7BUAAAAASUVORK5CYII=" alt=""></a>
-								<div class="wxc"><img src="img/wxc.4886e67.jpg" alt=""></div>
+								<div class="wxc"><img src="../img/wxc.4886e67.jpg" alt=""></div>
 							</div>
 						</div>
 						<!---->
@@ -969,9 +977,9 @@
 					</div>
 					<div class="code">
 						<div>
-							<p>订阅号</p> <img src="img/wxcode.cc79ece.jpg" alt=""></div>
+							<p>订阅号</p> <img src="../img/wxcode.cc79ece.jpg" alt=""></div>
 						<div>
-							<p>APP下载</p> <img src="img/appcode.e8d3d31.png" alt=""></div>
+							<p>APP下载</p> <img src="../img/appcode.e8d3d31.png" alt=""></div>
 					</div>
 					<div class="footer">
 						<p>北京悟空国际旅行社有限公司</p>
@@ -982,8 +990,8 @@
 			</div>
 		</div>
 		<!--<script type="text/javascript" src="js/manifest.fb5239f97ae874448f44.js.下载"></script>-->
-		<script type="text/javascript" src="js/vendor.434b2f13fc4d603f30a3.js.下载"></script>
-		<script type="text/javascript" src="js/app.6d0a0c8dac82bcb8212b.js.下载"></script>
+		<script type="text/javascript" src="../js/vendor.434b2f13fc4d603f30a3.js"></script>
+		<script type="text/javascript" src="../js/app.6d0a0c8dac82bcb8212b.js"></script>
 	</body>
 
 </html>
