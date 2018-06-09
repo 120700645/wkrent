@@ -1,9 +1,11 @@
 package com.qianfeng.wkrent.dao;
 
 import com.qianfeng.wkrent.dto.Coupon;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface CouponMapper {
     int deleteByPrimaryKey(Integer couponId);
 

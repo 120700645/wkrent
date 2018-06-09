@@ -1,9 +1,11 @@
 package com.qianfeng.wkrent.dao;
 
 import com.qianfeng.wkrent.dto.RentOrder;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface RentOrderMapper {
     int deleteByPrimaryKey(Integer orderId);
 
