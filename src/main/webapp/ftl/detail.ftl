@@ -299,7 +299,7 @@
 								<a href="../freedesign.ftl" class="">自由定制</a>
 							</li>
 							<li>
-								<a href="../renting.ftl" target="_blank">自驾租车</a>
+								<a href="renting.ftl" target="_blank">自驾租车</a>
 							</li>
 						</ul> <span hidden="hidden"></span>
 						<div class="user">
@@ -337,10 +337,10 @@
 									<!---->
 									<!---->
 									<!---->
-									<div data-v-06a02ad2="" class="item next left"><img data-v-06a02ad2="" src="../img/4c485974-a59b-4b78-b910-43a70c3ed74d.jpg" alt=""></div>
-									<div data-v-06a02ad2="" class="item"><img data-v-06a02ad2="" src="../img/c7f1eb60-a315-4313-bf52-17817f29d781.jpg" alt=""></div>
-									<div data-v-06a02ad2="" class="item"><img data-v-06a02ad2="" src="../img/d03f5c50-cad3-4909-be95-6a4db0ca7c6a.jpg" alt=""></div>
-									<div data-v-06a02ad2="" class="item"><img data-v-06a02ad2="" src="../img/bffc77e3-98a6-4f9c-b7f8-ef623be06d62.jpg" alt=""></div>
+									<div data-v-06a02ad2="" class="item next left"><img data-v-06a02ad2="" src="${base}/img/4c485974-a59b-4b78-b910-43a70c3ed74d.jpg" alt=""></div>
+									<div data-v-06a02ad2="" class="item"><img data-v-06a02ad2="" src="${base}/img/c7f1eb60-a315-4313-bf52-17817f29d781.jpg" alt=""></div>
+									<div data-v-06a02ad2="" class="item"><img data-v-06a02ad2="" src="${base}/img/d03f5c50-cad3-4909-be95-6a4db0ca7c6a.jpg" alt=""></div>
+									<div data-v-06a02ad2="" class="item"><img data-v-06a02ad2="" src="${base}/img/bffc77e3-98a6-4f9c-b7f8-ef623be06d62.jpg" alt=""></div>
 								</div>
 							</div>
 						</div>
@@ -350,29 +350,30 @@
 							<p data-v-06a02ad2="" id="pname" class="titles">${combo.comboName}</p>
 							<table data-v-06a02ad2="" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
 								<tr data-v-06a02ad2="">
-									<td data-v-06a02ad2="" colspan="2" height="70"><span data-v-06a02ad2="" class="price_box"><!----> <span data-v-06a02ad2="" style="font-size: 20px; color: rgb(208, 0, 0);">¥</span>&nbsp;<span data-v-06a02ad2="" style="font-size: 30px; color: rgb(208, 0, 0); font-weight: bold;">1280</span> <span data-v-06a02ad2="" style="font-size: 14px; color: rgb(102, 102, 102);">起 / 人</span> <span data-v-06a02ad2="" style="font-size: 12px; color: rgb(153, 153, 153);">（按4成人出行共用1辆车，住 2间房核算）</span> <span data-v-06a02ad2="" class="start-desc"><a data-v-06a02ad2="" href="javascript:void(0)">起价说明</a></span></span>
+									<td data-v-06a02ad2="" colspan="2" height="70"><span data-v-06a02ad2="" class="price_box"><!---->
+                                        <span data-v-06a02ad2="" style="font-size: 20px; color: rgb(208, 0, 0);">¥</span>&nbsp;<span data-v-06a02ad2="" style="font-size: 30px; color: rgb(208, 0, 0); font-weight: bold;">${combo.comboPrice}</span> <span data-v-06a02ad2="" style="font-size: 14px; color: rgb(102, 102, 102);">起 / 人</span> <span data-v-06a02ad2="" style="font-size: 12px; color: rgb(153, 153, 153);"></span> <span data-v-06a02ad2="" class="start-desc"><a data-v-06a02ad2="" href="javascript:void(0)">起价说明</a></span></span>
 									</td>
 								</tr>
 								<tr data-v-06a02ad2="">
 									<td data-v-06a02ad2="" width="4em" height="35" class="w82"><span data-v-06a02ad2="" class="category w3">出发地</span>：
 									</td>
-									<td data-v-06a02ad2=""><span data-v-06a02ad2="" class="content">昆明</span></td>
+									<td data-v-06a02ad2=""><span data-v-06a02ad2="" class="content">${combo.comboSite}</span></td>
 								</tr>
 								<tr data-v-06a02ad2="">
 									<td data-v-06a02ad2="" height="35" class="w82"><span data-v-06a02ad2="" class="category">类<span data-v-06a02ad2="" style="width: 28px; height: 22px; display: inline-block;"></span>型</span>：
 									</td>
-									<td data-v-06a02ad2=""><span data-v-06a02ad2="" class="content">自助自驾</span></td>
+									<td data-v-06a02ad2=""><span data-v-06a02ad2="" class="content">${combo.comboType}</span></td>
 								</tr>
 								<tr data-v-06a02ad2="">
 									<td data-v-06a02ad2="" height="35"><span data-v-06a02ad2="" class="category w4">行程天数</span>：
 									</td>
-									<td data-v-06a02ad2=""><span data-v-06a02ad2="" class="content">3天2晚</span></td>
+									<td data-v-06a02ad2=""><span data-v-06a02ad2="" class="content">${combo.comboDays}</span></td>
 								</tr>
 							</table>
 							<div data-v-06a02ad2="" class="advantage">
 								<div data-v-06a02ad2="" class="atitle category">产品亮点：</div>
 								<div data-v-06a02ad2="" class="adesc"><textarea data-v-06a02ad2="" id="" cols="60" rows="14" readonly="readonly" disabled="disabled" class="desc" style="resize: none; background: rgb(255, 255, 255);">
-
+                                    ${combo.comboLight}
                                 </textarea></div>
 							</div>
 						</div>
@@ -855,7 +856,7 @@
 				<div data-v-06a02ad2="" id="travel1_fixed" class="travel1" style="margin-top: 55px; top: 7px;">
 					<ul data-v-06a02ad2="" class="clearfix">
 						<li data-v-06a02ad2="">
-							<a data-v-06a02ad2="" class="actived">3日行程</a>
+							<a data-v-06a02ad2="" class="actived">${combo.comboDays}日行程</a>
 						</li>
 						<li data-v-06a02ad2="">
 							<a data-v-06a02ad2="" class="">费用说明</a>
@@ -1063,7 +1064,8 @@
 						<a data-v-06a02ad2="" name="cost-description" id="cost-description" class="red-title">费用说明</a>
 					</p>
 					<div data-v-06a02ad2="" class="bw">
-						<p style="text-align:justify"><span style="color:#FF0000"><strong>费用说明：此产品价格均按4人/车计算，如人数增加或减少，费用将发生变化！</strong></span></p>
+                        <p style="text-align:justify"><strong>${combo.instruction.instructionContent}</strong></p>
+						<#--<p style="text-align:justify"><span style="color:#FF0000"><strong>费用说明：此产品价格均按4人/车计算，如人数增加或减少，费用将发生变化！</strong></span></p>
 						<p style="text-align:justify"><strong>特别说明：本产品为自助自驾线路产品，如您进行产品自由搭配，行程费用将根据您的选择发生变化并在订单总价处显示，下列费用中列示价格仅为原线路标配产品价格说明。</strong><strong>&nbsp;</strong></p>
 						<p style="text-align:justify"><strong>【费用包含】</strong></p>
 						<p style="text-align:justify"><strong>奢华型：</strong></p>
@@ -1079,7 +1081,7 @@
 						<p style="text-align:justify"><strong>&nbsp;【用车】</strong>全程用车为5座奥迪A3车</p>
 						<p style="text-align:justify">&nbsp;【<strong>景娱】</strong>行程所列景点首道大门票包含：九乡、弥勒酒庄（及酒庄内教堂）、锦屏山“弥勒大佛”、可邑小镇景区</p>
 						<p style="text-align:justify"><strong>&nbsp;【保险】</strong>旅游意外险、旅行社责任险</p>
-						<p style="text-align:justify">&nbsp;</p>
+						<p style="text-align:justify">&nbsp;</p>-->
 						<p style="text-align:justify"><strong>&nbsp;【费用不含】</strong></p>
 						<p style="text-align:justify">1)行程内未提及的其他个人消费；</p>
 						<p style="text-align:justify">2)自驾车辆的过路费、停车费、燃油费、违章罚款、救援费、维修费、拖车费等；</p>
@@ -1099,8 +1101,8 @@
 						<a data-v-06a02ad2="" class="red-title">预订须知</a>
 					</p>
 					<div data-v-06a02ad2="" class="bw">
-						<p><strong>路程路况</strong></p>
-						<p>全程为高速路段90%高速路面，全程过路费约为 60元。</p>
+						<p><strong>${combo.notice.noticeContent}</strong></p>
+						<#--<p>全程为高速路段90%高速路面，全程过路费约为 60元。</p>
 						<p><strong>加 油 点</strong></p>
 						<p>全程90%为高速公路，沿途加油站充足，进入乡镇可在乡镇上加油。（您需注意所使用车辆车型所需加油的油品型号，详情可看车内<strong>行车提示卡</strong>中标注信息）。</p>
 						<p><strong>温馨提示：请驾驶人员准备好身份证、驾驶证原件及足额信用卡。</strong></p>
@@ -1123,7 +1125,7 @@
 						<p><strong>取车/还车</strong>：</p>
 						<p>长水机场取车人员联系电话：&nbsp;13759475722</p>
 						<p>昆明高铁站取车人员联系电话：13529293634</p>
-						<p><strong>客服管家</strong>：13759441592</p>
+						<p><strong>客服管家</strong>：13759441592</p>-->
 						<p><strong>其他提示</strong></p>
 						<p>1）取车时需缴纳<strong>车辆押金</strong>：根据您所选车型不同，车辆押金预授权金额为每车20000元-60000元不等，平台将根据您的信用等级进行相应额度的减免，具体升级方法将有悟空服务人员在您出发前为您进行电话指导。</p>
 						<p>2）车辆押金支付时刷取的预授权金额还在您的信用额度中，由银行暂时冻结，车辆押金在您还车至网点并由工作人员查验车辆无损伤后即时解冻预授权。</p>
@@ -1253,11 +1255,11 @@
 			<div data-v-06a02ad2="" class="bottom">
 				<div data-v-06a02ad2="" class="wkxm-client">
 					<a data-v-06a02ad2="" href="javascript:void(0);"><img data-v-06a02ad2="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAA5CAMAAAB3X0lcAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0RDkwNDUwMjU4QUQxMUU3OUMxNUJEMTU4QzhEMDlDMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0RDkwNDUwMzU4QUQxMUU3OUMxNUJEMTU4QzhEMDlDMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjdDNzc5Njc1NTg4QjExRTc5QzE1QkQxNThDOEQwOUMxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjdDNzc5Njc2NTg4QjExRTc5QzE1QkQxNThDOEQwOUMxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+n3dbDgAAAMBQTFRF9ZkA/////vDZ/ezQ+cZx+s6F/vLf+cJm/e/X/e3R+b9f+cdy/e/W/N2p/N+w+LpT+sh1/Nyn/e/Y/ebB+LhN/vXm/e3S+9ec/vHb/erL/N2r+b9e9qUd/vbo+sdz+cNo9qcj/OW9/e7U96st/e7V/vXl/vTk/OW++LVH96ss/efD+LpS96or+LxY/OK2+cFl96419682/OO6/vXn+LNC/ejG/vDa97A6/vbp//78/enJ/vPg/e3T/vju/vPi+s+GXiN3IAAAALhJREFUeNrs1ccOgkAQgGEGEXeXJtXee++9vf9bqUhiCBkkHM3+F8jMdyCbbBAEHi9VTZN4lFzbRFXVLqXUs8wqQm14pdwG09Vy1AI/HaH39/J8qmm6Xt586B6hIhQcozFjdUlSmGFMHA0oSll4kIcMSpXw4BFDpfAgyymnf0IrSS+MBRrLfVuwOUoJRPpJdzQptd+fHU/lYF88DI/Bq4ieQKQxQrclV/br9f3HxV13+P+Bl66nAAMAIT4LhxvhtooAAAAASUVORK5CYII=" alt=""></a>
-					<div data-v-06a02ad2="" class="appc"><img data-v-06a02ad2="" src="../img/appc.fd9965f.jpg" alt=""></div>
+					<div data-v-06a02ad2="" class="appc"><img data-v-06a02ad2="" src="${base}/img/appc.fd9965f.jpg" alt=""></div>
 				</div>
 				<div data-v-06a02ad2="" class="wkxm-wx">
 					<a data-v-06a02ad2="" href="javascript:void(0)"><img data-v-06a02ad2="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAABACAMAAABbchVVAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0RDkwNDUwNjU4QUQxMUU3OUMxNUJEMTU4QzhEMDlDMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0RDkwNDUwNzU4QUQxMUU3OUMxNUJEMTU4QzhEMDlDMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjREOTA0NTA0NThBRDExRTc5QzE1QkQxNThDOEQwOUMxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjREOTA0NTA1NThBRDExRTc5QzE1QkQxNThDOEQwOUMxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+bgRg0gAAAVlQTFRF9ZkA////+9qj/enH//v0+sdz/vPi/OK3+cVt/e/X+cFk///++9id9qIW+b5c/evM/vfq/evN/vnx9qck+sd0/N+v+syA/vLf//369Z0J/vXm+cNp/N2r+LNC96st+s2C/vXn+LNA9682+LVG9ZwI+cdy/OG0/vHc+tGM9683/vju+LxY97E8/e7V/efC/OCx97I/960y+LpS+9WW+LRD/OO6+cVu+sh19ZwH9Z0L96419ZsG//78/OO5960x//35/vbp9p4N/vnw+9mg/e/W/Nyo+9mf/e3T+sl5+LZJ/N+w+cNo+LlP+sh2+LdK+LhO/N6t9p8P+LtW/vHd/vHb+b9e/vTk//v2/N+u+9WX9ZsF/vLe/vry/N2q+LNB/N2p+LxX/OCy96ko97E9/efD960z//rz/vPh+LhN+s6E+9ie+9ea/OW/+cZw/vDa/ezP+sl4/OO4/e3SwCUzWwAAAUVJREFUeNpiYBgFo2AU0B74ZUbw56Uw+SoRUsilywgD7Mr4FEqKMiIDDTxKixhRQTxOlUxAWSlVERYglSZmpgCkxHCo1AQZxMHAYAukshkYCkDcJOxK3UBygnEmIOPE/ZOlGBnDBLmwK3VBdWi0CCtrrrw21kCTQFHJoaPKDxbh9JDEUMqGpNBe0ZMFzkmXRVcqg6Q0lA/FCkU0pcoIqYAMICHA4w4kmZ2dGBlteNHUqsGVJoBskGcwBJK8DJFA0hhNaZQ6VCWbNzfIP6zsQNLVHOSHYHTXBuZwg5XqS6PFMGM4ZoAJgSX0MJRqYaiUY2T0inVgZOETQlPKjK7SOqsQGIQWwnaWpmhKfdCVqsjBWKmoKnnwpXIjZJWi+LOOATNcJRPBDBnElC8QI57IxBhCTPZVcQQSVmrCowXZKBgFgwYABBgAs74dx7Hp7BUAAAAASUVORK5CYII=" alt=""></a>
-					<div data-v-06a02ad2="" class="wxc"><img data-v-06a02ad2="" src="../img/wxc.4886e67.jpg" alt=""></div>
+					<div data-v-06a02ad2="" class="wxc"><img data-v-06a02ad2="" src="${base}/img/wxc.4886e67.jpg" alt=""></div>
 				</div>
 			</div>
 			<!---->

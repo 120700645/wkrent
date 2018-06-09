@@ -711,6 +711,21 @@
 				position: relative;
 				right: 111px
 			}
+
+            .classify-more{
+                padding:0 15px;
+                width:120px;
+                height:30px;
+                background-color:#D31733;
+                color:#fff;
+                line-height:30px;
+                text-align:center;
+                border-radius:5px;
+                margin:20px auto;
+                border:0 none;
+                font-size:16px;
+                display:none;*//*默认不显示，ajax调用成功后才决定显示与否*/
+            }
 		</style>
 	</head>
 
@@ -739,7 +754,7 @@
 								<a href="../freedesign.ftl" class="">自由定制</a>
 							</li>
 							<li>
-								<a href="../renting.ftl" target="_blank">自驾租车</a>
+								<a href="renting.ftl" target="_blank">自驾租车</a>
 							</li>
 						</ul> <span hidden="hidden"></span>
 						<div class="user">
@@ -833,177 +848,7 @@
 									</a>
 								</div>
 							</div>
-							<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100054" class=""><img data-v-107a46b0="" src="../img/e73672bd-88ff-41a2-8a72-187f8dd50c11.jpg" alt=""></a> <span data-v-107a46b0="" class="tags"><span data-v-107a46b0="" class="test" style="margin-right: 38px;"></span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100054" class="">【Jeep专线】寻觅世外桃源 昆明-红河元阳-普者黑坝美 8天7晚 自驾之旅</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">昆明出发</span> <span data-v-107a46b0="">8天7晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">1、车辆配置Jeep自由侠/自由光，美景配美车，给你自由，给你好看。 2、滇东南文化美景之旅，从千年儒学文化到哈尼传世美景，穿越时空，美景不断。 3、震惊世界的文化遗产——元阳哈尼梯田，哈尼族世世代代创造的人间奇迹。 4、坝美——陶渊明笔下现实的桃花源记，乘船穿洞，别有洞天。 5、入住特色酒店，精选弥勒温泉酒店，带给你不一样的住宿体验。 6、专属旅途管家，为您提供更多当地好吃、好玩的旅行推荐。
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">休闲</span><span data-v-107a46b0="">落地自驾</span><span data-v-107a46b0="">世外桃源</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">2990</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100054" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
-							<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100053" class=""><img data-v-107a46b0="" src="../img/47da43e6-c0e9-4ec3-99c6-635bbae39418.jpg" alt=""></a> <span data-v-107a46b0="" class="tags"><span data-v-107a46b0="" class="test" style="margin-right: 38px;"></span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100053" class="">【Jeep专线】温润腾冲 昆明-腾冲 6天5晚 温泉养生度假之旅</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">昆明出发</span> <span data-v-107a46b0="">6天5晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">1.车辆配置Jeep自由侠/自由光，美景配美车，给你自由，给你好看。 2.从大理到腾冲，从休闲之都走进极边第一城，经过龙江特大桥，翻越高黎贡山，一路向西，美景让你心花怒放。 3.冬季一定要来银杏村“捡黄金”，未来年粘一粘好运气。 4.腾冲火山的极边美景，中国最好的理疗温泉-热海，尽情享受每一刻的温润与舒适。 5.从腾冲到芒市，处处是美景，随拍随停，多样的民族文化，独特的边境风情。 6.入住大理特色酒店，精选腾冲温泉酒店，带给你不一样的住宿体验。 7.专属旅途管家，为您提供更多当地好吃、好玩的旅行推荐。
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">休闲</span><span data-v-107a46b0="">落地自驾</span><span data-v-107a46b0="">温泉</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">2280</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100053" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
-							<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100051" class=""><img data-v-107a46b0="" src="../img/8731f79f-b5ba-45e1-bf0c-e1d83ac24ea4.jpg" alt=""></a> <span data-v-107a46b0="" class="tags"><span data-v-107a46b0="" class="test" style="margin-right: 38px;"></span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100051" class="">【Jeep专线】穿越雨林 西双版纳一地 6天5晚 自驾之旅</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">西双版纳出发</span> <span data-v-107a46b0="">6天5晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">1.西双版纳一地深度游，从东边的热带雨林到南面的传统傣寨，带你去看最原始最传统的西双版纳。 2.车辆配置Jeep自由侠/自由光，和酷炫Jeep一起穿越热带雨林，到中国的边境去看一看。 3.来版纳最不能错过的赶摆夜市：告庄，澜沧江畔最美的夜市，汇聚西双版纳及东南亚特色美食、手工艺品。 4.看过阿凡达，也想去潘多拉。望天树，最像潘多拉星球的地方，天然的氧吧，一起去洗肺。 5.中国最大的热带植物园—勐仑植物园，千千万万你没有见过的独特植物，在这里，让你大开眼界。 6.亚洲野象出没的地方—野象谷，一起去寻找野象的足迹。 7.精选当地特色酒店，带你去过不一样的夜生活。去看热带星空，去找夜晚出没的小精灵-萤火虫。 8.专属旅途管家，为您提供更多当地好吃、好玩的旅行推荐。
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">望天树</span><span data-v-107a46b0="">落地自驾</span><span data-v-107a46b0="">热带雨林</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">2680</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100051" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
-							<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100029" class=""><img data-v-107a46b0="" src="../img/305578a7-67c3-4ac8-abeb-83e9eddc72f6.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_4"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">绿-亲子研学</span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100029" class="">&lt;Hello版纳，热带风情，轻享勐巴拉那西5天4晚傣乡体验之旅&gt;（版纳进出）赏五光十色傣乡风情、热带雨林、奢享秘境</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">西双版纳出发</span> <span data-v-107a46b0="">5天4晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">西双版纳，古代傣语为“勐巴拉娜西”，意思是“理想而神奇的乐土”，这里以神奇的热带雨林自然景观和少数民族风情而闻名于世，每年的泼水节于4月13-15日举行，被誉为“东方狂欢节”。如果说西藏是离天堂最近的地方，那西双版纳就是天堂遗漏在人间的最后一颗宝石。驾车旅途中，我们或穿梭于茂密的原始森林，呼吸着大自然最纯洁的空气，或驻足小憩，欣赏竹楼间炊烟袅袅的田园生活。走走停停中，感受大自然馈赠的一切。 —— 简易行程 —— Day1：漫步昔日的傣王御花园、触摸傣式古老建筑、感受灵魂之园 Day2：领略热带风光、体验激情漂流、自行车观光傣家村寨、感知大自然神奇、露天烧烤party、放飞祈福孔明灯 Day3：深入雨林，奢享秘境，探秘天人合一的热带雨林，挑战世界最高树冠空中走廊 Day4：享受惊险刺激的滑行，体验跨时空的神奇之旅。领略热带雨林的乐趣，观赏世界顶级魔幻秀“傣秀 Day5：结束本次旅行
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">最美公路</span><span data-v-107a46b0="">佛教文化</span><span data-v-107a46b0="">热带雨林</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">2450</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100029" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
-							<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100008" class=""><img data-v-107a46b0="" src="../img/9037a480-6482-4a1e-bca6-b7e8d53a9516.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_6"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">蓝-山海之间</span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100008" class="">&lt;香格里拉、梅里雪山 5天4晚自在休闲游&gt; (香格里拉进出) 特色精品酒店，享受悠闲自驾</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">香格里拉出发</span> <span data-v-107a46b0="">5天4晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">【一场真正的美景体验】独克宗古城、松赞林寺、普达措、金沙江大拐弯、梅里雪山飞来寺、白马雪山、纳帕海 【一夜无忧的舒适好梦】精选当地特色精品酒店 【一段悠闲的午后时光】在纳帕海边享受懒懒的阳光 【一趟轻松的自驾旅程】赠送氧气瓶、每日轻松景点安排 【一路关注的贴心管家】专属客服管家全程为您提供咨询服务 —— 简易行程 —— Day1：抵达香格里拉、取车、独克宗古城、入住香格里拉独克宗古城特色酒店 Day2：松赞林寺、白马雪山、梅里雪山飞来寺、入住德钦梅里观景酒店 Day3：赏“日照金山”、观梅里十三峰、入住香格里拉普达措景区内酒店 Day4：普达措、环纳帕海依拉草原、入住香格里拉纳帕海畔度假村、赠送下午茶 Day5：结束旅程、还车、返程
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">日照金山</span><span data-v-107a46b0="">圣洁</span><span data-v-107a46b0="">精品特色客栈</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">2280</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100008" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
-							<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100001" class=""><img data-v-107a46b0="" src="../img/59718850-dcf4-44e5-856e-87bcd64a2894.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_6"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">蓝-山海之间</span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100001" class="">&lt;&lt;昆明、普者黑、坝美、可邑小镇6天5晚休闲游&gt;(昆明进出） 十里桃花林、穿越喀斯特地貌群、湿身水仗、世外桃源、帐篷酒店</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">昆明出发</span> <span data-v-107a46b0="">6天5晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">穿越喀斯特、三生三世十里桃花、田园风光、湿身水仗、世外桃源坝美。湖泊纵横交错，湖水清澈见底，四周群山环抱，灵秀幽静，大好的一片田园风光，甜美而宁静，乘舟赏景，其乐无穷。 ——简易行程—— Day1：花之城、翠湖公园、陆军讲武堂、观看大型原生态民族演出杨丽萍“云南映象”，入住花之城温德姆豪生酒店 Day2：出发普者黑（途经“平远街”）、观赏普者黑美景，入住天成太合酒店 Day3：青龙山看日出、乘柳叶小舟游览仙人湖、普者黑湖，丘北天成太合酒店 Day4：坝美-八宝贡酒店 Day5：游“西部后花园”可邑小镇，住帐篷酒店 Day6：可邑小镇返回昆明
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">喀斯特</span><span data-v-107a46b0="">十里桃花林</span><span data-v-107a46b0="">山水小桂林</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">2560</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100001" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
-							<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100016" class=""><img data-v-107a46b0="" src="../img/4a918239-e099-4b43-b984-8970c0bf15fb.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_1"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">赤-茶马古道</span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100016" class="">&lt;昆明、抚仙湖、普洱、西盟、孟连、澜沧7天6晚穿越之旅 &gt;( 昆明进普洱出）穿越太阳河原始森林、千年古茶林、森林酒店</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">昆明出发</span> <span data-v-107a46b0="">7天6晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">迎着抚仙湖的风去探秘双胞文化的神奇，寻访那即将消失的原始部落世界拉祜之根、触摸千年布朗古寨，漫步娜允探访傣族历史，这一路奢华与原始会在这里完美结合，如期而遇，这是一种彻底放松之后的狂喜、坦然和踏实，却又多了新奇的体验和醉人的心情。 —— 简易行程 —— Day1: 湖光、山色、阳光、沙滩 Day2:古化石探秘、环湖驰骋 Day3:神奇双胞、天文研学 Day4:穿越太阳河原始森林，深入动物天堂，追踪犀牛踪迹、森林酒店、长街宴 Day5:龙摩爷圣地、秘境佤寨、佤宴 Day6:娜允古镇、景迈山、原始部落 Day7：返程
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">田园风光</span><span data-v-107a46b0="">民俗</span><span data-v-107a46b0="">原生态</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">3100</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100016" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
-							<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100015" class=""><img data-v-107a46b0="" src="../img/f32c6af0-54ce-4f49-bc8a-85337896421d.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_5"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">青-丝路古城</span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100015" class="">&lt;丽江、香格里拉、大理、昆明7天6晚 轻奢自驾之旅&gt;(丽江进昆明出) 异地还车，特色精品客栈+国际品牌酒店，私享舒适.</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">丽江出发</span> <span data-v-107a46b0="">7天6晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">·丽江进，昆明出，不走回头路，更多游玩时间 ·著名景点搭配，一路尽览云南大美风光 ·入住高端精品客栈式酒店，升级一晚国际品牌酒店 ·特别安排藏式手工体验，机场VIP候机室 ·专属客服管家全程为您提供旅途咨询服务 —— 简易行程 —— Day1：抵达丽江、办理取车手续、入住丽江古城特色客栈 Day2：丽江、虎跳峡、香格里拉、入住香格里拉独克宗古城精品客栈 Day3：普达措、纳帕海、皮雕体验、入住香格里拉独克宗古城客栈 Day4：松赞林寺、丽江束河、夜游束河、入住丽江束河古城客栈 Day5：束河、沙溪古镇、大理、环洱海、入住大理海景酒店 Day6：苍山洗马潭、云南驿古镇、昆明、入住昆明洲际酒店 Day7：昆明还车、返程、VIP候机室
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">玉洱银苍</span><span data-v-107a46b0="">亲子优选</span><span data-v-107a46b0="">五星酒店</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">4157</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100015" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
-							<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100018" class=""><img data-v-107a46b0="" src="../img/4b7783ec-7a9e-4d12-91d8-82946e48284e.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_5"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">青-丝路古城</span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100018" class="">&lt;昆明、楚雄、大理、腾冲、芒市、瑞丽8天7晚浪漫之旅&gt;( 昆明进芒市出) 五星特色精品酒店</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">昆明出发</span> <span data-v-107a46b0="">8天7晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">品味楚雄的古韵、大理的浪漫、腾冲的深度、和顺古镇的悠闲淡泊、芒市的梦幻、瑞丽的美丽。 —— 简易行程 —— Day1：滇池、碧鸡坊、讲武堂 Day2：古镇、古牌坊、古盐井、古石雕、古龙祠、古院、古寺、古街、古宅 Day3：风花雪月、浪漫大理、最美公里、指尖艺术、最佳视觉精品客栈 Day4：著名侨乡、历史文化名城、玉泉神汤、温泉星空 Day5：高原草排沼泽湿地，抓鱼、踩草、震撼“梦幻腾冲”剧 Day6：湖水、山色、自行车、高尔夫练习、勐焕大金塔 Day7：神奇雨林瀑布、边境口岸姐告、一国两寨 Day8：返回
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">一国两寨</span><span data-v-107a46b0="">湿地</span><span data-v-107a46b0="">古城</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">7080</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100018" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
+
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
 									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100106" class=""><img data-v-107a46b0="" src="../img/71a748cd-5a3d-4f54-9ca8-7346552a80fa.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_1"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">赤-茶马古道</span></span>
@@ -1064,8 +909,8 @@
                         </div>
 						</div>
 					</div>
-					<p data-v-107a46b0="" class="classify-more">
-						<!----><span data-v-107a46b0="" class="no-more">没有更多了</span></p>
+					<p data-v-107a46b0="" class="classify-more">加载更多
+						<!----><span data-v-107a46b0="" class="no-more"></span></p>
 				</div>
 				<!---->
 			</div>
@@ -1144,3 +989,75 @@
 	</body>
 
 </html>
+
+
+
+<script type="text/javascript">
+    $(function(){
+
+        /*初始化*/
+        var counter = 0; /*计数器*/
+        var pageStart = 0; /*offset*/
+        var pageSize = 4; /*size*/
+
+        /*首次加载*/
+        getData(pageStart, pageSize);
+
+        /*监听加载更多*/
+        $(document).on('click', '.js-load-more', function(){
+            counter ++;
+            pageStart = counter * pageSize;
+
+            getData(pageStart, pageSize);
+        });
+    });
+
+    //业务逻辑代码,负责从服务端拉数据
+    function getData(offset,size){
+        $.ajax({
+            type: 'GET', url: 'json/blog.json', dataType: 'json',
+            success: function(reponse){
+
+                var data = reponse.list;
+                var sum = reponse.list.length;
+
+                var result = '';
+
+                /****业务逻辑块：实现拼接html内容并append到页面*********/
+
+                //console.log(offset , size, sum);
+
+                /*如果剩下的记录数不够分页，就让分页数取剩下的记录数
+                * 例如分页数是5，只剩2条，则只取2条
+                *
+                * 实际MySQL查询时不写这个不会有问题
+                */
+                if(sum - offset < size ){
+                    size = sum - offset;
+                }
+
+                /*使用for循环模拟SQL里的limit(offset,size)*/
+                for(var i=offset; i< (offset+size); i++){
+                    result +='<div class="weui_media_box weui_media_text">'+
+                            '<a href="'+ data[i].url +'" target="_blank"><h4 class="weui_media_title">'+ data[i].title +'</h4></a>'+
+                            '<p class="weui_media_desc">'+ data[i].desc +'</p>'+
+                            '</div>';
+                }
+
+                $('.classify-li').append(result);
+
+                /*******************************************/
+
+                /*隐藏more按钮*/
+                if ( (offset + size) >= sum){
+                    $(".classify-more").hide();
+                }else{
+                    $(".classify-more").show();
+                }
+            },
+            error: function(xhr, type){
+                alert('Ajax error!');
+            }
+        });
+    }
+</script>

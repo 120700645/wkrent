@@ -3,6 +3,8 @@
 <html lang="en">
 
 	<head>
+        <#assign base = rc.contextPath/>
+        <base id="base" href="${base}" >
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 		<title>租车-旅游租车公司提供汽车出租,自驾租赁业务-悟空租车</title>
@@ -10,28 +12,28 @@
 		<meta name="description" content="租车公司,提供大中小型旅游租车,自驾游租车等汽车租赁业务。用车业务涵盖了日租车/包车，商务用车出租，接机租车、带驾汽车租赁等全方位租车服务。">
 
 		<link rel="icon" href="https://static.wkzuche.com/www/images/facicon.ico">
-		<link rel="stylesheet" href="./css/common.css">
-		<link rel="stylesheet" type="text/css" href="./css/searchpage.css">
+		<link rel="stylesheet" href="${base}/css/common.css">
+		<link rel="stylesheet" type="text/css" href="${base}/css/searchpage.css">
 		<!--[if !IE]><!-->
-		<link rel="stylesheet" type="text/css" href="./css/timepicker.css">
+		<link rel="stylesheet" type="text/css" href="${base}/css/timepicker.css">
 		<!---->
 		<!--[endif]---->
 		<!--[if IE]>
         <link rel="stylesheet" type="text/css" href="//static.wkzuche.com/www/css/search/timepicker_ie.css">
     <![endif]-->
-		<link rel="stylesheet" type="text/css" href="./css/timepicker_ie10.css">
+		<link rel="stylesheet" type="text/css" href="${base}/css/timepicker_ie10.css">
 		<!--[if !IE]><!-->
-		<link rel="stylesheet" type="text/css" href="./css/pricecalendar.css">
+		<link rel="stylesheet" type="text/css" href="${base}/css/pricecalendar.css">
 		<!---->
 		<!--[endif]---->
 		<!--[if IE]>
         <link rel="stylesheet" type="text/css" href="//static.wkzuche.com/www/css/search/pricecalendar_ie.css">
     <![endif]-->
-		<link rel="stylesheet" type="text/css" href="./css/pricecalendar_ie10.css">
-		<link rel="stylesheet" type="text/css" href="./css/cartype.css">
-		<script charset="utf-8" src="js/lxb.js"></script>
-		<script charset="utf-8" src="js/v.js"></script>
-		<link rel="stylesheet" type="text/css" href="./css/bmap_autocomplete.css">
+		<link rel="stylesheet" type="text/css" href="${base}/css/pricecalendar_ie10.css">
+		<link rel="stylesheet" type="text/css" href="${base}/css/cartype.css">
+		<script charset="utf-8" src="${base}/js/lxb.js"></script>
+		<script charset="utf-8" src="${base}/js/v.js"></script>
+		<link rel="stylesheet" type="text/css" href="${base}/css/bmap_autocomplete.css">
 		<style></style>
 		<style type="text/css">
 			.BMap_mask {
@@ -2178,7 +2180,7 @@
 
 	<body style="zoom: 1;">
 
-		<link rel="stylesheet" href="css/network.css">
+		<link rel="stylesheet" href="${base}/css/network.css">
 		<div class="zc_head_bd" style="height: 90px;min-width:1200px">
 			<div class="little-header-wrapper">
 				<div class="little-header">
@@ -2186,15 +2188,15 @@
 					</p>
 					<ul class="nav-letter-left">
 						<li id="common-phone">
-							<div id="all-phone"><img src="img/phone.png"><span style="margin-left:4px;">手机端</span></div>
+							<div id="all-phone"><img src="${base}/img/phone.png"><span style="margin-left:4px;">手机端</span></div>
 							<div class="common-phone">
-								<img src="img/rent-app.png">
+								<img src="../img/rent-app.png">
 							</div>
 						</li>
 						<li id="common-qacode">
-							<div id="all-weixin"><img src="img/weixin.png"><span style="margin-left:4px;">微信</span></div>
+							<div id="all-weixin"><img src="${base}/img/weixin.png"><span style="margin-left:4px;">微信</span></div>
 							<div class="common-qacode">
-								<img src="img/qacode.png">
+								<img src="${base}/img/qacode.png">
 							</div>
 						</li>
 					</ul>
@@ -2211,12 +2213,12 @@
 									<a href="hmyorder.html">我的租车订单</a>
 								</p>
 								<p>
-									<a href="mycoupon.html">我的优惠券</a>
+									<a href="${base}/mycoupon.html">我的优惠券</a>
 								</p>
 							</div>
 							<div class="mian-wk" id="over-login" style="display:none">
 								<div class="main-img" style="float:left;padding: 16px 0 10px">
-									<img src="img/wrz.png">
+									<img src="${base}/img/wrz.png">
 								</div>
 								<div class="status-identify">
 									<span style="color:#6E6E6E">佚名</span>
@@ -2227,12 +2229,12 @@
 									</div>
 								</div>
 								<div class="main-rent-orders">
-									<a href="myorder.html">我的租车订单</a>
+									<a href="${base}/myorder.html">我的租车订单</a>
 								</div>
 								<div class="account-information">
 									<p style="padding-right:10px;">
 										<span style="float:left">账户余额￥ 0</span>
-										<a href="mycoupon.html"><span style="float:right">优惠券 <span style="color:#F23732">0张</span></span>
+										<a href="${base}/mycoupon.html"><span style="float:right">优惠券 <span style="color:#F23732">0张</span></span>
 										</a>
 									</p>
 									<p style="padding-right:10px;">
@@ -2250,34 +2252,34 @@
 				</div>
 			</div>
 			<div class="zc_main">
-				<a class="zc_logo" href="index.html"><img src="img/logo.png" style="padding-top:10px" alt="悟空租车"></a>
+				<a class="zc_logo" href="${base}/index.html"><img src="${base}/img/logo.png" style="padding-top:10px" alt="悟空租车"></a>
 				<div class="zc_head_tab">
 					<ul class="zc_menu" style="line-height: 60px;height: 60px">
 						<li>
-							<a href="index.html">首页</a>
+							<a href="${base}/index.html">首页</a>
 						</li>
 						<li class="homecur">
 							<a href="renting.ftl">租车自驾</a>
 						</li>
 						<li>
-							<a href="site.html">全国网点</a>
+							<a href="${base}/site.html">全国网点</a>
 						</li>
 						<li>
-							<a href="ftl/driving.ftl" target="_blank">自驾嗨游</a>
+							<a href="driving.ftl" target="_blank">自驾嗨游</a>
 						</li>
 						<li>
-							<a href="join.html">加盟悟空</a>
+							<a href="${base}/join.html">加盟悟空</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="spaceDiv"></div>
-		<script type="text/javascript" async="" src="js/66c0b3fb.js"></script>
-		<script src="js/hm.js"></script>
-		<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
-		<script type="text/javascript" src="js/public.js"></script>
-		<script type="text/javascript" src="js/header.js"></script>
+		<script type="text/javascript" async="" src="${base}/js/66c0b3fb.js"></script>
+		<script src="${base}/js/hm.js"></script>
+		<script type="text/javascript" src="${base}/js/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="${base}/js/public.js"></script>
+		<script type="text/javascript" src="${base}/js/header.js"></script>
 		<script type="text/javascript">
 			var CONTEXT_PATH = "";
 			var HeaderUid = "null";
@@ -2484,15 +2486,15 @@
 								<li id="顺义区" onclick="areaSelected(&#39;dot_query_add_顺义区&#39;,&#39;顺义区&#39;,&#39;[object Object]&#39;,this,event);">顺义区</li>
 							</ul>
 							<ol class="dot_query_add" id="dot_query_add_朝阳区" style="display: block;">
-								<li area="110105" site_id="11_site_064" id="11_site_064" lat="39.911476" lng="116.486026" class="11_site_064" style="color: rgb(242, 55, 50);">大望路送车点</li><img style="vertical-align: middle;padding-left: 3px;" src="img/brand.png">
+								<li area="110105" site_id="11_site_064" id="11_site_064" lat="39.911476" lng="116.486026" class="11_site_064" style="color: rgb(242, 55, 50);">大望路送车点</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/brand.png">
 								<p class="address"><span>北京市朝阳区西大望路12号大望写字楼102室</span><span>营业时间:09:00—19:00</span></p>
-								<li area="110105" site_id="11_site_081" id="11_site_081" lat="40.016228" lng="116.474032" class="11_site_081" style="color: rgb(96, 96, 108);">东湖渠地铁站送车点</li><img style="vertical-align: middle;padding-left: 3px;" src="img/brand.png">
+								<li area="110105" site_id="11_site_081" id="11_site_081" lat="40.016228" lng="116.474032" class="11_site_081" style="color: rgb(96, 96, 108);">东湖渠地铁站送车点</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/brand.png">
 								<p class="address"><span>北京市朝阳区东湖渠</span><span>营业时间:09:00—18:30</span></p>
-								<li area="110105" site_id="11_site_068" id="11_site_068" lat="40.036821" lng="116.424525" class="11_site_068" style="color: rgb(96, 96, 108);">北苑路北送车点</li><img style="vertical-align: middle;padding-left: 3px;" src="img/brand.png">
+								<li area="110105" site_id="11_site_068" id="11_site_068" lat="40.036821" lng="116.424525" class="11_site_068" style="color: rgb(96, 96, 108);">北苑路北送车点</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/brand.png">
 								<p class="address"><span>北京市北京市朝阳区北苑路</span><span>营业时间:09:00—18:30</span></p>
-								<li area="110105" site_id="11_site_043" id="11_site_043" lat="40.032913" lng="116.447644" class="11_site_043" style="color: rgb(96, 96, 108);">来广营店</li><img style="vertical-align: middle;padding-left: 3px;" src="img/brand.png">
+								<li area="110105" site_id="11_site_043" id="11_site_043" lat="40.032913" lng="116.447644" class="11_site_043" style="color: rgb(96, 96, 108);">来广营店</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/brand.png">
 								<p class="address"><span>北京市朝阳区北苑东路华阳奥通4S店</span><span>营业时间:08:30—19:00</span></p>
-								<li area="110105" site_id="11_site_105" id="11_site_105" lat="39.940801" lng="116.461072" class="11_site_105" style="color: rgb(96, 96, 108);">三里屯太古里送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="img/lightning.png">
+								<li area="110105" site_id="11_site_105" id="11_site_105" lat="39.940801" lng="116.461072" class="11_site_105" style="color: rgb(96, 96, 108);">三里屯太古里送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
 								<p class="address"><span>北京市朝阳区三里屯路19号</span><span>营业时间:08:00—20:00</span></p>
 								<li area="110105" site_id="11_site_159" id="11_site_159" lat="39.901269" lng="116.483679" class="11_site_159" style="color: rgb(96, 96, 108);">大望路送车点-任我行</li>
 								<p class="address"><span>大望路15号院农业银行</span><span>营业时间:09:00—21:00</span></p>
@@ -2502,9 +2504,9 @@
 								<p class="address"><span>朝阳区建国路甲92号世茂大厦</span><span>营业时间:08:00—20:00</span></p>
 								<li area="110105" site_id="11_site_127" id="11_site_127" lat="40.048872" lng="116.441315" class="11_site_127" style="color: rgb(96, 96, 108);">北苑地铁站送车点</li>
 								<p class="address"><span>北京市朝阳区地铁13号线北苑站</span><span>营业时间:09:00—18:30</span></p>
-								<li area="110105" site_id="11_site_104" id="11_site_104" lat="39.87493" lng="116.545086" class="11_site_104" style="color: rgb(96, 96, 108);">亚之杰店--海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="img/lightning.png">
+								<li area="110105" site_id="11_site_104" id="11_site_104" lat="39.87493" lng="116.545086" class="11_site_104" style="color: rgb(96, 96, 108);">亚之杰店--海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
 								<p class="address"><span>北京朝阳区王四营乡（亚之杰）</span><span>营业时间:08:00—20:00</span></p>
-								<li area="110105" site_id="11_site_158" id="11_site_158" lat="40.072776" lng="116.619758" class="11_site_158" style="color: rgb(96, 96, 108);">T3航站楼送车点-任我行</li><img style="vertical-align: middle;padding-left: 3px;" src="img/plane.png">
+								<li area="110105" site_id="11_site_158" id="11_site_158" lat="40.072776" lng="116.619758" class="11_site_158" style="color: rgb(96, 96, 108);">T3航站楼送车点-任我行</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/plane.png">
 								<p class="address"><span>T3航站楼</span><span>营业时间:09:00—21:00</span></p>
 								<li area="110105" site_id="11_site_157" id="11_site_157" lat="40.002174" lng="116.487257" class="11_site_157" style="color: rgb(96, 96, 108);">望京soho送车点-任我行</li>
 								<p class="address"><span>望京SOHO地铁站</span><span>营业时间:09:00—21:00</span></p>
@@ -2512,31 +2514,31 @@
 								<p class="address"><span>朝阳区广顺南大街16号东煌酒店</span><span>营业时间:09:00—20:00</span></p>
 								<li area="110105" site_id="11_site_126" id="11_site_126" lat="40.032913" lng="116.447644" class="11_site_126" style="color: rgb(96, 96, 108);">来广营奥通店</li>
 								<p class="address"><span>北京市朝阳区北苑东路华阳奥通4S店</span><span>营业时间:08:30—18:30</span></p>
-								<li area="110105" site_id="11_site_107" id="11_site_107" lat="40.0026" lng="116.487806" class="11_site_107" style="color: rgb(96, 96, 108);">望京soho送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="img/lightning.png">
+								<li area="110105" site_id="11_site_107" id="11_site_107" lat="40.0026" lng="116.487806" class="11_site_107" style="color: rgb(96, 96, 108);">望京soho送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
 								<p class="address"><span>北京市朝阳区望京SOHO</span><span>营业时间:08:00—20:00</span></p>
 								<li area="110105" site_id="11_site_077" id="11_site_077" lat="39.91709" lng="116.604759" class="11_site_077" style="color: rgb(96, 96, 108);">管庄店-CUCO ONCE</li>
 								<p class="address"><span>北京市北京市朝阳区朝阳路8号</span><span>营业时间:09:00—21:00</span></p>
 								<li area="110105" site_id="11_site_155" id="11_site_155" lat="40.016106" lng="116.56079" class="11_site_155" style="color: rgb(96, 96, 108);">金盏嘉园店-方圆</li>
 								<p class="address"><span>北京市朝阳区金盏嘉园C区2号楼底商111室</span><span>营业时间:08:00—19:00</span></p>
-								<li area="110105" site_id="11_site_117" id="11_site_117" lat="39.913267" lng="116.504917" class="11_site_117" style="color: rgb(96, 96, 108);">四惠客运站送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="img/lightning.png">
+								<li area="110105" site_id="11_site_117" id="11_site_117" lat="39.913267" lng="116.504917" class="11_site_117" style="color: rgb(96, 96, 108);">四惠客运站送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
 								<p class="address"><span>北京市朝阳区建国路68号</span><span>营业时间:08:00—21:00</span></p>
 							</ol>
 							<ol class="dot_query_add" id="dot_query_add_海淀区" style="display: none;">
-								<li area="110108" site_id="11_site_049" id="11_site_049" lat="39.951101" lng="116.35678" class="11_site_049" style="color: rgb(96, 96, 108);">西直门店</li><img style="vertical-align: middle;padding-left: 3px;" src="img/brand.png">
+								<li area="110108" site_id="11_site_049" id="11_site_049" lat="39.951101" lng="116.35678" class="11_site_049" style="color: rgb(96, 96, 108);">西直门店</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/brand.png">
 								<p class="address"><span>北京海淀区西直门钻河中心底商1-125</span><span>营业时间:09:00—20:00</span></p>
 							</ol>
 							<ol class="dot_query_add" id="dot_query_add_丰台区" style="display: none;">
-								<li area="110106" site_id="11_site_099" id="11_site_099" lat="39.851064" lng="116.435492" class="11_site_099" style="color: rgb(96, 96, 108);">宋家庄送车点-中汽雷日</li><img style="vertical-align: middle;padding-left: 3px;" src="img/lightning.png">
+								<li area="110106" site_id="11_site_099" id="11_site_099" lat="39.851064" lng="116.435492" class="11_site_099" style="color: rgb(96, 96, 108);">宋家庄送车点-中汽雷日</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
 								<p class="address"><span>丰台区宋庄路宋家庄交通枢纽站</span><span>营业时间:09:30—16:30</span></p>
 								<li area="110106" site_id="1100000001" id="1100000001" lat="39.83204" lng="116.419705" class="1100000001" style="color: rgb(96, 96, 108);">永乐工业园店-百路通</li>
 								<p class="address"><span>北京市丰台区大红门永乐工业园C16号</span><span>营业时间:08:40—17:40</span></p>
-								<li area="110106" site_id="11_site_100" id="11_site_100" lat="39.851803" lng="116.404916" class="11_site_100" style="color: rgb(96, 96, 108);">大红门送车点-中汽雷日</li><img style="vertical-align: middle;padding-left: 3px;" src="img/lightning.png">
+								<li area="110106" site_id="11_site_100" id="11_site_100" lat="39.851803" lng="116.404916" class="11_site_100" style="color: rgb(96, 96, 108);">大红门送车点-中汽雷日</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
 								<p class="address"><span>大红门</span><span>营业时间:09:30—16:30</span></p>
 								<li area="110106" site_id="11_site_160" id="11_site_160" lat="39.841244" lng="116.386926" class="11_site_160" style="color: rgb(96, 96, 108);">大红门店-金泰</li>
 								<p class="address"><span>北京市丰台区大红门三星庄34号</span><span>营业时间:08:30—17:30</span></p>
-								<li area="110106" site_id="11_site_065" id="11_site_065" lat="39.838526" lng="116.429535" class="11_site_065" style="color: rgb(96, 96, 108);">丰台市区店-中汽雷日</li><img style="vertical-align: middle;padding-left: 3px;" src="img/lightning.png">
+								<li area="110106" site_id="11_site_065" id="11_site_065" lat="39.838526" lng="116.429535" class="11_site_065" style="color: rgb(96, 96, 108);">丰台市区店-中汽雷日</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
 								<p class="address"><span>北京市丰台区南四环中路20号</span><span>营业时间:08:30—17:30</span></p>
-								<li area="110106" site_id="11_site_128" id="11_site_128" lat="39.871374" lng="116.391989" class="11_site_128" style="color: rgb(96, 96, 108);">北京南站送车点-CUCO ONCE</li><img style="vertical-align: middle;padding-left: 3px;" src="img/tail.png">
+								<li area="110106" site_id="11_site_128" id="11_site_128" lat="39.871374" lng="116.391989" class="11_site_128" style="color: rgb(96, 96, 108);">北京南站送车点-CUCO ONCE</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/tail.png">
 								<p class="address"><span>北京南站路2号院1号楼供销弘泰大厦</span><span>营业时间:09:00—20:00</span></p>
 							</ol>
 							<ol class="dot_query_add" id="dot_query_add_东城区" style="display: none;">
@@ -2546,19 +2548,19 @@
 								<p class="address"><span>北京市北京市东城区东直门外大街48</span><span>营业时间:09:00—20:00</span></p>
 							</ol>
 							<ol class="dot_query_add" id="dot_query_add_顺义区" style="display: none;">
-								<li area="110113" site_id="11_site_109" id="11_site_109" lat="40.082601" lng="116.595772" class="11_site_109" style="color: rgb(96, 96, 108);">首都机场送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="img/lightning.png"><img style="vertical-align: middle;padding-left: 3px;" src="img/plane.png">
+								<li area="110113" site_id="11_site_109" id="11_site_109" lat="40.082601" lng="116.595772" class="11_site_109" style="color: rgb(96, 96, 108);">首都机场送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png"><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/plane.png">
 								<p class="address"><span>北京市顺义区机场西路</span><span>营业时间:08:00—20:00</span></p>
-								<li area="110113" site_id="11_site_134" id="11_site_134" lat="40.061664" lng="116.623233" class="11_site_134" style="color: rgb(96, 96, 108);">机场T3送车点-CUCO ONCE</li><img style="vertical-align: middle;padding-left: 3px;" src="img/plane.png">
+								<li area="110113" site_id="11_site_134" id="11_site_134" lat="40.061664" lng="116.623233" class="11_site_134" style="color: rgb(96, 96, 108);">机场T3送车点-CUCO ONCE</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/plane.png">
 								<p class="address"><span>北京市北京市顺义区</span><span>营业时间:09:00—20:00</span></p>
 							</ol>
 							<ol class="dot_query_add" id="dot_query_add_TRAINSTATION_AIRPORT" style="display: none;">
-								<li area="110113" site_id="11_site_109" id="11_site_109" lat="40.082601" lng="116.595772" class="11_site_109" style="color: rgb(96, 96, 108);">首都机场送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="img/lightning.png"><img style="vertical-align: middle;padding-left: 3px;" src="img/plane.png">
+								<li area="110113" site_id="11_site_109" id="11_site_109" lat="40.082601" lng="116.595772" class="11_site_109" style="color: rgb(96, 96, 108);">首都机场送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png"><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/plane.png">
 								<p class="address"><span>北京市顺义区机场西路</span><span>营业时间:08:00—20:00</span></p>
-								<li area="110105" site_id="11_site_158" id="11_site_158" lat="40.072776" lng="116.619758" class="11_site_158" style="color: rgb(96, 96, 108);">T3航站楼送车点-任我行</li><img style="vertical-align: middle;padding-left: 3px;" src="img/plane.png">
+								<li area="110105" site_id="11_site_158" id="11_site_158" lat="40.072776" lng="116.619758" class="11_site_158" style="color: rgb(96, 96, 108);">T3航站楼送车点-任我行</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/plane.png">
 								<p class="address"><span>T3航站楼</span><span>营业时间:09:00—21:00</span></p>
-								<li area="110113" site_id="11_site_134" id="11_site_134" lat="40.061664" lng="116.623233" class="11_site_134" style="color: rgb(96, 96, 108);">机场T3送车点-CUCO ONCE</li><img style="vertical-align: middle;padding-left: 3px;" src="img/plane.png">
+								<li area="110113" site_id="11_site_134" id="11_site_134" lat="40.061664" lng="116.623233" class="11_site_134" style="color: rgb(96, 96, 108);">机场T3送车点-CUCO ONCE</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/plane.png">
 								<p class="address"><span>北京市北京市顺义区</span><span>营业时间:09:00—20:00</span></p>
-								<li area="110106" site_id="11_site_128" id="11_site_128" lat="39.871374" lng="116.391989" class="11_site_128" style="color: rgb(96, 96, 108);">北京南站送车点-CUCO ONCE</li><img style="vertical-align: middle;padding-left: 3px;" src="img/tail.png">
+								<li area="110106" site_id="11_site_128" id="11_site_128" lat="39.871374" lng="116.391989" class="11_site_128" style="color: rgb(96, 96, 108);">北京南站送车点-CUCO ONCE</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/tail.png">
 								<p class="address"><span>北京南站路2号院1号楼供销弘泰大厦</span><span>营业时间:09:00—20:00</span></p>
 							</ol>
 						</div>
@@ -2578,7 +2580,7 @@
 										<div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"></div>
 									</div>
 									<div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 1;">
-										<div style="position: absolute; overflow: visible; z-index: -100; left: 0px; top: 0px; display: block; transform: translate3d(0px, 0px, 0px);"><img src="js/saved_resource" style="position: absolute; border: none; width: 256px; height: 256px; left: -223px; top: -240px; max-width: none; opacity: 1;"></div>
+										<div style="position: absolute; overflow: visible; z-index: -100; left: 0px; top: 0px; display: block; transform: translate3d(0px, 0px, 0px);"><img src="${base}/js/saved_resource" style="position: absolute; border: none; width: 256px; height: 256px; left: -223px; top: -240px; max-width: none; opacity: 1;"></div>
 									</div>
 									<div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 2; display: none;">
 										<div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 0; display: none;"></div>
@@ -2595,7 +2597,7 @@
 									<div class="BMap_zoomer" style="bottom:0;right:0;"></div>
 								</div>
 								<div class=" anchorBL" style="height: 32px; position: absolute; z-index: 30; text-size-adjust: none; bottom: 20px; right: auto; top: auto; left: 1px; display: none;">
-									<a title="到百度地图查看此区域" target="_blank" href="http://map.baidu.com/?sr=1" style="outline: none;"><img style="border:none;width:77px;height:32px" src="img/copyright_logo.png"></a>
+									<a title="到百度地图查看此区域" target="_blank" href="http://map.baidu.com/?sr=1" style="outline: none;"><img style="border:none;width:77px;height:32px" src="${base}/img/copyright_logo.png"></a>
 								</div>
 								<div unselectable="on" class=" BMap_cpyCtrl BMap_noprint anchorBL" style="cursor: default; white-space: nowrap; color: black; background: none; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 15px; font-family: arial, sans-serif; bottom: 2px; right: auto; top: auto; left: 4px; position: absolute; z-index: 10; text-size-adjust: none;"><span _cid="1" style="display: inline;"><span style="background: rgba(255, 255, 255, 0.701961);padding: 0px 1px;line-height: 16px;display: inline;height: 16px;">©&nbsp;2018 Baidu - GS(2016)2089号 - 甲测资字1100930 - 京ICP证030173号 - Data © 长地万方</span></span>
 								</div>
@@ -2638,31 +2640,31 @@
 						<div>
 							<h2>类型</h2>
 							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/buxian_selected.jpg" src="img/buxian_selected.jpg">
+								<img selected_src="//static.wkzuche.com/www/images/search/buxian_selected.jpg" src="${base}/img/buxian_selected.jpg">
 								<figcaption category="deselect" class="selected">不限</figcaption>
 							</figure>
 							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/jingji_selected.jpg" src="img/jingji.jpg">
+								<img selected_src="//static.wkzuche.com/www/images/search/jingji_selected.jpg" src="${base}/img/jingji.jpg">
 								<figcaption category="经济型">经济型</figcaption>
 							</figure>
 							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/shushi_selected.jpg" src="img/shushi.jpg">
+								<img selected_src="//static.wkzuche.com/www/images/search/shushi_selected.jpg" src="${base}/img/shushi.jpg">
 								<figcaption category="舒适型">舒适型</figcaption>
 							</figure>
 							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/shangwu_selected.jpg" src="img/shangwu.jpg">
+								<img selected_src="//static.wkzuche.com/www/images/search/shangwu_selected.jpg" src="${base}/img/shangwu.jpg">
 								<figcaption category="商务型">商务型</figcaption>
 							</figure>
 							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/haohua_selected.jpg" src="img/haohua.jpg">
+								<img selected_src="//static.wkzuche.com/www/images/search/haohua_selected.jpg" src="${base}/img/haohua.jpg">
 								<figcaption category="豪华型">豪华型</figcaption>
 							</figure>
 							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/suv_selected.jpg" src="img/suv.jpg">
+								<img selected_src="//static.wkzuche.com/www/images/search/suv_selected.jpg" src="${base}/img/suv.jpg">
 								<figcaption category="SUV">SUV</figcaption>
 							</figure>
 							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/mpv_selected.jpg" src="img/mpv.jpg">
+								<img selected_src="//static.wkzuche.com/www/images/search/mpv_selected.jpg" src="${base}/img/mpv.jpg">
 								<figcaption category="MPV">MPV</figcaption>
 							</figure>
 						</div>
@@ -2672,7 +2674,7 @@
 								<tbody>
 									<tr>
 										<td class="carmodels-btn-style">全部</td>
-										<td brand="大众">大众</td>
+										<td brand="大众"></td>
 										<td brand="奥迪">奥迪</td>
 										<td brand="现代">现代</td>
 										<td brand="起亚">起亚</td>
@@ -2725,15 +2727,15 @@
 					<div class="dot_car_list_o_left"></div>
 					<div class="dot_car_list_o_right">
 						<div class="dot_car_list_o_right_top">
-							<p class="dot-address"><strong>大望路送车点 </strong><img style="vertical-align: middle;padding-right: 2px;margin-top:-3px;" src="img/brand.png"><i>营业时间 :</i> <em>09:00-19:00 </em><i>网点电话 :</i> <em>400-0515-507 </em> </p>
-							<p class="dot-map"><i>网点地址 : </i><em style="font-size: 14px">北京市朝阳区西大望路12号大望写字楼102室 </em><img style="vertical-align: middle;padding-right: 2px;" src="img/blue_map.png"><strong site_name="大望路送车点" site_time="09:00-19:00" site_address="北京市朝阳区西大望路12号大望写字楼102室" site_lng="116.486026" site_lat="39.911476" site_phone="400-0515-507">查看地图</strong></p>
+							<p class="dot-address"><strong>大望路送车点 </strong><img style="vertical-align: middle;padding-right: 2px;margin-top:-3px;" src="${base}/img/brand.png"><i>营业时间 :</i> <em>09:00-19:00 </em><i>网点电话 :</i> <em>400-0515-507 </em> </p>
+							<p class="dot-map"><i>网点地址 : </i><em style="font-size: 14px">北京市朝阳区西大望路12号大望写字楼102室 </em><img style="vertical-align: middle;padding-right: 2px;" src="${base}/img/blue_map.png"><strong site_name="大望路送车点" site_time="09:00-19:00" site_address="北京市朝阳区西大望路12号大望写字楼102室" site_lng="116.486026" site_lat="39.911476" site_phone="400-0515-507">查看地图</strong></p>
 							<div class="spring-festival-activity" style="height: auto;"><label>正在进行1</label>个活动 :
 								<div><i style="border:1px solid #ff534c;color:#ff534c">减</i><strong class="display-whole"><strong>悟空端午激情放纵，下单最高立减618</strong></strong>
 								</div><b index="0" style="display: none;"></b></div>
 							<div class="occupy"></div>
 						</div>
 						<ul>
-							<li class="dot_car_list_o_li"><img src="img/694d7f45-1a5b-4f97-8d13-43d306812937.jpg">
+							<li class="dot_car_list_o_li"><img src="${base}/img/694d7f45-1a5b-4f97-8d13-43d306812937.jpg">
 								<div class="dot_car_list_o_divo">
 									<h4 title="别克 凯越">别克 凯越</h4>
 									<ol style="width:186px">
@@ -2751,15 +2753,15 @@
 						</ul>
 						<div style="clear: both;" class="more_dot">更多其他网点</div>
 						<div class="dot_car_list_o_right_top">
-							<p class="dot-address"><strong>东湖渠地铁站送车点 </strong><img style="vertical-align: middle;padding-right: 2px;margin-top:-3px;" src="img/brand.png"><i>营业时间 :</i> <em>09:00-18:30 </em><i>网点电话 :</i> <em>400-0515-507 </em> </p>
-							<p class="dot-map"><i>网点地址 : </i><em style="font-size: 14px">北京市朝阳区东湖渠 </em><img style="vertical-align: middle;padding-right: 2px;" src="img/blue_map.png"><strong site_name="东湖渠地铁站送车点" site_time="09:00-18:30" site_address="北京市朝阳区东湖渠" site_lng="116.474032" site_lat="40.016228" site_phone="400-0515-507">查看地图</strong></p>
+							<p class="dot-address"><strong>东湖渠地铁站送车点 </strong><img style="vertical-align: middle;padding-right: 2px;margin-top:-3px;" src="${base}/img/brand.png"><i>营业时间 :</i> <em>09:00-18:30 </em><i>网点电话 :</i> <em>400-0515-507 </em> </p>
+							<p class="dot-map"><i>网点地址 : </i><em style="font-size: 14px">北京市朝阳区东湖渠 </em><img style="vertical-align: middle;padding-right: 2px;" src="${base}/img/blue_map.png"><strong site_name="东湖渠地铁站送车点" site_time="09:00-18:30" site_address="北京市朝阳区东湖渠" site_lng="116.474032" site_lat="40.016228" site_phone="400-0515-507">查看地图</strong></p>
 							<div class="spring-festival-activity" style="height: auto;"><label>正在进行1</label>个活动 :
 								<div><i style="border:1px solid #ff534c;color:#ff534c">减</i><strong class="display-whole"><strong>悟空端午激情放纵，下单最高立减618</strong></strong>
 								</div><b index="0" style="display: none;"></b></div>
 							<div class="occupy"></div>
 						</div>
 						<ul>
-							<li class="dot_car_list_o_li"><img src="img/b5e4512a-359f-40b0-943a-54842fb6a3f4.jpg">
+							<li class="dot_car_list_o_li"><img src="${base}/img/b5e4512a-359f-40b0-943a-54842fb6a3f4.jpg">
 								<div class="dot_car_list_o_divo">
 									<h4 title="现代 瑞纳">现代 瑞纳</h4>
 									<ol style="width:186px">
@@ -2774,7 +2776,7 @@
 								</div>
 								<div id="list_reserve" class="dot_car_list_o_divth btn-style" onclick="toOrderPages(&#39;HYUNDAI_VERNA_201414LAT01&#39;,&#39;11_site_081&#39;,&#39;北京&#39;,&#39;110000&#39;,&#39;null&#39;);">预订</div>
 							</li>
-							<li class="dot_car_list_o_li"><img src="img/b09649f8-4444-4e3a-a95f-3491ae923342.jpg">
+							<li class="dot_car_list_o_li"><img src="${base}/img/b09649f8-4444-4e3a-a95f-3491ae923342.jpg">
 								<div class="dot_car_list_o_divo">
 									<h4 title="大众 速腾">大众 速腾</h4>
 									<ol style="width:186px">
@@ -2789,7 +2791,7 @@
 								</div>
 								<div id="list_reserve" class="dot_car_list_o_divth btn-style" onclick="toOrderPages(&#39;VW_SAGITAR_201414TAT02&#39;,&#39;11_site_081&#39;,&#39;北京&#39;,&#39;110000&#39;,&#39;null&#39;);">预订</div>
 							</li>
-							<li class="dot_car_list_o_li"><img src="img/c49dc3df-3a73-42dc-a68a-92c2a3327ce3.jpg">
+							<li class="dot_car_list_o_li"><img src="${base}/img/c49dc3df-3a73-42dc-a68a-92c2a3327ce3.jpg">
 								<div class="dot_car_list_o_divo">
 									<h4 title="马自达 睿翼">马自达 睿翼</h4>
 									<ol style="width:186px">
@@ -2804,7 +2806,7 @@
 								</div>
 								<div id="list_reserve" class="dot_car_list_o_divth btn-style" onclick="toOrderPages(&#39;MAZDA_6-RY_201225LAT03&#39;,&#39;11_site_081&#39;,&#39;北京&#39;,&#39;110000&#39;,&#39;null&#39;);">预订</div>
 							</li>
-							<li class="dot_car_list_o_li"><img src="img/c49dc3df-3a73-42dc-a68a-92c2a3327ce3.jpg">
+							<li class="dot_car_list_o_li"><img src="${base}/img/c49dc3df-3a73-42dc-a68a-92c2a3327ce3.jpg">
 								<div class="dot_car_list_o_divo">
 									<h4 title="马自达 睿翼">马自达 睿翼</h4>
 									<ol style="width:186px">
@@ -2819,7 +2821,7 @@
 								</div>
 								<div id="list_reserve" class="dot_car_list_o_divth btn-style" onclick="toOrderPages(&#39;MAZDA_6-RY_201225LAT02&#39;,&#39;11_site_081&#39;,&#39;北京&#39;,&#39;110000&#39;,&#39;null&#39;);">预订</div>
 							</li>
-							<li class="dot_car_list_o_li"><img src="img/85883adc-406f-4dab-a1a5-20a932d94cb7.jpg">
+							<li class="dot_car_list_o_li"><img src="${base}/img/85883adc-406f-4dab-a1a5-20a932d94cb7.jpg">
 								<div class="dot_car_list_o_divo">
 									<h4 title="马自达 8">马自达 8</h4>
 									<ol style="width:186px">
@@ -2860,7 +2862,7 @@
 				<em id="dot_map_site_address"></em>
 			</p>
 			<div>
-				<iframe id="dot_map_iframe" marginheight="0" marginwidth="0" frameborder="0" height="100%" width="100%" scrolling="no" src="js/saved_resource.html"></iframe>
+				<iframe id="dot_map_iframe" marginheight="0" marginwidth="0" frameborder="0" height="100%" width="100%" scrolling="no" src="${base}/js/saved_resource.html"></iframe>
 			</div>
 		</div>
 
@@ -2884,7 +2886,7 @@
 			</div>
 		</div>
 		<div class="dialog_order_timeout dialog_class" id="confirm_cancel">
-			<h1>温馨提示 <span onclick="$(&quot;.mcover&quot;).hide();$(&quot;#confirm_cancel&quot;).hide();"><img src="img/close_icon.png" alt=""></span></h1>
+			<h1>温馨提示 <span onclick="$(&quot;.mcover&quot;).hide();$(&quot;#confirm_cancel&quot;).hide();"><img src="${base}/img/close_icon.png" alt=""></span></h1>
 			<div class="dialog_info">
 				<span id="confirm_cancel_msg"></span>
 				<div>
@@ -2899,7 +2901,7 @@
 		</div>-->
 
 		<div class="dialog_order_timeout dialog_class" id="dialog_order_timeout">
-			<h1>订单超时 <span onclick="dialog_order_timeout_hide()"><img src="img/close_icon.png" alt=""></span></h1>
+			<h1>订单超时 <span onclick="dialog_order_timeout_hide()"><img src="${base}/img/close_icon.png" alt=""></span></h1>
 			<div class="dialog_info">
 				<span>此订单已超时 , 请重新下单支付</span>
 				<p id="dialog_order_timeout_success_fun">确定</p>
@@ -2907,7 +2909,7 @@
 		</div>
 
 		<div class="dialog_pay_choose dialog_class" id="dialog_pay_choose">
-			<h1>支付 <span onclick="dialog_pay_choose_hide();initPay();event.stopPropagation();"><img src="img/close_icon.png" alt=""></span></h1>
+			<h1>支付 <span onclick="dialog_pay_choose_hide();initPay();event.stopPropagation();"><img src="${base}/img/close_icon.png" alt=""></span></h1>
 			<div class="dialog_info pad_class">
 				<span class="tip_span">请您在新打开的页面进行支付，支付完成前请不要关闭该页面</span>
 				<a class="other_type" id="dialog_pay_choose_auth_fun">其他支付方式</a>
@@ -3047,19 +3049,19 @@
 			}
 		</script>
 
-		<link rel="stylesheet" href="css/common.css">
-		<link rel="stylesheet" href="css/pay.css">
-		<link rel="stylesheet" href="css/network.css">
+		<link rel="stylesheet" href="${base}/css/common.css">
+		<link rel="stylesheet" href="${base}/css/pay.css">
+		<link rel="stylesheet" href="${base}/css/network.css">
 		<div class="rent-car-advantage">
 			<div class="position-car-advantage">
 				<div style="float:left">
-					<a href="https://www.wkzuche.com/site/country_site.html"><img src="img/range.png" style="float:left"></a>
+					<a href="https://www.wkzuche.com/site/country_site.html"><img src="${base}/img/range.png" style="float:left"></a>
 				</div>
 				<div style="text-align:center">
-					<a href="https://www.wkzuche.com/cartype/search.html"><img src="img/much-car.png"></a>
+					<a href="https://www.wkzuche.com/cartype/search.html"><img src="${base}/img/much-car.png"></a>
 				</div>
 				<div style="float:right">
-					<a href="https://www.wkzuche.com/other/business_rule.html#rule1"><img src="img/good-service.png" style="float:right"></a>
+					<a href="https://www.wkzuche.com/other/business_rule.html#rule1"><img src="${base}/img/good-service.png" style="float:right"></a>
 				</div>
 			</div>
 		</div>
@@ -3068,52 +3070,52 @@
 				<ul class="gyfw">
 					<li class="li_head">关于服务</li>
 					<li>
-						<a href="rule.html#rule1">服务时间</a>
+						<a href="${base}/rule.html#rule1">服务时间</a>
 					</li>
 					<li>
-						<a href="rule.html#rule2">短租及可选服务</a>
+						<a href="${base}/rule.html#rule2">短租及可选服务</a>
 					</li>
 				</ul>
 				<ul class="yd">
 					<li class="li_head">预订指南</li>
 					<li>
-						<a href="rule.html#rule4">预订规则</a>
+						<a href="${base}/rule.html#rule4">预订规则</a>
 					</li>
 					<li>
-						<a href="rule.html#rule5">退改规则</a>
+						<a href="${base}/rule.html#rule5">退改规则</a>
 					</li>
 				</ul>
 				<ul class="qhc">
 					<li class="li_head">取还车指南</li>
 					<li>
-						<a href="rule.html#rule6">取车规则</a>
+						<a href="${base}/rule.html#rule6">取车规则</a>
 					</li>
 					<li>
-						<a href="rule.html#rule7">还车规则</a>
+						<a href="${base}/rule.html#rule7">还车规则</a>
 					</li>
 				</ul>
 				<ul class="bx">
 					<li class="li_head">保险及事故处理说明</li>
 					<li>
-						<a href="rule.html#rule8">保险责任</a>
+						<a href="${base}/rule.html#rule8">保险责任</a>
 					</li>
 					<li>
-						<a href="rule.html#rule9">事故处理说明</a>
+						<a href="${base}/rule.html#rule9">事故处理说明</a>
 					</li>
 					<li>
-						<a href="rule.html#rule10">救援及备用车服务</a>
+						<a href="${base}/rule.html#rule10">救援及备用车服务</a>
 					</li>
 				</ul>
 				<ul class="js">
 					<li class="li_head">费用标准</li>
 					<li>
-						<a href="rule.html#rule11">标准服务收费</a>
+						<a href="${base}/rule.html#rule11">标准服务收费</a>
 					</li>
 					<li>
-						<a href="rule.html#rule12">可选服务价格</a>
+						<a href="${base}/rule.html#rule12">可选服务价格</a>
 					</li>
 					<li>
-						<a href="rule.html#rule13">其他服务说明</a>
+						<a href="${base}/rule.html#rule13">其他服务说明</a>
 					</li>
 				</ul>
 			</div>
@@ -3123,11 +3125,11 @@
 		<div class="zc_foot zc_foot_background" style="padding-top: 0;">
 			<div class="foot_cover zc_main">
 				<p class="html_link" style="border-top: none;">
-					<a href="story.html">关于我们<span>|</span></a>
+					<a href="${base}/story.html">关于我们<span>|</span></a>
 					<a href="renting.ftl">短租自驾<span>|</span></a>
-					<a href="question.html">帮助中心<span>|</span></a>
-					<a href="media.html">媒体报道<span>|</span></a>
-					<a href="recruitment.html">加入我们</a>
+					<a href="${base}/question.html">帮助中心<span>|</span></a>
+					<a href="${base}/media.html">媒体报道<span>|</span></a>
+					<a href="${base}/recruitment.html">加入我们</a>
 				</p>
 			</div>
 			<div class="zc_foot_company_info">
@@ -3144,14 +3146,14 @@
 			</div>
 		</div>
 
-		<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
-		<script type="text/javascript" src="js/mk-browsing.js"></script>
-		<script type="text/javascript" src="js/public.js"></script>
-		<script type="text/javascript" src="js/baidu.js"></script>
-		<script type="text/javascript" src="js/tingyun-rum.js"></script>
-		<script type="text/javascript" src="js/174750.js" async="" defer=""></script>
-		<script type="text/javascript" src="js/ssyh.js"></script>
-		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="/js/jquery-1.11.2.js"></script>
+		<script type="text/javascript" src="/js/mk-browsing.js"></script>
+		<script type="text/javascript" src="/js/public.js"></script>
+		<script type="text/javascript" src="/js/baidu.js"></script>
+		<script type="text/javascript" src="/js/tingyun-rum.js"></script>
+		<script type="text/javascript" src="/js/174750.js" async="" defer=""></script>
+		<script type="text/javascript" src="/js/ssyh.js"></script>
+		<script type="text/javascript" src="base}/js/jquery.cookie.js"></script>
 
 		<style>
 			.zc_wallettooltipe {
@@ -3167,7 +3169,7 @@
 		<div class="zc_tool">
 			<ul class="ulbox">
 				<li id="tool_Order" class="libox p-re">
-					<a class="abox" href="myorder.html" target="_blank">
+					<a class="abox" href="${base}/myorder.html" target="_blank">
 						<span class="zc_order_i"></span>订<br>单
 					</a>
 
@@ -3180,7 +3182,7 @@
 
 				</li>
 				<li id="tool_wallet" class="libox p-re">
-					<a href="personal.html" target="_blank" class="abox">
+					<a href="${base}/personal.html" target="_blank" class="abox">
 						<span class="zc_wallet_i wallet_default"></span>钱<br>包
 					</a>
 
@@ -3244,7 +3246,7 @@
 			</ul>
 		</div>
 
-		<script type="text/javascript" src="js/tool.js"></script>
+		<script type="text/javascript" src="${base}/js/tool.js"></script>
 		<script type="text/javascript">
 			$(function() {
 				//初始化智齿咨询组件实例
@@ -3256,20 +3258,20 @@
 				zhiManager.set('customBtn', 'true');
 				zhiManager.set('customMargin', 50);
 				$('#goMycoupon').click(function() {
-					location.href = '/user/mycoupon.html';
+					location.href = '/mycoupon.html';
 				});
 			});
 		</script>
-		<script type="text/javascript" src="js/map.js"></script>
-		<script type="text/javascript" src="js/pricecalendar.js"></script>
-		<script type="text/javascript" src="js/sitesearch.js"></script>
-		<script type="text/javascript" src="js/get-citys.js"></script>
-		<script type="text/javascript" src="js/api"></script>
-		<script type="text/javascript" src="js/getscript"></script>
-		<script type="text/javascript" src="js/cartypesearch.js"></script>
-		<script type="text/javascript" src="js/searchpage.js"></script>
-		<script type="text/javascript" src="js/timepicker.js"></script>
-		<script src="js/entrance.js" id="zhichiScript" class="customService"></script>
+		<script type="text/javascript" src="/js/map.js"></script>
+		<script type="text/javascript" src="/js/pricecalendar.js"></script>
+		<script type="text/javascript" src=/js/sitesearch.js"></script>
+		<script type="text/javascript" src="/js/get-citys.js"></script>
+		<script type="text/javascript" src="/js/api"></script>
+		<script type="text/javascript" src="/js/getscript"></script>
+		<script type="text/javascript" src="/js/cartypesearch.js"></script>
+		<script type="text/javascript" src="/js/searchpage.js"></script>
+		<script type="text/javascript" src="/js/timepicker.js"></script>
+		<script src="${base}/js/entrance.js" id="zhichiScript" class="customService"></script>
 
 		<script type="text/javascript">
 			var static_webserver = "//static.wkzuche.com/www";
@@ -3371,6 +3373,6 @@
 			<div id="tangram-suggestion--TANGRAM__1h" class="tangram-suggestion" style="position:relative; top:0px; left:0px"></div>
 		</div>
 		<div id="zhichiBtnBox" style="position: fixed; z-index: 2147483583; box-shadow: rgba(15, 66, 76, 0.25) 0px 0px 14px 0px; width: 60px; height: 60px; border-radius: 50%; background-color: rgb(231, 83, 73); background-image: url(&quot;//www.sobot.com/chat/frame/imgs/icon.png&quot;); background-repeat: no-repeat; background-position: 18px -58px; right: 40px; bottom: 20px; display: none;">
-			<a hidefocus="" id="zhichiBtn" style="position:relative;text-decoration: none; outline: none; font-family: Microsoft Yahei, Arial, Helvetica; color: #fff; font-size: 16px; display: inline-block; margin: 0; padding: 0; border: none; line-height:43px; float:none;width:100%;height:100%;border-radius:50%;"><span class="zc-advice-icon-btn-title" style="box-shadow: rgba(107, 113, 114, 0.15) 0px 2px 4px 0px; border: 1px solid rgb(235, 239, 240); font-family: &quot;Microsoft Yahei&quot;, Arial, Helvetica; color: rgb(85, 85, 86); font-size: 13px; margin: 0px; text-align: right; background: rgb(255, 255, 255); position: absolute; top: 15px; right: 70px; text-overflow: ellipsis; white-space: nowrap; word-break: normal; display: none; border-radius: 3px; padding: 0px 5px; height: 30px; line-height: 30px;">咨询在线客服</span></a><i style="position:absolute;top:0px;right:0px;padding:1px;line-height:20px;text-align:center;color:#fff;font-weight:bold;height:18px;min-width:18px;background-color:#ed5c5c;border-radius:18px;font-size:12px;display:none;font-style:normal;" id="zhichiCount"></i></div><iframe name="423992" height="0" width="0" src="js/mv.html" style="display: none;"></iframe><input type="hidden" name="log_id" id="log_id" value="101420903"></body>
+			<a hidefocus="" id="zhichiBtn" style="position:relative;text-decoration: none; outline: none; font-family: Microsoft Yahei, Arial, Helvetica; color: #fff; font-size: 16px; display: inline-block; margin: 0; padding: 0; border: none; line-height:43px; float:none;width:100%;height:100%;border-radius:50%;"><span class="zc-advice-icon-btn-title" style="box-shadow: rgba(107, 113, 114, 0.15) 0px 2px 4px 0px; border: 1px solid rgb(235, 239, 240); font-family: &quot;Microsoft Yahei&quot;, Arial, Helvetica; color: rgb(85, 85, 86); font-size: 13px; margin: 0px; text-align: right; background: rgb(255, 255, 255); position: absolute; top: 15px; right: 70px; text-overflow: ellipsis; white-space: nowrap; word-break: normal; display: none; border-radius: 3px; padding: 0px 5px; height: 30px; line-height: 30px;">咨询在线客服</span></a><i style="position:absolute;top:0px;right:0px;padding:1px;line-height:20px;text-align:center;color:#fff;font-weight:bold;height:18px;min-width:18px;background-color:#ed5c5c;border-radius:18px;font-size:12px;display:none;font-style:normal;" id="zhichiCount"></i></div><iframe name="423992" height="0" width="0" src="${base}/js/mv.html" style="display: none;"></iframe><input type="hidden" name="log_id" id="log_id" value="101420903"></body>
 
 </html>

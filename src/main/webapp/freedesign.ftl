@@ -765,7 +765,7 @@
 								<a href="ftl/driving.ftl" class="">首页</a>
 							</li>
 							<li>
-								<a href="selfdriving.ftl" class="">自助自驾</a>
+								<a href="ftl/selfdriving.ftl" class="">自助自驾</a>
 							</li>
 							<li>
 								<a href="cardriving.ftl" class="">车+X</a>
@@ -777,7 +777,7 @@
 								<a href="freedesign.ftl" class="router-link-exact-active router-link-active">自由定制</a>
 							</li>
 							<li>
-								<a href="renting.ftl" target="_blank">自驾租车</a>
+								<a href="ftl/renting.ftl" target="_blank">自驾租车</a>
 							</li>
 						</ul> <span hidden="hidden"></span>
 						<div class="user">
