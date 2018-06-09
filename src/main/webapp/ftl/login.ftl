@@ -1735,9 +1735,34 @@
 								<img src="${base}/img/code-icon.png" alt="">
 								<input type="text" name="vcode" id="vcode" maxlength="4" placeholder="验证码" oninput="watchChange(this,&#39;vcode&#39;);">
 							</p>
-							<p class="get-code button-code" onclick="sendMessage()" style="width: 106px;">获取验证码</p>
+							<p class="get-code button-code" id="getCode" disabled="false" onclick="sendMessage()" style="width: 106px;">获取验证码</p>
 						</div>
                         <script type="text/javascript">
+							var countdown = 60;
+                            /**
+                             * 倒计时的方法
+                             */
+							function settime(obj) {
+								if(countdown == 0){
+								    obj.attr('disabled',false);
+								    obj.text("获取验证码")
+                                    obj.attr('onclick',"sendMessage()")
+									countdown = 60;
+								    return;
+								}else {
+								    obj.attr('disabled',true);
+								    obj.text("重新发送" + countdown);
+                                    obj.attr('onclick',"#")
+								    countdown--;
+								}
+								setTimeout(function () {
+									settime(obj);
+                                },1000)
+                            }
+
+                            /**
+							 * 发送短信
+                             */
 							function sendMessage() {
 							    // 获取输入的图片验证码
 								var pcode = $("#pcode").val();
@@ -1749,6 +1774,10 @@
                                         // ajax验证手机号格式是否正确
 										$.post("${base}/user/validation",{"tel":tel},function (data) {
 											if(data == "true"){
+											    // 获取发送验证码按钮的对象
+                                                var obj = $("#getCode");
+                                                // 调用倒计时方法
+                                                settime(obj);
                                                 $.post("${base}/user/sendMessage",{"tel":tel},function (data) {
                                                     alert("發送成功！");
                                                 })
@@ -1768,21 +1797,24 @@
                                 })
                             }
                             function login() {
+							    // 获取输入的手机号
 								var tel = $("#tel").val();
+								// 获取输入的短信验证码
 								var vcode = $("#vcode").val();
+								// ajax验证短信验证码是否正确
 								$.post("${base}/user/login",{"tel":tel,"code":vcode},function (data) {
 									if(data.code == 0){
-
+										// 跳转到index页面
 										window.location.href="${base}/user/preIndex";
 									}else{
 										alert(data.msg)
+										// 提示验证码错误
                                         $("#vcode").val("");
 									}
                                 })
                             }
                         </script>
 						<div class="cl"></div>
-						<!--             <p class="check-item"><i id="selectEle" class="check-i"></i>7日内免登录</p> -->
 						<p class="login-btn" onclick="login()" id="pcregister">确定</p>
 						<p class="login-tips">小贴士 : 未注册悟空租车的手机号 , 点击登录时代表您已阅读并同意
 							<a href="https://www.wkzuche.com/other/service_agreement.html" target="view_window">《悟空用户服务协议》</a> , 系统将自动注册。</p>
@@ -1799,52 +1831,52 @@
 				<ul class="gyfw">
 					<li class="li_head">关于服务</li>
 					<li>
-						<a href="../rule.html#rule1">服务时间</a>
+						<a href="${base}/rule.html#rule1">服务时间</a>
 					</li>
 					<li>
-						<a href="../rule.html#rule2">短租及可选服务</a>
+						<a href="${base}/rule.html#rule2">短租及可选服务</a>
 					</li>
 				</ul>
 				<ul class="yd">
 					<li class="li_head">预订指南</li>
 					<li>
-						<a href="../rule.html#rule4">预订规则</a>
+						<a href="${base}/rule.html#rule4">预订规则</a>
 					</li>
 					<li>
-						<a href="../rule.html#rule5">退改规则</a>
+						<a href="${base}/rule.html#rule5">退改规则</a>
 					</li>
 				</ul>
 				<ul class="qhc">
 					<li class="li_head">取还车指南</li>
 					<li>
-						<a href="../rule.html#rule6">取车规则</a>
+						<a href="${base}/rule.html#rule6">取车规则</a>
 					</li>
 					<li>
-						<a href="../rule.html#rule7">还车规则</a>
+						<a href="${base}/rule.html#rule7">还车规则</a>
 					</li>
 				</ul>
 				<ul class="bx">
 					<li class="li_head">保险及事故处理说明</li>
 					<li>
-						<a href="../rule.html#rule8">保险责任</a>
+						<a href="${base}/rule.html#rule8">保险责任</a>
 					</li>
 					<li>
-						<a href="../rule.html#rule9">事故处理说明</a>
+						<a href="${base}/rule.html#rule9">事故处理说明</a>
 					</li>
 					<li>
-						<a href="../rule.html#rule10">救援及备用车服务</a>
+						<a href="${base}/rule.html#rule10">救援及备用车服务</a>
 					</li>
 				</ul>
 				<ul class="js">
 					<li class="li_head">费用标准</li>
 					<li>
-						<a href="../rule.html#rule11">标准服务收费</a>
+						<a href="${base}/rule.html#rule11">标准服务收费</a>
 					</li>
 					<li>
-						<a href="../rule.html#rule12">可选服务价格</a>
+						<a href="${base}/rule.html#rule12">可选服务价格</a>
 					</li>
 					<li>
-						<a href="../rule.html#rule13">其他服务说明</a>
+						<a href="${base}/rule.html#rule13">其他服务说明</a>
 					</li>
 				</ul>
 			</div>
@@ -1854,19 +1886,11 @@
 		<div class="zc_foot" style="padding-top: 0;">
 			<div class="foot_cover zc_main">
 				<p class="html_link" style="border-top: none;">
-<<<<<<< Updated upstream:src/main/webapp/ftl/login.ftl
-					<a href="../story.html">关于我们<span>|</span></a>
-					<a href="../renting.html">短租自驾<span>|</span></a>
-					<a href="../question.html">帮助中心<span>|</span></a>
-					<a href="../media.html">媒体报道<span>|</span></a>
-					<a href="../recruitment.html">加入我们</a>
-=======
-					<a href="story.html">关于我们<span>|</span></a>
-					<a href="ftl/renting.ftl">短租自驾<span>|</span></a>
-					<a href="question.html">帮助中心<span>|</span></a>
-					<a href="media.html">媒体报道<span>|</span></a>
-					<a href="recruitment.html">加入我们</a>
->>>>>>> Stashed changes:src/main/webapp/login.html
+					<a href="${base}/story.html">关于我们<span>|</span></a>
+					<a href="${base}/renting.html">短租自驾<span>|</span></a>
+					<a href="${base}/question.html">帮助中心<span>|</span></a>
+					<a href="${base}/media.html">媒体报道<span>|</span></a>
+					<a href="${base}/recruitment.html">加入我们</a>
 				</p>
 			</div>
 			<div class="zc_foot_company_info">
@@ -1891,17 +1915,9 @@
 		<script src="./login_files/address.js.下载"></script>
 		<script type="text/javascript" src="./login_files/login.js.下载"></script>
 
-		<#--<script type="text/javascript">
-			var www_url = "https://www.wkzuche.com/";
-			var vcode_name = "skipcode.do";
-
-			function generateImageCode() {
-				$('#imageCode').css('background', 'url(/member/auth_image.do?time=' + new Date().getTime() + ')no-repeat left');
-			}
-		</script>-->
 		<div id="waf_nc_block" style="display: none;">
 			<div class="waf-nc-mask"></div>
-			<div id="WAF_NC_WRAPPER" class="waf-nc-wrapper"><img class="waf-nc-icon" src="../img/TB1_3FrKVXXXXbdXXXXXXXXXXXX-129-128.png" alt="" height="20" width="20">
+			<div id="WAF_NC_WRAPPER" class="waf-nc-wrapper"><img class="waf-nc-icon" src="${base}/img/TB1_3FrKVXXXXbdXXXXXXXXXXXX-129-128.png" alt="" height="20" width="20">
 				<p class="waf-nc-title">安全验证</p>
 				<div class="waf-nc-splitter"></div>
 				<p class="waf-nc-description">请完成以下验证后继续操作：</p>
