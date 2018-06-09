@@ -15,12 +15,18 @@
     <result column="ORDER_DISCOUNT" jdbcType="DECIMAL" property="orderDiscount" />
     <result column="ORDER_TOTAL" jdbcType="DECIMAL" property="orderTotal" />
     <result column="ORDER_STATUS" jdbcType="VARCHAR" property="orderStatus" />
+    <association property="carName" column="CAR_ID" select="com.qianfeng.wkrent.dao.CarMapper.selectCarNameById"/>
   </resultMap>
   <sql id="Base_Column_List">
     ORDER_ID, CAR_ID, ORDER_NUM, ORDER_TAKE_TIME, ORDER_TAKE_PLACE, ORDER_RETURN_TIME, 
     ORDER_RETURN_PLACE, ORDER_PRICE, ORDER_INSURANCE, ORDER_CHARGE, ORDER_DISCOUNT, ORDER_TOTAL, 
     ORDER_STATUS
   </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from TB_RENT_ORDER
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

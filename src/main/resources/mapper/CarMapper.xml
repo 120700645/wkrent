@@ -12,6 +12,12 @@
   <sql id="Base_Column_List">
     CAR_ID, CAR_NAME, CAR_DESC, CAR_IMG, TYPE_ID, BRAND_ID
   </sql>
+
+  <select id="selectCarNameById" resultType="java.lang.String">
+    SELECT CAR_NAME
+    FROM tb_car
+    where CAR_ID = #{carId}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
