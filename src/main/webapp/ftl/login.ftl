@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<!-- saved from url=(0126)https://sso.wkzuche.com/member/www/pages/login.html?url=https%3A%2F%2Fwww.wkzuche.com%2F&channel=baidupc@2017&utm_term=1000032 -->
 <html lang="en">
 
 	<head>
+	<#assign base=rc.contextPath />
+		<base id="base" href="${base}">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 		<title>登录</title>
+
 		<link rel="icon" href="https://static.wkzuche.com/sso/member/www/images/facicon.ico">
-		<link rel="stylesheet" href="./css/common.css">
-		<link rel="stylesheet" href="./css/login.css">
-		<script charset="utf-8" src="js/lxb.js"></script>
-		<script charset="utf-8" src="js/v.js"></script>
-		<script src="js/hm.js"></script>
-		<script type="text/javascript" src="js/f245814f86e1be9165b628022d17d1ee.js"></script>
+		<link rel="stylesheet" href="${base}/css/common.css">
+		<link rel="stylesheet" href="${base}/css/login.css">
+		<script charset="utf-8" src="${base}/js/lxb.js.下载"></script>
+		<script charset="utf-8" src="${base}/js/v.js.下载"></script>
+		<script src="${base}/js/hm.js.下载"></script>
+		<script type="text/javascript" src="${base}/js/f245814f86e1be9165b628022d17d1ee.js.下载"></script>
 		<style type="text/css">
 			#waf_nc_block {
 				position: fixed;
@@ -84,7 +86,8 @@
 				height36px;
 			}
 		</style>
-		<script src="../js/nc.js.下载"></script>
+		<script src="${base}/js/nc.js.下载"></script>
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 		<style>
 			@charset "utf-8";
 			@font-face {
@@ -1693,7 +1696,7 @@
 	<body>
 		<div class="zc_head_bd">
 			<div class="zc_main">
-				<a class="zc_logo" href="index.html" alt="悟空租车"><img src="img/logo.png" alt=""></a>
+				<a class="zc_logo" href="${base}/index.html" alt="悟空租车"><img src="${base}/img/logo.png" alt=""></a>
 				<h2 class="welcome-login">欢迎登录</h2>
 				<div class="zc_head_tab">
 					<div class="zc_phone_bd">
@@ -1710,27 +1713,77 @@
 					<div class="login_form">
 						<p class="check-val-p" id="error_msg" style="display:none;"></p>
 						<p class="input-wrapper">
-							<img src="./img/user-icon.png" alt="">
-							<input type="text" name="uid" id="uid" placeholder="手机号" maxlength="11" oninput="watchChange(this,&#39;phone&#39;);">
+							<img src="${base}/img/user-icon.png" alt="">
+							<input type="text" name="tel" id="tel" placeholder="手机号" maxlength="11" oninput="watchChange(this,&#39;phone&#39;);">
 						</p>
 						<div class="cl"></div>
 						<div class="form_code" style="margin-bottom: 15px;">
 							<p class="code-p" style="width: 110px;">
-								<img src="./img/code-icon.png" alt="">
-								<input type="text" name="pic_vcode" id="picCode" maxlength="4" placeholder="图形校验码" oninput="watchChange(this,&#39;vcode&#39;);">
+								<img src="${base}/img/code-icon.png" alt="">
+								<input type="text" name="pcode" id="pcode" maxlength="4" placeholder="图形校验码" oninput="watchChange(this,&#39;vcode&#39;);">
 							</p>
-							<p class="" name="imageCode" id="imageCode" onclick="generateImageCode();" style="width: 106px; height: 15px; color: rgb(203, 42, 31); font-size: 14px; cursor: pointer; padding: 10px 0px; text-align: center; border: 1px solid rgb(203, 42, 31); margin-bottom: 15px; background: url(&quot;/member/auth_image.do?time=1528251944092&quot;) left center no-repeat;"></p>
+							<img src="${base}/code/pcode" name="yz" id="yz" onclick="changeCode()" style="border:solid 2px #cb2a1f">
 						</div>
+                        <script type="text/javascript">
+                            function changeCode(){
+                                $("#pcode").val("");
+                                yz.src="${base}/code/pcode?aaa"+Math.random();
+                            }
+                        </script>
 						<div class="form_code">
 							<p class="code-p" style="width:110px !important;">
-								<img src="./img/code-icon.png" alt="">
+								<img src="${base}/img/code-icon.png" alt="">
 								<input type="text" name="vcode" id="vcode" maxlength="4" placeholder="验证码" oninput="watchChange(this,&#39;vcode&#39;);">
 							</p>
-							<p class="get-code button-code" style="width: 106px;">获取验证码</p>
+							<p class="get-code button-code" onclick="sendMessage()" style="width: 106px;">获取验证码</p>
 						</div>
+                        <script type="text/javascript">
+							function sendMessage() {
+							    // 获取输入的图片验证码
+								var pcode = $("#pcode").val();
+								// ajax调用vcode方法验证图片验证码是否正确
+								$.post("${base}/user/vcode",{"pcode":pcode},function (data) {
+									// 如果图片验证码正确,验证手机号码并且发送短信
+									if(data == "true"){
+                                        var tel = $("#tel").val();
+                                        // ajax验证手机号格式是否正确
+										$.post("${base}/user/validation",{"tel":tel},function (data) {
+											if(data == "true"){
+                                                $.post("${base}/user/sendMessage",{"tel":tel},function (data) {
+                                                    alert("發送成功！");
+                                                })
+											}else {
+											    alert("请输入正确的手机号!");
+											    // 更改验证码
+											    changeCode();
+											    // 清空输入的手机号
+                                                $("#tel").val("");
+											}
+                                        })
+									}else {
+									    alert("图片验证失败");
+									    // 如果图片验证码验证失败,更换图片验证码
+									    changeCode();
+									}
+                                })
+                            }
+                            function login() {
+								var tel = $("#tel").val();
+								var vcode = $("#vcode").val();
+								$.post("${base}/user/login",{"tel":tel,"code":vcode},function (data) {
+									if(data.code == 0){
+
+										window.location.href="${base}/user/preIndex";
+									}else{
+										alert(data.msg)
+                                        $("#vcode").val("");
+									}
+                                })
+                            }
+                        </script>
 						<div class="cl"></div>
 						<!--             <p class="check-item"><i id="selectEle" class="check-i"></i>7日内免登录</p> -->
-						<p class="login-btn" id="pcregister">确定</p>
+						<p class="login-btn" onclick="login()" id="pcregister">确定</p>
 						<p class="login-tips">小贴士 : 未注册悟空租车的手机号 , 点击登录时代表您已阅读并同意
 							<a href="https://www.wkzuche.com/other/service_agreement.html" target="view_window">《悟空用户服务协议》</a> , 系统将自动注册。</p>
 					</div>
@@ -1746,52 +1799,52 @@
 				<ul class="gyfw">
 					<li class="li_head">关于服务</li>
 					<li>
-						<a href="rule.html#rule1">服务时间</a>
+						<a href="../rule.html#rule1">服务时间</a>
 					</li>
 					<li>
-						<a href="rule.html#rule2">短租及可选服务</a>
+						<a href="../rule.html#rule2">短租及可选服务</a>
 					</li>
 				</ul>
 				<ul class="yd">
 					<li class="li_head">预订指南</li>
 					<li>
-						<a href="rule.html#rule4">预订规则</a>
+						<a href="../rule.html#rule4">预订规则</a>
 					</li>
 					<li>
-						<a href="rule.html#rule5">退改规则</a>
+						<a href="../rule.html#rule5">退改规则</a>
 					</li>
 				</ul>
 				<ul class="qhc">
 					<li class="li_head">取还车指南</li>
 					<li>
-						<a href="rule.html#rule6">取车规则</a>
+						<a href="../rule.html#rule6">取车规则</a>
 					</li>
 					<li>
-						<a href="rule.html#rule7">还车规则</a>
+						<a href="../rule.html#rule7">还车规则</a>
 					</li>
 				</ul>
 				<ul class="bx">
 					<li class="li_head">保险及事故处理说明</li>
 					<li>
-						<a href="rule.html#rule8">保险责任</a>
+						<a href="../rule.html#rule8">保险责任</a>
 					</li>
 					<li>
-						<a href="rule.html#rule9">事故处理说明</a>
+						<a href="../rule.html#rule9">事故处理说明</a>
 					</li>
 					<li>
-						<a href="rule.html#rule10">救援及备用车服务</a>
+						<a href="../rule.html#rule10">救援及备用车服务</a>
 					</li>
 				</ul>
 				<ul class="js">
 					<li class="li_head">费用标准</li>
 					<li>
-						<a href="rule.html#rule11">标准服务收费</a>
+						<a href="../rule.html#rule11">标准服务收费</a>
 					</li>
 					<li>
-						<a href="rule.html#rule12">可选服务价格</a>
+						<a href="../rule.html#rule12">可选服务价格</a>
 					</li>
 					<li>
-						<a href="rule.html#rule13">其他服务说明</a>
+						<a href="../rule.html#rule13">其他服务说明</a>
 					</li>
 				</ul>
 			</div>
@@ -1801,11 +1854,11 @@
 		<div class="zc_foot" style="padding-top: 0;">
 			<div class="foot_cover zc_main">
 				<p class="html_link" style="border-top: none;">
-					<a href="story.html">关于我们<span>|</span></a>
-					<a href="renting.ftl">短租自驾<span>|</span></a>
-					<a href="question.html">帮助中心<span>|</span></a>
-					<a href="media.html">媒体报道<span>|</span></a>
-					<a href="recruitment.html">加入我们</a>
+					<a href="../story.html">关于我们<span>|</span></a>
+					<a href="../renting.html">短租自驾<span>|</span></a>
+					<a href="../question.html">帮助中心<span>|</span></a>
+					<a href="../media.html">媒体报道<span>|</span></a>
+					<a href="../recruitment.html">加入我们</a>
 				</p>
 			</div>
 			<div class="zc_foot_company_info">
@@ -1830,17 +1883,17 @@
 		<script src="./login_files/address.js.下载"></script>
 		<script type="text/javascript" src="./login_files/login.js.下载"></script>
 
-		<script type="text/javascript">
+		<#--<script type="text/javascript">
 			var www_url = "https://www.wkzuche.com/";
 			var vcode_name = "skipcode.do";
 
 			function generateImageCode() {
 				$('#imageCode').css('background', 'url(/member/auth_image.do?time=' + new Date().getTime() + ')no-repeat left');
 			}
-		</script>
+		</script>-->
 		<div id="waf_nc_block" style="display: none;">
 			<div class="waf-nc-mask"></div>
-			<div id="WAF_NC_WRAPPER" class="waf-nc-wrapper"><img class="waf-nc-icon" src="./img/TB1_3FrKVXXXXbdXXXXXXXXXXXX-129-128.png" alt="" height="20" width="20">
+			<div id="WAF_NC_WRAPPER" class="waf-nc-wrapper"><img class="waf-nc-icon" src="../img/TB1_3FrKVXXXXbdXXXXXXXXXXXX-129-128.png" alt="" height="20" width="20">
 				<p class="waf-nc-title">安全验证</p>
 				<div class="waf-nc-splitter"></div>
 				<p class="waf-nc-description">请完成以下验证后继续操作：</p>

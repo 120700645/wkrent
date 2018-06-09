@@ -1,7 +1,9 @@
 package com.qianfeng.wkrent.dao;
 
 import com.qianfeng.wkrent.dto.User;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UserMapper {
     int deleteByPrimaryKey(Integer userId);
 

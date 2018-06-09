@@ -14,6 +14,8 @@
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
+    <import resource="spring-redis.xml"/>
+
     <!-- 扫描包下面的所有的类是否受spring的管理，需要spring创建对象 -->
     <context:component-scan base-package="com.qianfeng.wkrent">
         <!-- 不包含@Controller注解和@ControllerAdvice注解（配置全局异常处理的）
@@ -75,6 +77,50 @@
     </bean>
 
     <tx:annotation-driven></tx:annotation-driven>
+
+    <bean name="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <!--指定登录界面-->
+        <property name="loginUrl" value="/user/"/>
+
+        <property name="filterChainDefinitions">
+            <value>
+                <!--anon不需要登录-->
+
+                /user/**=anon
+                /code/pcode=anon
+                /css/**=anon
+                /dist/**=anon
+                /img/**=anon
+                /js/**=anon
+                /vendor/**=anon
+                <!--authc需要登录才能访问-->
+                <!--user配合rememberMe使用有效，authc不能配合rememberMe使用-->
+                /**=user
+            </value>
+        </property>
+
+    </bean>
+
+    <bean name="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realms" ref="userRealm"/>
+        <!--记住登录状态方便下次直接进入-->
+        <property name="rememberMeManager" ref="rememberMeManager"/>
+    </bean>
+
+    <bean name="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+        <property name="cookie" ref="rememberMeCookie"/>
+    </bean>
+
+
+
+    <bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="rememberMe"/>
+        <property name="httpOnly" value="true"/> <!--避免XSS攻击-->
+        <property name="maxAge" value="6000000"/><!-- 失效时间 -->
+    </bean>
+
+    <bean name="userRealm" class="com.qianfeng.wkrent.shiro.UserRealm"/>
 
     <!-- 配置通知（配置事务执行的方法定义的名称规则） -->
     <!--<tx:advice id="myAdvice" transaction-manager="transactionManager">-->

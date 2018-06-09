@@ -20,8 +20,6 @@ public class MessageUtil {
         querys.put("phone", phone);
         querys.put("sign", "1");
         querys.put("skin", skin);
-
-
         try {
             /**
              * 重要提示如下:
