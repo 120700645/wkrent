@@ -13,9 +13,8 @@ public class CouponService implements ICouponService {
     @Autowired
     private CouponMapper couponDAO;
 
-
     @Override
-    public List<Coupon> selectByStatus(int statusId) {
-        return couponDAO.selectByStatus(statusId);
+    public List<Coupon> selectAll() {
+        return couponDAO.selectAll();
     }
 }

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <#assign base=request.contextPath />
+    <#assign base=rc.contextPath />
     <base id="base" href="${base}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 

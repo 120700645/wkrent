@@ -20,9 +20,8 @@ public interface CouponMapper {
     int updateByPrimaryKey(Coupon record);
 
     /**
-     * 通过ucStatus查询优惠券
-     * @param ucStatus
+     * 查询所有优惠券
      * @return
      */
-    List<Coupon> selectByStatus(int ucStatus);
+    List<Coupon> selectAll();
 }

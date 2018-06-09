@@ -16,9 +16,9 @@ public class CouponController {
     @Autowired
     private CouponService couponService;
 
-    @RequestMapping("/selectByStatus/{couponId}")
-    public String selectByStatus(@PathVariable("couponId") int couponId, Model model){
-        List<Coupon> couponList = couponService.selectByStatus(couponId);
+    @RequestMapping("/selectAll")
+    public String selectAll(Model model){
+        List<Coupon> couponList = couponService.selectAll();
         model.addAttribute("couponList",couponList);
         return "mycoupon";
     }

@@ -29,6 +29,16 @@ public class RentOrder {
 
     private String orderStatus;
 
+    private String carName;
+
+    public String getCarName() {
+        return carName;
+    }
+
+    public void setCarName(String carName) {
+        this.carName = carName;
+    }
+
     public Integer getOrderId() {
         return orderId;
     }
