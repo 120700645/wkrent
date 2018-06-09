@@ -5,6 +5,7 @@ import com.qianfeng.wkrent.service.IComboService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -25,7 +26,14 @@ public class ComboController {
     public String comboList(Model model){
         List<Combo> comboList = comboService.findAllCombo();
         model.addAttribute("comboList",comboList);
-        return "/driving.ftl";
+        return "driving";
+    }
+
+    @RequestMapping("/home")
+    public String list(Model model){
+        List<Combo> comboList = comboService.findAllCombo();
+        model.addAttribute("comboList",comboList);
+        return "selfdriving";
     }
 
     /**
@@ -34,10 +42,10 @@ public class ComboController {
      * @param model
      * @return
      */
-    @RequestMapping("/combo")
-    public String findbyId(Integer comboId,Model model){
+    @RequestMapping("/self_driving/{comboId}")
+    public String findbyId(@PathVariable("comboId") Integer comboId, Model model){
         Combo combo = comboService.findByComboId(comboId);
         model.addAttribute("combo",combo);
-        return "comboinfo";
+        return "detail";
     }
 }

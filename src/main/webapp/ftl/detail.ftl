@@ -3,12 +3,15 @@
 <html>
 
 	<head>
+        <#assign base=rc.contextPath/>
+        <base id="base" href="${base}">
+
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="description" content="悟空自驾游是一家立足云南、面向全国、辐射东南亚的自驾游服务平台！为全国旅游爱好者提供吃、住、行、游、购、 娱等在内的高品质服务。依托于移动互联网技术，将云南省16个地州、15个机场、火车站、高铁站、公交枢纽、酒店、旅游景点、自驾游营地、 餐饮、购物、娱乐等旅游目的地、服务点和连接点打通，打造&quot;租车+旅游&quot;全新模式。">
 		<title>悟空自驾游 云南自驾游 自驾租车 云南租车 云南旅游 自驾游</title>
 		<link rel="icon" href="https://static.wkzuche.com/www/images/facicon.ico">
-		<script src="js/hm.js"></script>
+		<script src="${base}/js/hm.js"></script>
 		<script type="text/javascript">
 			var _hmt = _hmt || [];
 			(function() {
@@ -18,7 +21,7 @@
 				s.parentNode.insertBefore(hm, s);
 			})();
 		</script>
-		<link href="css/app.1e82d5e3d6f6affba7436d4c5b5588a5.css" rel="stylesheet">
+		<link href="${base}/css/app.1e82d5e3d6f6affba7436d4c5b5588a5.css" rel="stylesheet">
 		<style type="text/css">
 			.comp-full-calendar {
 				padding: 20px;
@@ -268,7 +271,7 @@
 				color: #f2f2f2;
 			}
 		</style>
-		<script src="js/pc.min.js" id="zhichiload" class="customService"></script>
+		<script src="${base}/js/pc.min.js" id="zhichiload" class="customService"></script>
 	</head>
 
 	<body>
@@ -276,27 +279,27 @@
 			<div class="reuse_top">
 				<div class="top-main">
 					<div class="top-logo">
-						<a href="ftl/driving.ftl"><img src="img/logo.74f8c8e.png" alt=""></a>
+						<a href="driving.ftl"><img src="${base}/img/logo.74f8c8e.png" alt=""></a>
 					</div>
 					<div class="nav">
 						<ul>
 							<li class="active">
-								<a href="ftl/driving.ftl">首页</a>
+								<a href="driving.ftl">首页</a>
 							</li>
 							<li>
-								<a href="selfdriving.ftl" class="">自助自驾</a>
+								<a href="${base}/combo/home" class="">自助自驾</a>
 							</li>
 							<li>
-								<a href="cardriving.ftl" class="">车+X</a>
+								<a href="../cardriving.ftl" class="">车+X</a>
 							</li>
 							<li>
-								<a href="groupdriving.ftl" class="">跟团自驾</a>
+								<a href="../groupdriving.ftl" class="">跟团自驾</a>
 							</li>
 							<li>
-								<a href="freedesign.ftl" class="">自由定制</a>
+								<a href="../freedesign.ftl" class="">自由定制</a>
 							</li>
 							<li>
-								<a href="renting.ftl" target="_blank">自驾租车</a>
+								<a href="../renting.ftl" target="_blank">自驾租车</a>
 							</li>
 						</ul> <span hidden="hidden"></span>
 						<div class="user">
@@ -315,34 +318,36 @@
 							<div data-v-06a02ad2="" id="carousel-example-generic" data-ride="carousel" data-interval="2000" class="carousel slide">
 								<div data-v-06a02ad2="" style="position: absolute; left: -5.6px; bottom: -90px; width: 575px;">
 									<ol data-v-06a02ad2="" class="carousel-indicators" style="position: static; margin-left: 0px; margin-bottom: 5px;">
-										<li data-v-06a02ad2="" data-target="#carousel-example-generic" data-slide-to="0" class="" style="margin-right: 0px;"><img data-v-06a02ad2="" src="img/cd07d77d-9e52-4c19-b5bf-cc3964e3b984.jpg" alt=""></li>
+										<li data-v-06a02ad2="" data-target="#carousel-example-generic" data-slide-to="0" class="" style="margin-right: 0px;"><img data-v-06a02ad2="" src="${base}/img/cd07d77d-9e52-4c19-b5bf-cc3964e3b984.jpg" alt=""></li>
 										<!---->
 										<!---->
 										<!---->
 										<!---->
 										<!---->
-										<li data-v-06a02ad2="" data-target="#carousel-example-generic" data-slide-to="1" class="active"><img data-v-06a02ad2="" src="img/4c485974-a59b-4b78-b910-43a70c3ed74d.jpg" alt=""></li>
-										<li data-v-06a02ad2="" data-target="#carousel-example-generic" data-slide-to="2" class=""><img data-v-06a02ad2="" src="img/c7f1eb60-a315-4313-bf52-17817f29d781.jpg" alt=""></li>
-										<li data-v-06a02ad2="" data-target="#carousel-example-generic" data-slide-to="3" class=""><img data-v-06a02ad2="" src="img/d03f5c50-cad3-4909-be95-6a4db0ca7c6a.jpg" alt=""></li>
-										<li data-v-06a02ad2="" data-target="#carousel-example-generic" data-slide-to="4" class=""><img data-v-06a02ad2="" src="img/bffc77e3-98a6-4f9c-b7f8-ef623be06d62.jpg" alt=""></li>
+										<li data-v-06a02ad2="" data-target="#carousel-example-generic" data-slide-to="1" class="active"><img data-v-06a02ad2="" src="../img/4c485974-a59b-4b78-b910-43a70c3ed74d.jpg" alt=""></li>
+										<li data-v-06a02ad2="" data-target="#carousel-example-generic" data-slide-to="2" class=""><img data-v-06a02ad2="" src="../img/c7f1eb60-a315-4313-bf52-17817f29d781.jpg" alt=""></li>
+										<li data-v-06a02ad2="" data-target="#carousel-example-generic" data-slide-to="3" class=""><img data-v-06a02ad2="" src="../img/d03f5c50-cad3-4909-be95-6a4db0ca7c6a.jpg" alt=""></li>
+										<li data-v-06a02ad2="" data-target="#carousel-example-generic" data-slide-to="4" class=""><img data-v-06a02ad2="" src="../img/bffc77e3-98a6-4f9c-b7f8-ef623be06d62.jpg" alt=""></li>
 									</ol>
 								</div>
 								<div data-v-06a02ad2="" role="listbox" class="carousel-inner">
-									<div data-v-06a02ad2="" class="item active left"><img data-v-06a02ad2="" src="img/cd07d77d-9e52-4c19-b5bf-cc3964e3b984.jpg" alt=""></div>
+									<div data-v-06a02ad2="" class="item active left"><img data-v-06a02ad2="" src="../img/cd07d77d-9e52-4c19-b5bf-cc3964e3b984.jpg" alt=""></div>
 									<!---->
 									<!---->
 									<!---->
 									<!---->
 									<!---->
-									<div data-v-06a02ad2="" class="item next left"><img data-v-06a02ad2="" src="img/4c485974-a59b-4b78-b910-43a70c3ed74d.jpg" alt=""></div>
-									<div data-v-06a02ad2="" class="item"><img data-v-06a02ad2="" src="img/c7f1eb60-a315-4313-bf52-17817f29d781.jpg" alt=""></div>
-									<div data-v-06a02ad2="" class="item"><img data-v-06a02ad2="" src="img/d03f5c50-cad3-4909-be95-6a4db0ca7c6a.jpg" alt=""></div>
-									<div data-v-06a02ad2="" class="item"><img data-v-06a02ad2="" src="img/bffc77e3-98a6-4f9c-b7f8-ef623be06d62.jpg" alt=""></div>
+									<div data-v-06a02ad2="" class="item next left"><img data-v-06a02ad2="" src="../img/4c485974-a59b-4b78-b910-43a70c3ed74d.jpg" alt=""></div>
+									<div data-v-06a02ad2="" class="item"><img data-v-06a02ad2="" src="../img/c7f1eb60-a315-4313-bf52-17817f29d781.jpg" alt=""></div>
+									<div data-v-06a02ad2="" class="item"><img data-v-06a02ad2="" src="../img/d03f5c50-cad3-4909-be95-6a4db0ca7c6a.jpg" alt=""></div>
+									<div data-v-06a02ad2="" class="item"><img data-v-06a02ad2="" src="../img/bffc77e3-98a6-4f9c-b7f8-ef623be06d62.jpg" alt=""></div>
 								</div>
 							</div>
 						</div>
+
+
 						<div data-v-06a02ad2="" class="right-silder">
-							<p data-v-06a02ad2="" id="pname" class="titles">&lt;昆明、弥勒3天2晚休闲游&gt; (昆明进出） 帐篷酒店、半山温泉、红酒庄园</p>
+							<p data-v-06a02ad2="" id="pname" class="titles">${combo.comboName}</p>
 							<table data-v-06a02ad2="" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
 								<tr data-v-06a02ad2="">
 									<td data-v-06a02ad2="" colspan="2" height="70"><span data-v-06a02ad2="" class="price_box"><!----> <span data-v-06a02ad2="" style="font-size: 20px; color: rgb(208, 0, 0);">¥</span>&nbsp;<span data-v-06a02ad2="" style="font-size: 30px; color: rgb(208, 0, 0); font-weight: bold;">1280</span> <span data-v-06a02ad2="" style="font-size: 14px; color: rgb(102, 102, 102);">起 / 人</span> <span data-v-06a02ad2="" style="font-size: 12px; color: rgb(153, 153, 153);">（按4成人出行共用1辆车，住 2间房核算）</span> <span data-v-06a02ad2="" class="start-desc"><a data-v-06a02ad2="" href="javascript:void(0)">起价说明</a></span></span>
@@ -366,13 +371,9 @@
 							</table>
 							<div data-v-06a02ad2="" class="advantage">
 								<div data-v-06a02ad2="" class="atitle category">产品亮点：</div>
-								<div data-v-06a02ad2="" class="adesc"><textarea data-v-06a02ad2="" id="" cols="60" rows="14" readonly="readonly" disabled="disabled" class="desc" style="resize: none; background: rgb(255, 255, 255);">恍若隔世美景、群山环抱、绿树成荫、漫步沙滩、养生SPA，领略红酒的魅力，让红酒的热烈冲击味蕾，让葡萄的芬芳沁透脾肺，天然温泉舒缓疲劳，自然是这里唯一的主题。
+								<div data-v-06a02ad2="" class="adesc"><textarea data-v-06a02ad2="" id="" cols="60" rows="14" readonly="readonly" disabled="disabled" class="desc" style="resize: none; background: rgb(255, 255, 255);">
 
-                        ——简易行程——
-
-Day1：九乡风景名胜区、入住弥勒湖泉酒店、弥勒半山温泉
-Day2：云南红酒庄、法邑基督圣恩大教堂、可邑小镇、入住帐篷酒店
-Day3：锦屏山“弥勒大佛”-返回昆明</textarea></div>
+                                </textarea></div>
 							</div>
 						</div>
 					</div>
@@ -895,7 +896,7 @@ Day3：锦屏山“弥勒大佛”-返回昆明</textarea></div>
 										</div>
 										<div data-v-6bba608e="" style="overflow: hidden; font-size: 14px; margin-bottom: 15px;"><span data-v-6bba608e="">九乡风景区</span> <span data-v-6bba608e="" class="map_mark3"></span></div>
 										<ul data-v-6bba608e="" class="flex list-img">
-											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="img/c912ec21-d1f5-4b14-8e5f-ff50e330bf3b.jpg" style="width: 484px; height: 290.4px;"></li>
+											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="../img/c912ec21-d1f5-4b14-8e5f-ff50e330bf3b.jpg" style="width: 484px; height: 290.4px;"></li>
 										</ul>
 										<p data-v-6bba608e="">九乡风景名胜区位于宜良县九乡彝族回族乡境内，国家AAAA级旅游区。</p>
 									</div>
@@ -918,8 +919,8 @@ Day3：锦屏山“弥勒大佛”-返回昆明</textarea></div>
 										<div data-v-6bba608e=""><img data-v-6bba608e="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjQ2RDc2OEU4MTkzMTFFNzg4Q0VEQkI5MDI0QzlFMjgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjQ2RDc2OEY4MTkzMTFFNzg4Q0VEQkI5MDI0QzlFMjgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCNDZENzY4QzgxOTMxMUU3ODhDRURCQjkwMjRDOUUyOCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCNDZENzY4RDgxOTMxMUU3ODhDRURCQjkwMjRDOUUyOCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PtH3Eo8AAAFMSURBVHjaYrzAgAHEgTgKiH2AWA+I/wPxZSDeAsTLgPglsmJGNANygLgTiLkYsIPvQFwNxP0wASYkyYlAPBmPZhDgBOI+IJ6BboATEOcxEA/Sgdgf2YAFOBSeA+KTOORAephABtgCsSya5H+oDcZAbAFV8wFNjQAQe4MMcMZiehEQb0LiHwHiaCzqzEAGKGCRWIpFbBsWMSGQASxYJPSxiGGziBlkwHksErOAmJ8IVz0CJSRJIOMZFklQilsCxL+AOASIVbGoUYOlxFVAHMpAGtgFxO6wdFDOQDooQk5I94F4LwmaQYnrKnpeiCLBgDBsmekVEPcSoXkaKPRxZWdY6Ivh0PwOiEWB+B82F8CAFx7bvZA14zLgLBDPwyI+H1vOxOYFGHgIxHJQ9gMgVsSmiAmPc32R2N64FLHgMeASEHcB8U8gvoZLEUCAAQCPRDnts9qxcwAAAABJRU5ErkJggg==" class="map_mark">
 											<h3 data-v-6bba608e="" class="tow_img" style="overflow: hidden;"><div data-v-6bba608e="" style="float: left; margin-left: 10px;"><div data-v-6bba608e="" style="float: left; overflow: hidden;"><span data-v-6bba608e="">弥勒湖泉酒店</span> <!----> <span data-v-6bba608e="" style="margin-left: 10px;"><span data-v-6bba608e="" class="el-rate__item" style="cursor: auto;"><i data-v-6bba608e="" class="el-rate__icon el-icon-star-on" style="color: rgb(220, 17, 17); margin-right: 0px; font-size: 14px;"></i></span><span data-v-6bba608e="" class="el-rate__item" style="cursor: auto;"><i data-v-6bba608e="" class="el-rate__icon el-icon-star-on" style="color: rgb(220, 17, 17); margin-right: 0px; font-size: 14px;"></i></span><span data-v-6bba608e="" class="el-rate__item" style="cursor: auto;"><i data-v-6bba608e="" class="el-rate__icon el-icon-star-on" style="color: rgb(220, 17, 17); margin-right: 0px; font-size: 14px;"></i></span><span data-v-6bba608e="" class="el-rate__item" style="cursor: auto;"><i data-v-6bba608e="" class="el-rate__icon el-icon-star-on" style="color: rgb(220, 17, 17); margin-right: 0px; font-size: 14px;"></i></span><span data-v-6bba608e="" class="el-rate__item" style="cursor: auto;"><i data-v-6bba608e="" class="el-rate__icon el-icon-star-on" style="color: rgb(220, 17, 17); margin-right: 0px; font-size: 14px;"></i></span></span></div></div></h3></div>
 										<ul data-v-6bba608e="" class="flex list-img">
-											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="img/46d12b28-54b1-4cfe-8fd2-3a7cd62cddc9.jpg" style="width: 484px; height: 290.4px;"></li>
-											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="img/07db98b9-78dd-4d62-be50-225a028faf98.jpg" style="width: 484px; height: 290.4px;"></li>
+											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="../img/46d12b28-54b1-4cfe-8fd2-3a7cd62cddc9.jpg" style="width: 484px; height: 290.4px;"></li>
+											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="../img/07db98b9-78dd-4d62-be50-225a028faf98.jpg" style="width: 484px; height: 290.4px;"></li>
 											<!---->
 										</ul>
 										<p data-v-6bba608e="">弥勒湖泉酒店隶属云南红河投资有限公司，是一家按照星级标准投资兴建的集住宿、温泉、餐饮、会议、娱乐等为一体的休闲度假酒店。湖泉生态园是水城风光、生态景观集一体的优良人文景观旅游资源，酒店依水而筑，傍山而立，客房格调典雅，整体设计构思新颖是中西式建筑的完美结合。</p>
@@ -945,7 +946,7 @@ Day3：锦屏山“弥勒大佛”-返回昆明</textarea></div>
 										</div>
 										<div data-v-6bba608e="" style="overflow: hidden; font-size: 14px; margin-bottom: 15px;"><span data-v-6bba608e="">红河弥勒红酒庄</span> <span data-v-6bba608e="" class="map_mark3"></span></div>
 										<ul data-v-6bba608e="" class="flex list-img">
-											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="img/a7bd4b4b-58cc-4d76-95c3-8461967737ef.jpg" style="width: 484px; height: 290.4px;"></li>
+											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="../img/a7bd4b4b-58cc-4d76-95c3-8461967737ef.jpg" style="width: 484px; height: 290.4px;"></li>
 										</ul>
 										<p data-v-6bba608e="">酒庄拥有2万亩玫瑰蜜、赤霞珠、法国野等世界知名优质酿酒葡萄品种种植基地，并拥有国际标准的大型现代化厂房及国际一流的葡萄酒生产设备。</p>
 									</div>
@@ -968,8 +969,8 @@ Day3：锦屏山“弥勒大佛”-返回昆明</textarea></div>
 										<div data-v-6bba608e=""><img data-v-6bba608e="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjQ2RDc2OEU4MTkzMTFFNzg4Q0VEQkI5MDI0QzlFMjgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjQ2RDc2OEY4MTkzMTFFNzg4Q0VEQkI5MDI0QzlFMjgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCNDZENzY4QzgxOTMxMUU3ODhDRURCQjkwMjRDOUUyOCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCNDZENzY4RDgxOTMxMUU3ODhDRURCQjkwMjRDOUUyOCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PtH3Eo8AAAFMSURBVHjaYrzAgAHEgTgKiH2AWA+I/wPxZSDeAsTLgPglsmJGNANygLgTiLkYsIPvQFwNxP0wASYkyYlAPBmPZhDgBOI+IJ6BboATEOcxEA/Sgdgf2YAFOBSeA+KTOORAephABtgCsSya5H+oDcZAbAFV8wFNjQAQe4MMcMZiehEQb0LiHwHiaCzqzEAGKGCRWIpFbBsWMSGQASxYJPSxiGGziBlkwHksErOAmJ8IVz0CJSRJIOMZFklQilsCxL+AOASIVbGoUYOlxFVAHMpAGtgFxO6wdFDOQDooQk5I94F4LwmaQYnrKnpeiCLBgDBsmekVEPcSoXkaKPRxZWdY6Ivh0PwOiEWB+B82F8CAFx7bvZA14zLgLBDPwyI+H1vOxOYFGHgIxHJQ9gMgVsSmiAmPc32R2N64FLHgMeASEHcB8U8gvoZLEUCAAQCPRDnts9qxcwAAAABJRU5ErkJggg==" class="map_mark">
 											<h3 data-v-6bba608e="" class="tow_img" style="overflow: hidden;"><div data-v-6bba608e="" style="float: left; margin-left: 10px;"><div data-v-6bba608e="" style="float: left; overflow: hidden;"><span data-v-6bba608e="">弥勒可邑.帐篷度假酒店</span> <!----> <span data-v-6bba608e="" style="margin-left: 10px;"><span data-v-6bba608e="" class="el-rate__item" style="cursor: auto;"><i data-v-6bba608e="" class="el-rate__icon el-icon-star-on" style="color: rgb(220, 17, 17); margin-right: 0px; font-size: 14px;"></i></span><span data-v-6bba608e="" class="el-rate__item" style="cursor: auto;"><i data-v-6bba608e="" class="el-rate__icon el-icon-star-on" style="color: rgb(220, 17, 17); margin-right: 0px; font-size: 14px;"></i></span><span data-v-6bba608e="" class="el-rate__item" style="cursor: auto;"><i data-v-6bba608e="" class="el-rate__icon el-icon-star-on" style="color: rgb(220, 17, 17); margin-right: 0px; font-size: 14px;"></i></span></span></div></div></h3></div>
 										<ul data-v-6bba608e="" class="flex list-img">
-											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="img/c57978f5-c414-45f3-bc17-47f304bb4cc5.jpg" style="width: 484px; height: 290.4px;"></li>
-											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="img/d775d353-3e3c-4cc8-b86b-d820c7c8ddd8.jpg" style="width: 484px; height: 290.4px;"></li>
+											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="../img/c57978f5-c414-45f3-bc17-47f304bb4cc5.jpg" style="width: 484px; height: 290.4px;"></li>
+											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="../img/d775d353-3e3c-4cc8-b86b-d820c7c8ddd8.jpg" style="width: 484px; height: 290.4px;"></li>
 											<!---->
 										</ul>
 										<p data-v-6bba608e="">弥勒可邑·帐篷度假酒店位于云南省红河州弥勒市可邑小镇景区内，距离景区入口约5公里。酒店四周青山环抱、空气清新、风景宜人，北面依天然崖壁，南面紧接真人CS竞技场地，既保留了帐篷的外观特点，又融合了现代酒店舒适元素，回归自然、崇尚自由。</p>
@@ -995,7 +996,7 @@ Day3：锦屏山“弥勒大佛”-返回昆明</textarea></div>
 										</div>
 										<div data-v-6bba608e="" style="overflow: hidden; font-size: 14px; margin-bottom: 15px;"><span data-v-6bba608e="">可邑小镇</span> <span data-v-6bba608e="" class="map_mark3"></span></div>
 										<ul data-v-6bba608e="" class="flex list-img">
-											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="img/5207228a-4bf0-40d3-b390-b23f6bf0acc3.jpg" style="width: 484px; height: 290.4px;"></li>
+											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="../img/5207228a-4bf0-40d3-b390-b23f6bf0acc3.jpg" style="width: 484px; height: 290.4px;"></li>
 										</ul>
 										<p data-v-6bba608e="">步入弥勒西部百里彝山的可邑旅游小镇，感受原汁原味的彝族生态文化; 品阿细美食。</p>
 									</div>
@@ -1009,7 +1010,7 @@ Day3：锦屏山“弥勒大佛”-返回昆明</textarea></div>
 										</div>
 										<div data-v-6bba608e="" style="overflow: hidden; font-size: 14px; margin-bottom: 15px;"><span data-v-6bba608e="">锦屏山风景区</span> <span data-v-6bba608e="" class="map_mark3"></span></div>
 										<ul data-v-6bba608e="" class="flex list-img">
-											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="img/594edb44-26b9-4397-a24e-01907c7e7e30.jpg" style="width: 484px; height: 290.4px;"></li>
+											<li data-v-6bba608e="" class="flex-item"><img data-v-6bba608e="" src="../img/594edb44-26b9-4397-a24e-01907c7e7e30.jpg" style="width: 484px; height: 290.4px;"></li>
 										</ul>
 										<p data-v-6bba608e="">锦屏山风景区是滇东南最为著名的佛教胜地，弥勒市与智佛弥勒同名，遂成市名弥勒，山似弥勒，寺名弥勒，佛名弥勒之大奇。</p>
 									</div>
@@ -1034,7 +1035,7 @@ Day3：锦屏山“弥勒大佛”-返回昆明</textarea></div>
 					<div data-v-06a02ad2="" class="car-center">
 						<p data-v-06a02ad2=""><span data-v-06a02ad2="" class="car-title">用车推荐</span></p>
 						<div data-v-06a02ad2="" class="img-info">
-							<div data-v-06a02ad2="" class="l-img"><img data-v-06a02ad2="" src="img/97a78a9a-2675-4f56-8b37-d19ecc453224.jpg" alt="" style="width: 469px; height: 281.4px;"></div>
+							<div data-v-06a02ad2="" class="l-img"><img data-v-06a02ad2="" src="../img/97a78a9a-2675-4f56-8b37-d19ecc453224.jpg" alt="" style="width: 469px; height: 281.4px;"></div>
 							<div data-v-06a02ad2="" class="r-info">
 								<p data-v-06a02ad2="" style="font-size: 20px; margin-bottom: 15px;">现代 朗动 <span data-v-06a02ad2="" class="content">(或同级车型)</span></p>
 								<ul data-v-06a02ad2="">
@@ -1054,7 +1055,7 @@ Day3：锦屏山“弥勒大佛”-返回昆明</textarea></div>
 							</div>
 						</div>
 					</div>
-					<div data-v-06a02ad2="" style="position: absolute; left: 98px; z-index: -1;"><img data-v-06a02ad2="" width="1100" src="img/bottom-shadow.c701ee9.png" alt=""></div>
+					<div data-v-06a02ad2="" style="position: absolute; left: 98px; z-index: -1;"><img data-v-06a02ad2="" width="1100" src="../img/bottom-shadow.c701ee9.png" alt=""></div>
 				</div>
 				<div data-v-06a02ad2="" id="1" class="cost-description">
 					<div data-v-06a02ad2="" style="width: 100%; height: 35px;"></div> <span data-v-06a02ad2="" class="slogo"><img data-v-06a02ad2="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAjCAYAAADxG9hnAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5MjcxZmY0YS03ZTk0LTRjOWEtOTgwOC03ZDg2M2MyOTRlNGMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RTFCNzJDMThDOTIwMTFFN0FGNjBBMUQ3NEIyN0FDNEMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RTFCNzJDMTdDOTIwMTFFN0FGNjBBMUQ3NEIyN0FDNEMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxY2QxZGY0Mi1kNmFjLTQ5MDgtOGU3Zi04YjlhNWRlYTkxN2QiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpmODE2ZTA5Ni1kOGE5LTExN2EtOGY0Zi1iNGVhNjgxNDdhNDgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4KB4X3AAAEFElEQVR42uxYXUhUURCeu+vu2rrqau6aFIgpKgghhoEPpajZkz+IaJo+BL5kuuqjD2pG9BCKrmm9CCIEpUgvFqmJSKAiUW+CGEWBqbn+rFir7a67zbmejbv3Z+/1J/ChgeEsx5k5352ZMzNHxuv1wmkgFZwSOjVAgnw/2traZIUrrVYNLjeQryOnI19ENtI/25G/IL9Hfos89qy+3iVns7W11R+IDAByWANyDbJJQiyacgayBXkd9Xpx7UJA9mOHBo3dxGWBgA8AQoyiqM4CtaEsNCIA1Lg8Rr5zzPATLz1He9dwrUPv7Cv2CAUxdAIguERsDVHbikPThVz8Dy4HsWlVBAQRl+FSK2fR2NAAps7OAyN6PUT390PY7dtKwNylZ0jnCL0d3ZLB7usDj90OrqUlONvSwu5pYmNBZTSCLjUVDIWFwOh07G9wuWCtrk7KVDeeNca9TfxkJVfULKWtSUgA3aVLfntnsrL8r8rDh+y6NzcXyCtmetY93wbj6zWfIyO1uCwFuqIh+flwbmBAUTKslJSAY3IykIgN+UL85qaTnyN5cnXC8eYN7NtssiCIjGNqSk7MRM8UhCZPTtPrdoOtsRFCy8rA6xKv3oxGAzvDwwAejxLHkXbxig8kTYnmmcxMUMfE4Gcf1CVVSAh48VDv7u6BgFoN+uxs+DUyosRcmliOrMmFJvjKFTg/OurvJQTAaLUsAC4tYz7tTk/LAbFhjpj5ORIup3WWdkofuZeX4WtyMny7fFmQO5HNzUo8En7oeSQ4I4NlH3m2t2Hr0SMwWixgKC6G9aYm8Dgcft7jyh+m6W0HCk0EJqlfSDBZ3VjYotrbgQkKgt2ZGXSRW6CzMjsb6PxtMY98kixkWD31ubl+e+qoKAitqIAV9MZqZSUEp6WBKizMT4boaOLiAgH5JAbkg5Q0OVBwlff2wFBUBDGDg+xNWsMQcUPzV/fWrUBAPooBGZeSJjnAJ8/ODqxWVYHn508ILS9ncwacTqEu9h9tYqKU6XGxHCGbG+RyCEITHy+woDaZwICFbSknBz9HBaaODrb5ienq0tPBubgoVuLHBB7BTkg+p+cww4WhoABMmKxmqxX0BJDUjYiOFtt+Qs8U7b5ddJIyKwWjz5PtDOD+/l3MG12SgxGdDyx8rV+vXx95JCO6jokJ/raFP9kLhmcUGMSh5SqZpHx7P6qrwVhbC9qUFDY32IYm9VRlGDZnSKV1zs+DvacHvL9/cyV68YwXSqf4euQY39xKDG1hMp4AvaS2lQ3PdOQvRX56goMzsVUq9ZyQfNdQhRoM0zs6eZuPCIB09XqxcBzqpUcNJCHfp3VGKW1QnSQ5EIrfvjTDW9E7D+hUlcd5hEdQsS3OI5wUx3FunZAj5v8/anj0R4ABAPIdVIc7zKfKAAAAAElFTkSuQmCC" width="34" height="34" alt=""></span>
@@ -1252,11 +1253,11 @@ Day3：锦屏山“弥勒大佛”-返回昆明</textarea></div>
 			<div data-v-06a02ad2="" class="bottom">
 				<div data-v-06a02ad2="" class="wkxm-client">
 					<a data-v-06a02ad2="" href="javascript:void(0);"><img data-v-06a02ad2="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAA5CAMAAAB3X0lcAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0RDkwNDUwMjU4QUQxMUU3OUMxNUJEMTU4QzhEMDlDMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0RDkwNDUwMzU4QUQxMUU3OUMxNUJEMTU4QzhEMDlDMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjdDNzc5Njc1NTg4QjExRTc5QzE1QkQxNThDOEQwOUMxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjdDNzc5Njc2NTg4QjExRTc5QzE1QkQxNThDOEQwOUMxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+n3dbDgAAAMBQTFRF9ZkA/////vDZ/ezQ+cZx+s6F/vLf+cJm/e/X/e3R+b9f+cdy/e/W/N2p/N+w+LpT+sh1/Nyn/e/Y/ebB+LhN/vXm/e3S+9ec/vHb/erL/N2r+b9e9qUd/vbo+sdz+cNo9qcj/OW9/e7U96st/e7V/vXl/vTk/OW++LVH96ss/efD+LpS96or+LxY/OK2+cFl96419682/OO6/vXn+LNC/ejG/vDa97A6/vbp//78/enJ/vPg/e3T/vju/vPi+s+GXiN3IAAAALhJREFUeNrs1ccOgkAQgGEGEXeXJtXee++9vf9bqUhiCBkkHM3+F8jMdyCbbBAEHi9VTZN4lFzbRFXVLqXUs8wqQm14pdwG09Vy1AI/HaH39/J8qmm6Xt586B6hIhQcozFjdUlSmGFMHA0oSll4kIcMSpXw4BFDpfAgyymnf0IrSS+MBRrLfVuwOUoJRPpJdzQptd+fHU/lYF88DI/Bq4ieQKQxQrclV/br9f3HxV13+P+Bl66nAAMAIT4LhxvhtooAAAAASUVORK5CYII=" alt=""></a>
-					<div data-v-06a02ad2="" class="appc"><img data-v-06a02ad2="" src="img/appc.fd9965f.jpg" alt=""></div>
+					<div data-v-06a02ad2="" class="appc"><img data-v-06a02ad2="" src="../img/appc.fd9965f.jpg" alt=""></div>
 				</div>
 				<div data-v-06a02ad2="" class="wkxm-wx">
 					<a data-v-06a02ad2="" href="javascript:void(0)"><img data-v-06a02ad2="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAABACAMAAABbchVVAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0RDkwNDUwNjU4QUQxMUU3OUMxNUJEMTU4QzhEMDlDMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0RDkwNDUwNzU4QUQxMUU3OUMxNUJEMTU4QzhEMDlDMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjREOTA0NTA0NThBRDExRTc5QzE1QkQxNThDOEQwOUMxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjREOTA0NTA1NThBRDExRTc5QzE1QkQxNThDOEQwOUMxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+bgRg0gAAAVlQTFRF9ZkA////+9qj/enH//v0+sdz/vPi/OK3+cVt/e/X+cFk///++9id9qIW+b5c/evM/vfq/evN/vnx9qck+sd0/N+v+syA/vLf//369Z0J/vXm+cNp/N2r+LNC96st+s2C/vXn+LNA9682+LVG9ZwI+cdy/OG0/vHc+tGM9683/vju+LxY97E8/e7V/efC/OCx97I/960y+LpS+9WW+LRD/OO6+cVu+sh19ZwH9Z0L96419ZsG//78/OO5960x//35/vbp9p4N/vnw+9mg/e/W/Nyo+9mf/e3T+sl5+LZJ/N+w+cNo+LlP+sh2+LdK+LhO/N6t9p8P+LtW/vHd/vHb+b9e/vTk//v2/N+u+9WX9ZsF/vLe/vry/N2q+LNB/N2p+LxX/OCy96ko97E9/efD960z//rz/vPh+LhN+s6E+9ie+9ea/OW/+cZw/vDa/ezP+sl4/OO4/e3SwCUzWwAAAUVJREFUeNpiYBgFo2AU0B74ZUbw56Uw+SoRUsilywgD7Mr4FEqKMiIDDTxKixhRQTxOlUxAWSlVERYglSZmpgCkxHCo1AQZxMHAYAukshkYCkDcJOxK3UBygnEmIOPE/ZOlGBnDBLmwK3VBdWi0CCtrrrw21kCTQFHJoaPKDxbh9JDEUMqGpNBe0ZMFzkmXRVcqg6Q0lA/FCkU0pcoIqYAMICHA4w4kmZ2dGBlteNHUqsGVJoBskGcwBJK8DJFA0hhNaZQ6VCWbNzfIP6zsQNLVHOSHYHTXBuZwg5XqS6PFMGM4ZoAJgSX0MJRqYaiUY2T0inVgZOETQlPKjK7SOqsQGIQWwnaWpmhKfdCVqsjBWKmoKnnwpXIjZJWi+LOOATNcJRPBDBnElC8QI57IxBhCTPZVcQQSVmrCowXZKBgFgwYABBgAs74dx7Hp7BUAAAAASUVORK5CYII=" alt=""></a>
-					<div data-v-06a02ad2="" class="wxc"><img data-v-06a02ad2="" src="img/wxc.4886e67.jpg" alt=""></div>
+					<div data-v-06a02ad2="" class="wxc"><img data-v-06a02ad2="" src="../img/wxc.4886e67.jpg" alt=""></div>
 				</div>
 			</div>
 			<!---->
@@ -1325,9 +1326,9 @@ Day3：锦屏山“弥勒大佛”-返回昆明</textarea></div>
 				</div>
 				<div class="code">
 					<div>
-						<p>订阅号</p> <img src="img/wxcode.cc79ece.jpg" alt=""></div>
+						<p>订阅号</p> <img src="../img/wxcode.cc79ece.jpg" alt=""></div>
 					<div>
-						<p>APP下载</p> <img src="img/appcode.e8d3d31.png" alt=""></div>
+						<p>APP下载</p> <img src="../img/appcode.e8d3d31.png" alt=""></div>
 				</div>
 				<div class="footer">
 					<p>北京悟空国际旅行社有限公司</p>
@@ -1338,8 +1339,8 @@ Day3：锦屏山“弥勒大佛”-返回昆明</textarea></div>
 		</div>
 		</div>
 		<!--<script type="text/javascript" src="js/manifest.fb5239f97ae874448f44.js.下载"></script>-->
-		<script type="text/javascript" src="js/vendor.434b2f13fc4d603f30a3.js"></script>
-		<script type="text/javascript" src="js/app.6d0a0c8dac82bcb8212b.js"></script>
+		<script type="text/javascript" src="../js/vendor.434b2f13fc4d603f30a3.js"></script>
+		<script type="text/javascript" src="../js/app.6d0a0c8dac82bcb8212b.js"></script>
 	</body>
 
 </html>

@@ -3,15 +3,15 @@
 <html>
 
 	<head>
-        <#assign base=request.contextPath />
+        <#assign base = rc.contextPath/>
         <base id="base" href="${base}">
-        <base href="<%=request.getContextPath();%>/"/>
+
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="description" content="悟空自驾游是一家立足云南、面向全国、辐射东南亚的自驾游服务平台！为全国旅游爱好者提供吃、住、行、游、购、 娱等在内的高品质服务。依托于移动互联网技术，将云南省16个地州、15个机场、火车站、高铁站、公交枢纽、酒店、旅游景点、自驾游营地、 餐饮、购物、娱乐等旅游目的地、服务点和连接点打通，打造&quot;租车+旅游&quot;全新模式。">
 		<title>悟空自驾游 云南自驾游 自驾租车 云南租车 云南旅游 自驾游</title>
 		<link rel="icon" href="https://static.wkzuche.com/www/images/facicon.ico">
-		<script src="../js/hm.js"></script>
+		<script src="${base}/js/hm.js"></script>
 		<script type="text/javascript">
 			var _hmt = _hmt || [];
 			(function() {
@@ -21,7 +21,7 @@
 				s.parentNode.insertBefore(hm, s);
 			})();
 		</script>
-		<link href="../css/app.1e82d5e3d6f6affba7436d4c5b5588a5.css" rel="stylesheet">
+		<link href="${base}/css/app.1e82d5e3d6f6affba7436d4c5b5588a5.css" rel="stylesheet">
 		<style type="text/css">
 			.comp-full-calendar {
 				padding: 20px;
@@ -271,7 +271,7 @@
 				color: #f2f2f2;
 			}
 		</style>
-		<script type="text/javascript" charset="utf-8" async="" src="../js/0.f6e92aef6c71e3f85cb8.js"></script>
+		<script type="text/javascript" charset="utf-8" async="" src="${base}/js/0.f6e92aef6c71e3f85cb8.js"></script>
 		<style type="text/css">
 			.slider {
 				margin-top: 55px
@@ -712,7 +712,7 @@
 				right: 111px
 			}
 		</style>
-		<script src="../js/pc.min.js" id="zhichiload" class="customService"></script>
+		<script src="js/pc.min.js" id="zhichiload" class="customService"></script>
 	</head>
 
 	<body>
@@ -720,7 +720,7 @@
 			<div class="reuse_top">
 				<div class="top-main">
 					<div class="top-logo">
-						<a href="driving.ftl"><img src="../img/logo.74f8c8e.png" alt=""></a>
+						<a href="driving.ftl"><img src="img/logo.74f8c8e.png" alt=""></a>
 					</div>
 					<div class="nav">
 						<ul>
@@ -728,7 +728,7 @@
 								<a href="driving.ftl" class="router-link-exact-active router-link-active">首页</a>
 							</li>
 							<li>
-								<a href="../selfdriving.ftl" class="">自助自驾</a>
+								<a href="${base}/combo/home" class="">自助自驾</a>
 							</li>
 							<li>
 								<a href="../cardriving.ftl" class="">车+X</a>
@@ -758,7 +758,7 @@
 					</ol>
 					<div role="listbox" class="carousel-inner">
 						<div class="item active">
-							<a href="http://www.wktrip.com/self_driving/100002"><img src="../img/b6cafeb9-7fb2-4c2f-a224-9c6c34326f09.jpg" alt=""></a>
+							<a href="http://www.wktrip.com/self_driving/100002"><img src="img/b6cafeb9-7fb2-4c2f-a224-9c6c34326f09.jpg" alt=""></a>
 						</div>
 					</div>
 				</div>
@@ -768,15 +768,12 @@
 						<div class="sh-list">
 							<h3>自助自驾</h3>
 							<p>感悟生命本源，自在畅游旷野美景。</p>
-							<a href="../selfdriving.ftl" class="">更多&gt;</a>
-                       <#-- <#list comboList as combo>
-                        ${combo.comboName}.${combo.comboSite},${combo.notice.noticeContent}
-                        </#list>-->
+							<a href="selfdriving.ftl" class="">更多&gt;</a>
 							<ul class="sh-nav-list">
                                 <#list comboList as combo>
 								<li>
-									<a href="https://www.wktrip.com/self_driving/100011" class=""><span style="display: none;">100011</span>
-										<div class="vessel-img"><img src="../img/cd07d77d-9e52-4c19-b5bf-cc3964e3b984.jpg" alt=""> <span class="tags tags_7"><span class="test">紫-地热农特</span></span>
+									<a href="${base}/combo/self_driving/${combo.comboId}" class=""><span style="display: none;">100011</span>
+										<div class="vessel-img"><img src="${base}/img/cd07d77d-9e52-4c19-b5bf-cc3964e3b984.jpg" alt=""> <span class="tags tags_7"><span class="test">紫-地热农特</span></span>
 										</div>
 										<div class="mess-border"><span class="name">${combo.comboName}</span>
 											<p class="message"><i class="qizi"></i><span>${combo.comboType}</span><i class="weizhi"></i><span>${combo.comboSite}</span></p>
@@ -785,38 +782,8 @@
 									</a>
 								</li>
                                 </#list>
-								<#--<li>
-									<a href="https://www.wktrip.com/self_driving/100021" class=""><span style="display: none;">100021</span>
-										<div class="vessel-img"><img src="img/fa65feb3-cf20-4011-ac00-53d9d63352f3.jpg" alt=""> <span class="tags tags_2"><span class="test">橙-民俗节庆</span></span>
-										</div>
-										<div class="mess-border"><span class="name">&lt;普者黑、坝美4天3晚休闲游&gt;(丘北进出）十里桃花林、穿越喀斯特地貌群、湿身水仗、世外桃源、坝美云端</span>
-											<p class="message"><i class="qizi"></i><span>自助自驾</span><i class="weizhi"></i><span>普者黑出发</span></p>
-											<p class="money"><span>¥<span class="money2">1360</span></span>起 / 人</p>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="https://www.wktrip.com/self_driving/100055" class=""><span style="display: none;">100055</span>
-										<div class="vessel-img"><img src="img/8eeed621-b64a-48a9-bf2c-630ee2ce3ba9.jpg" alt="">
-											<!--&ndash;&gt;
-										</div>
-										<div class="mess-border"><span class="name">【Jeep专线】遇见梅里 香格里拉-梅里雪山 5天4晚 转山朝圣之旅</span>
-											<p class="message"><i class="qizi"></i><span>自助自驾</span><i class="weizhi"></i><span>香格里拉出发</span></p>
-											<p class="money"><span>¥<span class="money2">2880</span></span>起 / 人</p>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="https://www.wktrip.com/self_driving/100054" class=""><span style="display: none;">100054</span>
-										<div class="vessel-img"><img src="img/e73672bd-88ff-41a2-8a72-187f8dd50c11.jpg" alt="">
-											<!--&ndash;&gt;
-										</div>
-										<div class="mess-border"><span class="name">【Jeep专线】寻觅世外桃源  昆明-红河元阳-普者黑坝美  8天7晚  自驾之旅</span>
-											<p class="message"><i class="qizi"></i><span>自助自驾</span><i class="weizhi"></i><span>昆明出发</span></p>
-											<p class="money"><span>¥<span class="money2">2990</span></span>起 / 人</p>
-										</div>
-									</a>
-								</li>-->
+								<#--
+								-->
 							</ul>
 						</div>
 						<div class="sh-list">

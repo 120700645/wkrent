@@ -3,12 +3,15 @@
 <html>
 
 	<head>
+        <#assign base = rc.contextPath/>
+        <base id="base" href="${base}">
+
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="description" content="悟空自驾游是一家立足云南、面向全国、辐射东南亚的自驾游服务平台！为全国旅游爱好者提供吃、住、行、游、购、 娱等在内的高品质服务。依托于移动互联网技术，将云南省16个地州、15个机场、火车站、高铁站、公交枢纽、酒店、旅游景点、自驾游营地、 餐饮、购物、娱乐等旅游目的地、服务点和连接点打通，打造&quot;租车+旅游&quot;全新模式。">
 		<title>悟空自驾游 云南自驾游 自驾租车 云南租车 云南旅游 自驾游</title>
 		<link rel="icon" href="https://static.wkzuche.com/www/images/facicon.ico">
-		<script src="js/hm.js"></script>
+		<script src="${base}/js/hm.js"></script>
 		<script type="text/javascript">
 			var _hmt = _hmt || [];
 			(function() {
@@ -18,7 +21,7 @@
 				s.parentNode.insertBefore(hm, s);
 			})();
 		</script>
-		<link href="css/app.1e82d5e3d6f6affba7436d4c5b5588a5.css" rel="stylesheet">
+		<link href="${base}/css/app.1e82d5e3d6f6affba7436d4c5b5588a5.css" rel="stylesheet">
 		<style type="text/css">
 			.comp-full-calendar {
 				padding: 20px;
@@ -268,7 +271,7 @@
 				color: #f2f2f2;
 			}
 		</style>
-		<script type="text/javascript" charset="utf-8" async="" src="js/0.f6e92aef6c71e3f85cb8.js"></script>
+		<script type="text/javascript" charset="utf-8" async="" src="${base}/js/0.f6e92aef6c71e3f85cb8.js"></script>
 		<style type="text/css">
 			.slider {
 				margin-top: 55px
@@ -716,27 +719,27 @@
 			<div class="reuse_top">
 				<div class="top-main">
 					<div class="top-logo">
-						<a href="ftl/driving.ftl"><img src="img/logo.74f8c8e.png" alt=""></a>
+						<a href="driving.ftl"><img src="${base}/img/logo.74f8c8e.png" alt=""></a>
 					</div>
 					<div class="nav">
 						<ul>
 							<li class="active">
-								<a href="ftl/driving.ftl" class="">首页</a>
+								<a href="driving.ftl" class="">首页</a>
 							</li>
 							<li>
-								<a href="selfdriving.ftl" class="router-link-exact-active router-link-active">自助自驾</a>
+								<a href="${base}/combo/home" class="router-link-exact-active router-link-active">自助自驾</a>
 							</li>
 							<li>
-								<a href="cardriving.ftl" class="">车+X</a>
+								<a href="../cardriving.ftl" class="">车+X</a>
 							</li>
 							<li>
-								<a href="groupdriving.ftl" class="">跟团自驾</a>
+								<a href="../groupdriving.ftl" class="">跟团自驾</a>
 							</li>
 							<li>
-								<a href="freedesign.ftl" class="">自由定制</a>
+								<a href="../freedesign.ftl" class="">自由定制</a>
 							</li>
 							<li>
-								<a href="renting.ftl" target="_blank">自驾租车</a>
+								<a href="../renting.ftl" target="_blank">自驾租车</a>
 							</li>
 						</ul> <span hidden="hidden"></span>
 						<div class="user">
@@ -769,28 +772,32 @@
 				<div data-v-107a46b0="">
 					<div data-v-107a46b0="" class="all-list">
 						<div data-v-107a46b0="" class="classify-list">
+                            <#list comboList as combo>
+                            <tr>
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100011" class=""><img data-v-107a46b0="" src="img/cd07d77d-9e52-4c19-b5bf-cc3964e3b984.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_7"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">紫-地热农特</span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100011" class=""><img data-v-107a46b0="" src="${base}/img/cd07d77d-9e52-4c19-b5bf-cc3964e3b984.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_7"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">紫-地热农特</span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
 									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100011" class="">&lt;昆明、弥勒3天2晚休闲游&gt; (昆明进出） 帐篷酒店、半山温泉、红酒庄园</a>
+										<a data-v-107a46b0="" href="${base}/combo/self_driving/${combo.comboId}" class="">${combo.comboName}</a>
 									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">昆明出发</span> <span data-v-107a46b0="">3天2晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">恍若隔世美景、群山环抱、绿树成荫、漫步沙滩、养生SPA，领略红酒的魅力，让红酒的热烈冲击味蕾，让葡萄的芬芳沁透脾肺，天然温泉舒缓疲劳，自然是这里唯一的主题。 ——简易行程—— Day1：九乡风景名胜区、入住弥勒湖泉酒店、弥勒半山温泉 Day2：云南红酒庄、法邑基督圣恩大教堂、可邑小镇、入住帐篷酒店 Day3：锦屏山“弥勒大佛”-返回昆明
+									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">${combo.comboType}</span> <span data-v-107a46b0="">${combo.comboSite}出发</span> <span data-v-107a46b0="">${combo.comboDays}</span></p>
+									<p data-v-107a46b0="" class="cd-list-description advantage">${combo.comboLight}
 									</p>
 									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">温泉</span><span data-v-107a46b0="">民俗</span><span data-v-107a46b0="">亲子优选</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">1280</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100011" class="">
+									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">${combo.comboPrice}</b></span>起 / 人</p>
+									<a data-v-107a46b0="" href="${base}/combo/self_driving/${combo.comboId}" class="">
 										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
 									</a>
 								</div>
 							</div>
-							<div data-v-107a46b0="" class="classify-li">
+                            </tr>
+                            </#list>
+							<#--<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100021" class=""><img data-v-107a46b0="" src="img/fa65feb3-cf20-4011-ac00-53d9d63352f3.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_2"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">橙-民俗节庆</span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100021" class=""><img data-v-107a46b0="" src="../img/fa65feb3-cf20-4011-ac00-53d9d63352f3.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_2"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">橙-民俗节庆</span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
@@ -809,7 +816,7 @@
 							</div>
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100055" class=""><img data-v-107a46b0="" src="img/8eeed621-b64a-48a9-bf2c-630ee2ce3ba9.jpg" alt=""></a> <span data-v-107a46b0="" class="tags"><span data-v-107a46b0="" class="test" style="margin-right: 38px;"></span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100055" class=""><img data-v-107a46b0="" src="../img/8eeed621-b64a-48a9-bf2c-630ee2ce3ba9.jpg" alt=""></a> <span data-v-107a46b0="" class="tags"><span data-v-107a46b0="" class="test" style="margin-right: 38px;"></span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
@@ -828,7 +835,7 @@
 							</div>
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100054" class=""><img data-v-107a46b0="" src="img/e73672bd-88ff-41a2-8a72-187f8dd50c11.jpg" alt=""></a> <span data-v-107a46b0="" class="tags"><span data-v-107a46b0="" class="test" style="margin-right: 38px;"></span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100054" class=""><img data-v-107a46b0="" src="../img/e73672bd-88ff-41a2-8a72-187f8dd50c11.jpg" alt=""></a> <span data-v-107a46b0="" class="tags"><span data-v-107a46b0="" class="test" style="margin-right: 38px;"></span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
@@ -847,7 +854,7 @@
 							</div>
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100053" class=""><img data-v-107a46b0="" src="img/47da43e6-c0e9-4ec3-99c6-635bbae39418.jpg" alt=""></a> <span data-v-107a46b0="" class="tags"><span data-v-107a46b0="" class="test" style="margin-right: 38px;"></span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100053" class=""><img data-v-107a46b0="" src="../img/47da43e6-c0e9-4ec3-99c6-635bbae39418.jpg" alt=""></a> <span data-v-107a46b0="" class="tags"><span data-v-107a46b0="" class="test" style="margin-right: 38px;"></span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
@@ -866,7 +873,7 @@
 							</div>
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100051" class=""><img data-v-107a46b0="" src="img/8731f79f-b5ba-45e1-bf0c-e1d83ac24ea4.jpg" alt=""></a> <span data-v-107a46b0="" class="tags"><span data-v-107a46b0="" class="test" style="margin-right: 38px;"></span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100051" class=""><img data-v-107a46b0="" src="../img/8731f79f-b5ba-45e1-bf0c-e1d83ac24ea4.jpg" alt=""></a> <span data-v-107a46b0="" class="tags"><span data-v-107a46b0="" class="test" style="margin-right: 38px;"></span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
@@ -885,7 +892,7 @@
 							</div>
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100029" class=""><img data-v-107a46b0="" src="img/305578a7-67c3-4ac8-abeb-83e9eddc72f6.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_4"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">绿-亲子研学</span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100029" class=""><img data-v-107a46b0="" src="../img/305578a7-67c3-4ac8-abeb-83e9eddc72f6.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_4"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">绿-亲子研学</span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
@@ -904,7 +911,7 @@
 							</div>
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100008" class=""><img data-v-107a46b0="" src="img/9037a480-6482-4a1e-bca6-b7e8d53a9516.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_6"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">蓝-山海之间</span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100008" class=""><img data-v-107a46b0="" src="../img/9037a480-6482-4a1e-bca6-b7e8d53a9516.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_6"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">蓝-山海之间</span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
@@ -923,7 +930,7 @@
 							</div>
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100001" class=""><img data-v-107a46b0="" src="img/59718850-dcf4-44e5-856e-87bcd64a2894.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_6"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">蓝-山海之间</span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100001" class=""><img data-v-107a46b0="" src="../img/59718850-dcf4-44e5-856e-87bcd64a2894.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_6"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">蓝-山海之间</span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
@@ -942,7 +949,7 @@
 							</div>
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100016" class=""><img data-v-107a46b0="" src="img/4a918239-e099-4b43-b984-8970c0bf15fb.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_1"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">赤-茶马古道</span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100016" class=""><img data-v-107a46b0="" src="../img/4a918239-e099-4b43-b984-8970c0bf15fb.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_1"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">赤-茶马古道</span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
@@ -961,7 +968,7 @@
 							</div>
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100015" class=""><img data-v-107a46b0="" src="img/f32c6af0-54ce-4f49-bc8a-85337896421d.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_5"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">青-丝路古城</span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100015" class=""><img data-v-107a46b0="" src="../img/f32c6af0-54ce-4f49-bc8a-85337896421d.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_5"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">青-丝路古城</span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
@@ -980,7 +987,7 @@
 							</div>
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100018" class=""><img data-v-107a46b0="" src="img/4b7783ec-7a9e-4d12-91d8-82946e48284e.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_5"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">青-丝路古城</span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100018" class=""><img data-v-107a46b0="" src="../img/4b7783ec-7a9e-4d12-91d8-82946e48284e.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_5"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">青-丝路古城</span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
@@ -999,7 +1006,7 @@
 							</div>
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100106" class=""><img data-v-107a46b0="" src="img/71a748cd-5a3d-4f54-9ca8-7346552a80fa.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_1"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">赤-茶马古道</span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100106" class=""><img data-v-107a46b0="" src="../img/71a748cd-5a3d-4f54-9ca8-7346552a80fa.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_1"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">赤-茶马古道</span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
@@ -1019,7 +1026,7 @@
 							</div>
 							<div data-v-107a46b0="" class="classify-li">
 								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100049" class=""><img data-v-107a46b0="" src="img/89d82442-4abc-42b8-a736-499cf2750398.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_7"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">紫-地热农特</span></span>
+									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100049" class=""><img data-v-107a46b0="" src="../img/89d82442-4abc-42b8-a736-499cf2750398.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_7"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">紫-地热农特</span></span>
 									<div data-v-107a46b0=""></div>
 								</div>
 								<div data-v-107a46b0="" class="cd-list-text">
@@ -1037,24 +1044,24 @@
 								</div>
 							</div>
 							<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100047" class=""><img data-v-107a46b0="" src="img/385ef25d-f5b4-4167-8c64-ab1c82268b5c.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_1"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">赤-茶马古道</span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100047" class="">&lt;奇幻雨林返普归真,5天4晚深度自驾游&gt;（版纳进普洱出）</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">西双版纳出发</span> <span data-v-107a46b0="">5天4晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">旅行的真谛在于“感路”而不是赶路，自驾能让您在遥远的他乡，充分体验旅行的过程之美。穿过麦田，穿过村庄，穿过城市，穿过热带雨林。遇见生命，遇见世间的一万种可能或者一万种以外的可能。生命的密码藏在一朵花里，一条雨林河里，一片热带雨林里。 ——简易行程—— Day1：漫步昔日的傣王御花园、触摸傣式古老建筑、感受灵魂之园 Day2：领略热带风光、感受奇异的热带雨林景观、亲眼目睹会跳舞的小草、看一眼令人生畏的箭毒木一见血封喉、来一场民族气息与魔幻色彩的视听盛宴 Day3：深入野象谷开启中国生态保护的“想象之旅”；在高空观象栈道、雨林游道寻找亚洲象的印迹 Day4：走进北回归线上最大的绿洲，感受动植物的天堂，天人合一、人与自然和谐共融。让灵魂尽情的私奔！ Day5：早餐后直接前往普洱思茅机场还车办理登机手续，结束本次旅行。
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">最美公路</span><span data-v-107a46b0="">落地自驾</span><span data-v-107a46b0="">热带雨林</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">5890</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100047" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
+                            <div data-v-107a46b0="" class="cd-list-img">
+                                <a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100047" class=""><img data-v-107a46b0="" src="../img/385ef25d-f5b4-4167-8c64-ab1c82268b5c.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_1"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">赤-茶马古道</span></span>
+                                <div data-v-107a46b0=""></div>
+                            </div>
+                            <div data-v-107a46b0="" class="cd-list-text">
+                                <p data-v-107a46b0="" class="cd-list-title">
+                                    <a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100047" class="">&lt;奇幻雨林返普归真,5天4晚深度自驾游&gt;（版纳进普洱出）</a>
+                                </p>
+                                <p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">西双版纳出发</span> <span data-v-107a46b0="">5天4晚</span></p>
+                                <p data-v-107a46b0="" class="cd-list-description advantage">旅行的真谛在于“感路”而不是赶路，自驾能让您在遥远的他乡，充分体验旅行的过程之美。穿过麦田，穿过村庄，穿过城市，穿过热带雨林。遇见生命，遇见世间的一万种可能或者一万种以外的可能。生命的密码藏在一朵花里，一条雨林河里，一片热带雨林里。 ——简易行程—— Day1：漫步昔日的傣王御花园、触摸傣式古老建筑、感受灵魂之园 Day2：领略热带风光、感受奇异的热带雨林景观、亲眼目睹会跳舞的小草、看一眼令人生畏的箭毒木一见血封喉、来一场民族气息与魔幻色彩的视听盛宴 Day3：深入野象谷开启中国生态保护的“想象之旅”；在高空观象栈道、雨林游道寻找亚洲象的印迹 Day4：走进北回归线上最大的绿洲，感受动植物的天堂，天人合一、人与自然和谐共融。让灵魂尽情的私奔！ Day5：早餐后直接前往普洱思茅机场还车办理登机手续，结束本次旅行。
+                                </p>
+                                <p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">最美公路</span><span data-v-107a46b0="">落地自驾</span><span data-v-107a46b0="">热带雨林</span></p>
+                                <p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">5890</b></span>起 / 人</p>
+                                <a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100047" class="">
+                                    <div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
+                                </a>
+                            </div>-->
+                        </div>
 						</div>
 					</div>
 					<p data-v-107a46b0="" class="classify-more">
@@ -1119,9 +1126,9 @@
 					</div>
 					<div class="code">
 						<div>
-							<p>订阅号</p> <img src="img/wxcode.cc79ece.jpg" alt=""></div>
+							<p>订阅号</p> <img src="../img/wxcode.cc79ece.jpg" alt=""></div>
 						<div>
-							<p>APP下载</p> <img src="img/appcode.e8d3d31.png" alt=""></div>
+							<p>APP下载</p> <img src="../img/appcode.e8d3d31.png" alt=""></div>
 					</div>
 					<div class="footer">
 						<p>北京悟空国际旅行社有限公司</p>
@@ -1132,8 +1139,8 @@
 			</div>
 		</div>
 		<!--<script type="text/javascript" src="js/manifest.fb5239f97ae874448f44.js.下载"></script>-->
-		<script type="text/javascript" src="js/vendor.434b2f13fc4d603f30a3.js"></script>
-		<script type="text/javascript" src="js/app.6d0a0c8dac82bcb8212b.js"></script>
+		<script type="text/javascript" src="../js/vendor.434b2f13fc4d603f30a3.js"></script>
+		<script type="text/javascript" src="../js/app.6d0a0c8dac82bcb8212b.js"></script>
 	</body>
 
 </html>
