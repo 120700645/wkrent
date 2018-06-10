@@ -2258,16 +2258,16 @@
 				<div class="zc_head_tab">
 					<ul class="zc_menu" style="line-height: 60px;height: 60px">
 						<li class="homecur">
-							<a href="index.html">首页</a>
+							<a href="${base}/user/preIndex">首页</a>
 						</li>
 						<li>
 							<a href="renting.html">租车自驾</a>
 						</li>
 						<li>
-							<a href="site.html">全国网点</a>
+							<a href="${base}/city/hotCityList">全国网点</a>
 						</li>
 						<li>
-							<a href="driving.html" target="_blank">自驾嗨游</a>
+							<a href="${base}/combo/home" target="_blank">自驾嗨游</a>
 						</li>
 						<li>
 							<a href="join.html">加盟悟空</a>
@@ -3499,7 +3499,7 @@
 								<a href="contactus.html">联系我们</a>
 							</li>
 							<li>
-								<a href="recruitment.html">加入我们</a>
+								<a href="recruitment.ftl">加入我们</a>
 							</li>
 						</ul>
 					</div>

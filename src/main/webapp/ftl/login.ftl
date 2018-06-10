@@ -1886,11 +1886,27 @@
 		<div class="zc_foot" style="padding-top: 0;">
 			<div class="foot_cover zc_main">
 				<p class="html_link" style="border-top: none;">
+<<<<<<< Updated upstream
 					<a href="${base}/story.html">关于我们<span>|</span></a>
 					<a href="${base}/renting.html">短租自驾<span>|</span></a>
 					<a href="${base}/question.html">帮助中心<span>|</span></a>
 					<a href="${base}/media.html">媒体报道<span>|</span></a>
 					<a href="${base}/recruitment.html">加入我们</a>
+=======
+<<<<<<< Updated upstream:src/main/webapp/ftl/login.ftl
+					<a href="../story.html">关于我们<span>|</span></a>
+					<a href="../renting.html">短租自驾<span>|</span></a>
+					<a href="../question.html">帮助中心<span>|</span></a>
+					<a href="../media.html">媒体报道<span>|</span></a>
+					<a href="recruitment.ftl">加入我们</a>
+=======
+					<a href="story.html">关于我们<span>|</span></a>
+					<a href="ftl/renting.ftl">短租自驾<span>|</span></a>
+					<a href="question.html">帮助中心<span>|</span></a>
+					<a href="media.html">媒体报道<span>|</span></a>
+					<a href="recruitment.ftl">加入我们</a>
+>>>>>>> Stashed changes:src/main/webapp/login.html
+>>>>>>> Stashed changes
 				</p>
 			</div>
 			<div class="zc_foot_company_info">
