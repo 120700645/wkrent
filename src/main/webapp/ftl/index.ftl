@@ -3992,7 +3992,7 @@
 				</li>
 			</ul>
 		</div>
-        <script src="https://qiyukf.com/script/0442b7bd3684a6890427e5bd55b94070.js?hidden=1"></script>
+        <script src="https://qiyukf.com/script/0442b7bd3684a6890427e5bd55b94070.js?hidden'"></script>
 
         <script type="text/javascript">
             function online(){
