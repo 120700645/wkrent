@@ -2181,7 +2181,7 @@
 
 	<body style="zoom: 1;">
 
-		<script src="https://qiyukf.com/script/0442b7bd3684a6890427e5bd55b94070.js"></script>
+		<#--<script src="https://qiyukf.com/script/0442b7bd3684a6890427e5bd55b94070.js"></script>-->
 		<link rel="stylesheet" href="${base}/css/network.css">
 		<div class="zc_head_bd" style="height: 90px;min-width:1200px">
 			<div class="little-header-wrapper">
@@ -3992,7 +3992,7 @@
 				</li>
 			</ul>
 		</div>
-        <script src="https://qiyukf.com/script/0442b7bd3684a6890427e5bd55b94070.js?hidden'"></script>
+        <script src="https://qiyukf.com/script/0442b7bd3684a6890427e5bd55b94070.js?hidden=true'"></script>
 
         <script type="text/javascript">
             function online(){

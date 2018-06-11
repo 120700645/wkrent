@@ -22,7 +22,7 @@
 <div class="zc_head_bd" style="box-sizing:border-box">
     <div class="zc_main">
         <div class="zc_main_lp">
-            <a href="index.html"><img src="img/logo.png" alt="悟空租车"></a>
+            <a href="${base}/user/preIndex"><img src="${base}/img/logo.png" alt="悟空租车"></a>
         </div>
         <div class="zc_head_tab">
             <ul class="nav-letter-right">
@@ -79,13 +79,13 @@
     </div>
 </div>
 <div class="simpleSpace"></div>
-<script charset="utf-8" src="js/lxb.js"></script>
-<script charset="utf-8" src="js/v.js"></script>
-<script type="text/javascript" async="" src="js/66c0b3fb.js"></script>
-<script src="js/hm.js"></script>
-<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
-<script type="text/javascript" src="js/header.js"></script>
+<script charset="utf-8" src="${base}/js/lxb.js"></script>
+<script charset="utf-8" src="${base}/js/v.js"></script>
+<script type="text/javascript" async="" src="${base}/js/66c0b3fb.js"></script>
+<script src="${base}/js/hm.js"></script>
+<script type="text/javascript" src="${base}/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="${base}/js/public.js"></script>
+<script type="text/javascript" src="${base}/js/header.js"></script>
 <script type="text/javascript">
     var CONTEXT_PATH = "";
     var HeaderUid = "13212780854";
@@ -97,7 +97,7 @@
         <h4><a href="personal.html">个人中心</a></h4>
         <ul>
             <li>
-                <a href="myorder.html">我的订单</a>
+                <a href="${base}/rentOrder/selectAll">我的订单</a>
             </li>
             <li style="background: #f9f9f9 url(//static.wkzuche.com/www/images/personal/l.png) no-repeat left center;color: #f23732!important;">我的优惠券</li>
             <li>
@@ -142,7 +142,7 @@
                         <p class="amount"><span>￥</span><span>${c.couponDiscount}100</span></p>
                         <div class="effective_time">
                             <p>有效期</p>
-                            <p>${c.couponStartTime}至${c.couponEndTime}</p>
+                            <p>${c.couponStartTime?string('yyyy-MM-dd')}至${c.couponEndTime?string('yyyy-MM-dd')}</p>
                         </div>
                     </div>
                     <p title="租期两天以上可享，不能同其他类型优惠券共同使用">${c.couponRule}租期两天以上可享，不能同其他类型优惠券共同使用</p>
@@ -228,11 +228,11 @@
 </div>
 
 <div class="loading_shuaxin" style="display: none">
-    <img src="img/car.gif">
+    <img src="${base}/img/car.gif">
 </div>
 
 <div class="dialog_order_timeout dialog_class" id="dialog_order_timeout">
-    <h1>订单超时 <span onclick="dialog_order_timeout_hide()"><img src="img/close_icon.png" alt=""></span></h1>
+    <h1>订单超时 <span onclick="dialog_order_timeout_hide()"><img src="${base}/img/close_icon.png" alt=""></span></h1>
     <div class="dialog_info">
         <span>此订单已超时 , 请重新下单支付</span>
         <p id="dialog_order_timeout_success_fun">确定</p>
@@ -240,7 +240,7 @@
 </div>
 
 <div class="dialog_pay_choose dialog_class" id="dialog_pay_choose">
-    <h1>支付 <span onclick="dialog_pay_choose_hide();initPay();event.stopPropagation();"><img src="img/close_icon.png" alt=""></span></h1>
+    <h1>支付 <span onclick="dialog_pay_choose_hide();initPay();event.stopPropagation();"><img src="${base}/img/close_icon.png" alt=""></span></h1>
     <div class="dialog_info pad_class">
         <span class="tip_span">请您在新打开的页面进行支付，支付完成前请不要关闭该页面</span>
         <a class="other_type" id="dialog_pay_choose_auth_fun">其他支付方式</a>
@@ -386,13 +386,13 @@
 <div class="rent-car-advantage">
     <div class="position-car-advantage">
         <div style="float:left">
-            <a href="site.html"><img src="img/range.png" style="float:left"></a>
+            <a href="site.html"><img src="${base}/img/range.png" style="float:left"></a>
         </div>
         <div style="text-align:center">
-            <a href="renting.ftl"><img src="img/much-car.png"></a>
+            <a href="renting.ftl"><img src="${base}/img/much-car.png"></a>
         </div>
         <div style="float:right">
-            <a href="rule.html#rule1"><img src="img/good-service.png" style="float:right"></a>
+            <a href="rule.html#rule1"><img src="${base}/img/good-service.png" style="float:right"></a>
         </div>
     </div>
 </div>
@@ -477,16 +477,16 @@
     </div>
 </div>
 
-<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
-<script type="text/javascript" src="js/mk-browsing.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
-<script type="text/javascript" src="js/baidu.js"></script>
-<script type="text/javascript" src="js/tingyun-rum.js"></script>
-<script type="text/javascript" src="js/174750.js" async="" defer=""></script>
-<script type="text/javascript" src="js/ssyh.js"></script>
-<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="${base}/js/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="${base}/js/mk-browsing.js"></script>
+<script type="text/javascript" src="${base}/js/public.js"></script>
+<script type="text/javascript" src="${base}/js/baidu.js"></script>
+<script type="text/javascript" src="${base}/js/tingyun-rum.js"></script>
+<script type="text/javascript" src="${base}/js/174750.js" async="" defer=""></script>
+<script type="text/javascript" src="${base}/js/ssyh.js"></script>
+<script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
 
-<script type="text/javascript" src="js/user_mycoupon.js.下载"></script>
+<script type="text/javascript" src="${base}/js/user_mycoupon.js.下载"></script>
 <script type="text/javascript">
     var user_id = '11214904';
     var uid = '13212780854';

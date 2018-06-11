@@ -11,13 +11,10 @@
   <sql id="Base_Column_List">
     COUPON_ID, COUPON_DISCOUNT, COUPON_RULE, COUPON_START_TIME, COUPON_END_TIME
   </sql>
-  <select id="selectByStatus" resultMap="BaseResultMap">
+  <select id="selectAll" resultMap="BaseResultMap">
     SELECT
-    tc.COUPON_ID, tc.COUPON_DISCOUNT, tc.COUPON_RULE, tc.COUPON_START_TIME, tc.COUPON_END_TIME
-    FROM tb_coupon tc
-    INNER JOIN tb_user_coupon uc
-    ON tc.coupon_id = uc.coupon_id
-    WHERE uc.uc_status = #{ucStatus}
+    <include refid="Base_Column_List" />
+    FROM tb_coupon
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

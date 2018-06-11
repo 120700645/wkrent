@@ -23,7 +23,7 @@
 <div class="zc_head_bd" style="box-sizing:border-box">
     <div class="zc_main">
         <div class="zc_main_lp">
-            <a href="index.html"><img src="${base}/img/logo.png" alt="悟空租车"></a>
+            <a href="${base}/user/preIndex"><img src="${base}/img/logo.png" alt="悟空租车"></a>
         </div>
         <div class="zc_head_tab">
             <ul class="nav-letter-right">
@@ -41,7 +41,7 @@
                             <a href="myorder.html">我的租车订单</a>
                         </p>
                         <p>
-                            <a href="mycoupon.html">我的优惠券</a>
+                            <a href="${base}/coupon/selectAll">我的优惠券</a>
                         </p>
                     </div>
                     <div class="mian-wk" id="over-login" style="display:none;top:56px;border-top: 1PX solid #E4E6E9;">

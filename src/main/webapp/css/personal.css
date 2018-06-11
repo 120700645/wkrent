@@ -1675,18 +1675,18 @@
 }
 
 .personal_right .not_used .coupon_item {
-    background: url(../../images/personal/coupon.jpg)no-repeat center;
+    background: url(../img/coupon.jpg)no-repeat center;
     background-size: 100%;
 }
 
 .personal_right .used .coupon_item,
 .personal_right .overdue .coupon_item {
-    background: url(../../images/personal/coupon_used.jpg)no-repeat center!important;
+    background: url(../img/coupon_used.jpg)no-repeat center!important;
     background-size: 100%!important;
 }
 
 .personal_right .no_coupon {
-    background: url(../../images/personal/no_coupon.jpg)no-repeat center!important;
+    background: url(../img/no_coupon.jpg)no-repeat center!important;
     background-size: 15%!important;
 }
 
@@ -1695,7 +1695,7 @@
 }
 
 .personal_right .not_used div.selected {
-    background: url(../../images/personal/coupon_selected.jpg)no-repeat center!important;
+    background: url(../img/coupon_selected.jpg)no-repeat center!important;
     background-size: 100%!important;
 }
 
