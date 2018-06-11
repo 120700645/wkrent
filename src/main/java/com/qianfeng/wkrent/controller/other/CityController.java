@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.security.Key;
 import java.util.*;
 
 @Controller
@@ -24,7 +23,6 @@ public class CityController {
         //查询所有去重,排序后的首字母
         String[] strings = cityService.findfirstWordDesc();
         model.addAttribute("strings",strings);
-
         //获得所有城市，为了按A-Z的顺序存入map集合中，所以查询的时候按拼音排序
         List<City> cityList = cityService.findAllCityByWord();
         Map<String,List<City>> map = new TreeMap<>();//分组后的城市集合
@@ -41,23 +39,10 @@ public class CityController {
             }
         }
         model.addAttribute("map",map);
-
         //产生映射项(里面有key和value)
         Set<Map.Entry<String, List<City>>> set = map.entrySet();
-
         model.addAttribute("set",set);
 
-
-
-//        for(Map.Entry<String, List<City>> m : set){
-//            if(m.getValue()!=null && m.getValue().size()>0){
-//                //key下面的集合不为空，才显示首字母以及下面的城市
-//                String key = m.getKey();
-//                for(City c:m.getValue()){
-//                    String cityName = c.getCityName();
-//                }
-//            }
-//        }
         return "site";
     }
     
