@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.ComplaintMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Complaint">
+    <id column="COMPLAINT_ID" jdbcType="DECIMAL" property="complaintId" />
+    <result column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="COMPLAINT_CONTENT" jdbcType="VARCHAR" property="complaintContent" />
+    <result column="COMPLAINT_TIME" jdbcType="TIMESTAMP" property="complaintTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    COMPLAINT_ID, USER_ID, COMPLAINT_CONTENT, COMPLAINT_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_COMPLAINT
+    where COMPLAINT_ID = #{complaintId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from TB_COMPLAINT
+    where COMPLAINT_ID = #{complaintId}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Complaint">
+    insert into TB_COMPLAINT (COMPLAINT_ID, USER_ID, COMPLAINT_CONTENT, 
+      COMPLAINT_TIME)
+    values (#{complaintId}, #{userId}, #{complaintContent}, 
+      #{complaintTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Complaint">
+    insert into TB_COMPLAINT
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="complaintId != null">
+        COMPLAINT_ID,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="complaintContent != null">
+        COMPLAINT_CONTENT,
+      </if>
+      <if test="complaintTime != null">
+        COMPLAINT_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="complaintId != null">
+        #{complaintId},
+      </if>
+      <if test="userId != null">
+        #{userId},
+      </if>
+      <if test="complaintContent != null">
+        #{complaintContent},
+      </if>
+      <if test="complaintTime != null">
+        #{complaintTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Complaint">
+    update TB_COMPLAINT
+    <set>
+      <if test="userId != null">
+        USER_ID = #{userId},
+      </if>
+      <if test="complaintContent != null">
+        COMPLAINT_CONTENT = #{complaintContent},
+      </if>
+      <if test="complaintTime != null">
+        COMPLAINT_TIME = #{complaintTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where COMPLAINT_ID = #{complaintId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Complaint">
+    update TB_COMPLAINT
+    set USER_ID = #{userId},
+      COMPLAINT_CONTENT = #{complaintContent},
+      COMPLAINT_TIME = #{complaintTime,jdbcType=TIMESTAMP}
+    where COMPLAINT_ID = #{complaintId}
+  </update>
+</mapper>

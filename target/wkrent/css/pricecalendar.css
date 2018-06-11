@@ -1,0 +1,352 @@
+.price-box {
+    position: relative;
+}
+
+.price-box .header,
+.price-box .lastTime,
+.price-box .pri-show {
+    background: #f9f9f9;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: justify;
+}
+
+.price-box .header .lastTime span,
+.price-box .header .lastTime input {
+    display: block;
+    border: none;
+    font-size: 16px;
+}
+
+.price-box .header .lastTime span:nth-child(1) {
+    color: #5d5d5d;
+}
+
+.price-box .header .lastTime input {
+    color: #333;
+    width: 100px;
+}
+
+.price-box .header .lastWeek {
+    padding-right: 20px;
+}
+
+.price-box .price {
+    width: 345px;
+    right: 50px;
+    padding-bottom: 20px;
+    background: #fff;
+    border: 1px solid #dadadf;
+    box-shadow: 0 0 40px 0 #e5e5e5;
+    position: absolute;
+    top: 66px;
+    z-index: 2;
+    font-size: 13px;
+}
+
+.price-box .price .pri-show {
+    width: 345px;
+    height: 34px;
+    border-bottom: 1px solid #dadadf;
+    padding: 5px 10px;
+    overflow: hidden;
+}
+
+.price-box .price .pri-show label {
+    display: block;
+    color: #5d5d5d;
+}
+
+.price-box .price .pri-show .prev,
+.price-box .price .pri-show .next {
+    width: 9px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.prevs{
+    width: 9px;
+    height: 17px;
+    cursor: pointer;
+    background: url("../../images/index/prevs.png");
+}
+
+.nexts{
+    width: 9px;
+    height: 17px;
+    cursor: pointer;
+    background: url("../../images/index/nexts.png");
+}
+
+.price-box .price .pri-show .prev {
+    background: url("../../images/index/prev.png");
+}
+
+.price-box .price .pri-show .next {
+    background: url("../../images/index/next.png");
+}
+
+.price-box .price .week {
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+    height: 23px;
+    overflow: hidden;
+    color: #93939e;
+}
+
+.price-box .price .week i {
+    width: 49px;
+    font-style: normal;
+    height: 23px;
+    line-height: 23px;
+    text-align: center;
+    float: left;
+    color: #5d5d5d;
+}
+
+.price-box .price .prices-box {
+    height: 200px;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.price-box .price .prices-box li {
+    width: 49px;
+    height: 42px;
+    float: left;
+    list-style: none;
+    position: relative;
+    border: 1px solid #edefed;
+    border-top: none;
+    border-right: none;
+    text-align: center;
+}
+
+.price-box .price .prices-box li:last-child{
+    border-right: 1px solid #edefed;
+}
+
+.prices-box span:hover {
+    background: #e9ebee;
+    color: #fff;
+}
+
+.price-box .price .prices-box li em {
+    height: 15px;
+    font-size: 10px;
+    text-align: center;
+    display: block;
+    color: #5d5d5d;
+    // padding: 3px 0;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    font-style: normal;
+}
+
+.price-box .price .prices-box li i {
+    font-style: normal;
+    font-size: 10px;
+    color: #6e6e6e;
+}
+
+.price-box .price .prices-box li span.cur {
+    background: #fc5f40;
+    color: #fff;
+}
+
+.price-box .price .prices-box li span.selected {
+    background: #ccc;
+    color: #fff;
+}
+
+div.time-box input[name="time"] {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #5d5d5d;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.time-box {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: justify;
+    position: relative;
+}
+
+.time-box .price {
+    width: 400px;
+    position: absolute;
+    padding-bottom: 0.1px;
+    left: 0;
+    border: 1px solid #fc5f40;
+    margin-top: -1px;
+}
+
+.time-box .price > ul {
+    float: left;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.time-box .price > ul > div {
+    padding: 10px 0;
+    background: #f7f8f8;
+    /*   border-top: 1px solid #e4e5e6;
+       border-bottom: 1px solid #e4e5e6;*/
+    color: #5d5d5d;
+    font-size: 14px;
+}
+
+.time-box .price > ul:nth-child(2) {
+    border-left: 1px solid #e4e5e6;
+}
+
+.time-box .price .hours {
+    display: inline-block;
+    width: 74%;
+    list-style: none;
+    float: left;
+    text-align: center;
+}
+
+.time-box .price .minutes {
+    display: inline-block;
+    width: 26%;
+    list-style: none;
+    float: left;
+    text-align: center;
+    border-left: 1px solid #e4e5e6;
+    box-sizing: border-box;
+}
+
+.time-box .price .hours li .meridian span {
+    display: block;
+}
+
+.time-box .price .hours li {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: justify;
+}
+
+.time-box .price .hours li .meridian {
+    display: block;
+    width: 20%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.time-box .price .hours li .numbers {
+    display: block;
+    width: 80%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.time-box .price .hours li .numbers span {
+    color: #5d5d5d;
+    display: inline-block;
+    font-size: 13px;
+    width: 16%;
+    margin: 0;
+    float: left;
+    text-align: center;
+    padding: 5px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.time-box .price .hours li .meridian span {
+    color: #5d5d5d;
+    font-size: 13px;
+    margin: 0;
+    text-align: center;
+    padding: 5px 0;
+    position: relative;
+}
+
+.time-box .price .minutes li .numbers {
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.time-box .price .minutes li .numbers span {
+    color: #5d5d5d;
+    display: inline-block;
+    font-size: 13px;
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 3px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.price span.on::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 3px;
+    color: #fff;
+    background: #fc5f40;
+    font-size: 13px;
+    margin-top: -9px;
+    margin-left: -11px;
+}
+
+.hour_part, .minute_part {
+    padding: 5px 0;
+    border-bottom: 1px solid #e9ebee;
+    background: #f8f9f8;
+}
+
+.price span.hover::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 3px;
+    color: #fff;
+    background: #e1e1e1;
+    font-size: 13px;
+    margin-top: -9px;
+    margin-left: -11px;
+}
+
+#price_span{
+    position: absolute;
+    top: -10px;
+    left: 257px;
+    font-size: 0;  
+    line-height: 0;  
+    border-width: 10px;  
+    border-color: #f9f9f9;
+    border-top-width: 0;  
+    border-style: dashed;  
+    border-bottom-style: solid;  
+    border-left-color: transparent;  
+    border-right-color: transparent;
+    z-index: 2;
+}
+.price_p{
+    position: absolute;
+    top: -11px;
+    left: 256px;
+    font-size: 0;  
+    line-height: 0;  
+    border-width: 11px;  
+    border-color: #dadadf;
+    border-top-width: 0;  
+    border-style: dashed;  
+    border-bottom-style: solid;  
+    border-left-color: transparent;  
+    border-right-color: transparent;
+}

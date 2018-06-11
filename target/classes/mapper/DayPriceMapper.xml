@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.DayPriceMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.DayPrice">
+    <id column="DP_ID" jdbcType="DECIMAL" property="dpId" />
+    <result column="PC_ID" jdbcType="DECIMAL" property="pcId" />
+    <result column="DB_MONTH" jdbcType="DECIMAL" property="dbMonth" />
+    <result column="DP_DATE" jdbcType="DECIMAL" property="dpDate" />
+    <result column="DB_PRICE" jdbcType="DECIMAL" property="dbPrice" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    DP_ID, PC_ID, DB_MONTH, DP_DATE, DB_PRICE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_DAY_PRICE
+    where DP_ID = #{dpId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from TB_DAY_PRICE
+    where DP_ID = #{dpId}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.DayPrice">
+    insert into TB_DAY_PRICE (DP_ID, PC_ID, DB_MONTH, 
+      DP_DATE, DB_PRICE)
+    values (#{dpId}, #{pcId}, #{dbMonth}, 
+      #{dpDate}, #{dbPrice})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.DayPrice">
+    insert into TB_DAY_PRICE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dpId != null">
+        DP_ID,
+      </if>
+      <if test="pcId != null">
+        PC_ID,
+      </if>
+      <if test="dbMonth != null">
+        DB_MONTH,
+      </if>
+      <if test="dpDate != null">
+        DP_DATE,
+      </if>
+      <if test="dbPrice != null">
+        DB_PRICE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dpId != null">
+        #{dpId},
+      </if>
+      <if test="pcId != null">
+        #{pcId},
+      </if>
+      <if test="dbMonth != null">
+        #{dbMonth},
+      </if>
+      <if test="dpDate != null">
+        #{dpDate},
+      </if>
+      <if test="dbPrice != null">
+        #{dbPrice},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.DayPrice">
+    update TB_DAY_PRICE
+    <set>
+      <if test="pcId != null">
+        PC_ID = #{pcId},
+      </if>
+      <if test="dbMonth != null">
+        DB_MONTH = #{dbMonth},
+      </if>
+      <if test="dpDate != null">
+        DP_DATE = #{dpDate},
+      </if>
+      <if test="dbPrice != null">
+        DB_PRICE = #{dbPrice},
+      </if>
+    </set>
+    where DP_ID = #{dpId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.DayPrice">
+    update TB_DAY_PRICE
+    set PC_ID = #{pcId},
+      DB_MONTH = #{dbMonth},
+      DP_DATE = #{dpDate},
+      DB_PRICE = #{dbPrice}
+    where DP_ID = #{dpId}
+  </update>
+</mapper>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.RoomMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Room">
+    <id column="ROOM_ID" jdbcType="DECIMAL" property="roomId" />
+    <result column="ROOM_NAME" jdbcType="VARCHAR" property="roomName" />
+    <result column="ROOM_BED" jdbcType="VARCHAR" property="roomBed" />
+    <result column="ROOM_BREAKFAST" jdbcType="VARCHAR" property="roomBreakfast" />
+    <result column="ROOM_AREA" jdbcType="DECIMAL" property="roomArea" />
+    <result column="ROOM_PRICE" jdbcType="DECIMAL" property="roomPrice" />
+    <result column="HOTEL_ID" jdbcType="DECIMAL" property="hotelId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ROOM_ID, ROOM_NAME, ROOM_BED, ROOM_BREAKFAST, ROOM_AREA, ROOM_PRICE, HOTEL_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_ROOM
+    where ROOM_ID = #{roomId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from TB_ROOM
+    where ROOM_ID = #{roomId}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Room">
+    insert into TB_ROOM (ROOM_ID, ROOM_NAME, ROOM_BED, 
+      ROOM_BREAKFAST, ROOM_AREA, ROOM_PRICE, 
+      HOTEL_ID)
+    values (#{roomId}, #{roomName}, #{roomBed}, 
+      #{roomBreakfast}, #{roomArea}, #{roomPrice}, 
+      #{hotelId})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Room">
+    insert into TB_ROOM
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roomId != null">
+        ROOM_ID,
+      </if>
+      <if test="roomName != null">
+        ROOM_NAME,
+      </if>
+      <if test="roomBed != null">
+        ROOM_BED,
+      </if>
+      <if test="roomBreakfast != null">
+        ROOM_BREAKFAST,
+      </if>
+      <if test="roomArea != null">
+        ROOM_AREA,
+      </if>
+      <if test="roomPrice != null">
+        ROOM_PRICE,
+      </if>
+      <if test="hotelId != null">
+        HOTEL_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roomId != null">
+        #{roomId},
+      </if>
+      <if test="roomName != null">
+        #{roomName},
+      </if>
+      <if test="roomBed != null">
+        #{roomBed},
+      </if>
+      <if test="roomBreakfast != null">
+        #{roomBreakfast},
+      </if>
+      <if test="roomArea != null">
+        #{roomArea},
+      </if>
+      <if test="roomPrice != null">
+        #{roomPrice},
+      </if>
+      <if test="hotelId != null">
+        #{hotelId},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Room">
+    update TB_ROOM
+    <set>
+      <if test="roomName != null">
+        ROOM_NAME = #{roomName},
+      </if>
+      <if test="roomBed != null">
+        ROOM_BED = #{roomBed},
+      </if>
+      <if test="roomBreakfast != null">
+        ROOM_BREAKFAST = #{roomBreakfast},
+      </if>
+      <if test="roomArea != null">
+        ROOM_AREA = #{roomArea},
+      </if>
+      <if test="roomPrice != null">
+        ROOM_PRICE = #{roomPrice},
+      </if>
+      <if test="hotelId != null">
+        HOTEL_ID = #{hotelId},
+      </if>
+    </set>
+    where ROOM_ID = #{roomId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Room">
+    update TB_ROOM
+    set ROOM_NAME = #{roomName},
+      ROOM_BED = #{roomBed},
+      ROOM_BREAKFAST = #{roomBreakfast},
+      ROOM_AREA = #{roomArea},
+      ROOM_PRICE = #{roomPrice},
+      HOTEL_ID = #{hotelId}
+    where ROOM_ID = #{roomId}
+  </update>
+</mapper>

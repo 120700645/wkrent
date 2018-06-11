@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.InstructionMapper">
+
+    <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Instruction">
+        <id column="INSTRUCTION_ID" property="instructionId" />
+    </resultMap>
+
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.qianfeng.wkrent.dto.Instruction">
+        <result column="INSTRUCTION_CONTENT" jdbcType="CLOB" property="instructionContent" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        INSTRUCTION_ID
+     </sql>
+
+    <sql id="Blob_Column_List">
+        INSTRUCTION_CONTENT
+     </sql>
+
+    <!--通过instruction_id查找费用说明-->
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from TB_INSTRUCTION
+        where INSTRUCTION_ID = #{instructionId}
+    </select>
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from TB_INSTRUCTION
+        where INSTRUCTION_ID = #{instructionId}
+    </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Instruction">
+    insert into TB_INSTRUCTION (INSTRUCTION_ID, INSTRUCTION_CONTENT)
+    values (#{instructionId}, #{instructionContent})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Instruction">
+    insert into TB_INSTRUCTION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="instructionId != null">
+        INSTRUCTION_ID,
+      </if>
+      <if test="instructionContent != null">
+        INSTRUCTION_CONTENT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="instructionId != null">
+        #{instructionId},
+      </if>
+      <if test="instructionContent != null">
+        #{instructionContent},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Instruction">
+    update TB_INSTRUCTION
+    <set>
+      <if test="instructionContent != null">
+        INSTRUCTION_CONTENT = #{instructionContent},
+      </if>
+    </set>
+    where INSTRUCTION_ID = #{instructionId}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.qianfeng.wkrent.dto.Instruction">
+    update TB_INSTRUCTION
+    set INSTRUCTION_CONTENT = #{instructionContent}
+    where INSTRUCTION_ID = #{instructionId}
+  </update>
+</mapper>

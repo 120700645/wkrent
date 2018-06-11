@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.ComboMapper">
+
+    <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Combo">
+        <id column="COMBO_ID" jdbcType="DECIMAL" property="comboId" />
+        <result column="COMBO_NAME" jdbcType="VARCHAR" property="comboName" />
+        <result column="COMBO_PRICE" jdbcType="DECIMAL" property="comboPrice" />
+        <result column="COMBO_SITE" jdbcType="VARCHAR" property="comboSite" />
+        <result column="COMBO_TYPE" jdbcType="VARCHAR" property="comboType" />
+        <result column="COMBO_DAYS" jdbcType="DECIMAL" property="comboDays" />
+        <result column="COMBO_IMG1" jdbcType="VARCHAR" property="comboImg1" />
+        <result column="COMBO_IMG2" jdbcType="VARCHAR" property="comboImg2" />
+        <result column="COMBO_IMG3" jdbcType="VARCHAR" property="comboImg3" />
+        <result column="COMBO_IMG4" jdbcType="VARCHAR" property="comboImg4" />
+        <result column="COMBO_IMG5" jdbcType="VARCHAR" property="comboImg5" />
+        <result column="INSTRUCTION_ID"  property="instructionId" />
+        <result column="NOTICE_ID"  property="noticeId" />
+        <association property="instruction" column="INSTRUCTION_ID" select="com.qianfeng.wkrent.dao.InstructionMapper.selectByPrimaryKey"></association>
+        <association property="notice" column="NOTICE_ID" select="com.qianfeng.wkrent.dao.NoticeMapper.selectByPrimaryKey"></association>
+    </resultMap>
+
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.qianfeng.wkrent.dto.Combo">
+        <result column="COMBO_LIGHT" jdbcType="CLOB" property="comboLight" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        COMBO_ID, COMBO_NAME, COMBO_PRICE, COMBO_SITE, COMBO_TYPE, COMBO_DAYS, INSTRUCTION_ID,
+        NOTICE_ID, COMBO_IMG1, COMBO_IMG2, COMBO_IMG3, COMBO_IMG4, COMBO_IMG5
+    </sql>
+
+    <sql id="Blob_Column_List">
+        COMBO_LIGHT
+    </sql>
+    <!--通过combo_id 查找自驾游组合-->
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from TB_COMBO
+        where COMBO_ID = #{comboId}
+    </select>
+
+    <select id="selectAllCombo" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from TB_COMBO
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from TB_COMBO
+        where COMBO_ID = #{comboId}
+    </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Combo">
+    insert into TB_COMBO (COMBO_ID, COMBO_NAME, COMBO_PRICE, 
+      COMBO_SITE, COMBO_TYPE, COMBO_DAYS, 
+      INSTRUCTION_ID, NOTICE_ID, COMBO_IMG1, 
+      COMBO_IMG2, COMBO_IMG3, COMBO_IMG4, 
+      COMBO_IMG5, COMBO_LIGHT)
+    values (#{comboId}, #{comboName}, #{comboPrice}, 
+      #{comboSite}, #{comboType}, #{comboDays}, 
+      #{instructionId}, #{noticeId}, #{comboImg1}, 
+      #{comboImg2}, #{comboImg3}, #{comboImg4}, 
+      #{comboImg5}, #{comboLight,jdbcType=CLOB})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Combo">
+    insert into TB_COMBO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="comboId != null">
+        COMBO_ID,
+      </if>
+      <if test="comboName != null">
+        COMBO_NAME,
+      </if>
+      <if test="comboPrice != null">
+        COMBO_PRICE,
+      </if>
+      <if test="comboSite != null">
+        COMBO_SITE,
+      </if>
+      <if test="comboType != null">
+        COMBO_TYPE,
+      </if>
+      <if test="comboDays != null">
+        COMBO_DAYS,
+      </if>
+      <if test="instructionId != null">
+        INSTRUCTION_ID,
+      </if>
+      <if test="noticeId != null">
+        NOTICE_ID,
+      </if>
+      <if test="comboImg1 != null">
+        COMBO_IMG1,
+      </if>
+      <if test="comboImg2 != null">
+        COMBO_IMG2,
+      </if>
+      <if test="comboImg3 != null">
+        COMBO_IMG3,
+      </if>
+      <if test="comboImg4 != null">
+        COMBO_IMG4,
+      </if>
+      <if test="comboImg5 != null">
+        COMBO_IMG5,
+      </if>
+      <if test="comboLight != null">
+        COMBO_LIGHT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="comboId != null">
+        #{comboId},
+      </if>
+      <if test="comboName != null">
+        #{comboName},
+      </if>
+      <if test="comboPrice != null">
+        #{comboPrice},
+      </if>
+      <if test="comboSite != null">
+        #{comboSite},
+      </if>
+      <if test="comboType != null">
+        #{comboType},
+      </if>
+      <if test="comboDays != null">
+        #{comboDays},
+      </if>
+      <if test="instructionId != null">
+        #{instructionId},
+      </if>
+      <if test="noticeId != null">
+        #{noticeId},
+      </if>
+      <if test="comboImg1 != null">
+        #{comboImg1},
+      </if>
+      <if test="comboImg2 != null">
+        #{comboImg2},
+      </if>
+      <if test="comboImg3 != null">
+        #{comboImg3},
+      </if>
+      <if test="comboImg4 != null">
+        #{comboImg4},
+      </if>
+      <if test="comboImg5 != null">
+        #{comboImg5},
+      </if>
+      <if test="comboLight != null">
+        #{comboLight,jdbcType=CLOB},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Combo">
+    update TB_COMBO
+    <set>
+      <if test="comboName != null">
+        COMBO_NAME = #{comboName},
+      </if>
+      <if test="comboPrice != null">
+        COMBO_PRICE = #{comboPrice},
+      </if>
+      <if test="comboSite != null">
+        COMBO_SITE = #{comboSite},
+      </if>
+      <if test="comboType != null">
+        COMBO_TYPE = #{comboType},
+      </if>
+      <if test="comboDays != null">
+        COMBO_DAYS = #{comboDays},
+      </if>
+      <if test="instructionId != null">
+        INSTRUCTION_ID = #{instructionId},
+      </if>
+      <if test="noticeId != null">
+        NOTICE_ID = #{noticeId},
+      </if>
+      <if test="comboImg1 != null">
+        COMBO_IMG1 = #{comboImg1},
+      </if>
+      <if test="comboImg2 != null">
+        COMBO_IMG2 = #{comboImg2},
+      </if>
+      <if test="comboImg3 != null">
+        COMBO_IMG3 = #{comboImg3},
+      </if>
+      <if test="comboImg4 != null">
+        COMBO_IMG4 = #{comboImg4},
+      </if>
+      <if test="comboImg5 != null">
+        COMBO_IMG5 = #{comboImg5},
+      </if>
+      <if test="comboLight != null">
+        COMBO_LIGHT = #{comboLight,jdbcType=CLOB},
+      </if>
+    </set>
+    where COMBO_ID = #{comboId}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.qianfeng.wkrent.dto.Combo">
+    update TB_COMBO
+    set COMBO_NAME = #{comboName},
+      COMBO_PRICE = #{comboPrice},
+      COMBO_SITE = #{comboSite},
+      COMBO_TYPE = #{comboType},
+      COMBO_DAYS = #{comboDays},
+      INSTRUCTION_ID = #{instructionId},
+      NOTICE_ID = #{noticeId},
+      COMBO_IMG1 = #{comboImg1},
+      COMBO_IMG2 = #{comboImg2},
+      COMBO_IMG3 = #{comboImg3},
+      COMBO_IMG4 = #{comboImg4},
+      COMBO_IMG5 = #{comboImg5},
+      COMBO_LIGHT = #{comboLight,jdbcType=CLOB}
+    where COMBO_ID = #{comboId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Combo">
+    update TB_COMBO
+    set COMBO_NAME = #{comboName},
+      COMBO_PRICE = #{comboPrice},
+      COMBO_SITE = #{comboSite},
+      COMBO_TYPE = #{comboType},
+      COMBO_DAYS = #{comboDays},
+      INSTRUCTION_ID = #{instructionId},
+      NOTICE_ID = #{noticeId},
+      COMBO_IMG1 = #{comboImg1},
+      COMBO_IMG2 = #{comboImg2},
+      COMBO_IMG3 = #{comboImg3},
+      COMBO_IMG4 = #{comboImg4},
+      COMBO_IMG5 = #{comboImg5}
+    where COMBO_ID = #{comboId}
+  </update>
+</mapper>

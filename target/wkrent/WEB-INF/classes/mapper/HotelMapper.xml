@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.HotelMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Hotel">
+    <id column="HOTEL_ID" jdbcType="DECIMAL" property="hotelId" />
+    <result column="HOTEL_NAME" jdbcType="VARCHAR" property="hotelName" />
+    <result column="HOTEL_DESC" jdbcType="VARCHAR" property="hotelDesc" />
+    <result column="HOTEL_ADDRESS" jdbcType="VARCHAR" property="hotelAddress" />
+    <result column="HOTEL_STAR" jdbcType="DECIMAL" property="hotelStar" />
+    <result column="HOTEL_SERVICE" jdbcType="VARCHAR" property="hotelService" />
+    <result column="HOTEL_IMG1" jdbcType="VARCHAR" property="hotelImg1" />
+    <result column="HOTEL_IMG2" jdbcType="VARCHAR" property="hotelImg2" />
+    <result column="HOTEL_IMG3" jdbcType="VARCHAR" property="hotelImg3" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    HOTEL_ID, HOTEL_NAME, HOTEL_DESC, HOTEL_ADDRESS, HOTEL_STAR, HOTEL_SERVICE, HOTEL_IMG1, 
+    HOTEL_IMG2, HOTEL_IMG3
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_HOTEL
+    where HOTEL_ID = #{hotelId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from TB_HOTEL
+    where HOTEL_ID = #{hotelId}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Hotel">
+    insert into TB_HOTEL (HOTEL_ID, HOTEL_NAME, HOTEL_DESC, 
+      HOTEL_ADDRESS, HOTEL_STAR, HOTEL_SERVICE, 
+      HOTEL_IMG1, HOTEL_IMG2, HOTEL_IMG3
+      )
+    values (#{hotelId}, #{hotelName}, #{hotelDesc}, 
+      #{hotelAddress}, #{hotelStar}, #{hotelService}, 
+      #{hotelImg1}, #{hotelImg2}, #{hotelImg3}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Hotel">
+    insert into TB_HOTEL
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="hotelId != null">
+        HOTEL_ID,
+      </if>
+      <if test="hotelName != null">
+        HOTEL_NAME,
+      </if>
+      <if test="hotelDesc != null">
+        HOTEL_DESC,
+      </if>
+      <if test="hotelAddress != null">
+        HOTEL_ADDRESS,
+      </if>
+      <if test="hotelStar != null">
+        HOTEL_STAR,
+      </if>
+      <if test="hotelService != null">
+        HOTEL_SERVICE,
+      </if>
+      <if test="hotelImg1 != null">
+        HOTEL_IMG1,
+      </if>
+      <if test="hotelImg2 != null">
+        HOTEL_IMG2,
+      </if>
+      <if test="hotelImg3 != null">
+        HOTEL_IMG3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="hotelId != null">
+        #{hotelId},
+      </if>
+      <if test="hotelName != null">
+        #{hotelName},
+      </if>
+      <if test="hotelDesc != null">
+        #{hotelDesc},
+      </if>
+      <if test="hotelAddress != null">
+        #{hotelAddress},
+      </if>
+      <if test="hotelStar != null">
+        #{hotelStar},
+      </if>
+      <if test="hotelService != null">
+        #{hotelService},
+      </if>
+      <if test="hotelImg1 != null">
+        #{hotelImg1},
+      </if>
+      <if test="hotelImg2 != null">
+        #{hotelImg2},
+      </if>
+      <if test="hotelImg3 != null">
+        #{hotelImg3},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Hotel">
+    update TB_HOTEL
+    <set>
+      <if test="hotelName != null">
+        HOTEL_NAME = #{hotelName},
+      </if>
+      <if test="hotelDesc != null">
+        HOTEL_DESC = #{hotelDesc},
+      </if>
+      <if test="hotelAddress != null">
+        HOTEL_ADDRESS = #{hotelAddress},
+      </if>
+      <if test="hotelStar != null">
+        HOTEL_STAR = #{hotelStar},
+      </if>
+      <if test="hotelService != null">
+        HOTEL_SERVICE = #{hotelService},
+      </if>
+      <if test="hotelImg1 != null">
+        HOTEL_IMG1 = #{hotelImg1},
+      </if>
+      <if test="hotelImg2 != null">
+        HOTEL_IMG2 = #{hotelImg2},
+      </if>
+      <if test="hotelImg3 != null">
+        HOTEL_IMG3 = #{hotelImg3},
+      </if>
+    </set>
+    where HOTEL_ID = #{hotelId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Hotel">
+    update TB_HOTEL
+    set HOTEL_NAME = #{hotelName},
+      HOTEL_DESC = #{hotelDesc},
+      HOTEL_ADDRESS = #{hotelAddress},
+      HOTEL_STAR = #{hotelStar},
+      HOTEL_SERVICE = #{hotelService},
+      HOTEL_IMG1 = #{hotelImg1},
+      HOTEL_IMG2 = #{hotelImg2},
+      HOTEL_IMG3 = #{hotelImg3}
+    where HOTEL_ID = #{hotelId}
+  </update>
+</mapper>

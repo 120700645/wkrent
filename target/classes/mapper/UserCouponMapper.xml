@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.UserCouponMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.UserCoupon">
+    <id column="UC_ID" jdbcType="DECIMAL" property="ucId" />
+    <result column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="COUPON_ID" jdbcType="DECIMAL" property="couponId" />
+    <result column="UC_STATUS" jdbcType="DECIMAL" property="ucStatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    UC_ID, USER_ID, COUPON_ID, UC_STATUS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_USER_COUPON
+    where UC_ID = #{ucId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from TB_USER_COUPON
+    where UC_ID = #{ucId}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.UserCoupon">
+    insert into TB_USER_COUPON (UC_ID, USER_ID, COUPON_ID, 
+      UC_STATUS)
+    values (#{ucId}, #{userId}, #{couponId}, 
+      #{ucStatus})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.UserCoupon">
+    insert into TB_USER_COUPON
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ucId != null">
+        UC_ID,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="couponId != null">
+        COUPON_ID,
+      </if>
+      <if test="ucStatus != null">
+        UC_STATUS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ucId != null">
+        #{ucId},
+      </if>
+      <if test="userId != null">
+        #{userId},
+      </if>
+      <if test="couponId != null">
+        #{couponId},
+      </if>
+      <if test="ucStatus != null">
+        #{ucStatus},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.UserCoupon">
+    update TB_USER_COUPON
+    <set>
+      <if test="userId != null">
+        USER_ID = #{userId},
+      </if>
+      <if test="couponId != null">
+        COUPON_ID = #{couponId},
+      </if>
+      <if test="ucStatus != null">
+        UC_STATUS = #{ucStatus},
+      </if>
+    </set>
+    where UC_ID = #{ucId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.UserCoupon">
+    update TB_USER_COUPON
+    set USER_ID = #{userId},
+      COUPON_ID = #{couponId},
+      UC_STATUS = #{ucStatus}
+    where UC_ID = #{ucId}
+  </update>
+</mapper>

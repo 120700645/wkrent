@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.User">
+    <id column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="USER_TEL" jdbcType="VARCHAR" property="userTel" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="USER_CARD" jdbcType="VARCHAR" property="userCard" />
+    <result column="USER_COUNT" jdbcType="DECIMAL" property="userCount" />
+    <result column="USER_FREEZE" jdbcType="DECIMAL" property="userFreeze" />
+    <result column="USER_USEABLE" jdbcType="DECIMAL" property="userUseable" />
+    <result column="USER_WKB" jdbcType="DECIMAL" property="userWkb" />
+    <result column="USER_NUM" jdbcType="DECIMAL" property="userNum" />
+    <result column="USER_LEAVEL" jdbcType="DECIMAL" property="userLeavel" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    USER_ID, USER_TEL, USER_NAME, USER_CARD, USER_COUNT, USER_FREEZE, USER_USEABLE, USER_WKB, 
+    USER_NUM, USER_LEAVEL
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_USER
+    where USER_ID = #{userId}
+  </select>
+  
+  <select id="selectByTel" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from TB_USER
+    WHERE USER_TEL = #{userTel}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from TB_USER
+    where USER_ID = #{userId}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.User">
+    insert into TB_USER (USER_ID, USER_TEL, USER_NAME, 
+      USER_CARD, USER_COUNT, USER_FREEZE, 
+      USER_USEABLE, USER_WKB, USER_NUM, 
+      USER_LEAVEL)
+    values (#{userId}, #{userTel}, #{userName}, 
+      #{userCard}, #{userCount}, #{userFreeze}, 
+      #{userUseable}, #{userWkb}, #{userNum}, 
+      #{userLeavel})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.User">
+    insert into TB_USER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="userTel != null">
+        USER_TEL,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="userCard != null">
+        USER_CARD,
+      </if>
+      <if test="userCount != null">
+        USER_COUNT,
+      </if>
+      <if test="userFreeze != null">
+        USER_FREEZE,
+      </if>
+      <if test="userUseable != null">
+        USER_USEABLE,
+      </if>
+      <if test="userWkb != null">
+        USER_WKB,
+      </if>
+      <if test="userNum != null">
+        USER_NUM,
+      </if>
+      <if test="userLeavel != null">
+        USER_LEAVEL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId},
+      </if>
+      <if test="userTel != null">
+        #{userTel},
+      </if>
+      <if test="userName != null">
+        #{userName},
+      </if>
+      <if test="userCard != null">
+        #{userCard},
+      </if>
+      <if test="userCount != null">
+        #{userCount},
+      </if>
+      <if test="userFreeze != null">
+        #{userFreeze},
+      </if>
+      <if test="userUseable != null">
+        #{userUseable},
+      </if>
+      <if test="userWkb != null">
+        #{userWkb},
+      </if>
+      <if test="userNum != null">
+        #{userNum},
+      </if>
+      <if test="userLeavel != null">
+        #{userLeavel},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.User">
+    update TB_USER
+    <set>
+      <if test="userTel != null">
+        USER_TEL = #{userTel},
+      </if>
+      <if test="userName != null">
+        USER_NAME = #{userName},
+      </if>
+      <if test="userCard != null">
+        USER_CARD = #{userCard},
+      </if>
+      <if test="userCount != null">
+        USER_COUNT = #{userCount},
+      </if>
+      <if test="userFreeze != null">
+        USER_FREEZE = #{userFreeze},
+      </if>
+      <if test="userUseable != null">
+        USER_USEABLE = #{userUseable},
+      </if>
+      <if test="userWkb != null">
+        USER_WKB = #{userWkb},
+      </if>
+      <if test="userNum != null">
+        USER_NUM = #{userNum},
+      </if>
+      <if test="userLeavel != null">
+        USER_LEAVEL = #{userLeavel},
+      </if>
+    </set>
+    where USER_ID = #{userId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.User">
+    update TB_USER
+    set USER_TEL = #{userTel},
+      USER_NAME = #{userName},
+      USER_CARD = #{userCard},
+      USER_COUNT = #{userCount},
+      USER_FREEZE = #{userFreeze},
+      USER_USEABLE = #{userUseable},
+      USER_WKB = #{userWkb},
+      USER_NUM = #{userNum},
+      USER_LEAVEL = #{userLeavel}
+    where USER_ID = #{userId}
+  </update>
+</mapper>

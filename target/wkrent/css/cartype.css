@@ -1,0 +1,22 @@
+.now_choice_car{
+  float: left;
+  margin-top: 21px;
+}
+#btn-style_order{
+  cursor: pointer;
+  float: left;
+  width: 140px;
+  height: 40px;
+  background: #f23732;
+  color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 40px;
+  margin: 9px 0 0 0
+}
+.choice_city_occupy{
+  display: none;
+  height: 102px;
+  margin: 0 auto;
+  width: 1200px;
+}

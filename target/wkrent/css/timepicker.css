@@ -1,0 +1,318 @@
+.date-box {
+    position: relative;
+}
+
+.date-box .header,
+.date-box .lastTime,
+.date-box .cur-show {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: justify;
+}
+
+.date-box .header .lastTime span,
+.date-box .header .lastTime input {
+    display: block;
+    border: none;
+    font-size: 16px;
+}
+
+.date-box .header .lastTime span:nth-child(1) {
+    color: #5d5d5d;
+}
+
+.date-box .header .lastTime input {
+    color: #333;
+    width: 100px;
+}
+
+.date-box .header .lastWeek {
+    padding-right: 20px;
+}
+
+.date-box .contents {
+    overflow: hidden;
+    width: 74%;
+    background: #fff;
+    border: 1px solid #fc5f40;
+    position: absolute;
+    top: 40px;
+    z-index: 2;
+    font-size: 13px;
+    box-shadow: 5px 5px 20px rgba(2,2,2,0.2);
+}
+
+.date-box .contents .cur-show {
+    padding: 5px 10px;
+    overflow: hidden;
+}
+
+.date-box .contents .cur-show span {
+    display: block;
+    color: #5d5d5d;
+}
+
+.date-box .contents .cur-show .prev,
+.date-box .contents .cur-show .next {
+    width: 9px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.date-box .contents .cur-show .prev {
+    background: url("../../images/index/prev.png");
+}
+
+.date-box .contents .cur-show .next {
+    background: url("../../images/index/next.png");
+}
+
+.date-box .contents .week {
+    border-bottom: 1px solid #e1e1e1;
+    overflow: hidden;
+}
+
+.date-box .contents .week span {
+    padding: 10px 0;
+    width: 14.28%;
+    float: left;
+    text-align: center;
+    color: #5d5d5d;
+}
+
+.date-box .contents .dates-box {
+    display: -webkit-box;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.date-box .contents .dates-box li {
+    list-style: none;
+    position: relative;
+    padding: 0 5px;
+}
+
+.dates-box span:hover {
+    background: #e9ebee;
+    color: #fff;
+}
+
+.date-box .contents .dates-box li span {
+    width: 14.28%;
+    float: left;
+    text-align: center;
+    display: block;
+    color: #5d5d5d;
+    padding: 3px 0;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.date-box .contents .dates-box li span.cur {
+    background: #fc5f40;
+    color: #fff;
+}
+
+.date-box .contents .dates-box li span.selected {
+    background: #ccc;
+    color: #fff;
+}
+
+div.time-box input[name="time"] {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #5d5d5d;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.time-box {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: justify;
+    position: relative;
+}
+
+.time-box .contents {
+    width: 400px;
+    position: absolute;
+    left: 0;
+    border: 1px solid #fc5f40;
+    margin-top: -1px;
+}
+
+.contents_right{
+    width: 400px;
+    position: absolute;
+    right: 0;
+    border: 1px solid #fc5f40;
+    margin-top: -1px;
+    
+}
+
+.time-box .contents > ul {
+    float: left;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.time-box .contents > ul > div {
+    padding: 10px 0;
+    background: #f7f8f8;
+    /*   border-top: 1px solid #e4e5e6;
+       border-bottom: 1px solid #e4e5e6;*/
+    color: #5d5d5d;
+    font-size: 14px;
+}
+
+.time-box .contents > ul:nth-child(2) {
+    border-left: 1px solid #e4e5e6;
+}
+
+.time-box .contents .hours {
+    display: inline-block;
+    width: 74%;
+    list-style: none;
+    float: left;
+    text-align: center;
+}
+
+.time-box .contents .minutes {
+    display: inline-block;
+    width: 26%;
+    list-style: none;
+    float: left;
+    text-align: center;
+    border-left: 1px solid #e4e5e6;
+    box-sizing: border-box;
+}
+
+.time-box .contents .hours li .meridian span {
+    display: block;
+}
+
+.time-box .contents .hours li {
+    padding: 10px 0;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: justify;
+}
+
+.time-box .contents .hours li .meridian {
+    display: block;
+    width: 20%;
+    position: relative;
+    text-align: center;
+}
+
+.time-box .contents .hours li .numbers {
+    display: block;
+    width: 80%;
+    text-align: center;
+}
+
+.time-box .contents .hours li .numbers span {
+    color: #5d5d5d;
+    display: inline-block;
+    font-size: 13px;
+    width: 16%;
+    margin: 0;
+    float: left;
+    text-align: center;
+    padding: 8px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.time-box .contents .hours li .meridian span {
+    color: #5d5d5d;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    position: absolute;
+    left: 18px;
+}
+
+.time-box .contents .hours li .meridian span.am_span {
+    top: -40px;
+}
+
+.time-box .contents .hours li .meridian span.pm_span {
+    top: 25px;
+}
+
+.time-box .contents .minutes li .numbers {
+    padding: 8px 0;
+    overflow: hidden;
+}
+
+.time-box .contents .minutes li .numbers span {
+    color: #5d5d5d;
+    display: inline-block;
+    font-size: 13px;
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 3px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.contents span.on::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 3px;
+    color: #fff;
+    background: #fc5f40;
+    font-size: 13px;
+    margin-top: -9px;
+    margin-left: -11px;
+}
+
+.hour_part, .minute_part {
+    padding: 5px 0;
+    border-bottom: 1px solid #e9ebee;
+    background: #f8f9f8;
+}
+
+.contents span.hover::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 3px;
+    color: #fff;
+    background: #e1e1e1;
+    font-size: 13px;
+    margin-top: -9px;
+    margin-left: -11px;
+}
+
+.non_rent{
+    background: #f9f9f9;
+    color: #a7a7b0;
+}
+
+.prevs{
+    width: 9px;
+    height: 17px;
+    cursor: pointer;
+    background: url("../../images/index/prevs.png");
+}
+
+.nexts{
+    width: 9px;
+    height: 17px;
+    cursor: pointer;
+    background: url("../../images/index/nexts.png");
+}

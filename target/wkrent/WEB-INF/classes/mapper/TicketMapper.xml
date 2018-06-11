@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.TicketMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Ticket">
+    <id column="TICKET_ID" jdbcType="DECIMAL" property="ticketId" />
+    <result column="TRIP_ID" jdbcType="DECIMAL" property="tripId" />
+    <result column="TICKET_NAME" jdbcType="VARCHAR" property="ticketName" />
+    <result column="TICKET_NUM" jdbcType="DECIMAL" property="ticketNum" />
+    <result column="TICKET_PRICE" jdbcType="DECIMAL" property="ticketPrice" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    TICKET_ID, TRIP_ID, TICKET_NAME, TICKET_NUM, TICKET_PRICE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_TICKET
+    where TICKET_ID = #{ticketId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from TB_TICKET
+    where TICKET_ID = #{ticketId}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Ticket">
+    insert into TB_TICKET (TICKET_ID, TRIP_ID, TICKET_NAME, 
+      TICKET_NUM, TICKET_PRICE)
+    values (#{ticketId}, #{tripId}, #{ticketName}, 
+      #{ticketNum}, #{ticketPrice})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Ticket">
+    insert into TB_TICKET
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ticketId != null">
+        TICKET_ID,
+      </if>
+      <if test="tripId != null">
+        TRIP_ID,
+      </if>
+      <if test="ticketName != null">
+        TICKET_NAME,
+      </if>
+      <if test="ticketNum != null">
+        TICKET_NUM,
+      </if>
+      <if test="ticketPrice != null">
+        TICKET_PRICE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ticketId != null">
+        #{ticketId},
+      </if>
+      <if test="tripId != null">
+        #{tripId},
+      </if>
+      <if test="ticketName != null">
+        #{ticketName},
+      </if>
+      <if test="ticketNum != null">
+        #{ticketNum},
+      </if>
+      <if test="ticketPrice != null">
+        #{ticketPrice},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Ticket">
+    update TB_TICKET
+    <set>
+      <if test="tripId != null">
+        TRIP_ID = #{tripId},
+      </if>
+      <if test="ticketName != null">
+        TICKET_NAME = #{ticketName},
+      </if>
+      <if test="ticketNum != null">
+        TICKET_NUM = #{ticketNum},
+      </if>
+      <if test="ticketPrice != null">
+        TICKET_PRICE = #{ticketPrice},
+      </if>
+    </set>
+    where TICKET_ID = #{ticketId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Ticket">
+    update TB_TICKET
+    set TRIP_ID = #{tripId},
+      TICKET_NAME = #{ticketName},
+      TICKET_NUM = #{ticketNum},
+      TICKET_PRICE = #{ticketPrice}
+    where TICKET_ID = #{ticketId}
+  </update>
+</mapper>

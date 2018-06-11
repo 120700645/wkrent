@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.PlaceMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Place">
+    <id column="PLACE_ID" jdbcType="DECIMAL" property="placeId" />
+    <result column="PLACE_NAME" jdbcType="VARCHAR" property="placeName" />
+    <result column="PLACE_ADDRESS" jdbcType="VARCHAR" property="placeAddress" />
+    <result column="PLACE_LONGITUDE" jdbcType="VARCHAR" property="placeLongitude" />
+    <result column="PLACE_LATITUDE" jdbcType="VARCHAR" property="placeLatitude" />
+    <result column="PLACE_START_TIME" jdbcType="VARCHAR" property="placeStartTime" />
+    <result column="PLACE_END_TIME" jdbcType="VARCHAR" property="placeEndTime" />
+    <result column="PLACE_TEL" jdbcType="VARCHAR" property="placeTel" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PLACE_ID, PLACE_NAME, PLACE_ADDRESS, PLACE_LONGITUDE, PLACE_LATITUDE, PLACE_START_TIME, 
+    PLACE_END_TIME, PLACE_TEL
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_PLACE
+    where PLACE_ID = #{placeId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from TB_PLACE
+    where PLACE_ID = #{placeId}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Place">
+    insert into TB_PLACE (PLACE_ID, PLACE_NAME, PLACE_ADDRESS, 
+      PLACE_LONGITUDE, PLACE_LATITUDE, PLACE_START_TIME, 
+      PLACE_END_TIME, PLACE_TEL)
+    values (#{placeId}, #{placeName}, #{placeAddress}, 
+      #{placeLongitude}, #{placeLatitude}, #{placeStartTime}, 
+      #{placeEndTime}, #{placeTel})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Place">
+    insert into TB_PLACE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="placeId != null">
+        PLACE_ID,
+      </if>
+      <if test="placeName != null">
+        PLACE_NAME,
+      </if>
+      <if test="placeAddress != null">
+        PLACE_ADDRESS,
+      </if>
+      <if test="placeLongitude != null">
+        PLACE_LONGITUDE,
+      </if>
+      <if test="placeLatitude != null">
+        PLACE_LATITUDE,
+      </if>
+      <if test="placeStartTime != null">
+        PLACE_START_TIME,
+      </if>
+      <if test="placeEndTime != null">
+        PLACE_END_TIME,
+      </if>
+      <if test="placeTel != null">
+        PLACE_TEL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="placeId != null">
+        #{placeId},
+      </if>
+      <if test="placeName != null">
+        #{placeName},
+      </if>
+      <if test="placeAddress != null">
+        #{placeAddress},
+      </if>
+      <if test="placeLongitude != null">
+        #{placeLongitude},
+      </if>
+      <if test="placeLatitude != null">
+        #{placeLatitude},
+      </if>
+      <if test="placeStartTime != null">
+        #{placeStartTime},
+      </if>
+      <if test="placeEndTime != null">
+        #{placeEndTime},
+      </if>
+      <if test="placeTel != null">
+        #{placeTel},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Place">
+    update TB_PLACE
+    <set>
+      <if test="placeName != null">
+        PLACE_NAME = #{placeName},
+      </if>
+      <if test="placeAddress != null">
+        PLACE_ADDRESS = #{placeAddress},
+      </if>
+      <if test="placeLongitude != null">
+        PLACE_LONGITUDE = #{placeLongitude},
+      </if>
+      <if test="placeLatitude != null">
+        PLACE_LATITUDE = #{placeLatitude},
+      </if>
+      <if test="placeStartTime != null">
+        PLACE_START_TIME = #{placeStartTime},
+      </if>
+      <if test="placeEndTime != null">
+        PLACE_END_TIME = #{placeEndTime},
+      </if>
+      <if test="placeTel != null">
+        PLACE_TEL = #{placeTel},
+      </if>
+    </set>
+    where PLACE_ID = #{placeId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Place">
+    update TB_PLACE
+    set PLACE_NAME = #{placeName},
+      PLACE_ADDRESS = #{placeAddress},
+      PLACE_LONGITUDE = #{placeLongitude},
+      PLACE_LATITUDE = #{placeLatitude},
+      PLACE_START_TIME = #{placeStartTime},
+      PLACE_END_TIME = #{placeEndTime},
+      PLACE_TEL = #{placeTel}
+    where PLACE_ID = #{placeId}
+  </update>
+</mapper>

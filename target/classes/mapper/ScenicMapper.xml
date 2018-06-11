@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.ScenicMapper">
+  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Scenic">
+    <id column="SCENIC_ID" jdbcType="DECIMAL" property="scenicId" />
+    <result column="SCENIC_NAME" jdbcType="VARCHAR" property="scenicName" />
+    <result column="SCENIC_IMG" jdbcType="VARCHAR" property="scenicImg" />
+    <result column="SCENIC_DESC" jdbcType="VARCHAR" property="scenicDesc" />
+    <result column="SCENIC_DINING" jdbcType="VARCHAR" property="scenicDining" />
+    <result column="SCENIC_LONGITUDE" jdbcType="VARCHAR" property="scenicLongitude" />
+    <result column="SCENIC_LATITUDE" jdbcType="VARCHAR" property="scenicLatitude" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    SCENIC_ID, SCENIC_NAME, SCENIC_IMG, SCENIC_DESC, SCENIC_DINING, SCENIC_LONGITUDE, 
+    SCENIC_LATITUDE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TB_SCENIC
+    where SCENIC_ID = #{scenicId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from TB_SCENIC
+    where SCENIC_ID = #{scenicId}
+  </delete>
+  <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Scenic">
+    insert into TB_SCENIC (SCENIC_ID, SCENIC_NAME, SCENIC_IMG, 
+      SCENIC_DESC, SCENIC_DINING, SCENIC_LONGITUDE, 
+      SCENIC_LATITUDE)
+    values (#{scenicId}, #{scenicName}, #{scenicImg}, 
+      #{scenicDesc}, #{scenicDining}, #{scenicLongitude}, 
+      #{scenicLatitude})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianfeng.wkrent.dto.Scenic">
+    insert into TB_SCENIC
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="scenicId != null">
+        SCENIC_ID,
+      </if>
+      <if test="scenicName != null">
+        SCENIC_NAME,
+      </if>
+      <if test="scenicImg != null">
+        SCENIC_IMG,
+      </if>
+      <if test="scenicDesc != null">
+        SCENIC_DESC,
+      </if>
+      <if test="scenicDining != null">
+        SCENIC_DINING,
+      </if>
+      <if test="scenicLongitude != null">
+        SCENIC_LONGITUDE,
+      </if>
+      <if test="scenicLatitude != null">
+        SCENIC_LATITUDE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="scenicId != null">
+        #{scenicId},
+      </if>
+      <if test="scenicName != null">
+        #{scenicName},
+      </if>
+      <if test="scenicImg != null">
+        #{scenicImg},
+      </if>
+      <if test="scenicDesc != null">
+        #{scenicDesc},
+      </if>
+      <if test="scenicDining != null">
+        #{scenicDining},
+      </if>
+      <if test="scenicLongitude != null">
+        #{scenicLongitude},
+      </if>
+      <if test="scenicLatitude != null">
+        #{scenicLatitude},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.Scenic">
+    update TB_SCENIC
+    <set>
+      <if test="scenicName != null">
+        SCENIC_NAME = #{scenicName},
+      </if>
+      <if test="scenicImg != null">
+        SCENIC_IMG = #{scenicImg},
+      </if>
+      <if test="scenicDesc != null">
+        SCENIC_DESC = #{scenicDesc},
+      </if>
+      <if test="scenicDining != null">
+        SCENIC_DINING = #{scenicDining},
+      </if>
+      <if test="scenicLongitude != null">
+        SCENIC_LONGITUDE = #{scenicLongitude},
+      </if>
+      <if test="scenicLatitude != null">
+        SCENIC_LATITUDE = #{scenicLatitude},
+      </if>
+    </set>
+    where SCENIC_ID = #{scenicId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.Scenic">
+    update TB_SCENIC
+    set SCENIC_NAME = #{scenicName},
+      SCENIC_IMG = #{scenicImg},
+      SCENIC_DESC = #{scenicDesc},
+      SCENIC_DINING = #{scenicDining},
+      SCENIC_LONGITUDE = #{scenicLongitude},
+      SCENIC_LATITUDE = #{scenicLatitude}
+    where SCENIC_ID = #{scenicId}
+  </update>
+</mapper>

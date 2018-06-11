@@ -1,0 +1,512 @@
+.invitationjoin-banner {
+  width: 100%;
+  height: 380px;
+  background: url(../img/banner.png) no-repeat center;
+  background-size: 100%;
+}
+
+.invitationjoin {
+  background: #fcfcfc;
+  padding: 1px;
+}
+
+.about-us,
+.development-history,
+.advantage,
+.cooperation-platform,
+.join-store,
+.conditions-joining,
+.contact-us {
+  width: 800px;
+  margin: 0 auto 0 auto;
+}
+
+.invitationjoin .icon {
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  margin: 64.5px 0 18.5px 0;
+}
+
+.about-us .icon {
+  background: url(../img/about.png) no-repeat center;
+  background-size: contain;
+}
+
+.about-us-content p {
+  text-align: justify;
+  font-size: 17px;
+  color: #585858;
+  letter-spacing: 1.5px;
+}
+
+.about-us-content p:first-child {
+  margin-bottom: 20px;
+}
+
+.about-us-content p:first-child > span {
+  font-size: 33px;
+  color: #B62018;
+  float: left;
+  margin-left: 20px;
+}
+
+.about-us-content p:last-child {
+  text-indent: 2em;
+}
+
+.development-history .icon {
+  background: url(../img/development.png) no-repeat 303.5px;
+  background-size: contain;
+}
+
+.development-history .development-history-content {
+  width: 100%;
+  height: 400px;
+  margin: 0 auto;
+  background: url(../img/development-histor.png) no-repeat center;
+  background-size: contain;
+  margin: 0 0 18.5px 0;
+}
+
+.advantage .icon {
+  background: url(../img/advantage.png) no-repeat 303.5px;
+  background-size: contain;
+}
+
+.advantage .advantage-content {
+  width: 65%;
+  margin: 0 auto 82.5px auto;
+  display: table;
+}
+
+.advantage span {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+}
+
+.network span {
+  background: url(../img/network_of_vehicles.png) no-repeat center;
+  background-size: contain;
+}
+
+.vehicle span {
+  background: url(../img/vehicle.png) no-repeat center;
+  background-size: contain;
+}
+
+.customer span {
+  background: url(../img/customer.png) no-repeat center;
+  background-size: contain;
+}
+
+.brand span {
+  background: url(../img/brand_2.png) no-repeat center;
+  background-size: contain;
+}
+
+.platform span {
+  background: url(../img/platform.png) no-repeat center;
+  background-size: contain;
+}
+
+.assets span {
+  background: url(../img/assets.png) no-repeat center;
+  background-size: contain;
+}
+
+.finance span {
+  background: url(../img/finance.png) no-repeat center;
+  background-size: contain;
+}
+
+.train span {
+  background: url(../img/train.png) no-repeat center;
+  background-size: contain;
+}
+
+.advantage .advantage-content > :first-child {
+  margin-right: 65px;
+}
+
+.advantage > .advantage-content > div {
+  display:table-cell;
+  vertical-align: middle;
+}
+
+.advantage .advantage-content > div h2 {
+  color: #4e4e4e;
+  font-size: 23.5px;
+  margin-bottom: 11px;
+}
+
+.advantage .advantage-content > div p {
+  font-size: 11px;
+  color: #616161;
+}
+
+.cooperation-platform .icon {
+  background: url(../img/cooperation_platform.png) no-repeat 303.5px;
+  background-size: contain;
+}
+
+.cooperation-platform-content {
+  width: 460px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.cooperation-platform-content span {
+  display: inline-block;
+  width: 31.2%;
+  height: 76.5px;
+  border-radius: 20px;
+  border: 1px solid #C0C0C0;
+  margin: 0 10px 15px 0;
+  float: left;
+}
+
+.cooperation-platform-content span:nth-child(3n) {
+  margin: 0;
+}
+
+.cooperation-platform-content span:first-child {
+  background: #fff url(../img/jingdong.png) no-repeat center;
+  background-size: 90%;
+}
+
+.cooperation-platform-content span:nth-child(2) {
+  background: #fff url(../img/xiecheng.png) no-repeat center;
+  background-size: 80%;
+}
+
+.cooperation-platform-content span:nth-child(3) {
+  background: #fff url(../img/qunaer.png) no-repeat center;
+  background-size: 80%;
+}
+
+.cooperation-platform-content span:nth-child(4) {
+  background: #fff url(../img/tuniu.png) no-repeat center;
+  background-size: 80%;
+}
+
+.cooperation-platform-content span:nth-child(5) {
+  background: #fff url(../img/zhima.png) no-repeat center;
+  background-size: 80%;
+}
+
+.cooperation-platform-content span:nth-child(6) {
+  background: #fff url(../img/feizhu.png) no-repeat center;
+  background-size: 80%;
+}
+
+.cooperation-platform-content span:nth-child(7) {
+  background: #fff url(../img/tongcheng.png) no-repeat center;
+  background-size: 80%;
+}
+
+.cooperation-platform-content span:nth-child(8) {
+  background: #fff url(../img/mafeng.png) no-repeat center;
+  background-size: 80%;
+}
+
+.cooperation-platform-content span:nth-child(9) {
+  background: #fff url(../img/meituan.png) no-repeat center;
+  background-size: 80%;
+}
+
+.cooperation-platform-content span:nth-child(10) {
+  background: #fff url(../img/tujia.png) no-repeat center;
+  background-size: 80%;
+}
+
+.cooperation-platform-content span:nth-child(11) {
+  background: #fff url(../img/nuomi.png) no-repeat center;
+  background-size: 80%;
+}
+
+.cooperation-platform-content span:nth-child(12) {
+  background: #fff url(../img/yiqifa.png) no-repeat center;
+  background-size: 80%;
+}
+
+.join-store {
+  position: relative;
+}
+.join-store .icon {
+  background: url(../img/join_store.png) no-repeat 303.5px;
+  background-size: contain;
+}
+
+.join-store p {
+  text-align: center;
+  font-size: 18px;
+  color: #3D3D3D;
+  margin: 14px 0;
+}
+
+.join-store .franchiser, .join-store-swiper {
+  width: 430px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.join-store-swiper,.swiper-container {
+  height: 200px;
+}
+
+.swiper-pagination-bullet, .swiper-pagination-bullet-active {
+  width: 5px!important;
+  height: 5px!important;
+  border-radius: 50%!important;
+}
+.swiper-pagination-bullet-active {
+  background: #373737!important;
+}
+
+.join-store .franchiser figure, .swiper-slide-content figure {
+  width: 125px;
+  float: left;
+  margin-right: 27px;
+  font-size: 11px;
+  color: #636363;
+}
+
+.swiper-slide-content figure {
+  text-align: center;
+}
+
+.join-store .franchiser figure:nth-child(3n), .swiper-slide-content figure:nth-child(3n) {
+  margin-right: 0;
+}
+
+.join-store .franchiser img, .swiper-slide-content figure img {
+  width: 125px;
+  height: 125px;
+  border-radius: 25px;
+}
+
+.swiper-button-prev {
+  top: 160px!important;
+  background-image: url(../img/button_prev_icon.png)!important;
+  background-size: 80%!important;
+  left: 137px!important;
+}
+
+.swiper-button-next {
+  top: 160px!important;
+  background-image: url(../img/button_next_icon.png)!important;
+  background-size: 80%!important;
+  right: 137px!important;
+}
+
+.conditions-joining .icon {
+  background: url(../img/conditions_joining.png) no-repeat 303.5px;
+  background-size: contain;
+}
+
+.conditions-joining .franchise-fee {
+  width: 400px;
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+  color: #BB2721;
+  margin: 0 auto;
+}
+
+.conditions-joining .franchise-fee::after {
+  content: '-';
+  height: 2px;
+  display: inline-block;
+  transform: scale(25, 1)!important;
+  -ms-transform: scale(1,3);
+  -webkit-transform: scale(1,3);
+  -moz-transform: scale(1,3);
+  -o-transform: scale(1,3);
+  float: left;
+  font-weight: bold;
+}
+
+.conditions-joining .franchise-fee::before {
+  content: '-';
+  height: 3px;
+  display: inline-block;
+  transform: scale(25, 1)!important;
+  -ms-transform: scale(1,3);
+  -webkit-transform: scale(1,3);
+  -moz-transform: scale(1,3);
+  -o-transform: scale(1,3);
+  float: right;
+  font-weight: bold;
+}
+
+.conditions-joining div h1, .conditions-joining div h2 {
+  display: inline-block;
+}
+
+.conditions-joining div h1 {
+  font-size: 62.5px;
+}
+
+.conditions-joining div h2 {
+  font-size: 40px;
+}
+
+.conditions-joining-content {
+  width: 480px;
+  margin: 0 auto;
+}
+
+.conditions-joining-content li {
+  border-bottom: 1px solid #E7E7E7;
+  overflow: hidden;
+  width: 100%;
+  height: 150px;
+  display: table;
+  margin: 0 auto;
+  padding-left: 30px;
+}
+
+.conditions-joining-content li:last-child {
+  border: none;
+}
+
+.conditions-joining-content li span {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 40px;
+  color: #BB2721;
+  width: 90px;
+}
+
+.conditions-joining-content li div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.conditions-joining-content li div b {
+  color: #202020;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.conditions-joining-content li div p {
+  color: #999999;
+  font-size: 13px;
+  margin-top: 14px;
+}
+
+.conditions-joining-button {
+  width: 300px;
+  height: 38px;
+  border-radius: 38px;
+  border: 3px solid #BB2721;
+  text-align: center;
+  line-height: 38px;
+  margin: 30px auto;
+  color: #BB2721;
+  font-weight: 600;
+  font-size: 18.5px;
+  cursor: pointer;
+}
+
+.contact-us .icon {
+  background: url(../img/contact-us.png) no-repeat 303.5px;
+  background-size: contain;
+}
+
+.contact-us table {
+  width: 327.5px;
+  height: 234px;
+  border: 1px solid 646464;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.contact-us table thead {
+  font-weight: 600;
+  color: #646464;
+}
+
+.contact-us table td {
+  border: 1px solid #646464;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.address {
+  width: 488px;
+  margin: 20px auto;
+}
+
+.address p {
+  float: left;
+  margin-top: 40px;
+  color: #646464;
+  font-size: 10px;
+}
+
+.address p span {
+  display: inline-block;
+  height: 20px;
+  float: left;
+  text-indent: 25px;
+  background: url(../img/site.png)no-repeat left center;
+  background-size: contain;
+}
+
+.address p label {
+  display: inline-block;
+  width: 290px;
+}
+
+/* .address img {
+  width: 237px;
+  height: 155px;
+} */
+
+.side {
+  width: 169px;
+  height: 507px;
+  background: url(../img/monkey_icon.png)no-repeat center;
+  background-size: contain;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 8%;
+}
+
+.side ul {
+  position: absolute;
+  left:56px;
+  top: 190px;
+  font-size: 18px;
+  color: #F9D69D;
+}
+
+.side ul li {
+  height: 38px;
+  line-height: 38px;
+  cursor:pointer;
+}
+
+.side ul li:last-child {
+  color: #BE251C;
+}
+.phone-number-join{
+  width: 300px;
+  height: 38px;
+  border-radius: 38px;
+  border: 3px solid #BB2721;
+  text-align: center;
+  line-height: 38px;
+  margin: 30px auto;
+  color: #BB2721;
+  font-weight: 600;
+  font-size: 18.5px;
+  border: none;
+  cursor: default;
+}

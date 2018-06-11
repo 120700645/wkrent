@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://www.wktrip.com/reuse_left/inner_travel_agreement -->
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="悟空自驾游是一家立足云南、面向全国、辐射东南亚的自驾游服务平台！为全国旅游爱好者提供吃、住、行、游、购、 娱等在内的高品质服务。依托于移动互联网技术，将云南省16个地州、15个机场、火车站、高铁站、公交枢纽、酒店、旅游景点、自驾游营地、 餐饮、购物、娱乐等旅游目的地、服务点和连接点打通，打造&quot;租车+旅游&quot;全新模式。">
+		<title>悟空自驾游 云南自驾游 自驾租车 云南租车 云南旅游 自驾游</title>
+		<link rel="icon" href="https://static.wkzuche.com/www/images/facicon.ico">
+		<script src="./travel2_files/hm.js.下载"></script>
+		<script type="text/javascript">
+			var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?02ead58d043689449fcd95b182303a33";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+		<link href="../css/app.1e82d5e3d6f6affba7436d4c5b5588a5.css" rel="stylesheet">
+		<style type="text/css">
+			.comp-full-calendar {
+				padding: 20px;
+				background: #fff;
+				max-width: 560px;
+				margin: 0 auto;
+			}
+			
+			.comp-full-calendar ul,
+			.comp-full-calendar p {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.full-calendar-body {
+				margin-top: 0px;
+			}
+			
+			.full-calendar-body .weeks {
+				display: flex;
+				border-top: 1px solid #e0e0e0;
+				border-bottom: 1px solid #e0e0e0;
+				height: 48px;
+			}
+			
+			.full-calendar-body .weeks .week {
+				width: 100%;
+				position: relative;
+				flex: 1;
+				text-align: center;
+				margin-top: 14px;
+				margin-top: 10px;
+				/* //border-right:1px solid #f2f2f2;*/
+			}
+			
+			.full-calendar-body .weeks .week span {
+				display: block;
+				float: left;
+				width: 70px;
+				line-height: 40px;
+				text-align: center;
+			}
+			
+			.full-calendar-body .highlightcls {
+				color: #e1061c;
+			}
+			
+			.full-calendar-body .dates {
+				position: relative;
+			}
+			
+			.full-calendar-body .dates .week-row {
+				border-left: 1px solid #f2f2f2;
+				display: flex;
+			}
+			
+			.full-calendar-body .dates .week-row .day-cell {
+				flex: 1;
+				min-height: 63px;
+				padding: 0px;
+				border-right: 1px solid #f2f2f2;
+				border-bottom: 1px solid #f2f2f2;
+				background-color: #fdfdfd;
+			}
+			
+			.full-calendar-body .dates .week-row .day-cell .day-number {
+				margin-top: 12px;
+				text-align: center;
+				opacity: 0;
+			}
+			
+			.full-calendar-body .dates .week-row .day-cell.white-cell {
+				background-color: #ffffff;
+			}
+			
+			.full-calendar-body .dates .week-row .day-cell.not-cur-month .day-number {
+				color: rgba(0, 0, 0, 0.24);
+			}
+			
+			.full-calendar-body .dates .dates-events {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				width: 100%;
+			}
+			
+			.full-calendar-body .dates .dates-events .events-week {
+				display: flex;
+			}
+			
+			.full-calendar-body .dates .dates-events .events-week .events-day {
+				cursor: pointer;
+				flex: 1;
+				min-height: 63px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			
+			.full-calendar-body .dates .dates-events .events-week .events-day .day-number {
+				text-align: center;
+				padding: 14px 5px 2px 4px;
+			}
+			
+			.full-calendar-body .dates .dates-events .events-week .events-day.today {
+				border-right: 2px solid #e1061c;
+				border-left: 2px solid #e1061c;
+				border-top: 2px solid #e1061c;
+				border-bottom: 2px solid #e1061c;
+				background-color: #ffffff;
+			}
+			
+			.full-calendar-body .dates .dates-events .events-week .events-day.not-cur-month .day-number {
+				color: rgba(0, 0, 0, 0.24);
+			}
+			
+			.full-calendar-body .dates .dates-events .events-week .events-day .event-box {
+				position: absolute;
+				width: 80px;
+				height: 64px;
+				margin-top: -40px;
+				margin-left: -4px;
+			}
+			
+			.full-calendar-body .dates .dates-events .events-week .events-day .event-box .event-item {
+				cursor: pointer;
+				font-size: 14px;
+				margin-top: 0px;
+				margin-bottom: 0px;
+				color: #e1061c;
+				padding: 0 0 0 0px;
+				height: 100%;
+				line-height: 90px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				text-align: center;
+			}
+			
+			.full-calendar-body .dates .dates-events .events-week .events-day .event-box .event-item.is-end {
+				margin-right: 4px;
+			}
+			
+			.full-calendar-body .dates .dates-events .events-week .events-day .event-box .event-item.is-opacity {
+				opacity: 0;
+			}
+			
+			.full-calendar-body .dates .dates-events .events-week .events-day .event-box .more-link {
+				cursor: pointer;
+				padding-left: 8px;
+				padding-right: 2px;
+				color: rgba(0, 0, 0, 0.38);
+				font-size: 14px;
+			}
+			
+			.full-calendar-body .dates .more-events {
+				position: absolute;
+				width: 150px;
+				z-index: 2;
+				border: 1px solid #eee;
+				box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+			}
+			
+			.full-calendar-body .dates .more-events .more-header {
+				background-color: #eee;
+				padding: 5px;
+				display: flex;
+				align-items: center;
+				font-size: 14px;
+			}
+			
+			.full-calendar-body .dates .more-events .more-header .title {
+				flex: 1;
+			}
+			
+			.full-calendar-body .dates .more-events .more-header .close {
+				margin-right: 2px;
+				cursor: pointer;
+				font-size: 16px;
+			}
+			
+			.full-calendar-body .dates .more-events .more-body {
+				height: 146px;
+				overflow: hidden;
+			}
+			
+			.full-calendar-body .dates .more-events .more-body .body-list {
+				height: 144px;
+				padding: 5px;
+				overflow: auto;
+				background-color: #fff;
+			}
+			
+			.full-calendar-body .dates .more-events .more-body .body-list .body-item {
+				cursor: pointer;
+				font-size: 12px;
+				background-color: #C7E6FD;
+				margin-bottom: 2px;
+				color: rgba(0, 0, 0, 0.87);
+				padding: 0 0 0 4px;
+				height: 18px;
+				line-height: 18px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		</style>
+		<style type="text/css">
+			.full-calendar-header {
+				display: flex;
+				align-items: center;
+			}
+			
+			.full-calendar-header .header-left,
+			.full-calendar-header .header-right {
+				flex: 1;
+			}
+			
+			.full-calendar-header .header-right {
+				text-align: right;
+				color: red;
+				cursor: pointer;
+			}
+			
+			.full-calendar-header .header-left {
+				cursor: pointer;
+			}
+			
+			.full-calendar-header .header-center {
+				flex: 3;
+				text-align: center;
+				color: #e1061c;
+				margin-bottom: 8px;
+			}
+			
+			.full-calendar-header .header-center .title {
+				margin: 0 10px;
+			}
+			
+			.full-calendar-header .header-center .prev-month,
+			.full-calendar-header .header-center .next-month {
+				cursor: pointer;
+			}
+			
+			.full-calendar-header .header-center .disable-style {
+				cursor: auto;
+				color: #f2f2f2;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="reuse_top">
+				<div class="top-main">
+					<div class="top-logo">
+						<a href="driving.html"><img src="../img/logo.74f8c8e.png" alt=""></a>
+					</div>
+					<div class="nav">
+						<ul>
+							<li class="active">
+								<a href="driving.html">首页</a>
+							</li>
+							<li>
+								<a href="selfdriving.html" class="">自助自驾</a>
+							</li>
+							<li>
+								<a href="cardriving.html" class="">车+X</a>
+							</li>
+							<li>
+								<a href="groupdriving.html" class="">跟团自驾</a>
+							</li>
+							<li>
+								<a href="freedesign.html" class="">自由定制</a>
+							</li>
+							<li>
+								<a href="renting.html" target="_blank">自驾租车</a>
+							</li>
+						</ul> <span hidden="hidden"></span>
+						<div class="user">
+							<a href="https://www.wktrip.com/personalCenter/centerCard" class="black"><span class="user-icon"><span aria-hidden="true" class="glyphicon glyphicon-user"></span></span>王磊</a> <span class="clear">[退出]</span></div>
+						<div class="top-code"></div>
+						<div class="phone"><span></span> 400-0515-507
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="reuse_left">
+				<div class="reuse_left_content">
+					<div class="tab-left">
+						<div class="two-title">关于我们</div>
+						<p class="tab">
+							<a href="selfabout.html" class="">匠心打造</a>
+						</p>
+						<p class="tab">
+							<a href="selfmedia.html" class="">媒体报道</a>
+						</p>
+						<p class="tab">
+							<a href="selfstory.html" class="">悟空故事</a>
+						</p>
+						<p class="tab">
+							<a href="selfcontact.html" class="">联系我们</a>
+						</p>
+						<p class="tab">
+							<a href="selfjoin.html" class="">加入我们</a>
+						</p>
+						<div class="two-title">帮助中心</div>
+						<p class="tab">
+							<a href="selfinsurance.html" class="">保险条款</a>
+						</p>
+						<p class="tab">
+							<a href="selfservice.html" class="">人工服务</a>
+						</p>
+						<p class="tab">
+							<a href="selfquestion.html" class="">常见问题</a>
+						</p>
+						<div class="two-title">服务协议</div>
+						<p class="tab">
+							<a href="selftravel.html" class="">旅游协议</a>
+						</p>
+						<p class="tab">
+							<a href="selfcaragreement.html" class="">车辆服务协议</a>
+						</p>
+						<p class="tab">
+							<a href="selfuseragreement.html" class="">用户服务协议</a>
+						</p>
+						<div class="two-title">经营资质</div>
+						<p class="tab">
+							<a href="selflicense.html" class="">营业执照</a>
+						</p>
+						<p class="tab">
+							<a href="selfpermit.html" class="">经营许可证</a>
+						</p>
+					</div>
+					<div class="tab-right">
+						<div data-v-1fbf5698="" class="inner_travel_agreement">
+							<h2 data-v-1fbf5698="">境内旅游合同范文</h2>
+							<h3 data-v-1fbf5698="">第一部分通用条款</h3>
+							<p data-v-1fbf5698="" class="red">第一条 合同使用说明</p>
+							<p data-v-1fbf5698="">1、本合同供云南省的组团旅行社（以下简称“组团社”）与旅游者签订省内包价旅游合同时使用。</p>
+							<p data-v-1fbf5698="">2、组团社应是在工商和市场监管机关注册登记，并取得旅行社业务经营许可证的旅行社或者经旅游行政管理部门备案的旅行社分支机构（分社和服务网点）。经备案的旅行社分支机构只能以旅行社名义与旅游者签订旅游合同。</p>
+							<p data-v-1fbf5698="">3、凡旅游者不在旅行社营业场所签订合同，应注意核实旅行社业务代表的身份、授权委托书，以及营业执照、旅行社业务经营许可证副本或旅行社盖章的副本复印件。</p>
+							<p data-v-1fbf5698="">4、组团社签订合同所加盖的印章，应为旅行社印章或合同专用章。</p>
+							<p data-v-1fbf5698="">5、双方当事人应当自愿选择本合同条款所提供的选择项，或是自愿在空格处填写完整内容。</p>
+							<p data-v-1fbf5698="">6、经双方协商一致，组团社和旅游者可以书面形式对合同内容进行变更或者补充，但不得低于《旅行社接待服务规范》（DB 53/T 416）标准，不得减轻或者免除应当由旅行社承担的责任。</p>
+							<h3 data-v-1fbf5698="">双方权利义务</h3>
+							<p data-v-1fbf5698="" class="red">旅游者为甲方，组团社为乙方。双方的权利义务如下：</p>
+							<p data-v-1fbf5698="" class="red">1、甲方的权利</p>
+							<p data-v-1fbf5698="">（1）要求<span data-v-1fbf5698="" class="red">乙方</span>按照合同及《旅游行程及服务标准》约定履行相关义务。</p>
+							<p data-v-1fbf5698="">（2）拒绝未经事先协商一致的转团、拼团行为。</p>
+							<p data-v-1fbf5698="">（3）有权自主选择旅游产品和服务，有权拒绝 <span data-v-1fbf5698="" class="red">乙方</span>指定购物场所、安排参加另行付费旅游项目的行为，有权拒绝<span data-v-1fbf5698="" class="red">乙方</span>的导游强迫或者变相强迫购物、参加另行付费旅游项目的行为。</p>
+							<p data-v-1fbf5698="">（4）在支付旅游费用时要求<span data-v-1fbf5698="" class="red">乙方</span>出具发票。</p>
+							<p data-v-1fbf5698="">（5）人格尊严、民族风俗习惯和宗教信仰得到尊重。</p>
+							<p data-v-1fbf5698="">（6）在人身、财产安全遇有危险时，有权请求乙方救助和保护；人身、财产受到损害的，有权依法获得赔偿。</p>
+							<p data-v-1fbf5698="">（7）在合法权益受到损害时有权向有关部门投诉或者要求<span data-v-1fbf5698="" class="red">乙方</span>协助索赔。</p>
+							<p data-v-1fbf5698="">（8）《中华人民共和国旅游法》、《中华人民共和国消费者权益保护法》和有关法律、法规赋予甲方的其他各项权利。</p>
+							<p data-v-1fbf5698="" class="red">2、甲方的义务</p>
+							<p data-v-1fbf5698="">（1）如实填写<span data-v-1fbf5698="" class="red">《旅游报名表》各项内容</span>，告知与旅游活动相关的个人健康信息，并对其真实性负责，保证所提供的联系方式准确无误且能及时联系。</p>
+							<p data-v-1fbf5698="">（2）按照合同约定支付旅游费用。</p>
+							<p data-v-1fbf5698="">（3）遵守法律、法规和有关规定，在旅游行程中不从事违法活动，不参与色情、赌博和涉毒活动。</p>
+							<p data-v-1fbf5698="">（4）遵守公共秩序和社会公德，尊重旅游目的地的风俗习惯、文化传统和宗教信仰，爱护旅游资源，保护生态环境，遵守《中国公民国内旅游文明行为公约》等文明行为规范。</p>
+							<p data-v-1fbf5698="">（5）对国家应对重大突发事件暂时限制旅游活动的措施以及有关部门、机构或者旅游经营者采取的安全防范和应急处置措施予以配合。</p>
+							<p data-v-1fbf5698="">（6）妥善保管自己的行李物品，随身携带现金、有价证券、贵重物品，不在行李中夹带。</p>
+							<p data-v-1fbf5698="">（7）在旅游活动中或者在解决纠纷时，应采取措施防止损失扩大，不损害当地居民的合法权益；不干扰他人的旅游活动；不损害旅游经营者和旅游从业人员的合法权益，不采取拒绝上、下机（车、船），拖延行程或者脱团等不当行为。</p>
+							<p data-v-1fbf5698="">（8）自行安排活动期间，应当在自己能够控制风险的范围内选择活动项目，遵守旅游活动中的安全警示规定，并对自己的安全负责。</p>
+							<p data-v-1fbf5698="">（9）甲方应当为乙方做好接待服务工作履行必要的通知、协助、保密等辅助义务。</p>
+							<p data-v-1fbf5698="" class="red">3、乙方的权利</p>
+							<p data-v-1fbf5698="">（1）根据<span data-v-1fbf5698="" class="red">甲方</span>的身体健康状况及相关条件决定是否接纳甲方报名参团。</p>
+							<p data-v-1fbf5698="">（2）核实<span data-v-1fbf5698="" class="red">甲方</span>提供的相关信息资料。</p>
+							<p data-v-1fbf5698="">（3）按照合同约定向<span data-v-1fbf5698="">甲方</span>收取全额旅游费用。</p>
+							<p data-v-1fbf5698="">（4）旅游团队遇紧急情况时，可以采取安全防范措施和紧急避险措施并要求<span data-v-1fbf5698="" class="red">甲方</span>配合。</p>
+							<p data-v-1fbf5698="">（5）拒绝<span data-v-1fbf5698="" class="red">甲方</span>提出的超出合同约定的不合理要求。</p>
+							<p data-v-1fbf5698="">（6）要求 <span data-v-1fbf5698="" class="red">甲方</span>对在旅游活动中或者在解决纠纷时损害乙方合法权益的行为承担赔偿责任。</p>
+							<p data-v-1fbf5698="">（7）引导 <span data-v-1fbf5698="" class="red">甲方</span>健康、文明旅游，劝阻甲方违法和违反社会公德的行为。</p>
+							<p data-v-1fbf5698="" class="red">4、乙方的义务</p>
+							<p data-v-1fbf5698="">（1）按照合同和《旅游行程及服务标准》为甲方提供服务，不擅自变更旅游行程安排。</p>
+							<p data-v-1fbf5698="">（2）向合格的供应商订购产品和服务。</p>
+							<p data-v-1fbf5698="">（3）不以不合理的低价组织旅游活动，诱骗甲方，并通过安排购物或者另行付费旅游项目获取回扣等不正当利益。</p>
+							<p data-v-1fbf5698="">（4）根据甲方的要求可安排自由活动、自由购物时间，但不得指定购物场所或带甲方进入指定的购物场所。</p>
+							<p data-v-1fbf5698="">（5）在出团前如实告知具体行程安排和有关具体事项，具体事项包括但不限于所到旅游目的地的重要规定、风俗习惯；旅游活动中的安全注意事项和安全避险措施、甲方不适合参加旅游活动的情形；乙方依法可以减免责任的信息；应急联络方式以及法律、法规规定的其他应当告知的事项。</p>
+							<p data-v-1fbf5698="">（6）按照合同约定，为旅游团队安排符合《中华人民共和国旅游法》、《导游人员管理条例》规定的持证导游人员。</p>
+							<p data-v-1fbf5698="">（7）妥善保管甲方交其代管的证件、行李等物品。</p>
+							<p data-v-1fbf5698="">（8）<span data-v-1fbf5698="" class="red">甲方</span>人身、财产权益受到损害时，应当采取合理必要的保护和救助措施，避免 <span data-v-1fbf5698="">甲方</span>人身、财产权益损失扩大。</p>
+							<p data-v-1fbf5698="">（9）积极协调处理旅游行程中的纠纷，采取适当措施防止损失扩大。</p>
+							<p data-v-1fbf5698="">（10）向 <span data-v-1fbf5698="" class="red">甲方</span>提供发票。</p>
+							<p data-v-1fbf5698="">（11）依法对 <span data-v-1fbf5698="" class="red">甲方</span>个人信息保密。</p>
+							<p data-v-1fbf5698="">（12）旅游行程中解除合同的，应当协助甲方返回出发地或者 <span data-v-1fbf5698="">甲方</span>指定的合理地点。</p>
+							<h3 data-v-1fbf5698="">第三条 旅游业务委托</h3>
+							<p data-v-1fbf5698="">1、乙方根据甲方报名的旅游行程，确定需要将旅游业务委托其他旅行社接待的，应征得甲方书面同意。</p>
+							<p data-v-1fbf5698="">2、乙方将旅游业务委托给其他旅行社的，受委托旅行社必须具备相应的经营资质，并与受委托旅行社签订委托合同，约定接待游客的各项服务安排及标准；受委托旅行社违约的，应承担违约责任；给甲方权益造成损害的，乙方应承担损害赔偿责任；受委托旅行社故意或者过失造成甲方合法权益损害的，应承担连带责任。</p>
+							<h3 data-v-1fbf5698="">第四条 产品类型与质量标准 </h3>
+							<p data-v-1fbf5698="">1、按照《旅行社接待服务规范》（DB 53/T 416）要求，旅行社的产品类型包括A、B、C、D四类预制旅游产品及非预制旅游产品，乙方为甲方提供的具体产品类型由甲乙双方在 <span data-v-1fbf5698="" class="red">本合同第二部分专用条款第六条“旅游行程及服务标准”中的</span>“旅行社产品类型”栏约定。《旅行社接待服务规范》（DB 53/T 416）关于“预制旅游产品”、“ 非预制旅游产品”的含义、范围及质量要求如下：</p>
+							<p data-v-1fbf5698="">（1）预制旅游产品是指由旅行社设计提供，事先制定的确定计划人数、出发日期、线路行程及价格等，并用广告或其他方法招徕旅游者而实施的旅游产品。其类型及质量要求见表1。</p>
+							<h3 data-v-1fbf5698="" align="center">表1  旅行社预制旅游产品类型及质量要求</h3>
+							<p data-v-1fbf5698="" align="center" style="margin-bottom: 20px;"><img data-v-1fbf5698="" src="./travel2_files/t01.1b7ddab.png" alt=""></p>
+							<p data-v-1fbf5698="">（2）非预制旅游产品是指旅行社接受旅游者的委托，根据旅游者的需求，单独设计行程、报价并提供服务的专项产品及服务，包括单项旅游服务、单项委托服务、会议旅游服务、奖励旅游服务、特种旅游服务等。非预制旅游产品各服务要素应达到的最低要求如下：</p>
+							<p data-v-1fbf5698="">①住宿服务达到《旅游饭店星级的划分与评定》（GB/T 14308）评定的一星级饭店标准要求或《特色民居客栈等级划分与评定》（DB53/T 413）认定的一星级特色民居客栈、《经济型酒店等级划分与评定》（DB53/T 414）认定的一星级经济型酒店要求；</p>
+							<p data-v-1fbf5698="">②餐饮服务餐馆达到《旅游餐馆设施与服务等级的划分》（GB/T 26361）认定的铜盘级要求，旅游团队用餐达到《旅游团队餐饮服务企业评定规范》（DB</p>
+							<p data-v-1fbf5698="">53/T 415）认定的具有接待旅游团队餐资质的铜盘级餐饮企业要求；</p>
+							<p data-v-1fbf5698="">③客运服务汽车达到《旅游汽车服务质量等级划分与评定》（DB53/T 342 ）认定的一星级旅游汽车要求；</p>
+							<p data-v-1fbf5698="">④导游服务质量达到《导游服务质量等级划分与评定》（DB53/T 324）认定的一星级导游要求；</p>
+							<p data-v-1fbf5698="">⑤旅游景区达到《旅游区(点)质量等级的划分与评定》（GB/T 17775）评定的A级旅游景区要求；</p>
+							<p data-v-1fbf5698="">2、云南省内的接待服务质量标准，以本合同第二部分专用条款第六条“旅游行程及服务标准”约定为准，但不得低于《旅行社接待服务规范》（DB 53/T 416）要求；未约定或者约定不明确的，执行《旅行社接待服务规范》（DB 53/T 416）标准。</p>
+							<p data-v-1fbf5698="">3、云南省外的接待服务质量标准，优先采用国家或行业标准、旅游目的地地方标准；若无具体标准，则采用相似标准。</p>
+							<h3 data-v-1fbf5698="">第五条 旅游费用</h3>
+							<p data-v-1fbf5698="">1、旅游费用包括：（1）交通费；（2）住宿费；（3）餐费（不含酒水费）；（4）旅游景区的第一道门票费；（5）旅行社服务费；（6）导游服务费；（7）其他旅游项目费用。</p>
+							<p data-v-1fbf5698="">2、旅游费用不包括：（1）旅游者投保的个人旅游保险费用；（2）合同未约定由旅行社支付的费用；（3）行程中发生的旅游者个人费用。</p>
+							<h3 data-v-1fbf5698="">第六条 付款方式</h3>
+							<p data-v-1fbf5698="">1、签订合同时，甲方应向乙方支付全额旅游费用。</p>
+							<p data-v-1fbf5698="">2、支付旅游费用时，乙方应向甲方出具发票。</p>
+							<h3 data-v-1fbf5698="">第七条 旅游安全保障 </h3>
+							<p data-v-1fbf5698="">1、乙方必须购买云南旅游组合保险，并保证所提供的接待服务达到相关旅游安全标准要求。</p>
+							<p data-v-1fbf5698="">2、乙方应当提示甲方购买旅游人身意外保险及相关保险；甲方在旅游期间因自身身体状况或者其他意外因素发生人身伤害或财产损失的，按照已购买保险的相关条款处理。</p>
+							<h3 data-v-1fbf5698="">第八条 合同变更</h3>
+							<p data-v-1fbf5698="">1、旅游行程开始前，甲方可将合同中自身的权利义务转让给第三人，乙方非因正当理由不得拒绝，因此增加的费用由甲方和第三人承担。</p>
+							<p data-v-1fbf5698="">2、甲乙双方协商一致，可以书面形式变更合同约定的内容，并由双方签字、盖章确认，或由甲方与乙方委派的导游或经理、计调人员签字确认；由此增加的旅游费用及给对方造成的损失，由变更提出方承担；减少的旅游费用，乙方应当退还甲方。</p>
+							<p data-v-1fbf5698="">3、在出行前遇到不可抗力（指因自然原因和社会原因引起的，如自然灾害、战争、恐怖活动、动乱、骚乱、罢工、突发公共事件、政府行为等不能预见、不能避免并不能克服的客观情况），双方经协商可以取消行程或者延期出行。取消行程的，乙方向甲方退还旅游费用；乙方能够证明已向地接社或者履行辅助人支付且不可退还的费用的，乙方可部分或者全部免除责任。</p>
+							<p data-v-1fbf5698="">4、在行程中因不可抗力导致无法履行或者继续履行合同的，乙方可以在征得甲方50%以上成员同意后，对相应内容予以变更；因情况紧急无法征求意见时，乙方可以决定内容的变更，但应当就作出的决定承担举证责任。</p>
+							<p data-v-1fbf5698="">5、因不可抗力或特殊原因需更换导游人员的，不得降低导游星级标准，且需及时告知甲方。</p>
+							<h3 data-v-1fbf5698="">第九条 合同解除 </h3>
+							<p data-v-1fbf5698="">1、甲方在行程开始前7日以上（含7日）提出解除合同的，乙方应当向甲方退还全额旅游费用；甲方在行程开始前7日内和行程中解除合同的，按下列标准扣除必要的费用：</p>
+							<p data-v-1fbf5698="" class="red">（1）行程开始前6日（含6日，下同）至4日，按旅游费用总额的20%。</p>
+							<p data-v-1fbf5698="" class="red">（2）行程开始前3日至1日，按旅游费用总额的40%。</p>
+							<p data-v-1fbf5698="" class="red">（3）行程开始当日，按旅游费用总额的60%。</p>
+							<p data-v-1fbf5698="" class="red">（4）在行程中解除合同的，必要的费用扣除标准为：</p>
+							<p data-v-1fbf5698="" class="red">旅游费用×60%+（旅游费用-旅游费用×60%)÷旅游天数×已经出游的天数。</p>
+							<p data-v-1fbf5698="" class="red">如乙方按上述约定比例扣除的必要的费用低于实际发生的费用，甲方应按照乙方实际发生的费用支付，但最高额不应超过旅游费用总额。乙方扣除必要的费用后，应在解除合同通知到达日起5个工作日内为甲方办结退款手续。</p>
+							<p data-v-1fbf5698="" class="red">2、乙方在行程开始前7日以上（含7日）提出解除合同的，应向甲方退还全额旅游费用；乙方在行程开始前7日以内提出解除合同的，应向甲方退还已收取的全部旅游费用，并按下列标准向甲方承担违约责任：</p>
+							<p data-v-1fbf5698="" class="red">（1）出发前6日（含6日，下同）至4日，支付旅游费用总额10%的违约金。</p>
+							<p data-v-1fbf5698="" class="red">（2）出发前3日至1日，支付旅游费用总额15%的违约金。</p>
+							<p data-v-1fbf5698="" class="red">（3）出发当日，支付旅游费用总额20%的违约金。</p>
+							<p data-v-1fbf5698="" class="red">如按上述比例支付的违约金不足以赔偿甲方的实际损失，乙方应当按实际损失对甲方予以赔偿，并在解除合同通知到达日起5个工作日内为甲方办结退款手续。</p>
+							<p data-v-1fbf5698="">3、甲方有下列情形之一的，乙方可以解除合同：</p>
+							<p data-v-1fbf5698="">（1）患有传染病等疾病，可能危害其他旅游者健康和安全的。</p>
+							<p data-v-1fbf5698="">（2）携带危害公共安全的物品且不同意交有关部门处理的。</p>
+							<p data-v-1fbf5698="">（3）从事违法或者违反社会公德的活动的。</p>
+							<p data-v-1fbf5698="">（4）从事严重影响其他旅游者权益的活动，且不听劝阻、不能制止的。</p>
+							<p data-v-1fbf5698="">（5）法律规定的其他情形。</p>
+							<p data-v-1fbf5698="">因前款情形解除合同的，乙方应在扣除必要的费用后，将余款退还甲方；给乙方造成损失的，甲方应当依法承担赔偿责任。</p>
+							<p data-v-1fbf5698="">4、因不可抗力或者乙方、履行辅助人已尽合理注意义务仍不能避免的事件，影响旅游行程的，按照下列情形处理：</p>
+							<p data-v-1fbf5698="">（1）合同不能继续履行的，甲乙双方均可解除合同。合同不能完全履行的，乙方向甲方作出说明，甲方同意变更的，可以在合理范围内变更合同；甲方不同意变更的，可以解除合同。</p>
+							<p data-v-1fbf5698="">（2）合同解除的，乙方应当在扣除已向地接社或者履行辅助人支付且不可退还的费用后，将余款退还甲方；合同变更的，因此增加的费用由甲方承担，减少的费用退还甲方。</p>
+							<p data-v-1fbf5698="">（3）危及甲方人身、财产安全的，乙方应采取相应的安全措施，因此支出的费用，<span data-v-1fbf5698="" class="red">由甲乙双方分担。</span></p>
+							<p data-v-1fbf5698="">（4）造成甲方滞留的，乙方应当采取相应的安置措施。因此增加的食宿费用，由甲方承担；增加的返程费用，由甲乙双方分担。</p>
+							<p data-v-1fbf5698="">5、旅游行程中解除合同的，乙方应当协助甲方返回出发地或者甲方指定的合理地点，费用由甲方承担。由于乙方或者履行辅助人的原因导致合同解除的，返程费用由乙方承担。</p>
+							<h3 data-v-1fbf5698="">第十条 违约责任</h3>
+							<p data-v-1fbf5698="">1、甲方违约责任</p>
+							<p data-v-1fbf5698="">（1）甲方因不听从<span data-v-1fbf5698="">乙方</span>及其导游的劝告、提示而影响团队行程，给 <span data-v-1fbf5698="">乙方</span>造成损失的，应当承担相应的赔偿责任。</p>
+							<p data-v-1fbf5698="">（2）甲方超出本合同约定的内容进行个人活动所造成的损失，由其自行承担；在旅游期间甲方擅自脱团的，乙方与其合同关系自动终止，未发生的费用不退。</p>
+							<p data-v-1fbf5698="">（3）由于甲方的过错，使<span data-v-1fbf5698="">乙方</span>、履行辅助人、旅游从业人员或者其他旅游者遭受损害的，甲方应当赔偿损失。</p>
+							<p data-v-1fbf5698="">（4）甲方在旅游活动中或者在解决纠纷时，应采取措施防止损失扩大，否则应当就扩大的损失承担相应的责任。</p>
+							<p data-v-1fbf5698="">（5）甲方违反安全警示规定，或者对国家应对重大突发事件暂时限制旅游活动的措施、安全防范和应急处置措施不予配合，造成乙方损失的，应当依法承担相应责任。</p>
+							<p data-v-1fbf5698="">（6）由于自身原因导致本合同不能履行，造成甲方人身损害、财产损失的，由其自行承担。</p>
+							<p data-v-1fbf5698="">（7）甲方在自行安排活动期间人身、财产权益受到损害的，乙方在事前已尽到必要警示说明义务且事后已尽到必要救助义务的，由其自行承担。</p>
+							<p data-v-1fbf5698=""> 2、乙方违约责任</p>
+							<p data-v-1fbf5698="">（1）乙方不履行合同义务或者履行合同义务不符合约定的，应当依法承担继续履行、采取补救措施或者赔偿损失等违约责任；造成甲方人身损害、财产损失的，应当依法承担赔偿责任。</p>
+							<p data-v-1fbf5698="">（2）乙方具备履行条件，经甲方要求仍拒绝履行合同，<span data-v-1fbf5698="" class="red">乙方向甲方支付旅游费用总额30%的违约金，</span>造成甲方人身损害、滞留等严重后果的，甲方还可以要求乙方支付旅游费用1倍以上3倍以下的赔偿金。</p>
+							<p data-v-1fbf5698="">（3）在甲方自行安排活动期间，乙方未尽到安全提示、救助义务的，应当对甲方的人身损害、财产损失承担相应责任。</p>
+							<p data-v-1fbf5698="">（4）乙方根据甲方的具体要求安排旅游行程，与甲方订立旅游合同的，甲方请求变更旅游行程安排，因此增加的费用由甲方承担，减少的费用退还甲方。</p>
+							<p data-v-1fbf5698="">（5）未经甲方同意，乙方擅自将甲方转团、拼团、转委托的，或是乙方将不同游览行程、不同服务标准、不同价格的旅游者合并同一团队的，应向甲方支付旅游费用总额25%的违约金；甲方解除合同的，乙方还应向未随团出行的旅游者退还全部旅游费用，向已随团出行的旅游者退还尚未发生的旅游费用。</p>
+							<p data-v-1fbf5698="">（6）在同一旅游行程中，乙方提供相同服务，因甲方的年龄、职业等差异增收费用的，乙方应返还增收的费用。</p>
+							<p data-v-1fbf5698="">（7）因乙方原因造成甲方未能乘坐预定的公共交通工具的，乙方应赔偿甲方的直接经济损失，并支付直接经济损失20%的违约金。</p>
+							<p data-v-1fbf5698="">（8）乙方安排的旅游项目低于合同约定标准的，乙方应退还甲方合同金额与实际花费的差额，并支付与退还费用同额的违约金。</p>
+							<p data-v-1fbf5698="">（9）因乙方选择的接待旅行社、旅游景区、酒店、餐馆、旅游汽车、娱乐活动经营单位等旅游辅助服务者的原因，造成安排的旅游项目与合同不符，乙方应退还甲方合同金额与实际花费的差额，并支付与退还费用同额的违约金。</p>
+							<p data-v-1fbf5698="">（10）乙方委派的导游人员未按照国家、旅游行业或地方标准提供导游服务，乙方应向甲方支付旅游费用总额3%的违约金；委派的导游人员达不到约定等级的，乙方应向甲方支付旅游费用总额5%的违约金；非因不可抗力及特殊原因更换导游人员不通知<span data-v-1fbf5698="" class="red">甲方</span>的，乙方应向甲方支付旅游费用总额2%的违约金，若更换导游后降低星级标准的，按前款处理。</p>
+							<p data-v-1fbf5698="">（11）乙方及其委派的导游人员违反合同约定，乙方应按下述标准承担责任：</p>
+							<p data-v-1fbf5698="">①擅自增加旅游消费项目，费用由乙方承担。</p>
+							<p data-v-1fbf5698="">②擅自缩短游览时间、遗漏旅游景点、减少旅游服务项目的，乙方应退还未完成约定旅游服务项目的费用，并支付与退还费用同额的违约金；遗漏无门票景点的，每遗漏一处乙方向甲方支付旅游费用总额5%的违约金。</p>
+							<p data-v-1fbf5698="">③擅自中止对甲方提供住宿、用餐、交通等旅游服务的，应当负担甲方在被中止旅游服务期间所订的同等级别的住宿、用餐、交通等必要费用，并向甲方支付旅游费用总额30%的违约金。</p>
+							<h3 data-v-1fbf5698="">第十一条 减轻或免除责任</h3>
+							<p data-v-1fbf5698="">1、乙方能够证明在旅游质量问题发生之前已采取以下措施的，应减轻或免除责任：</p>
+							<p data-v-1fbf5698="">（1）旅游质量和安全状况已给予充分说明、提醒、劝诫、警告或事先说明。</p>
+							<p data-v-1fbf5698="">（2）所发生的违约问题非乙方责任或无法预知或已采取了预防性措施。</p>
+							<p data-v-1fbf5698="">（3）质量问题的发生全部或部分是由于甲方自身的过错。</p>
+							<p data-v-1fbf5698="">（4）质量问题发生后，乙方及时采取了妥善处理措施。</p>
+							<p data-v-1fbf5698="" class="red">2、乙方不履行合同或者履行合同不符合约定时，甲方应配合采取适当措施防止损失的扩大，因防止损失扩大而支出的合理费用，由乙方承担；甲方未配合采取适当措施致使损失扩大的，乙方不应就扩大的损失承担赔偿责任。</p>
+							<h3 data-v-1fbf5698="">第十二条  解决争议的方法</h3>
+							<p data-v-1fbf5698="">1、在本合同履行中发生争议时，双方可协商解决，或向旅游合同签订地或乙方所在地的旅游质检执法机构投诉；需要立即制止、纠正<span data-v-1fbf5698="" class="red">乙方</span>的损害行为的，可向损害行为发生地的旅游质检执法机构投诉。</p>
+							<p data-v-1fbf5698="">2、本合同履行过程中发生争议，由双方协商解决；亦可向合同签订地的旅游质监执法机构申请调解。协商或者调解不成的，按下列第______种方式解决：</p>
+							<p data-v-1fbf5698="">（1）就近到基层司法所（乡镇）人民调解室调解。</p>
+							<p data-v-1fbf5698="">（2）提交 仲裁委员会仲裁。</p>
+							<p data-v-1fbf5698="">（3）依法向人民法院起诉。</p>
+							<h3 data-v-1fbf5698="">第十三条 补充协议 </h3>
+							<p data-v-1fbf5698="">本合同生效后，双方未约定的事宜，可以签订补充协议，补充协议与本合同具有同等法律效力。</p>
+							<h3 data-v-1fbf5698="">第十四条 合同生效 </h3>
+							<p data-v-1fbf5698="">本合同自双方签字盖章，且全额支付旅游费用之日起生效。本合同一式两份，双方各持一份，具有同等法律效力。</p>
+							<h3 data-v-1fbf5698="">第二部分  专用条款</h3>
+							<p data-v-1fbf5698="">甲方（旅游者）</p>
+							<p data-v-1fbf5698="">旅游者或旅游团代表：________________（参团名单表如下）</p>
+							<p data-v-1fbf5698="">身份证件号码：_______________________________________________________</p>
+							<p data-v-1fbf5698="">联系电话：___________________________________________________________</p>
+							<p data-v-1fbf5698="" class="red">紧急联系人姓名及电话：_______________________________________________</p>
+							<h3 data-v-1fbf5698="" align="center">参团名单表</h3>
+							<p data-v-1fbf5698="" align="center" style="margin-bottom: 20px;"><img data-v-1fbf5698="" src="./travel2_files/03t.3a2b931.png" alt=""></p>
+							<p data-v-1fbf5698="">乙方（组团社）</p>
+							<p data-v-1fbf5698="">组团社名称：_____________________________________________________</p>
+							<p data-v-1fbf5698="">等级：________________业务经营许可证号：_________________________</p>
+							<p data-v-1fbf5698="">住所地：_________________________________________________________</p>
+							<p data-v-1fbf5698="">法定代表人（负责人）：__________________________________________</p>
+							<p data-v-1fbf5698="">联系电话：______________________________________________________</p>
+							<p data-v-1fbf5698="">甲乙双方本着平等协商的原则，根据《中华人民共和国旅游法》、《旅行社条例》、《最高人民法院关于审理旅游纠纷案件适用法律若干问题的规定》、《旅行社服务质量赔偿标准》等法律法规规章，现就甲方参加乙方组织的境内旅游事项达成如下协议。</p>
+							<p data-v-1fbf5698="">第一条 通用条款效力</p>
+							<p data-v-1fbf5698="">甲乙双方在签订本合同前，乙方已向甲方介绍《第一部分 通用条款》的内容，双方同意将其列为合同组成部分。</p>
+							<p data-v-1fbf5698="">第二条 成团人数</p>
+							<p data-v-1fbf5698="">本次旅游活动约定人数为_______。</p>
+							<p data-v-1fbf5698="">第三条 旅游费用 </p>
+							<p data-v-1fbf5698="">1、旅游费用总额：________元（大写：________）。</p>
+							<p data-v-1fbf5698="">其中：（1）成年人：________元/人，共________人 ，合计：________元</p>
+							<p data-v-1fbf5698="">（2）未成年人：________元/人，共________人 ，合计：________元</p>
+							<p data-v-1fbf5698="">（3）导游服务费：________元/人，共________人 ，合计：________元</p>
+							<p data-v-1fbf5698="">2、付款方式为________。</p>
+							<p data-v-1fbf5698="">（1）现金支付；（2）转帐。</p>
+							<p data-v-1fbf5698="">组团社户名：________________________________开户银行：</p>
+							<p data-v-1fbf5698="">帐号：________________</p>
+							<p data-v-1fbf5698="">第四条 业务委托</p>
+							<p data-v-1fbf5698="">1、对甲方的委托，按第_______项处理:</p>
+							<p data-v-1fbf5698="">（1）乙方需要将本合同旅游业务委托其他旅行社，甲方是否同意：________（同意或者不同意）委托。</p>
+							<p data-v-1fbf5698="">委托接待旅行社名称：________________________ 等级：________</p>
+							<p data-v-1fbf5698="">（2）本合同约定的旅游业务，由乙方独立完成，乙方不得再委托其他旅行社。</p>
+							<p data-v-1fbf5698="">第五条 合同解除</p>
+							<p data-v-1fbf5698="">1、乙方解除合同时，甲方同意乙方在保证所约定的旅游服务内容和标准不变的前提下，按下列第________项处理：</p>
+							<p data-v-1fbf5698="">（1）另行签订合同改期出团；</p>
+							<p data-v-1fbf5698="">（2）由甲方自愿与乙方推荐的其他旅行社另行签订合同。</p>
+							<p data-v-1fbf5698=""> 2、解除合同，按照本合同《第一部分 通用条款》<span data-v-1fbf5698="">第九条</span>承担违约责任。</p>
+							<p data-v-1fbf5698="">第六条 旅游行程及服务标准</p>
+							<p data-v-1fbf5698="" align="center"><img data-v-1fbf5698="" src="./travel2_files/04t.f734d9c.png" alt=""></p>
+							<p data-v-1fbf5698="" align="center" style="margin-top: -4px; margin-left: -1px;"><img data-v-1fbf5698="" src="./travel2_files/05t.087138e.png" alt=""></p>
+							<p data-v-1fbf5698="" style="margin-top: 30px;">甲方（旅游者或旅游团代表）签字：____________身份证件号码：________________________</p>
+							<p data-v-1fbf5698="">其他旅游者签字：________________________________________</p>
+							<hr data-v-1fbf5698="" style="border: 1px solid rgb(0, 0, 0); margin-top: 30px; margin-bottom: 30px;">
+							<p data-v-1fbf5698="">乙方（组团社）盖章：</p>
+							<p data-v-1fbf5698="">法定代表人（代理人）签字：__________</p>
+							<p data-v-1fbf5698="" align="right">_______年_____月_____日</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="reuse_bottom">
+				<div class="bottom-main">
+					<div class="bottom-ul">
+						<ul>
+							<li>服务协议</li>
+							<li>
+								<a href="selftravel.html" class="">旅游协议</a>
+							</li>
+							<li>
+								<a href="selfcaragreement.html" class="">车辆服务协议</a>
+							</li>
+							<li>
+								<a href="selfuseragreement.html" class="">用户服务协议</a>
+							</li>
+						</ul>
+						<ul>
+							<li>帮助中心</li>
+							<li>
+								<a href="selfinsurance.html" class="">保险条款</a>
+							</li>
+							<li>
+								<a href="selfservice.html" class="">人工服务</a>
+							</li>
+							<li>
+								<a href="selfquestion.html" class="">常见问题</a>
+							</li>
+						</ul>
+						<ul>
+							<li>关于我们</li>
+							<li>
+								<a href="selfabout.html" class="">匠心打造</a>
+							</li>
+							<li>
+								<a href="selfmedia.html" class="">媒体报道</a>
+							</li>
+							<li>
+								<a href="selfstory.html" class="">悟空故事</a>
+							</li>
+							<li>
+								<a href="selfcontact.html" class="">联系我们</a>
+							</li>
+							<li>
+								<a href="selfjoin.html" class="">加入我们</a>
+							</li>
+						</ul>
+						<ul>
+							<li>经营资质</li>
+							<li>
+								<a href="selflicense.html" class="">营业执照</a>
+							</li>
+							<li>
+								<a href="selfpermit.html" class="">经营许可证</a>
+							</li>
+						</ul>
+					</div>
+					<div class="code">
+						<div>
+							<p>订阅号</p> <img src="../img/wxcode.cc79ece.jpg" alt=""></div>
+						<div>
+							<p>APP下载</p> <img src="../img/appcode.e8d3d31.png" alt=""></div>
+					</div>
+					<div class="footer">
+						<p>北京悟空国际旅行社有限公司</p>
+						<p>地址：北京市东城区东直门外大街39号院航空服务楼2#B517&nbsp;电话：400-0515-507</p>
+						<p>苏ICP备17014043号-2　｜　ICP证苏B2-20170199</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<script type="text/javascript" src="./travel2_files/manifest.fb5239f97ae874448f44.js.下载"></script>-->
+		<script type="text/javascript" src="./travel2_files/vendor.434b2f13fc4d603f30a3.js.下载"></script>
+		<script type="text/javascript" src="./travel2_files/app.6d0a0c8dac82bcb8212b.js.下载"></script>
+	</body>
+
+</html>
