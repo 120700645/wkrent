@@ -1,25 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qianfeng.wkrent.dao.CityMapper">
-  <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.City">
-    <id column="CITY_ID" jdbcType="DECIMAL" property="cityId" />
-    <result column="CITY_NAME" jdbcType="VARCHAR" property="cityName" />
-    <result column="CITY_FIRST_WORD" jdbcType="CHAR" property="cityFirstWord" />
-    <result column="CITY_HOT" jdbcType="CHAR" property="cityHot" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    CITY_ID, CITY_NAME, CITY_FIRST_WORD, CITY_HOT
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from TB_CITY
-    where CITY_ID = #{cityId}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from TB_CITY
-    where CITY_ID = #{cityId}
-  </delete>
+
+    <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.City">
+        <id column="CITY_ID" jdbcType="DECIMAL" property="cityId" />
+        <result column="CITY_NAME" jdbcType="VARCHAR" property="cityName" />
+        <result column="CITY_FIRST_WORD" jdbcType="CHAR" property="cityFirstWord" />
+        <result column="CITY_HOT" jdbcType="CHAR" property="cityHot" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        CITY_ID, CITY_NAME, CITY_FIRST_WORD, CITY_HOT
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from TB_CITY
+        where CITY_ID = #{cityId}
+    </select>
+
+    <select id="selectHotCity" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from TB_CITY
+        where CITY_HOT = '1'
+    </select>
+
+    <select id="selectfirstWordDesc" resultType="java.lang.String">
+        select city_first_word from
+        (select row_number() over (partition by city_first_word order by city_first_word desc)
+        as rn,city_first_word from system.tb_city) where rn = 1
+    </select>
+
+    <select id="selectAllCity" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from TB_CITY
+    </select>
+
+    <select id="selectAllCityByWord" resultMap="BaseResultMap">
+        select * from tb_city where 1=1 order by city_first_word
+    </select>
+
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from TB_CITY
+        where CITY_ID = #{cityId}
+    </delete>
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.City">
     insert into TB_CITY (CITY_ID, CITY_NAME, CITY_FIRST_WORD, 
       CITY_HOT)
