@@ -1,15 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!-- saved from url=(0046)https://www.wkzuche.com/other/recruitment.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
+    <#assign base = rc.contextPath/>
+    <base id="base" href="${base}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 	<title>加入我们_人才招聘_招聘岗位-悟空租车</title>
 	<meta name="keywords" content="悟空租车招聘，加入悟空租车">
     <meta name="description" content="悟空租车的招聘岗位介绍。">
 	
     <link rel="icon" href="https://static.wkzuche.com/www/images/facicon.ico">
-    <link rel="stylesheet" href="./recruitment_files/common.css">
-    <link rel="stylesheet" type="text/css" href="./recruitment_files/about.css">
-    <link rel="stylesheet" href="./recruitment_files/static.css">
+    <link rel="stylesheet" href="${base}/css/common.css">
+    <link rel="stylesheet" type="text/css" href="${base}/css/about.css">
+    <link rel="stylesheet" href="${base}/css/static.css">
 </head>
 <body style="zoom: 1;">
 
@@ -17,22 +21,22 @@
 
 
 
-<link rel="stylesheet" href="./recruitment_files/network.css">
+<link rel="stylesheet" href="${base}/css/network.css">
 <div class="zc_head_bd" style="height: 90px;min-width:1200px">
 	<div class="little-header-wrapper">
 			<div class="little-header">
 			 <p>
 			 </p><ul class="nav-letter-left">
 				 <li id="common-phone">
-					<div id="all-phone"><img src="./recruitment_files/phone.png"><span style="margin-left:4px;">手机端</span></div>
+					<div id="all-phone"><img src="${base}/img/phone.png"><span style="margin-left:4px;">手机端</span></div>
 					<div class="common-phone">
-						<img src="./recruitment_files/rent-app.png">
+						<img src="${base}/img/rent-app.png">
 					</div>
 				 </li>
 				 <li id="common-qacode">
-					<div id="all-weixin"><img src="./recruitment_files/weixin.png"><span style="margin-left:4px;">微信</span></div>
+					<div id="all-weixin"><img src="${base}/img/weixin.png"><span style="margin-left:4px;">微信</span></div>
 					<div class="common-qacode">
-						<img src="./recruitment_files/qacode.png">
+						<img src="${base}/img/qacode.png">
 					</div>
 				 </li>
 			 </ul>
@@ -45,8 +49,8 @@
 						我的悟空
 						<i class="caret down-caret"></i>
 						<div id="no-login" style="display:none">
-							<p><a href="myorder.html">我的租车订单</a></p>
-							<p><a href="mycoupon.html">我的优惠券</a></p>
+							<p><a href="../myorder.html">我的租车订单</a></p>
+							<p><a href="../mycoupon.html">我的优惠券</a></p>
 						</div>
 						<div class="mian-wk" id="over-login" style="display:none">
 							<div class="main-img" style="float:left;padding: 16px 0 10px">
@@ -57,16 +61,16 @@
 								<br>
 								<p class="identify-over"></p>
 								<div class="no-identify" style="display:none;">
-									<a href="auth.html"><span style="color:#F23732;">去认证</span></a>
+									<a href="../auth.html"><span style="color:#F23732;">去认证</span></a>
 								</div>
 							</div>
 						<div class="main-rent-orders">
-							<a href="myorder.html">我的租车订单</a>
+							<a href="../myorder.html">我的租车订单</a>
 						</div>
 						<div class="account-information">
 							<p style="padding-right:10px;">
 								<span style="float:left">账户余额￥ 0</span>
-								<a href="mycoupon.html"><span style="float:right">优惠券 <span style="color:#F23732">0张</span></span></a>
+								<a href="../mycoupon.html"><span style="float:right">优惠券 <span style="color:#F23732">0张</span></span></a>
 							</p>
 							<p style="padding-right:10px;">
 								<span style="float:left">悟空币 ￥ 0</span>
@@ -83,22 +87,22 @@
 		</div>
 	</div>
     <div class="zc_main">
-        <a class="zc_logo" href="index.html"><img src="./recruitment_files/logo.png" style="padding-top:10px" alt="悟空租车"></a>
+        <a class="zc_logo" href="../index.html"><img src="${base}/img/logo.png" style="padding-top:10px" alt="悟空租车"></a>
         <div class="zc_head_tab">
             <ul class="zc_menu" style="line-height: 60px;height: 60px">
-                <li class="homecur"><a href="index.html">首页</a></li>
-				<li><a href="ftl/renting.ftl">租车自驾</a></li>
-				<li><a href="site.html">全国网点</a></li>
-				<li><a href="ftl/driving.ftl/" target="_blank">自驾嗨游</a></li>
-				<li><a href="join.html">加盟悟空</a></li>
+                <li class="homecur"><a href="../index.html">首页</a></li>
+				<li><a href="renting.ftl">租车自驾</a></li>
+				<li><a href="site.ftl">全国网点</a></li>
+				<li><a href="driving.ftl" target="_blank">自驾嗨游</a></li>
+				<li><a href="../join.html">加盟悟空</a></li>
             </ul>
         </div>
     </div>
 </div>
 <div class="spaceDiv"></div>
-<script type="text/javascript" src="./recruitment_files/jquery-1.9.0.min.js.下载"></script>
-<script type="text/javascript" src="./recruitment_files/public.js.下载"></script>
-<script type="text/javascript" src="./recruitment_files/header.js.下载"></script>
+<script type="text/javascript" src="${base}/js/jquery-1.9.0.min.js.下载"></script>
+<script type="text/javascript" src="${base}/js/public.js.下载"></script>
+<script type="text/javascript" src="${base}/js/header.js.下载"></script>
 <script type="text/javascript">
 	var CONTEXT_PATH = "";
 	var HeaderUid="13545192143";
@@ -113,22 +117,22 @@
             <span></span>
             <li style="clear: both;height: 7px"></li>
             <li>
-                <a href="story.html">悟空故事</a>
+                <a href="../story.html">悟空故事</a>
             </li>
-            <li><a href="media.html">媒体报道</a></li>
-            <li><a href="information.html">行业资讯</a></li>
-            <li><a href="contactus.html">联系我们</a></li>
-            <li><a href="recruitment.html" style="color: #d62b1f">加入我们</a></li>
+            <li><a href="../media.html">媒体报道</a></li>
+            <li><a href="../information.html">行业资讯</a></li>
+            <li><a href="../contactus.html">联系我们</a></li>
+            <li><a href="recruitment.ftl" style="color: #d62b1f">加入我们</a></li>
         </ul>
         <ol>
             <li>帮助中心</li>
             <span></span>
             <li style="clear: both;height: 0"></li>
-            <li><a href="question.html">常见问题</a></li>
-            <li><a href="agreement.html">用户服务协议</a></li>
-            <li><a href="cooperation.html">加盟合作</a></li>
-            <li><a href="insurance.html">保险条款</a></li>
-			<li><a href="humanservice.html">人工服务</a></li>
+            <li><a href="../question.html">常见问题</a></li>
+            <li><a href="../agreement.html">用户服务协议</a></li>
+            <li><a href="../cooperation.html">加盟合作</a></li>
+            <li><a href="../insurance.html">保险条款</a></li>
+			<li><a href="../humanservice.html">人工服务</a></li>
         </ol>
     </div>
     <div class="right_k">
@@ -415,19 +419,19 @@
 </div>
 <div style="clear: both;height: 10px"></div>
 
-<link rel="stylesheet" href="./recruitment_files/common.css">
-<link rel="stylesheet" href="./recruitment_files/pay.css">
-<link rel="stylesheet" href="./recruitment_files/network.css">
+<link rel="stylesheet" href="${base}/css/common.css">
+<link rel="stylesheet" href="${base}/css/pay.css">
+<link rel="stylesheet" href="${base}/css/network.css">
 <div class="rent-car-advantage">
     <div class="position-car-advantage">
         <div style="float:left">
-            <a href="https://www.wkzuche.com/site/country_site.html"><img src="./recruitment_files/range.png" style="float:left"></a>
+            <a href="https://www.wkzuche.com/site/country_site.html"><img src="${base}/img/range.png" style="float:left"></a>
         </div>
         <div style="text-align:center">
-            <a href="https://www.wkzuche.com/cartype/search.html"><img src="./recruitment_files/much-car.png"></a>
+            <a href="https://www.wkzuche.com/cartype/search.html"><img src="${base}/img/much-car.png"></a>
         </div>
         <div style="float:right">
-            <a href="https://www.wkzuche.com/other/business_rule.html#rule1"><img src="./recruitment_files/good-service.png" style="float:right"></a>
+            <a href="https://www.wkzuche.com/other/business_rule.html#rule1"><img src="${base}/img/good-service.png" style="float:right"></a>
         </div>
     </div>
 </div>
@@ -435,30 +439,30 @@
     <div class="ul_cover">
         <ul class="gyfw">
             <li class="li_head">关于服务</li>
-            <li><a href="rule.html#rule1">服务时间</a></li>
-            <li><a href="rule.html#rule2">短租及可选服务</a></li>
+            <li><a href="../rule.html#rule1">服务时间</a></li>
+            <li><a href="../rule.html#rule2">短租及可选服务</a></li>
         </ul>
         <ul class="yd">
             <li class="li_head">预订指南</li>
-            <li><a href="rule.html#rule4">预订规则</a></li>
-            <li><a href="rule.html#rule5">退改规则</a></li>
+            <li><a href="../rule.html#rule4">预订规则</a></li>
+            <li><a href="../rule.html#rule5">退改规则</a></li>
         </ul>
         <ul class="qhc">
             <li class="li_head">取还车指南</li>
-            <li><a href="rule.html#rule6">取车规则</a></li>
-            <li><a href="rule.html#rule7">还车规则</a></li>
+            <li><a href="../rule.html#rule6">取车规则</a></li>
+            <li><a href="../rule.html#rule7">还车规则</a></li>
         </ul>
         <ul class="bx">
             <li class="li_head">保险及事故处理说明</li>
-            <li><a href="rule.html#rule8">保险责任</a></li>
-            <li><a href="rule.html#rule9">事故处理说明</a></li>
-            <li><a href="rule.html#rule10">救援及备用车服务</a></li>
+            <li><a href="../rule.html#rule8">保险责任</a></li>
+            <li><a href="../rule.html#rule9">事故处理说明</a></li>
+            <li><a href="../rule.html#rule10">救援及备用车服务</a></li>
         </ul>
         <ul class="js">
             <li class="li_head">费用标准</li>
-            <li><a href="rule.html#rule11">标准服务收费</a></li>
-            <li><a href="rule.html#rule12">可选服务价格</a></li>
-            <li><a href="rule.html#rule13">其他服务说明</a></li>
+            <li><a href="../rule.html#rule11">标准服务收费</a></li>
+            <li><a href="../rule.html#rule12">可选服务价格</a></li>
+            <li><a href="../rule.html#rule13">其他服务说明</a></li>
         </ul>
     </div>
     <div style="clear: both;"></div>
@@ -467,11 +471,11 @@
 <div class="zc_foot zc_foot_background" style="padding-top: 0;">
     <div class="foot_cover zc_main">
         <p class="html_link" style="border-top: none;">
-            <a href="story.html">关于我们<span>|</span></a>
-            <a href="ftl/renting.ftl">短租自驾<span>|</span></a>
-            <a href="question.html">帮助中心<span>|</span></a>
-            <a href="media.html">媒体报道<span>|</span></a>
-            <a href="recruitment.html">加入我们</a>
+            <a href="../story.html">关于我们<span>|</span></a>
+            <a href="renting.ftl">短租自驾<span>|</span></a>
+            <a href="../question.html">帮助中心<span>|</span></a>
+            <a href="../media.html">媒体报道<span>|</span></a>
+            <a href="recruitment.ftl">加入我们</a>
         </p>
     </div>
     <div class="zc_foot_company_info">
