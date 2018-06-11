@@ -11,10 +11,10 @@
 		<link rel="icon" href="https://static.wkzuche.com/sso/member/www/images/facicon.ico">
 		<link rel="stylesheet" href="${base}/css/common.css">
 		<link rel="stylesheet" href="${base}/css/login.css">
-		<script charset="utf-8" src="${base}/js/lxb.js.下载"></script>
-		<script charset="utf-8" src="${base}/js/v.js.下载"></script>
-		<script src="${base}/js/hm.js.下载"></script>
-		<script type="text/javascript" src="${base}/js/f245814f86e1be9165b628022d17d1ee.js.下载"></script>
+		<script charset="utf-8" src="${base}/js/lxb.js"></script>
+		<script charset="utf-8" src="${base}/js/v.js"></script>
+		<script src="${base}/js/hm.js"></script>
+		<script type="text/javascript" src="${base}/js/f245814f86e1be9165b628022d17d1ee.js"></script>
 		<style type="text/css">
 			#waf_nc_block {
 				position: fixed;
@@ -86,7 +86,7 @@
 				height36px;
 			}
 		</style>
-		<script src="${base}/js/nc.js.下载"></script>
+		<script src="${base}/js/nc.js"></script>
 		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 		<style>
 			@charset "utf-8";
@@ -1886,27 +1886,11 @@
 		<div class="zc_foot" style="padding-top: 0;">
 			<div class="foot_cover zc_main">
 				<p class="html_link" style="border-top: none;">
-<<<<<<< Updated upstream
 					<a href="${base}/story.html">关于我们<span>|</span></a>
 					<a href="${base}/renting.html">短租自驾<span>|</span></a>
 					<a href="${base}/question.html">帮助中心<span>|</span></a>
 					<a href="${base}/media.html">媒体报道<span>|</span></a>
 					<a href="${base}/recruitment.html">加入我们</a>
-=======
-<<<<<<< Updated upstream:src/main/webapp/ftl/login.ftl
-					<a href="../story.html">关于我们<span>|</span></a>
-					<a href="../renting.html">短租自驾<span>|</span></a>
-					<a href="../question.html">帮助中心<span>|</span></a>
-					<a href="../media.html">媒体报道<span>|</span></a>
-					<a href="recruitment.ftl">加入我们</a>
-=======
-					<a href="story.html">关于我们<span>|</span></a>
-					<a href="ftl/renting.ftl">短租自驾<span>|</span></a>
-					<a href="question.html">帮助中心<span>|</span></a>
-					<a href="media.html">媒体报道<span>|</span></a>
-					<a href="recruitment.ftl">加入我们</a>
->>>>>>> Stashed changes:src/main/webapp/login.html
->>>>>>> Stashed changes
 				</p>
 			</div>
 			<div class="zc_foot_company_info">
@@ -1923,13 +1907,13 @@
 			</div>
 		</div>
 		<!-- 360统计分析 -->
-		<script type="text/javascript" src="./login_files/174750.js.下载" async="" defer=""></script>
+		<script type="text/javascript" src="${base}/login_files/174750.js" async="" defer=""></script>
 		<!-- 百度统计分析 -->
-		<script type="text/javascript" src="./login_files/baidu.js.下载"></script>
-		<script src="./login_files/jquery-2.1.1.min.js.下载"></script>
-		<script src="./login_files/jquery-form.min.js.下载"></script>
-		<script src="./login_files/address.js.下载"></script>
-		<script type="text/javascript" src="./login_files/login.js.下载"></script>
+		<script type="text/javascript" src="${base}/login_files/baidu.js"></script>
+		<script src="${base}/login_files/jquery-2.1.1.min.js"></script>
+		<script src="${base}/login_files/jquery-form.min.js"></script>
+		<script src="${base}/login_files/address.js"></script>
+		<script type="text/javascript" src="./login_files/login.js"></script>
 
 		<div id="waf_nc_block" style="display: none;">
 			<div class="waf-nc-mask"></div>
