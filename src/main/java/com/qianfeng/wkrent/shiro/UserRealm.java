@@ -4,7 +4,6 @@ import com.qianfeng.wkrent.cache.IRedisCache;
 import com.qianfeng.wkrent.dto.User;
 import com.qianfeng.wkrent.service.IUserService;
 import com.qianfeng.wkrent.utils.CodeGenerateUtil;
-import com.qianfeng.wkrent.utils.MessageUtil;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -40,7 +39,7 @@ public class UserRealm extends AuthorizingRealm {
             userService.insertUser(user1);
         }
         // 从缓存中获取生成的短信验证码
-        String code = redisCache.getValueByKey("code");
+        String code = redisCache.getValueByKey("code-" + telephone);
         // 从token中获取用户输入的验证码
         String vcode = token.getCredentials().toString();
         if(!code.equals(vcode)){
