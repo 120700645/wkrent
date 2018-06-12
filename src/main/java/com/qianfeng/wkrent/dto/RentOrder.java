@@ -11,11 +11,7 @@ public class RentOrder {
 
     private Date orderTakeTime;
 
-    private String orderTakePlace;
-
     private Date orderReturnTime;
-
-    private String orderReturnPlace;
 
     private Integer orderPrice;
 
@@ -30,6 +26,26 @@ public class RentOrder {
     private String orderStatus;
 
     private String carName;
+
+    private Place takePlace;
+
+    private Place returnPlace;
+
+    public Place getTakePlace() {
+        return takePlace;
+    }
+
+    public void setTakePlace(Place takePlace) {
+        this.takePlace = takePlace;
+    }
+
+    public Place getReturnPlace() {
+        return returnPlace;
+    }
+
+    public void setReturnPlace(Place returnPlace) {
+        this.returnPlace = returnPlace;
+    }
 
     public String getCarName() {
         return carName;
@@ -71,13 +87,7 @@ public class RentOrder {
         this.orderTakeTime = orderTakeTime;
     }
 
-    public String getOrderTakePlace() {
-        return orderTakePlace;
-    }
 
-    public void setOrderTakePlace(String orderTakePlace) {
-        this.orderTakePlace = orderTakePlace == null ? null : orderTakePlace.trim();
-    }
 
     public Date getOrderReturnTime() {
         return orderReturnTime;
@@ -87,13 +97,6 @@ public class RentOrder {
         this.orderReturnTime = orderReturnTime;
     }
 
-    public String getOrderReturnPlace() {
-        return orderReturnPlace;
-    }
-
-    public void setOrderReturnPlace(String orderReturnPlace) {
-        this.orderReturnPlace = orderReturnPlace == null ? null : orderReturnPlace.trim();
-    }
 
     public Integer getOrderPrice() {
         return orderPrice;

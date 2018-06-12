@@ -6,9 +6,7 @@
     <result column="CAR_ID" jdbcType="DECIMAL" property="carId" />
     <result column="ORDER_NUM" jdbcType="VARCHAR" property="orderNum" />
     <result column="ORDER_TAKE_TIME" jdbcType="TIMESTAMP" property="orderTakeTime" />
-    <result column="ORDER_TAKE_PLACE" jdbcType="VARCHAR" property="orderTakePlace" />
     <result column="ORDER_RETURN_TIME" jdbcType="TIMESTAMP" property="orderReturnTime" />
-    <result column="ORDER_RETURN_PLACE" jdbcType="VARCHAR" property="orderReturnPlace" />
     <result column="ORDER_PRICE" jdbcType="DECIMAL" property="orderPrice" />
     <result column="ORDER_INSURANCE" jdbcType="DECIMAL" property="orderInsurance" />
     <result column="ORDER_CHARGE" jdbcType="DECIMAL" property="orderCharge" />
@@ -16,17 +14,22 @@
     <result column="ORDER_TOTAL" jdbcType="DECIMAL" property="orderTotal" />
     <result column="ORDER_STATUS" jdbcType="VARCHAR" property="orderStatus" />
     <association property="carName" column="CAR_ID" select="com.qianfeng.wkrent.dao.CarMapper.selectCarNameById"/>
+    <association property="takePlace" column="take_place_id" select="com.qianfeng.wkrent.dao.PlaceMapper.selectByPrimaryKey"/>
+    <association property="returnPlace" column="return_place_id" select="com.qianfeng.wkrent.dao.PlaceMapper.selectByPrimaryKey"/>
   </resultMap>
+
   <sql id="Base_Column_List">
-    ORDER_ID, CAR_ID, ORDER_NUM, ORDER_TAKE_TIME, ORDER_TAKE_PLACE, ORDER_RETURN_TIME, 
-    ORDER_RETURN_PLACE, ORDER_PRICE, ORDER_INSURANCE, ORDER_CHARGE, ORDER_DISCOUNT, ORDER_TOTAL, 
-    ORDER_STATUS
+    ORDER_ID, CAR_ID, ORDER_NUM, ORDER_TAKE_TIME,ORDER_RETURN_TIME,
+    ORDER_PRICE, ORDER_INSURANCE, ORDER_CHARGE, ORDER_DISCOUNT, ORDER_TOTAL,
+    ORDER_STATUS,take_place_id,return_place_id
   </sql>
+
   <select id="selectAll" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from TB_RENT_ORDER
   </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
