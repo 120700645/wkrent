@@ -2511,13 +2511,6 @@
 							</div>
 						</div>
 					</div>
-					<!--<p>
-                <input type="text" class="clickNo arrowClass" id="fromCityName" name="fromCityName" onmouseover="fromOrtoOut=false" onmouseout="fromOrtoOut=true" readonly="true" value="北京">
-                <input type="text" class="clickNo arrowClass" id="toCityName" name="toCityName"
-                       onmouseover="fromOrtoOut=false" onmouseout="fromOrtoOut=true" placeholder="取车网点 : " readonly="true" value="东直门网点">
-                <input type="text" class="clickNo arrowClass" id="time_begin" readonly="true" placeholder="取车时间 : " value="2017-09-12 周四"/>
-                <input type="text" class="clickNo arrowClass" id="time_end" readonly="true" placeholder="还车时间 : " value="2017-09-13 周五"/>
-            </p>-->
 					<div class="home_rent_days">租期: <span>2天</span></div>
 					<input type="button" value="立即选车" id="home_select" class="s_btn" title="" onclick="toSearchLocalCar();">
 				</div>
