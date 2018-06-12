@@ -1,7 +1,10 @@
 package com.qianfeng;
 
+import com.qianfeng.wkrent.dao.CarMapper;
+import com.qianfeng.wkrent.dto.Car;
 import com.qianfeng.wkrent.dto.CarType;
 import com.qianfeng.wkrent.dto.City;
+import com.qianfeng.wkrent.service.ICarService;
 import com.qianfeng.wkrent.service.ICarTypeService;
 import com.qianfeng.wkrent.service.ICityService;
 import org.junit.Test;
@@ -20,14 +23,35 @@ public class OtherTest {
     private ICityService cityService;
 
     @Autowired
+    private ICarService carService;
+
+    @Autowired
     private ICarTypeService carTypeService;
+
+    @Autowired
+    private CarMapper carDao;
+
+
+    @Test
+    public void testCase5(){
+        Car car = carDao.selectByPrimaryKey(1);
+        System.out.println(car.getCarName());
+    }
+
+    @Test
+    public  void testCase4(){
+        List<Car> carList = carDao.selectCarByTypeName("1");
+        for (Car car : carList) {
+            System.out.println(car.getCarName());
+        }
+    }
+
     @Test
     public void testCase1(){
         List<CarType> carTypeList = carTypeService.findAllCarType();
         for (CarType carType : carTypeList) {
             System.out.println(carType.getTypeName());
         }
-
     }
 
     @Test
@@ -40,6 +64,7 @@ public class OtherTest {
 
     @Test
     public void testCase3(){
+
         List<City> hotCityList = cityService.findHotCity();
         //model.addAttribute("hotCityList",hotCityList);
         //查询所有去重,排序后的首字母
@@ -61,8 +86,6 @@ public class OtherTest {
                 System.out.println(map.get(word).add(c));
             }
         }
-
-
         //model.addAttribute("map",map);
 
         //产生映射项(里面有key和value)

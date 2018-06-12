@@ -84,6 +84,7 @@
             <value>
                 <!--anon不需要登录-->
 
+                /carType/list=anon
                 /manage/**=anon
                 /user/**=anon
                 /code/pcode=anon

@@ -726,7 +726,28 @@
                 font-size:16px;
                 display:none;*//*默认不显示，ajax调用成功后才决定显示与否*/
             }
-		</style>
+
+            --------------增加多选样式----------------
+            *{margin:0;padding:0;}
+            ol, ul {list-style: none;}
+            blockquote,q {quotes: none;}
+            a{text-decoration:none;color:#2d2f30;-webkit-transition: all .3s linear;-moz-transition: all .3s linear;-o-transition: all .3s linear;-ms-transition: all .3s linear;transition: all .3s linear;}
+            a:focus{ outline:none;}
+            .content{margin:auto;width:1200px;}
+            .sx_updown{width:100%;border-top:1px solid #f2f2f2;background:#fff;overflow:hidden;padding:32px 0 40px 0;z-index:9999;position:absolute;left:0;top:60px;text-align:left;}
+            .updown_box{float:left;min-height:198px;width:388px;border-left:1px solid #f2f2f2;padding:0 50px;-webkit-box-sizing: content-box;-moz-box-sizing: content-box; box-sizing: content-box;}
+            .updown_box h3{font-size:16px;margin-bottom:18px;padding-left:10px;}
+            .updown_box ul li{float:left;margin:0 10px 10px 10px;}
+            .updown_box ul li a{display:block;font-size:14px;padding:6px 8px;line-height:18px;}
+            .updown_box ul li.selected a{background:#7ecbc8;color:#fff;}
+            .w136{width:136px;border-left:0;padding:0;}
+            .w290{width:290px;}
+            .w160{width:160px;padding:0 40px;}
+            .sousuo{padding:10px 0 36px 0;width:100%;}
+            .select-result{width:900px;float:left;}
+            .select-result ul li a{height:30px;padding:0 24px 0 10px;line-height:30px;display:block;position:relative;float:left;margin:0 10px 10px 0;color:#fff;font-size:14px;background:url(close1.png) 90% center no-repeat #7ecbc8;}
+
+        </style>
 	</head>
 
 	<body>
@@ -765,19 +786,31 @@
 					</div>
 				</div>
 			</div>
+            <#-------------------------选择过滤--------------------------->
 			<div data-v-107a46b0="" class="self">
 				<div data-v-107a46b0="" class="cf-top"></div>
 				<div data-v-107a46b0="" style="height: 36px; background-color: rgb(243, 243, 243);"></div>
 				<div data-v-107a46b0="" class="classify-cf">
-					<div data-v-107a46b0="" class="cf cf-one cf-choose">
-						<div data-v-107a46b0="" class="tit tit-1">游玩城市:</div> <span data-v-107a46b0="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-107a46b0="" class="selected">全部</span> <span data-v-107a46b0="" class="">昆明</span><span data-v-107a46b0="" class="">大理</span><span data-v-107a46b0="" class="">西双版纳</span><span data-v-107a46b0="" class="">瑞丽</span><span data-v-107a46b0="" class="">普洱</span><span data-v-107a46b0="" class="">腾冲</span><span data-v-107a46b0="" class="">玉溪</span><span data-v-107a46b0="" class="">丽江</span><span data-v-107a46b0="" class="">香格里拉</span><span data-v-107a46b0="" class="">红河</span><span data-v-107a46b0="" class="">楚雄</span><span data-v-107a46b0="" class="">文山</span><span data-v-107a46b0="" class="">怒江</span><span data-v-107a46b0="" class="">临沧</span><span data-v-107a46b0="" class="">曲靖</span><span data-v-107a46b0="" class="">昭通</span></div>
+					<div data-v-107a46b0="" id="select1" class="cf cf-one cf-choose">
+						<div data-v-107a46b0="" class="tit tit-1">游玩城市:</div>
+                        <span data-v-107a46b0="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span>
+                        <span data-v-107a46b0="" class="select-all selected">全部</span>
+                        <span data-v-107a46b0="" class="">昆明</span>
+                        <span data-v-107a46b0="" class="">大理</span>
+                        <span data-v-107a46b0="" class="">西双版纳</span><span data-v-107a46b0="" class="">瑞丽</span>
+                        <span data-v-107a46b0="" class="">普洱</span><span data-v-107a46b0="" class="">腾冲</span><span data-v-107a46b0="" class="">玉溪</span><span data-v-107a46b0="" class="">丽江</span>
+                        <span data-v-107a46b0="" class="">香格里拉</span><span data-v-107a46b0="" class="">红河</span><span data-v-107a46b0="" class="">楚雄</span><span data-v-107a46b0="" class="">文山</span>
+                        <span data-v-107a46b0="" class="">怒江</span><span data-v-107a46b0="" class="">临沧</span><span data-v-107a46b0="" class="">曲靖</span><span data-v-107a46b0="" class="">昭通</span></div>
+
+                    <div data-v-107a46b0="" class="cf cf-choose">
+						<div data-v-107a46b0="" id="select2" class="tit">出行天数:</div> <span data-v-107a46b0="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-107a46b0="" class="selected">全部</span> <span data-v-107a46b0="" class="">3天以下</span><span data-v-107a46b0="" class="">3~5天</span><span data-v-107a46b0="" class="">6~9天</span><span data-v-107a46b0="" class="">10~15天</span><span data-v-107a46b0="" class="">15天以上</span></div>
 					<div data-v-107a46b0="" class="cf cf-choose">
-						<div data-v-107a46b0="" class="tit">出行天数:</div> <span data-v-107a46b0="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-107a46b0="" class="selected">全部</span> <span data-v-107a46b0="" class="">3天以下</span><span data-v-107a46b0="" class="">3~5天</span><span data-v-107a46b0="" class="">6~9天</span><span data-v-107a46b0="" class="">10~15天</span><span data-v-107a46b0="" class="">15天以上</span></div>
+						<div data-v-107a46b0="" id="select3" class="tit">价格区间:</div> <span data-v-107a46b0="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-107a46b0="" class="selected">全部</span> <span data-v-107a46b0="" class="">3千元以下</span><span data-v-107a46b0="" class="">3千~5千元</span><span data-v-107a46b0="" class="">5千~1万元</span><span data-v-107a46b0="" class="">1万~2万元</span><span data-v-107a46b0="" class="">2万元以上</span></div>
 					<div data-v-107a46b0="" class="cf cf-choose">
-						<div data-v-107a46b0="" class="tit">价格区间:</div> <span data-v-107a46b0="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-107a46b0="" class="selected">全部</span> <span data-v-107a46b0="" class="">3千元以下</span><span data-v-107a46b0="" class="">3千~5千元</span><span data-v-107a46b0="" class="">5千~1万元</span><span data-v-107a46b0="" class="">1万~2万元</span><span data-v-107a46b0="" class="">2万元以上</span></div>
-					<div data-v-107a46b0="" class="cf cf-choose">
-						<div data-v-107a46b0="" class="tit">适合人群:</div> <span data-v-107a46b0="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-107a46b0="" class="selected">全部</span> <span data-v-107a46b0="" class="">家庭游</span><span data-v-107a46b0="" class="">商务人士</span><span data-v-107a46b0="" class="">茶友</span><span data-v-107a46b0="" class="">同学会</span><span data-v-107a46b0="" class="">公司团建</span><span data-v-107a46b0="" class="">定制团队</span><span data-v-107a46b0="" class="">亲子游</span><span data-v-107a46b0="" class="">朋友</span><span data-v-107a46b0="" class="">情侣游</span><span data-v-107a46b0="" class="">驴友</span><span data-v-107a46b0="" class="">爸妈游</span><span data-v-107a46b0="" class="">资深旅行家</span><span data-v-107a46b0="" class="">摄影爱好者</span><span data-v-107a46b0="" class="">学生团体</span></div>
+						<div data-v-107a46b0="" id="select4" class="tit">适合人群:</div> <span data-v-107a46b0="" style="display: inline-block; width: 2px; padding: 0px; margin: 0px;"></span> <span data-v-107a46b0="" class="selected">全部</span> <span data-v-107a46b0="" class="">家庭游</span><span data-v-107a46b0="" class="">商务人士</span><span data-v-107a46b0="" class="">茶友</span><span data-v-107a46b0="" class="">同学会</span><span data-v-107a46b0="" class="">公司团建</span><span data-v-107a46b0="" class="">定制团队</span><span data-v-107a46b0="" class="">亲子游</span><span data-v-107a46b0="" class="">朋友</span><span data-v-107a46b0="" class="">情侣游</span><span data-v-107a46b0="" class="">驴友</span><span data-v-107a46b0="" class="">爸妈游</span><span data-v-107a46b0="" class="">资深旅行家</span><span data-v-107a46b0="" class="">摄影爱好者</span><span data-v-107a46b0="" class="">学生团体</span></div>
 				</div>
+
+
 				<div data-v-107a46b0="" class="cf-sort">
 					<div data-v-107a46b0="" class="hover hover_active" style="padding-left: 4px;">默认排序</div>
 					<div data-v-107a46b0="" class="">价格
@@ -810,102 +843,7 @@
 							</div>
                             </tr>
                             </#list>
-							<#--<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100021" class=""><img data-v-107a46b0="" src="../img/fa65feb3-cf20-4011-ac00-53d9d63352f3.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_2"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">橙-民俗节庆</span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100021" class="">&lt;普者黑、坝美4天3晚休闲游&gt;(丘北进出）十里桃花林、穿越喀斯特地貌群、湿身水仗、世外桃源、坝美云端</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">普者黑出发</span> <span data-v-107a46b0="">4天3晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">青龙山观日出，菜花箐-探寻剧版《三生三世十里花》“水墨丹青山水意境”，穿过神秘溶洞寻找桃花园，途径“三天三夜、三明三暗”发现秘境坝美探寻世外桃源的秘密。 ——简易行程—— Day1：前往“爸爸去哪儿”、“三生三世”拍摄地，住丘北天成太合酒店 Day2：登青龙山观日出、普者黑喀斯特地貌全景、乘柳叶小舟游览仙人湖、普者黑湖，住八宝贡酒店 Day3：体验坝美“三天三夜、三明三暗”豁然开朗的意境，住八宝贡酒店 Day4：早餐后驾车返回普者黑高铁站交还车辆
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">田园风光</span><span data-v-107a46b0="">三生三世</span><span data-v-107a46b0="">打水仗</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">1360</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100021" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
-							<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100055" class=""><img data-v-107a46b0="" src="../img/8eeed621-b64a-48a9-bf2c-630ee2ce3ba9.jpg" alt=""></a> <span data-v-107a46b0="" class="tags"><span data-v-107a46b0="" class="test" style="margin-right: 38px;"></span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100055" class="">【Jeep专线】遇见梅里 香格里拉-梅里雪山 5天4晚 转山朝圣之旅</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">香格里拉出发</span> <span data-v-107a46b0="">5天4晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">1.十月后是梅里“日照金山”的频发季，来梅里，期待一次好运气。 2.在与神最接近的松赞林寺里，放明心镜，以敬畏和虔诚的心，听活佛讲经，请活佛赐福。 3.从白马到梅里，一路转山转水转佛塔，在朝圣的路上尽享美景， 4.走进隐藏在雪山下的千年藏族村落，去看与世隔绝的藏民的幸福生活。 5.入住特色酒店，精选观景酒店，带给你不一样的住宿体验。 6.专属旅途管家，为您提供更多当地好吃、好玩的旅行推荐。
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">日照金山</span><span data-v-107a46b0="">落地自驾</span><span data-v-107a46b0="">祈福</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">2880</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100055" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
-
-							<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100106" class=""><img data-v-107a46b0="" src="../img/71a748cd-5a3d-4f54-9ca8-7346552a80fa.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_1"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">赤-茶马古道</span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100106" class="">&lt; 返“普”归真 奇幻雨林 &gt; 昆明+普洱+绿三角7天6晚穿越秘境之旅</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">昆明出发</span> <span data-v-107a46b0="">7天6晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">【2017最美自驾线路NO.1】该线路在 2017 年度中国最美自驾游线路中，探访类排名第一，荣获全国 36 位评选意见领袖提名奖。线路中建筑原始，民风淳朴，多民族混居，生态植被丰茂，是北回归线上保存最完美的绿洲，负氧离子高达 98%。 【亲体验*春城印象后的蔚然大观】落地四季如春的春城、满眼花海，体验滇池边亲手喂食漫天飞舞的红嘴鸥， 【零距离*50万年守候的自然原乡】徒步太阳河原始森林，深入动物天堂，追踪犀牛踪迹、尽情领略普洱太阳河国家公园神秘的热带雨林风光与少数民族共享长街宴，夜晚满天繁星，入住森林木屋，清晨叫醒你的不是酒店服务员而是萌动的小熊猫。 【心发现*隐世蛮荒的古老与虔诚】中缅边境神秘的“绿三角”，膜拜佤族三位一体的原始宗教，感受异国情调及浓郁的民族风情。穿行于原生态的森林和灌木丛林中，可以看到有榕树、木依吉神像、岩画、人头桩、五神谭等景观。龙摩爷圣地、剽牛祭祀、阿瓦人民唱新歌、佤族创世史诗《司岗里》的故乡，这里是距离人类童年最近的地方。佤宴、鸡肉烂饭、凉拌蚂蚁每一款都能刺激您的味蕾。 【全接触*氤氲茶香中的千年礼赞】景迈山千年万亩古茶园，近观世界上发现连片面积最大保存最为完好年代最为悠久的古茶园，神奇的茶祖圣地云雾缭绕，绿树繁华，更有翁基布朗古寨观震撼云海，这里三民族混居和谐共融，《快乐拉祜》让您身临其境的来一场听觉盛宴。 【盛饕餮*惊艳味蕾的民族美食大赏】美食遍布，一路行走一路品尝，各民族、地方味觉大餐。 【另类游*北回归线上的灵魂放空日】行走在太阳转身的地方，沉浸于神奇的北回归双胞福祈，仰躺在森林温泉绿池中享受着灵魂放飞的感觉。
-
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">茶宴</span><span data-v-107a46b0="">拉祜族</span><span data-v-107a46b0="">芦笛恋歌</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">5630</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100106" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
-							<div data-v-107a46b0="" class="classify-li">
-								<div data-v-107a46b0="" class="cd-list-img">
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100049" class=""><img data-v-107a46b0="" src="../img/89d82442-4abc-42b8-a736-499cf2750398.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_7"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">紫-地热农特</span></span>
-									<div data-v-107a46b0=""></div>
-								</div>
-								<div data-v-107a46b0="" class="cd-list-text">
-									<p data-v-107a46b0="" class="cd-list-title">
-										<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100049" class="">&lt;丝绸碧玉，醉美腾冲 5天4晚轻奢之旅&gt;(腾冲进芒市出）</a>
-									</p>
-									<p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">腾冲出发</span> <span data-v-107a46b0="">5天4晚</span></p>
-									<p data-v-107a46b0="" class="cd-list-description advantage">这个世界太快了，以至于人们没有时间放慢脚步来好好看看周围的美景，慢一点，世界都在你眼中。如果慢不下来，就来云南，云南很慢，慢得你可以在这里享受最闲适的生活，看世间最美的风景。卸下你的烦恼与苦闷，在这里找寻你的初心。 ——简易行程—— Day1：马帮重镇、古“西南丝绸之路”的必经之地，大型歌舞视觉盛宴 Day2：观赏被誉为“火山地质博物馆”，北海沼泽湿地，神奇景观 Day3：走进历史、了解历史、牢记历史、缅怀英雄、踏寻金色国度 Day4：热带雨林、自行车环湖、高尔夫练习 Day5：结束本次旅程返回
-									</p>
-									<p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">休闲</span><span data-v-107a46b0="">落地自驾</span><span data-v-107a46b0="">湿地</span></p>
-									<p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">5800</b></span>起 / 人</p>
-									<a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100049" class="">
-										<div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-									</a>
-								</div>
-							</div>
-							<div data-v-107a46b0="" class="classify-li">
-                            <div data-v-107a46b0="" class="cd-list-img">
-                                <a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100047" class=""><img data-v-107a46b0="" src="../img/385ef25d-f5b4-4167-8c64-ab1c82268b5c.jpg" alt=""></a> <span data-v-107a46b0="" class="tags tags_1"><span data-v-107a46b0="" class="test" style="margin-right: 38px;">赤-茶马古道</span></span>
-                                <div data-v-107a46b0=""></div>
-                            </div>
-                            <div data-v-107a46b0="" class="cd-list-text">
-                                <p data-v-107a46b0="" class="cd-list-title">
-                                    <a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100047" class="">&lt;奇幻雨林返普归真,5天4晚深度自驾游&gt;（版纳进普洱出）</a>
-                                </p>
-                                <p data-v-107a46b0="" class="cd-list-type"><span data-v-107a46b0="">自助自驾</span> <span data-v-107a46b0="">西双版纳出发</span> <span data-v-107a46b0="">5天4晚</span></p>
-                                <p data-v-107a46b0="" class="cd-list-description advantage">旅行的真谛在于“感路”而不是赶路，自驾能让您在遥远的他乡，充分体验旅行的过程之美。穿过麦田，穿过村庄，穿过城市，穿过热带雨林。遇见生命，遇见世间的一万种可能或者一万种以外的可能。生命的密码藏在一朵花里，一条雨林河里，一片热带雨林里。 ——简易行程—— Day1：漫步昔日的傣王御花园、触摸傣式古老建筑、感受灵魂之园 Day2：领略热带风光、感受奇异的热带雨林景观、亲眼目睹会跳舞的小草、看一眼令人生畏的箭毒木一见血封喉、来一场民族气息与魔幻色彩的视听盛宴 Day3：深入野象谷开启中国生态保护的“想象之旅”；在高空观象栈道、雨林游道寻找亚洲象的印迹 Day4：走进北回归线上最大的绿洲，感受动植物的天堂，天人合一、人与自然和谐共融。让灵魂尽情的私奔！ Day5：早餐后直接前往普洱思茅机场还车办理登机手续，结束本次旅行。
-                                </p>
-                                <p data-v-107a46b0="" class="cd-list-label"><span data-v-107a46b0="">最美公路</span><span data-v-107a46b0="">落地自驾</span><span data-v-107a46b0="">热带雨林</span></p>
-                                <p data-v-107a46b0="" class="cd-list-money"><span data-v-107a46b0="">¥<b data-v-107a46b0="">5890</b></span>起 / 人</p>
-                                <a data-v-107a46b0="" href="https://www.wktrip.com/self_driving/100047" class="">
-                                    <div data-v-107a46b0="" class="cd-list-btn">查看详情</div>
-                                </a>
-                            </div>-->
+							<#---->
                         </div>
 						</div>
 					</div>
@@ -971,9 +909,9 @@
 					</div>
 					<div class="code">
 						<div>
-							<p>订阅号</p> <img src="../img/wxcode.cc79ece.jpg" alt=""></div>
+							<p>订阅号</p> <img src="${base}/img/wxcode.cc79ece.jpg" alt=""></div>
 						<div>
-							<p>APP下载</p> <img src="../img/appcode.e8d3d31.png" alt=""></div>
+							<p>APP下载</p> <img src="${base}/img/appcode.e8d3d31.png" alt=""></div>
 					</div>
 					<div class="footer">
 						<p>北京悟空国际旅行社有限公司</p>
@@ -983,9 +921,9 @@
 				</div>
 			</div>
 		</div>
-		<!--<script type="text/javascript" src="js/manifest.fb5239f97ae874448f44.js.下载"></script>-->
-		<script type="text/javascript" src="../js/vendor.434b2f13fc4d603f30a3.js"></script>
-		<script type="text/javascript" src="../js/app.6d0a0c8dac82bcb8212b.js"></script>
+		<#--<script type="text/javascript" src="${base}/js/manifest.fb5239f97ae874448f44.js"></script>-->
+		<script type="text/javascript" src="${base}/js/vendor.434b2f13fc4d603f30a3.js"></script>
+		<script type="text/javascript" src="${base}/js/app.6d0a0c8dac82bcb8212b.js"></script>
 	</body>
 
 </html>
@@ -993,8 +931,24 @@
 
 
 <script type="text/javascript">
-    $(function(){
 
+    /*-----------------------增加的内容----------------------*/
+    $("#select2 span").click(function () {
+        $(this).addClass("selected").siblings().removeClass("selected");
+        if ($(this).hasClass("select-all")) {
+            $("#selectA").remove();
+        } else {
+            var copyThisA = $(this).clone();
+            if ($("#selectA").length > 0) {
+                $("#selectA a").html($(this).text());
+            } else {
+                $(".select-result dl").append(copyThisA.attr("id", "selectA"));
+            }
+        }
+    });
+
+
+    $(function(){
         /*初始化*/
         var counter = 0; /*计数器*/
         var pageStart = 0; /*offset*/
@@ -1060,4 +1014,10 @@
             }
         });
     }
+
+
+
 </script>
+
+
+

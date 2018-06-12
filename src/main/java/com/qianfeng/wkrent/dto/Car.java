@@ -13,6 +13,27 @@ public class Car {
 
     private Integer brandId;
 
+    //增加carType和brand
+    private CarType carType;
+
+    private Brand brand;
+
+    public CarType getCarType() {
+        return carType;
+    }
+
+    public void setCarType(CarType carType) {
+        this.carType = carType;
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
+    }
+
     public Integer getCarId() {
         return carId;
     }

@@ -2190,7 +2190,7 @@
 						<li id="common-phone">
 							<div id="all-phone"><img src="${base}/img/phone.png"><span style="margin-left:4px;">手机端</span></div>
 							<div class="common-phone">
-								<img src="../img/rent-app.png">
+								<img src="${base}/img/rent-app.png">
 							</div>
 						</li>
 						<li id="common-qacode">
@@ -2252,14 +2252,14 @@
 				</div>
 			</div>
 			<div class="zc_main">
-				<a class="zc_logo" href="${base}/index.html"><img src="${base}/img/logo.png" style="padding-top:10px" alt="悟空租车"></a>
+				<a class="zc_logo" href="${base}/index.ftl"><img src="${base}/img/logo.png" style="padding-top:10px" alt="悟空租车"></a>
 				<div class="zc_head_tab">
 					<ul class="zc_menu" style="line-height: 60px;height: 60px">
 						<li>
-							<a href="${base}/index.html">首页</a>
+							<a href="${base}/index.ftl">首页</a>
 						</li>
 						<li class="homecur">
-							<a href="renting.ftl">租车自驾</a>
+							<a href="${base}/carType/list">租车自驾</a>
 						</li>
 						<li>
 							<a href="${base}/ftl/site.ftl">全国网点</a>
@@ -2641,7 +2641,9 @@
 						</div>
 					</div>
 				</div>
-				<div></div>
+
+                <div></div>
+
 				<div class="pinck_up_list date-box" day_id="from_time" stamp_id="from_stamp">
 					<p>取车时间</p>
 					<div class="pinck_up_list_div">
@@ -2663,7 +2665,7 @@
 					</div>
 				</div>
 				<div class="now_choice_car">
-					<p><span style="color:black;font-size:12px">租期: </span><span id="LeaseTerm" style="color:#F23732;font-size:12px">2天</span></p>
+					<p><span style="color:black;font-size:12px">租期: </span><span id="LeaseTerm" style="color:#F23732;font-size:12px"></span></p>
 					<p class="btn-style" id="btn-style_order" onclick="loadingUpShow();getCars(&#39;local&#39;);">立即选车</p>
 				</div>
 				<!-- <p class="btn-style" onclick="loadingUpShow();getCars('local');">立即选车</p> -->
@@ -2674,34 +2676,16 @@
 					<div class="dot_car_list_o_left" id="choice_car">
 						<div>
 							<h2>类型</h2>
-							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/buxian_selected.jpg" src="${base}/img/buxian_selected.jpg">
+							<figure class="buxian_fig">
+								<img src="${base}/img/buxian_selected.jpg">
 								<figcaption category="deselect" class="selected">不限</figcaption>
 							</figure>
-							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/jingji_selected.jpg" src="${base}/img/jingji.jpg">
-								<figcaption category="经济型">经济型</figcaption>
-							</figure>
-							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/shushi_selected.jpg" src="${base}/img/shushi.jpg">
-								<figcaption category="舒适型">舒适型</figcaption>
-							</figure>
-							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/shangwu_selected.jpg" src="${base}/img/shangwu.jpg">
-								<figcaption category="商务型">商务型</figcaption>
-							</figure>
-							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/haohua_selected.jpg" src="${base}/img/haohua.jpg">
-								<figcaption category="豪华型">豪华型</figcaption>
-							</figure>
-							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/suv_selected.jpg" src="${base}/img/suv.jpg">
-								<figcaption category="SUV">SUV</figcaption>
-							</figure>
-							<figure>
-								<img selected_src="//static.wkzuche.com/www/images/search/mpv_selected.jpg" src="${base}/img/mpv.jpg">
-								<figcaption category="MPV">MPV</figcaption>
-							</figure>
+                            <#list carTypeList as list>
+                                <figure class="jinji_fig" >
+                                    <img  src="${base}/img/jingji.jpg" class="jinji_fig_img" >
+                                    <figcaption class="fig_type" category="${list.typeName}">${list.typeName}</figcaption>
+                                </figure>
+                            </#list>
 						</div>
 						<div>
 							<h2>常见品牌</h2>
@@ -2811,66 +2795,6 @@
 								</div>
 								<div id="list_reserve" class="dot_car_list_o_divth btn-style" onclick="toOrderPages(&#39;HYUNDAI_VERNA_201414LAT01&#39;,&#39;11_site_081&#39;,&#39;北京&#39;,&#39;110000&#39;,&#39;null&#39;);">预订</div>
 							</li>
-							<li class="dot_car_list_o_li"><img src="${base}/img/b09649f8-4444-4e3a-a95f-3491ae923342.jpg">
-								<div class="dot_car_list_o_divo">
-									<h4 title="大众 速腾">大众 速腾</h4>
-									<ol style="width:186px">
-										<li>三厢车 |</li>
-										<li>1.4T |</li>
-										<li>自动 |</li>
-										<li>可载5人</li>
-									</ol><i style="border:1px solid undefined;color:undefined">减</i></div>
-								<div class="dot_car_list_o_divt price-box">
-									<p><span>￥</span><i>159</i><em>/日均</em></p>
-									<p class="prices" id="dot_car_list_o_divt_p" name="date-car" data="2017-3-21" onclick="getCarTypePrices(this,&#39;VW_SAGITAR_201414TAT02&#39;, &#39;11_site_081&#39;, event);">价格日历</p>
-								</div>
-								<div id="list_reserve" class="dot_car_list_o_divth btn-style" onclick="toOrderPages(&#39;VW_SAGITAR_201414TAT02&#39;,&#39;11_site_081&#39;,&#39;北京&#39;,&#39;110000&#39;,&#39;null&#39;);">预订</div>
-							</li>
-							<li class="dot_car_list_o_li"><img src="${base}/img/c49dc3df-3a73-42dc-a68a-92c2a3327ce3.jpg">
-								<div class="dot_car_list_o_divo">
-									<h4 title="马自达 睿翼">马自达 睿翼</h4>
-									<ol style="width:186px">
-										<li>掀背车 |</li>
-										<li>2.5L |</li>
-										<li>自动 |</li>
-										<li>可载5人</li>
-									</ol><i style="border:1px solid undefined;color:undefined">减</i></div>
-								<div class="dot_car_list_o_divt price-box">
-									<p><span>￥</span><i>209</i><em>/日均</em></p>
-									<p class="prices" id="dot_car_list_o_divt_p" name="date-car" data="2017-3-21" onclick="getCarTypePrices(this,&#39;MAZDA_6-RY_201225LAT03&#39;, &#39;11_site_081&#39;, event);">价格日历</p>
-								</div>
-								<div id="list_reserve" class="dot_car_list_o_divth btn-style" onclick="toOrderPages(&#39;MAZDA_6-RY_201225LAT03&#39;,&#39;11_site_081&#39;,&#39;北京&#39;,&#39;110000&#39;,&#39;null&#39;);">预订</div>
-							</li>
-							<li class="dot_car_list_o_li"><img src="${base}/img/c49dc3df-3a73-42dc-a68a-92c2a3327ce3.jpg">
-								<div class="dot_car_list_o_divo">
-									<h4 title="马自达 睿翼">马自达 睿翼</h4>
-									<ol style="width:186px">
-										<li>三厢车 |</li>
-										<li>2.5L |</li>
-										<li>自动 |</li>
-										<li>可载5人</li>
-									</ol><i style="border:1px solid undefined;color:undefined">减</i></div>
-								<div class="dot_car_list_o_divt price-box">
-									<p><span>￥</span><i>209</i><em>/日均</em></p>
-									<p class="prices" id="dot_car_list_o_divt_p" name="date-car" data="2017-3-21" onclick="getCarTypePrices(this,&#39;MAZDA_6-RY_201225LAT02&#39;, &#39;11_site_081&#39;, event);">价格日历</p>
-								</div>
-								<div id="list_reserve" class="dot_car_list_o_divth btn-style" onclick="toOrderPages(&#39;MAZDA_6-RY_201225LAT02&#39;,&#39;11_site_081&#39;,&#39;北京&#39;,&#39;110000&#39;,&#39;null&#39;);">预订</div>
-							</li>
-							<li class="dot_car_list_o_li"><img src="${base}/img/85883adc-406f-4dab-a1a5-20a932d94cb7.jpg">
-								<div class="dot_car_list_o_divo">
-									<h4 title="马自达 8">马自达 8</h4>
-									<ol style="width:186px">
-										<li>MPV |</li>
-										<li>2.5L |</li>
-										<li>自动 |</li>
-										<li>可载7人</li>
-									</ol><i style="border:1px solid undefined;color:undefined">减</i></div>
-								<div class="dot_car_list_o_divt price-box">
-									<p><span>￥</span><i>359</i><em>/日均</em></p>
-									<p class="prices" id="dot_car_list_o_divt_p" name="date-car" data="2017-3-21" onclick="getCarTypePrices(this,&#39;MAZDA_8_201325LAT01&#39;, &#39;11_site_081&#39;, event);">价格日历</p>
-								</div>
-								<div id="list_reserve" class="dot_car_list_o_divth btn-style" onclick="toOrderPages(&#39;MAZDA_8_201325LAT01&#39;,&#39;11_site_081&#39;,&#39;北京&#39;,&#39;110000&#39;,&#39;null&#39;);">预订</div>
-							</li>
 						</ul>
 					</div>
 					<p style="clear: both;"></p>
@@ -2882,6 +2806,10 @@
 			<!--     <div class="dot_car_jiazaigengduo" id="search_more" onclick="getMoreCars();"> -->
 			<!--         <p>加载更多</p> -->
 			<!--     </div> -->
+
+            <div id="carList">
+
+            </div>
 		</div>
 		<div id="dot_map">
 			<p>
@@ -2961,6 +2889,39 @@
 			</p>
 		</div>
 		<script type="text/javascript">
+            /*--------------选择类型 更换背景图片为红色---------------*/
+
+            $(".jinji_fig").click(function () {
+                var carType = $(this).find("figcaption").text();
+                //alert(type);
+                if($(this).find("img").attr('src') == "${base}/img/jingji.jpg"){
+                    $(this).find("img").attr('src',"${base}/img/jingji_selected.jpg");
+                }else{
+                    $(this).find("img").attr('src',"${base}/img/jingji.jpg");
+                }
+
+                $.post("${base}/car/list", {"carType":carType},
+                        function (data) {
+                    alert("1111");
+                            if (data.code == "0"){
+                                alert(data.resultData);
+                                var carList = "";
+                                $.each(data.resultData,function () {
+                                    carList += "<tr><td>"+obj.carName+"</td><td>"+obj.carDasc+"</td><td>"+obj.carType.typeName+"</td><td>"+obj.brand.brandName+"</td></tr>";
+
+                                });
+                                ("#carList").html(carList);
+                            }
+                        }
+                )
+            });
+
+            /*------------------ajax-----------------------*/
+
+
+
+            /*-------------------------  -----------------------------*/
+
 			function confirm(msg, successFun) {
 				$('.mcover').show();
 				//$("#confirm").show();
@@ -3297,15 +3258,15 @@
 				});
 			});
 		</script>
-		<script type="text/javascript" src="/js/map.js"></script>
-		<script type="text/javascript" src="/js/pricecalendar.js"></script>
-		<script type="text/javascript" src=/js/sitesearch.js"></script>
-		<script type="text/javascript" src="/js/get-citys.js"></script>
-		<script type="text/javascript" src="/js/api"></script>
-		<script type="text/javascript" src="/js/getscript"></script>
-		<script type="text/javascript" src="/js/cartypesearch.js"></script>
-		<script type="text/javascript" src="/js/searchpage.js"></script>
-		<script type="text/javascript" src="/js/timepicker.js"></script>
+		<script type="text/javascript" src="${base}/js/map.js"></script>
+		<script type="text/javascript" src="${base}/js/pricecalendar.js"></script>
+		<script type="text/javascript" src="${base}/js/sitesearch.js"></script>
+		<script type="text/javascript" src="${base}/js/get-citys.js"></script>
+		<script type="text/javascript" src="${base}/js/api"></script>
+		<script type="text/javascript" src="${base}/js/getscript"></script>
+		<script type="text/javascript" src="${base}/js/cartypesearch.js"></script>
+		<script type="text/javascript" src="${base}/js/searchpage.js"></script>
+		<script type="text/javascript" src="${base}/js/timepicker.js"></script>
 		<script src="${base}/js/entrance.js" id="zhichiScript" class="customService"></script>
 
 		<script type="text/javascript">
@@ -3322,6 +3283,7 @@
 			var country = '';
 			var province = '';
 			var ip = "59.63.207.2, 116.211.165.4, 101.200.106.10";
+            /*setItem存储value    用途：将value存储到key字段 用法：.setItem( key, value)*/
 			if(paramCityId) {
 				sessionStorage.setItem("city_id", paramCityId);
 			}
@@ -3335,7 +3297,7 @@
 			if(paramSiteName) {
 				sessionStorage.setItem("site_name", paramSiteName);
 			}
-
+            /*getItem获取value  用途：获取指定key本地存储的     用法：.getItem(key)*/
 			var city_id = sessionStorage.getItem("city_id");
 			var city_name = sessionStorage.getItem("city_name");
 			var from_time = sessionStorage.getItem("from_time");
@@ -3402,6 +3364,11 @@
 					}
 				})
 			});
+            /*-----------------------增加的内容----------------------*/
+
+
+
+
 		</script>
 
 		<div class="tangram-suggestion-main" id="tangram-suggestion--TANGRAM__1h-main" data-guid="TANGRAM__1h" style="position: absolute; display: none; left: 0px; top: -1px;">
