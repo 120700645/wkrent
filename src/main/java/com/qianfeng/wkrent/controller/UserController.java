@@ -1,22 +1,26 @@
 package com.qianfeng.wkrent.controller;
 
 import com.qianfeng.wkrent.cache.IRedisCache;
+import com.qianfeng.wkrent.dto.User;
 import com.qianfeng.wkrent.info.JsonResult;
 import com.qianfeng.wkrent.service.IUserService;
 import com.qianfeng.wkrent.utils.CodeGenerateUtil;
 import com.qianfeng.wkrent.utils.MessageUtil;
 import com.qianfeng.wkrent.utils.ParamUtil;
-import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.web.session.HttpServletSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import java.io.IOException;
 
 @Controller
+@SessionAttributes("currentUser")
 @RequestMapping("/user")
 public class UserController {
     @Autowired
@@ -26,15 +30,18 @@ public class UserController {
 
     @RequestMapping("/login")
     @ResponseBody
-    public JsonResult login(String tel,String code, Model model){
+    public JsonResult login(String tel, String code,Model model){
         JsonResult jsonResult = new JsonResult();
         try {
             userService.login(tel,code);
-            jsonResult.setCode("0");
-            jsonResult.setMsg("登录成功");
+            // 登录成功,将对应的user记录从数据库查询出来,保存在session中
+            User user = userService.selectByTel(tel);
+            model.addAttribute(user);
+            jsonResult.setCode(ParamUtil.SUCCESS_CODE);
+            jsonResult.setMsg(ParamUtil.SUCCESS_MSG);
         } catch (IncorrectCredentialsException e) {
-            jsonResult.setCode("1");
-            jsonResult.setCode("验证码错误");
+            jsonResult.setCode(ParamUtil.FAIL_CODE);
+            jsonResult.setMsg(ParamUtil.FAIL_MSG);
             e.printStackTrace();
         }
         return jsonResult;
@@ -50,8 +57,9 @@ public class UserController {
         String code = CodeGenerateUtil.getCode(4);
         // 调用发送短信的方法
         MessageUtil.sendMessage(code,tel,"3");
+        // 将手机号拼接到"code-"后面
         // 将生成的短信验证码保存到redis缓存中,并且设定时间为1200秒,即20分钟
-        redisCache.setValueByKey("code",code,1200);
+        redisCache.setValueByKey("code-" + tel,code,1200);
     }
 
     /**

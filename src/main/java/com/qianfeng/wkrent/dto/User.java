@@ -1,6 +1,7 @@
 package com.qianfeng.wkrent.dto;
 
 public class User {
+
     private Integer userId;
 
     private String userTel;
