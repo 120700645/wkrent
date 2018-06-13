@@ -1,7 +1,6 @@
 package com.qianfeng.wkrent.dao;
 
 import com.qianfeng.wkrent.dto.Place;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,7 +17,5 @@ public interface PlaceMapper {
 
     int updateByPrimaryKey(Place record);
 
-    List<Place> selectAll(@Param("start") int start,@Param("end") int end);
-
-    long selectCount();
+    List<Place> selectByArea(String areaName);
 }

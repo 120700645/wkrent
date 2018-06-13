@@ -3,9 +3,24 @@
 <mapper namespace="com.qianfeng.wkrent.dao.AreaMapper">
   <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Area">
     <result column="AREA_ID" jdbcType="DECIMAL" property="areaId" />
-    <result column="CITY_ID" jdbcType="DECIMAL" property="cityId" />
     <result column="AREA_NAME" jdbcType="VARCHAR" property="areaName" />
+    <association property="city" column="city_id" select="com.qianfeng.wkrent.dao.CityMapper.selectByPrimaryKey"/>
   </resultMap>
+
+  <select id="selectById" resultMap="BaseResultMap">
+    SELECT AREA_ID, CITY_ID, AREA_NAME FROM TB_AREA WHERE AREA_ID = #{areaId}
+  </select>
+  
+  <select id="selectByCity" resultMap="BaseResultMap">
+    SELECT AREA_ID, CITY_ID, AREA_NAME FROM TB_AREA WHERE CITY_ID = #{cityId}
+  </select>
+  
+  <select id="selectByCityName" resultMap="BaseResultMap">
+    SELECT a.AREA_ID, a.CITY_ID, a.AREA_NAME
+    FROM tb_area a join tb_city c
+    ON a.city_id = c.city_id and c.city_name = #{cityName}
+  </select>
+
   <insert id="insert" parameterType="com.qianfeng.wkrent.dto.Area">
     insert into TB_AREA (AREA_ID, CITY_ID, AREA_NAME
       )

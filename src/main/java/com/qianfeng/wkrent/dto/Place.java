@@ -17,6 +17,16 @@ public class Place {
 
     private String placeTel;
 
+    private Area area;
+
+    public Area getArea() {
+        return area;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
+    }
+
     public Integer getPlaceId() {
         return placeId;
     }

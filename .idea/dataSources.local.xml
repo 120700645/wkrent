@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="dataSourceStorageLocal">
-    <data-source name="jdbc:oracle:thin:@192.168.58.42:1521/wkrent" uuid="24e3b537-1748-4972-a782-f2f1a02740cd">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
-    </data-source>
-  </component>
-</project>

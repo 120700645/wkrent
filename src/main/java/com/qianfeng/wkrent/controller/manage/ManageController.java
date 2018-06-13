@@ -35,12 +35,12 @@ public class ManageController {
      * @param model
      * @return
      */
-    @RequestMapping("/placeList/{page}")
-    public String plaveList(@PathVariable int page, Model model){
+    /*@RequestMapping("/placeList/{page}")
+    public String placeList(@PathVariable int page, Model model){
         PageBean<Place> pageBean = placeService.findAll(page);
         model.addAttribute("pages",pageBean);
         return "product-list";
-    }
+    }*/
 
     /**
      * 查询所有订单

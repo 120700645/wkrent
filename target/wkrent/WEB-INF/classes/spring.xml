@@ -84,8 +84,7 @@
             <value>
                 <!--anon不需要登录-->
 
-                #collapseThree=anon
-                /manage/**=anon
+                /==anon
                 /user/**=anon
                 /code/pcode=anon
                 /css/**=anon
@@ -93,11 +92,6 @@
                 /img/**=anon
                 /js/**=anon
                 /vendor/**=anon
-                /lib/**=anon
-                /static/**=anon
-                /temp/**=anon
-                #**=anon
-
                 <!--authc需要登录才能访问-->
                 <!--user配合rememberMe使用有效，authc不能配合rememberMe使用-->
                 <!--/**=user-->

@@ -3,7 +3,7 @@ package com.qianfeng.wkrent.dto;
 public class Area {
     private Integer areaId;
 
-    private Integer cityId;
+    private City city;
 
     private String areaName;
 
@@ -15,12 +15,12 @@ public class Area {
         this.areaId = areaId;
     }
 
-    public Integer getCityId() {
-        return cityId;
+    public City getCity() {
+        return city;
     }
 
-    public void setCityId(Integer cityId) {
-        this.cityId = cityId;
+    public void setCity(City city) {
+        this.city = city;
     }
 
     public String getAreaName() {

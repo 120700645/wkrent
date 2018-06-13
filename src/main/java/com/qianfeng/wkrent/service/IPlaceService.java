@@ -1,12 +1,9 @@
 package com.qianfeng.wkrent.service;
 
-import com.qianfeng.wkrent.dto.PageBean;
 import com.qianfeng.wkrent.dto.Place;
 
-
+import java.util.List;
 
 public interface IPlaceService {
-    PageBean<Place> findAll(int page);
-    long count();
+    List<Place> selectByAreaName(String areaName);
 }
-

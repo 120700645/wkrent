@@ -20,6 +20,13 @@
         where CITY_ID = #{cityId}
     </select>
 
+    <select id="selectByName" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        from TB_CITY
+        WHERE CITY_NAME = #{cityName}
+    </select>
+
     <select id="selectHotCity" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />

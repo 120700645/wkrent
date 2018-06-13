@@ -26,15 +26,10 @@
 		<link rel="stylesheet" href="${base}/css/index.css">
 		<link rel="stylesheet" href="${base}/css/common.css">
 		<link rel="stylesheet" href="${base}/css/swiper.css">
-		<!--[if !IE]><!-->
 		<link rel="stylesheet" href="${base}/css/date.css">
-		<!--[endif]-->
-		<!--[if IE]>
     <link rel="stylesheet" href="//static.wkzuche.com/www/css/search/timepicker_ie.css">
-    <![endif]-->
 		<link rel="stylesheet" href="${base}/css/timepicker_ie10.css">
-		<!--[if !IE]><!-->
-		<link rel="stylesheet" type="text/css" href="css/bmap_autocomplete.css">
+		<link rel="stylesheet" type="text/css" href="${base}/css/bmap_autocomplete.css">
 		<style></style>
 		<style type="text/css">
 			.BMap_mask {
@@ -2211,10 +2206,10 @@
 							<i class="caret down-caret"></i>
 							<div id="no-login" style="display:none">
 								<p>
-									<a href="myorder.html">我的租车订单</a>
+									<a href="#">我的租车订单</a>
 								</p>
-								<p>
-									<a href="mycoupon.html">我的优惠券</a>
+                                <p>
+									<a href="#">我的优惠券</a>
 								</p>
 							</div>
 							<div class="mian-wk" id="over-login" style="display:none">
@@ -2226,11 +2221,11 @@
 									<br>
 									<p class="identify-over"></p>
 									<div class="no-identify" style="display:none;">
-										<a href="auth.html"><span style="color:#F23732;">去认证</span></a>
+										<a href="#"><span style="color:#F23732;">去认证</span></a>
 									</div>
 								</div>
 								<div class="main-rent-orders">
-									<a href="myorder.html">我的租车订单</a>
+									<a href="#">我的租车订单</a>
 								</div>
 								<div class="account-information">
 									<p style="padding-right:10px;">
@@ -2253,7 +2248,7 @@
 				</div>
 			</div>
 			<div class="zc_main">
-				<a class="zc_logo" href="index.html"><img src="${base}/img/logo.png" style="padding-top:10px" alt="悟空租车"></a>
+				<a class="zc_logo" href="${base}/user/preIndex"><img src="${base}/img/logo.png" style="padding-top:10px" alt="悟空租车"></a>
 				<div class="zc_head_tab">
 					<ul class="zc_menu" style="line-height: 60px;height: 60px">
 						<li class="homecur">
@@ -2269,7 +2264,7 @@
 							<a href="${base}/combo/home" target="_blank">自驾嗨游</a>
 						</li>
 						<li>
-							<a href="join.html">加盟悟空</a>
+							<a href="#">加盟悟空</a>
 						</li>
 					</ul>
 				</div>
@@ -2288,8 +2283,8 @@
 			<div class="zc-ban-wrap">
 				<div class="swiper-container swiper-container-horizontal">
 					<div class="swiper-wrapper" id="swiper_wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-						<a class="swiper-slide swiper-wrapper-common swiper-slide-active" href="javascript:void(0)" onclick="window.open(&#39;activity.html&#39;)" style="background-image: url(&quot;https://img.wkzuche.com/banner/2018/0528/a4f7ab4a-1b12-4464-8b27-f7b44a4ce1b4.jpg&quot;); width: 1366px;"></a>
-						<a class="swiper-slide swiper-wrapper-common swiper-slide-next" href="javascript:void(0)" onclick="window.open(&#39;gift.html&#39;)" style="background-image: url(&quot;https://img.wkzuche.com/banner/2018/0412/f75a20d2-52c9-4bac-a85f-4ba3fe44b101.jpg&quot;); width: 1366px;"></a>
+						<a class="swiper-slide swiper-wrapper-common swiper-slide-active" href="javascript:void(0)" onclick="window.open(&#39;activity.html&#39;)" style="background-image: url(&quot;https://img.wkzuche.com/banner/2018/0528/a4f7ab4a-1b12-4464-8b27-f7b44a4ce1b4.jpg&quot;); width: 100%;"></a>
+						<a class="swiper-slide swiper-wrapper-common swiper-slide-next" href="javascript:void(0)" onclick="window.open(&#39;gift.html&#39;)" style="background-image: url(&quot;https://img.wkzuche.com/banner/2018/0412/f75a20d2-52c9-4bac-a85f-4ba3fe44b101.jpg&quot;); width: 100%;"></a>
 					</div>
 					<!-- Add Pagination -->
 					<div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets" id="swiper_pagination"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span></div>
@@ -2309,7 +2304,7 @@
 					</div>
 					<div class="zc_cell clickNo arrowClass takeSite city_self_driving">
 						<label class="zc_label">取车网点 : </label>
-						<input type="text" class="zc_input" id="site_input" onmouseover="this.title=this.value">
+						<input type="text" class="zc_input" id="site_input" onclick="getArea()" onmouseover="this.title=this.value">
 					</div>
 					<div class="dot_query" no-close="dot_query" style="display: none;">
 						<div class="query" no-close="dot_query" style="display: block;">
@@ -2317,13 +2312,35 @@
 							<p index="2">根据地址查找</p>
 						</div>
 						<div id="siteSelect" style="display: block;">
-							<ul>
-								<li id="TRAINSTATION_AIRPORT" onclick="areaSelected(&#39;dot_query_add_TRAINSTATION_AIRPORT&#39;,&#39;TRAINSTATION_AIRPORT&#39;,&#39;[object Object]&#39;,this,event);">机场/火车站/汽车站</li>
-								<li id="朝阳区" onclick="areaSelected(&#39;dot_query_add_朝阳区&#39;,&#39;朝阳区&#39;,&#39;[object Object]&#39;,this,event);">朝阳区</li>
-								<li id="海淀区" onclick="areaSelected(&#39;dot_query_add_海淀区&#39;,&#39;海淀区&#39;,&#39;[object Object]&#39;,this,event);" style="background: rgb(242, 55, 50); color: rgb(255, 255, 255);">海淀区</li>
-								<li id="顺义区" onclick="areaSelected(&#39;dot_query_add_顺义区&#39;,&#39;顺义区&#39;,&#39;[object Object]&#39;,this,event);">顺义区</li>
-								<li id="丰台区" onclick="areaSelected(&#39;dot_query_add_丰台区&#39;,&#39;丰台区&#39;,&#39;[object Object]&#39;,this,event);">丰台区</li>
-								<li id="东城区" onclick="areaSelected(&#39;dot_query_add_东城区&#39;,&#39;东城区&#39;,&#39;[object Object]&#39;,this,event);">东城区</li>
+							<script>
+								function getArea() {
+									var cityName = $("#fromCityName").val();
+									$.post("${base}/area/findAll",{"cityName":cityName},function (data) {
+                                        $("#list_area").text("");
+										$.each(data,function (index,area) {
+										    listArea(area)
+                                        })
+                                    })
+                                }
+
+                                function listArea(area) {
+									$("#list_area").append("<li id=\"" + area.areaName + "\" onclick='listPlace(this)'>" + area.areaName + "</li>" );
+//									$("#list_area").append("<li id=\"" + area.areaName + "\">" + area.areaName + "</li>" );
+                                }
+
+                                function listPlace(obj) {
+									var areaName = $(obj).text();
+									alert(areaName);
+                                    $.post("${base}/place/findAll",{"areaName":areaName},function (data) {
+                                        alert(data)
+										$.each(data,function (index,place) {
+											alert(1111)
+                                        })
+                                    })
+                                }
+							</script>
+							<ul id="list_area">
+								<#--<li id="东城区" onclick="areaSelected(&#39;dot_query_add_东城区&#39;,&#39;东城区&#39;,&#39;[object Object]&#39;,this,event);">东城区</li>-->
 							</ul>
 							<ol class="dot_query_add" id="dot_query_add_朝阳区" style="display: none;">
 								<li area="110105" site_id="11_site_081" id="11_site_081" lat="40.016228" lng="116.474032" class="11_site_081" style="color: rgb(0, 0, 0);">东湖渠地铁站送车点</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/brand.png">
@@ -2363,7 +2380,7 @@
 								<li area="110105" site_id="11_site_104" id="11_site_104" lat="39.87493" lng="116.545086" class="11_site_104" style="color: rgb(0, 0, 0);">亚之杰店--海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
 								<p class="address"><span>北京朝阳区王四营乡（亚之杰）</span><span>营业时间:08:00—20:00</span></p>
 							</ol>
-							<ol class="dot_query_add" id="dot_query_add_海淀区" style="display: block;">
+							<#--<ol class="dot_query_add" id="dot_query_add_海淀区" style="display: none;">
 								<li area="110108" site_id="11_site_049" id="11_site_049" lat="39.951101" lng="116.35678" class="11_site_049" style="color: rgb(203, 43, 31);">西直门店</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/brand.png">
 								<p class="address"><span>北京海淀区西直门钻河中心底商1-125</span><span>营业时间:09:00—20:00</span></p>
 							</ol>
@@ -2402,7 +2419,7 @@
 								<p class="address"><span>T3航站楼</span><span>营业时间:09:00—21:00</span></p>
 								<li area="110113" site_id="11_site_109" id="11_site_109" lat="40.082601" lng="116.595772" class="11_site_109" style="color: rgb(0, 0, 0);">首都机场送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png"><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/plane.png">
 								<p class="address"><span>北京市顺义区机场西路</span><span>营业时间:08:00—20:00</span></p>
-							</ol>
+							</ol>-->
 						</div>
 						<div class="address_query" id="address_query" no-close="dot_query" style="display: none;">
 							<input no-close="dot_query" type="text" id="suggestId" placeholder="请输入目的地/位置/关键词" name="111" value="请输入目的地/位置/关键词" autocomplete="off">
@@ -2733,52 +2750,52 @@
 				<ul class="gyfw">
 					<li class="li_head">关于服务</li>
 					<li>
-						<a href="rule.html#rule1">服务时间</a>
+						<a href="#">服务时间</a>
 					</li>
 					<li>
-						<a href="rule.html#rule2">短租及可选服务</a>
+						<a href="#">短租及可选服务</a>
 					</li>
 				</ul>
 				<ul class="yd">
 					<li class="li_head">预订指南</li>
 					<li>
-						<a href="rule.html#rule4">预订规则</a>
+						<a href="#">预订规则</a>
 					</li>
 					<li>
-						<a href="rule.html#rule5">退改规则</a>
+						<a href="#">退改规则</a>
 					</li>
 				</ul>
 				<ul class="qhc">
 					<li class="li_head">取还车指南</li>
 					<li>
-						<a href="rule.html#rule6">取车规则</a>
+						<a href="#">取车规则</a>
 					</li>
 					<li>
-						<a href="rule.html#rule7">还车规则</a>
+						<a href="#">还车规则</a>
 					</li>
 				</ul>
 				<ul class="bx">
 					<li class="li_head">保险及事故处理说明</li>
 					<li>
-						<a href="rule.html#rule8">保险责任</a>
+						<a href="#">保险责任</a>
 					</li>
 					<li>
-						<a href="rule.html#rule9">事故处理说明</a>
+						<a href="#">事故处理说明</a>
 					</li>
 					<li>
-						<a href="rule.html#rule10">救援及备用车服务</a>
+						<a href="#">救援及备用车服务</a>
 					</li>
 				</ul>
 				<ul class="js">
 					<li class="li_head">费用标准</li>
 					<li>
-						<a href="rule.html#rule11">标准服务收费</a>
+						<a href="#">标准服务收费</a>
 					</li>
 					<li>
-						<a href="rule.html#rule12">可选服务价格</a>
+						<a href="#">可选服务价格</a>
 					</li>
 					<li>
-						<a href="rule.html#rule13">其他服务说明</a>
+						<a href="#">其他服务说明</a>
 					</li>
 				</ul>
 			</div>
@@ -3458,40 +3475,40 @@
 						<ul>
 							<li class="li_title">我们的服务</li>
 							<li>
-								<a href="html#rule2">短租介绍</a>
+								<a href="#">短租介绍</a>
 							</li>
 							<li>
-								<a href="join.html">加盟服务</a>
+								<a href="#">加盟服务</a>
 							</li>
 						</ul>
 						<ul>
 							<li class="li_title">帮助中心</li>
 							<li class="ln-selected">
-								<a href="insurance.html">保险条款</a>
+								<a href="#">保险条款</a>
 							</li>
 							<li>
-								<a href="humanservice.html">人工服务</a>
+								<a href="#">人工服务</a>
 							</li>
 							<li>
-								<a href="question.html">常见问题</a>
+								<a href="#">常见问题</a>
 							</li>
 							<li>
-								<a href="agreement.html">用户服务协议</a>
+								<a href="#">用户服务协议</a>
 							</li>
 						</ul>
 						<ul>
 							<li class="li_title">关于我们</li>
 							<li>
-								<a href="media.html">媒体报道</a>
+								<a href="#">媒体报道</a>
 							</li>
 							<li>
-								<a href="story.html">悟空故事</a>
+								<a href="#">悟空故事</a>
 							</li>
 							<li>
-								<a href="contactus.html">联系我们</a>
+								<a href="#">联系我们</a>
 							</li>
 							<li>
-								<a href="recruitment.ftl">加入我们</a>
+								<a href="#">加入我们</a>
 							</li>
 						</ul>
 					</div>
@@ -3919,7 +3936,7 @@
 
 				</li>
 				<li id="tool_wallet" class="libox p-re">
-					<a href="personal.html" target="_blank" class="abox">
+					<a href="#" target="_blank" class="abox">
 						<span class="zc_wallet_i wallet_default"></span>钱<br>包
 					</a>
 
@@ -3945,11 +3962,10 @@
 							<font class="customService" style="cursor:pointer">在线客服</font>
 						</div>
 					</div>
-					<#--<a href="javascript:void(0);" onclick="online()" id="customService">在线客服</a>-->
 				</li>
 
 				<li id="tool_Help">
-					<a href="question.html" target="_blank"><span class="zc_help_i"></span></a>
+					<a href="#" target="_blank"><span class="zc_help_i"></span></a>
 					<div class="zc_foottooltipe" style="display: none;">
 						<div class="p-re" onclick="window.open(&#39;question.html&#39;)" style="display: none;">
 							<div class="rightsj" style="display: none;">◆</div>
@@ -3957,22 +3973,6 @@
 						</div>
 					</div>
 				</li>
-				<!--         <li><a href="javascript:void(0);"><span class="zc_share_i"></span></a> -->
-				<!--             <div class="zc_foottooltipe"> -->
-				<!--                 <div class="p-re"> -->
-				<!--                     <div class="rightsj">◆</div> -->
-				<!--                     分享 -->
-				<!--                 </div> -->
-				<!--             </div> -->
-				<!--         </li> -->
-				<!-- 		 <li style="margin-top: 28px"><a href="http://cn.mikecrm.com/YBz0Wou" target="_blank"><span class="zc_share_i"></span></a>
-            <div class="zc_foottooltipe">
-                <div class="p-re" onclick="window.open('http://cn.mikecrm.com/YBz0Wou')">
-                    <div class="rightsj">◆</div>
-                    	<font style="cursor:pointer"> 问卷</font>
-                </div>
-            </div>
-        </li> -->
 				<li>
 					<a href="https://www.wkzuche.com/#" style="border-bottom: none;"><span class="zc_top_i"></span></a>
 					<div class="zc_foottooltipe" style="display: none;">

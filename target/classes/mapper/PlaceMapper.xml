@@ -2,19 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qianfeng.wkrent.dao.PlaceMapper">
   <resultMap id="BaseResultMap" type="com.qianfeng.wkrent.dto.Place">
-    <id column="PLACE_ID" jdbcType="DECIMAL" property="placeId" />
-    <result column="PLACE_NAME" jdbcType="VARCHAR" property="placeName" />
-    <result column="PLACE_ADDRESS" jdbcType="VARCHAR" property="placeAddress" />
-    <result column="PLACE_LONGITUDE" jdbcType="VARCHAR" property="placeLongitude" />
-    <result column="PLACE_LATITUDE" jdbcType="VARCHAR" property="placeLatitude" />
-    <result column="PLACE_START_TIME" jdbcType="VARCHAR" property="placeStartTime" />
-    <result column="PLACE_END_TIME" jdbcType="VARCHAR" property="placeEndTime" />
-    <result column="PLACE_TEL" jdbcType="VARCHAR" property="placeTel" />
-  </resultMap>
+  <id column="PLACE_ID" jdbcType="DECIMAL" property="placeId" />
+  <result column="PLACE_NAME" jdbcType="VARCHAR" property="placeName" />
+  <result column="PLACE_ADDRESS" jdbcType="VARCHAR" property="placeAddress" />
+  <result column="PLACE_LONGITUDE" jdbcType="VARCHAR" property="placeLongitude" />
+  <result column="PLACE_LATITUDE" jdbcType="VARCHAR" property="placeLatitude" />
+  <result column="PLACE_START_TIME" jdbcType="VARCHAR" property="placeStartTime" />
+  <result column="PLACE_END_TIME" jdbcType="VARCHAR" property="placeEndTime" />
+  <result column="PLACE_TEL" jdbcType="VARCHAR" property="placeTel" />
+  <collection property="area" column="area_id" select="com.qianfeng.wkrent.dao.AreaMapper.selectById"/>
+</resultMap>
   <sql id="Base_Column_List">
     PLACE_ID, PLACE_NAME, PLACE_ADDRESS, PLACE_LONGITUDE, PLACE_LATITUDE, PLACE_START_TIME, 
-    PLACE_END_TIME, PLACE_TEL
+    PLACE_END_TIME, PLACE_TEL,area_id
   </sql>
+
+  <select id="selectByArea" resultMap="BaseResultMap">
+    SELECT P.Place_ID, P.Place_NAME, P.Place_ADDRESS, P.Place_LONGITUDE, P.Place_LATITUDE, P.Place_START_TIME,p.area_id,P.Place_END_TIME, P.Place_TEL
+    FROM tb_place p JOIN tb_area a
+    on p.area_id = a.area_id and a.area_name = #{areaName}
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

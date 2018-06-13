@@ -115,8 +115,6 @@ function getSiteStr(site) {
 
 //区域点击事件；
 function areaSelected(id,key,map,$this,e) {
-//	$("#"+id).empty();
-//	$("#"+id).html(areaMap.get(key));
 	$(".dot_query_add").hide();
 	$("#"+id).show();
 
@@ -128,7 +126,7 @@ function areaSelected(id,key,map,$this,e) {
     });
     $($this).css({
         'background': '#f23732',
-        'color': '#fff'
+        'color' '#fff':
     });
     e = e || window.event;
     e.stopPropagation();

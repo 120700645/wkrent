@@ -2,9 +2,14 @@ package com.qianfeng;
 
 import com.qianfeng.wkrent.cache.IRedisCache;
 import com.qianfeng.wkrent.cache.impl.RedisCache;
+import com.qianfeng.wkrent.dao.AreaMapper;
+import com.qianfeng.wkrent.dao.PlaceMapper;
 import com.qianfeng.wkrent.dao.RoleMapper;
+import com.qianfeng.wkrent.dto.Area;
+import com.qianfeng.wkrent.dto.Place;
 import com.qianfeng.wkrent.dto.Role;
 import com.qianfeng.wkrent.dto.User;
+import com.qianfeng.wkrent.service.IAreaService;
 import com.qianfeng.wkrent.service.IUserService;
 import com.qianfeng.wkrent.utils.MessageUtil;
 import com.qianfeng.wkrent.utils.ParamUtil;
@@ -17,6 +22,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import sun.java2d.pipe.SpanIterator;
 
+import java.util.List;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -33,6 +39,12 @@ public class OracleTest {
     private StringRedisTemplate template;
     @Autowired
     private IRedisCache redisCache;
+    @Autowired
+    private IAreaService areaService;
+    @Autowired
+    private PlaceMapper placeMapper;
+    @Autowired
+    private AreaMapper areaMapper;
 
     @Test
     public void testCase(){
@@ -89,5 +101,37 @@ public class OracleTest {
         Matcher matcher = pattern.matcher("18162327456");
         System.out.println(matcher.matches());
         System.out.println("18162327456".matches(ParamUtil.TEL_FORMAT));
+    }
+
+    @Test
+    public void testCase7(){
+        List<Area> areas = areaService.selectByCity(1);
+        for (Area area : areas) {
+            System.out.println(area.getAreaName());
+        }
+    }
+
+    @Test
+    public void testCase8(){
+        List<Place> places = placeMapper.selectByArea("机场/火车站/汽车站");
+        for (Place place : places) {
+            System.out.println(place.getPlaceName());
+        }
+    }
+
+    @Test
+    public void testCase9(){
+        List<Area> areas = areaMapper.selectByCityName("北京");
+        for (Area area : areas) {
+            System.out.println(area.getAreaName());
+        }
+    }
+
+    @Test
+    public void testCase10(){
+        List<Area> areas = areaService.selectByCityName("北京");
+        for (Area area : areas) {
+            System.out.println(area.getAreaName());
+        }
     }
 }
