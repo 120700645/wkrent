@@ -11,7 +11,7 @@ public interface CarMapper {
      * 通过汽车类型选择租车车辆
      * @return
      */
-    List<Car> selectCarByTypeId(int typeId);
+    List<Car> selectCarByTypeName(String typeName);
 
     int deleteByPrimaryKey(Integer carId);
 
@@ -24,4 +24,8 @@ public interface CarMapper {
     int updateByPrimaryKeySelective(Car record);
 
     int updateByPrimaryKey(Car record);
+
+    String selectCarNameById(Integer carId);
+
+    List<Car> selectByCityName(String cityName);
 }

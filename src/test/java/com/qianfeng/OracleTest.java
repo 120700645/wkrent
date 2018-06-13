@@ -3,12 +3,10 @@ package com.qianfeng;
 import com.qianfeng.wkrent.cache.IRedisCache;
 import com.qianfeng.wkrent.cache.impl.RedisCache;
 import com.qianfeng.wkrent.dao.AreaMapper;
+import com.qianfeng.wkrent.dao.CarMapper;
 import com.qianfeng.wkrent.dao.PlaceMapper;
 import com.qianfeng.wkrent.dao.RoleMapper;
-import com.qianfeng.wkrent.dto.Area;
-import com.qianfeng.wkrent.dto.Place;
-import com.qianfeng.wkrent.dto.Role;
-import com.qianfeng.wkrent.dto.User;
+import com.qianfeng.wkrent.dto.*;
 import com.qianfeng.wkrent.service.IAreaService;
 import com.qianfeng.wkrent.service.IUserService;
 import com.qianfeng.wkrent.utils.MessageUtil;
@@ -45,6 +43,8 @@ public class OracleTest {
     private PlaceMapper placeMapper;
     @Autowired
     private AreaMapper areaMapper;
+    @Autowired
+    private CarMapper carMapper;
 
     @Test
     public void testCase(){
@@ -133,5 +133,21 @@ public class OracleTest {
         for (Area area : areas) {
             System.out.println(area.getAreaName());
         }
+    }
+
+    @Test
+    public void testCase11(){
+        List<Car> cars = carMapper.selectByCityName("北京");
+        for (Car car : cars) {
+            System.out.println(car.getCarName());
+        }
+    }
+
+    @Test
+    public void testCase12(){
+        Car car = carMapper.selectByPrimaryKey(1);
+        System.out.println(car.getCarName());
+        String name = carMapper.selectCarNameById(1);
+        System.out.println(name);
     }
 }

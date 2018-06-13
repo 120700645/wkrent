@@ -18,6 +18,19 @@
         CAR_ID, CAR_NAME, CAR_DESC, CAR_IMG, TYPE_ID, BRAND_ID
      </sql>
 
+    <select id="selectByCityName" resultMap="BaseResultMap">
+        SELECT
+            c.CAR_ID, c.CAR_NAME, c.CAR_DESC, c.CAR_IMG, c.TYPE_ID, c.BRAND_ID
+        FROM
+            tb_car c
+            JOIN tb_place_car pc ON c.car_id = pc.car_id
+            JOIN tb_place p ON p.place_id = pc.place_id
+            JOIN tb_area a ON a.area_id = p.area_id
+            JOIN tb_city ci ON ci.city_id = a.city_id
+        WHERE
+            ci.city_name = #{cityName}
+    </select>
+
     <select id="selectCarNameById" resultType="java.lang.String">
         SELECT CAR_NAME
         FROM tb_car

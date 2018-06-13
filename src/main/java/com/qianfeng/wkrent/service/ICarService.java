@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface ICarService {
 
-    List<Car> findCarByTypeId(int typeId);
+    List<Car> findCarByTypeName(String typeName);
+
+    List<Car> selectByCityName(String cityName);
 }
