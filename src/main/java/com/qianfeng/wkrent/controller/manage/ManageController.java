@@ -26,9 +26,15 @@ public class ManageController {
 
     @RequestMapping("/preIndex")
     public String preIndex(){
-        return "indexManage";
+        return "main";
     }
 
+    /**
+     * 分页查询网点
+     * @param page
+     * @param model
+     * @return
+     */
     @RequestMapping("/placeList/{page}")
     public String plaveList(@PathVariable int page, Model model){
         PageBean<Place> pageBean = placeService.findAll(page);
@@ -36,10 +42,27 @@ public class ManageController {
         return "product-list";
     }
 
+    /**
+     * 查询所有订单
+     * @return
+     */
     @RequestMapping("/orderList")
     @ResponseBody
     public List<RentOrder> orderList(){
         List<RentOrder> rentOrders = rentOrderService.selectAll();
         return rentOrders;
     }
+
+    /**
+     * 分页查询订单
+     * @param page
+     * @return
+     */
+    @RequestMapping("/orderList/{page}")
+    public String orderListInPage(@PathVariable int page,Model model){
+        PageBean<RentOrder> page1 = rentOrderService.findInPage(page);
+        model.addAttribute("pages",page1);
+        return "morderlist";
+    }
+
 }

@@ -1634,36 +1634,36 @@
     cursor: pointer;
 }
 
-// .personal_right .coupon_list .amount {
-//     width: 100px;
-//     float: left;
-//     margin-top: 28px;
-//     overflow: hidden;
-//     text-align: center;
-// }
+ .personal_right .coupon_list .amount {
+    width: 100px;
+    float: left;
+     margin-top: 28px;
+     overflow: hidden;
+    text-align: center;
+ }
 
-// .personal_right .coupon_list .amount span:first-child {
-//     margin-top: 19px;
-//     font-size: 18px;
-//     width: 15px;
-// }
+ .personal_right .coupon_list .amount span:first-child {
+    margin-top: 19px;
+     font-size: 18px;
+     width: 15px;
+ }
 
-// .personal_right .coupon_list .amount span:nth-child(2) {
-//     font-size: 37px;
-//     margin-left: -5px;
-// }
+ .personal_right .coupon_list .amount span:nth-child(2) {
+     font-size: 37px;
+     margin-left: -5px;
+ }
 
-// .personal_right .coupon_list .effective_time {
-//     float: right;
-//     margin: 43px 13px 0 0;
-//     letter-spacing: 0.5px;
-//     font-size: 12px;
-// }
+ .personal_right .coupon_list .effective_time {
+    float: right;
+     margin: 43px 13px 0 0;
+     letter-spacing: 0.5px;
+     font-size: 12px;
+ }
 
-// .personal_right .coupon_list .effective_time p {
-//     height: 12px;
-//     line-height: 12px;
-// }
+ .personal_right .coupon_list .effective_time p {
+    height: 12px;
+     line-height: 12px;
+ }
 
 .personal_right .coupon_item {
     width: 272px;

@@ -19,6 +19,11 @@ public class PlaceService implements IPlaceService {
     private PlaceMapper placeMapper;
 
 
+    /**
+     * 分页查询
+     * @param page 页数
+     * @return
+     */
     @Override
     public PageBean<Place> findAll(int page) {
         Long count = placeMapper.selectCount();
@@ -31,6 +36,10 @@ public class PlaceService implements IPlaceService {
         return pageBean;
     }
 
+    /**
+     * 查询数量
+     * @return
+     */
     @Override
     public long count() {
         return placeMapper.selectCount();

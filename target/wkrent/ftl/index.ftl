@@ -2260,7 +2260,7 @@
 							<a href="${base}/user/preIndex">首页</a>
 						</li>
 						<li>
-							<a href="renting.html">租车自驾</a>
+							<a href="${base}/carType/list">租车自驾</a>
 						</li>
 						<li>
 							<a href="${base}/city/hotCityList">全国网点</a>

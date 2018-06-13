@@ -1,6 +1,8 @@
 package com.qianfeng.wkrent.dao;
 
+import com.qianfeng.wkrent.dto.Place;
 import com.qianfeng.wkrent.dto.RentOrder;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -24,4 +26,18 @@ public interface RentOrderMapper {
      * @return
      */
     List<RentOrder> selectAll();
+
+    /**
+     * 分页查询
+     * @param start
+     * @param end
+     * @return
+     */
+    List<RentOrder> selectInPage(@Param("start") int start, @Param("end") int end);
+
+    /**
+     * 查询数量
+     * @return
+     */
+    long selectCount();
 }
