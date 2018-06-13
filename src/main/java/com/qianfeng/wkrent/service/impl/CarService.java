@@ -15,9 +15,19 @@ public class CarService implements ICarService {
     @Autowired
     private CarMapper carDao;
 
+    @Override
+    public List<Car> findCarByTypeName(String typeName) {
+        return null;
+    }
 
     @Override
-    public List<Car> findCarByTypeId(int typeId) {
-        return carDao.selectCarByTypeId(typeId);
+    public List<Car> selectByCityName(String cityName) {
+        return null;
     }
+
+
+//    @Override
+//    public List<Car> findCarByTypeId(int typeId) {
+//        return carDao.selectCarByTypeId(typeId);
+//    }
 }

@@ -18,12 +18,12 @@ public class CarController {
     @Autowired
     private ICarService carService;
 
-    @RequestMapping("/list/{typeId}")
-    public String carList(@PathVariable int typeId, Model model){
-        List<Car> carList = carService.findCarByTypeId(typeId);
-        model.addAttribute("cars",carList);
-        return "";
+//    @RequestMapping("/list/{typeId}")
+//    public String carList(@PathVariable int typeId, Model model){
+//        List<Car> carList = carService.findCarByTypeId(typeId);
+//        model.addAttribute("cars",carList);
+//        return "";
     }
 
 
-}
+//}
