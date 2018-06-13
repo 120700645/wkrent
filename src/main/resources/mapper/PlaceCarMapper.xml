@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.wkrent.dao.PlaceCarMapper">
+    <resultMap id="ResultMap" type="com.qianfeng.wkrent.dto.entity.PlaceCar">
+        <id column="pc_id" property="pcId" />
+        <association property="place" column="place_id" select="com.qianfeng.wkrent.dao.PlaceMapper.selectByPrimaryKey"/>
+        <association property="car" column="car_id" select="com.qianfeng.wkrent.dao.CarMapper.selectByPrimaryKey"/>
+    </resultMap>
+
+    <select id="selectByPlaceId" resultMap="ResultMap">
+        SELECT pc_id,place_id,car_id FROM tb_place_car WHERE place_id = #{placeId}
+    </select>
+
+</mapper>

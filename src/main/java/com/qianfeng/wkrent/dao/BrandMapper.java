@@ -2,6 +2,8 @@ package com.qianfeng.wkrent.dao;
 
 import com.qianfeng.wkrent.dto.Brand;
 
+import java.util.List;
+
 public interface BrandMapper {
     int deleteByPrimaryKey(Integer brandId);
 
@@ -14,4 +16,6 @@ public interface BrandMapper {
     int updateByPrimaryKeySelective(Brand record);
 
     int updateByPrimaryKey(Brand record);
+
+    List<Brand> selectAll();
 }

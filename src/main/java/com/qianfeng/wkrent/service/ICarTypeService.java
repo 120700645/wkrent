@@ -7,4 +7,6 @@ import java.util.List;
 public interface ICarTypeService {
 
     List<CarType> findAllCarType();
+
+    Integer findCarId(String carName);
 }

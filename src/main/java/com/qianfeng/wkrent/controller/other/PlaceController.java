@@ -14,8 +14,8 @@ public class PlaceController {
     @Autowired
     private IPlaceService placeService;
 
-    @RequestMapping("/findAll")
-    public List<Place> findAll(String areaName){
-        return placeService.selectByAreaName(areaName);
-    }
+//    @RequestMapping("/findAll")
+//    public List<Place> findAll(String areaName){
+//        return placeService.selectByAreaName(areaName);
+//    }
 }

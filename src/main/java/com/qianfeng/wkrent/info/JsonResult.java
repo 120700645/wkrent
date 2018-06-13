@@ -48,8 +48,10 @@ public class JsonResult {
         this.resultData = resultData;
     }
 
-    public static JsonResult createSuccessJsonResult(List<Car> resultData){
-        return new JsonResult("0", "", resultData);
+
+
+    public static JsonResult createSuccessJsonResult(Object object){
+        return new JsonResult("0", "", object);
     }
 
     public static JsonResult createFailJsonResult(String code, String msg){

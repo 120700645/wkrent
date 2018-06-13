@@ -5,5 +5,5 @@ import com.qianfeng.wkrent.dto.Place;
 import java.util.List;
 
 public interface IPlaceService {
-    List<Place> selectByAreaName(String areaName);
+    Integer findIdByName(String placeName);
 }

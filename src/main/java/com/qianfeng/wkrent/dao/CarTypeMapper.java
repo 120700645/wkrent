@@ -20,4 +20,6 @@ public interface CarTypeMapper {
     int updateByPrimaryKeySelective(CarType record);
 
     int updateByPrimaryKey(CarType record);
+
+    int selectNameById(String carName);
 }

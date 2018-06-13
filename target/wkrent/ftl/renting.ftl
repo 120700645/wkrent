@@ -2681,10 +2681,12 @@
 								<figcaption category="deselect" class="selected">不限</figcaption>
 							</figure>
                             <#list carTypeList as list>
+								<a href="${base}/car/list/${list.typeId}">
                                 <figure class="jinji_fig" >
                                     <img  src="${base}/img/jingji.jpg" class="jinji_fig_img" >
                                     <figcaption class="fig_type" category="${list.typeName}">${list.typeName}</figcaption>
                                 </figure>
+								</a>
                             </#list>
 						</div>
 						<div>
@@ -2893,27 +2895,13 @@
 
             $(".jinji_fig").click(function () {
                 var carType = $(this).find("figcaption").text();
-                alert(type);
+                alert(carType);
                 if($(this).find("img").attr('src') == "${base}/img/jingji.jpg"){
                     $(this).find("img").attr('src',"${base}/img/jingji_selected.jpg");
                 }else{
                     $(this).find("img").attr('src',"${base}/img/jingji.jpg");
                 }
 
-                $.post("${base}/car/list", {"carType":carType},
-                        function (data) {
-                    alert("1111");
-                            if (data.code == "0"){
-                                alert(data.resultData);
-                                var carList = "";
-                                $.each(data.resultData,function () {
-                                    carList += "<tr><td>"+obj.carName+"</td><td>"+obj.carDasc+"</td><td>"+obj.carType.typeName+"</td><td>"+obj.brand.brandName+"</td></tr>";
-
-                                });
-                                ("#carList").html(carList);
-                            }
-                        }
-                )
             });
 
             /*------------------ajax-----------------------*/
@@ -3142,14 +3130,14 @@
 			</div>
 		</div>
 
-		<script type="text/javascript" src="/js/jquery-1.11.2.js"></script>
-		<script type="text/javascript" src="/js/mk-browsing.js"></script>
-		<script type="text/javascript" src="/js/public.js"></script>
-		<script type="text/javascript" src="/js/baidu.js"></script>
-		<script type="text/javascript" src="/js/tingyun-rum.js"></script>
-		<script type="text/javascript" src="/js/174750.js" async="" defer=""></script>
-		<script type="text/javascript" src="/js/ssyh.js"></script>
-		<script type="text/javascript" src="base}/js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="${base}/js/jquery-1.11.2.js"></script>
+		<script type="text/javascript" src="${base}/js/mk-browsing.js"></script>
+		<script type="text/javascript" src="${base}/js/public.js"></script>
+		<script type="text/javascript" src="${base}/js/baidu.js"></script>
+		<script type="text/javascript" src="${base}/js/tingyun-rum.js"></script>
+		<script type="text/javascript" src="${base}/js/174750.js" async="" defer=""></script>
+		<script type="text/javascript" src="${base}/js/ssyh.js"></script>
+		<script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
 
 		<style>
 			.zc_wallettooltipe {

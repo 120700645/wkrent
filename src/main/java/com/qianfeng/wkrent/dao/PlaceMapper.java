@@ -18,4 +18,6 @@ public interface PlaceMapper {
     int updateByPrimaryKey(Place record);
 
     List<Place> selectByArea(String areaName);
+
+    Integer selectIdByName(String placeName);
 }

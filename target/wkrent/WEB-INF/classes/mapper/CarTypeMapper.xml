@@ -18,6 +18,10 @@
         where TYPE_ID = #{typeId}
     </select>
 
+    <select id="selectNameById" resultType="java.lang.Integer">
+        select TYPE_ID FROM TB_CAR_TYPE WHERE TYPE_NAME = #{typeName}
+    </select>
+
     <select id="selectAllCarType" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />

@@ -7,6 +7,7 @@ import com.qianfeng.wkrent.dto.City;
 import com.qianfeng.wkrent.service.ICarService;
 import com.qianfeng.wkrent.service.ICarTypeService;
 import com.qianfeng.wkrent.service.ICityService;
+import com.qianfeng.wkrent.service.impl.CarService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +24,13 @@ public class OtherTest {
     private ICityService cityService;
 
     @Autowired
-    private ICarService carService;
-
-    @Autowired
     private ICarTypeService carTypeService;
 
     @Autowired
     private CarMapper carDao;
+
+    @Autowired
+    private CarService carService;
 
 
     @Test
@@ -38,13 +39,7 @@ public class OtherTest {
         System.out.println(car.getCarName());
     }
 
-    @Test
-    public  void testCase4(){
-        List<Car> carList = carDao.selectCarByTypeName("1");
-        for (Car car : carList) {
-            System.out.println(car.getCarName());
-        }
-    }
+
 
     @Test
     public void testCase1(){
@@ -107,5 +102,13 @@ public class OtherTest {
         }
         //return "site";
     }
+
+//    @Test
+//    public void findCar(){
+//        List<Car> carList = carService.findCarByTypeName("经济型");
+//        for (Car car : carList) {
+//            System.out.println(car.getCarName());
+//        }
+//    }
 
 }

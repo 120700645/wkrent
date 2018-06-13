@@ -17,4 +17,9 @@ public class CarTypeService implements ICarTypeService{
     public List<CarType> findAllCarType() {
         return carTypeDao.selectAllCarType();
     }
+
+    @Override
+    public Integer findCarId(String carName) {
+        return carTypeDao.selectNameById(carName);
+    }
 }

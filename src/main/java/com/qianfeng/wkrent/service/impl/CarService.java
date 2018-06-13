@@ -9,12 +9,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class CarService implements ICarService{
+public class CarService implements ICarService {
+
 
     @Autowired
     private CarMapper carDao;
+
+
     @Override
-    public List<Car> findCarByTypeName(String typeName) {
-        return carDao.selectCarByTypeName(typeName);
+    public List<Car> findCarByTypeId(int typeId) {
+        return carDao.selectCarByTypeId(typeId);
     }
 }

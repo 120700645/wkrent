@@ -31,11 +31,11 @@
         where CAR_ID = #{carId}
     </select>
 
-    <select id="selectCarByTypeName" resultMap="BaseResultMap">
+    <select id="selectCarByTypeId" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />
         from tb_car
-        where type_id = #{typeName}
+        where type_id = #{typeId}
     </select>
 
 
