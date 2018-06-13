@@ -1,5 +1,6 @@
 package com.qianfeng.wkrent.service.impl;
 
+import com.qianfeng.wkrent.dao.PlaceMapper;
 import com.qianfeng.wkrent.dto.Place;
 import com.qianfeng.wkrent.service.IPlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,10 @@ import java.util.List;
 @Service
 public class PlaceService implements IPlaceService {
     @Autowired
-    private IPlaceService placeService;
+    private PlaceMapper placeMapper;
 
     @Override
     public List<Place> selectByAreaName(String areaName) {
-        return placeService.selectByAreaName(areaName);
+        return placeMapper.selectByArea(areaName);
     }
 }

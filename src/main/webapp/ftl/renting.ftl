@@ -2893,7 +2893,7 @@
 
             $(".jinji_fig").click(function () {
                 var carType = $(this).find("figcaption").text();
-                alert(type);
+                alert(carType);
                 if($(this).find("img").attr('src') == "${base}/img/jingji.jpg"){
                     $(this).find("img").attr('src',"${base}/img/jingji_selected.jpg");
                 }else{

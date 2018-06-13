@@ -1,7 +1,9 @@
 package com.qianfeng.wkrent.dao;
 
 import com.qianfeng.wkrent.dto.Brand;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface BrandMapper {
     int deleteByPrimaryKey(Integer brandId);
 

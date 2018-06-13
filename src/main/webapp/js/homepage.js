@@ -328,26 +328,10 @@ function getNDaysLater(n) {
 }
 
 function toSearchLocalCar() {
-	var fromTime = $("#from_time").val();
-	if (fromTime) {
-		fromTime = fromTime + " " + $("#from_stamp").val();
-		sessionStorage.setItem("from_time", fromTime);
-	}
-	var toTime = $("#to_time").val();
-	if (fromTime) {
-		toTime = toTime + " " + $("#to_stamp").val();
-		sessionStorage.setItem("to_time", toTime);
-	}
-	var url = "";
-	if($(".tc-nav-item:eq(0)").hasClass("nav-item-style")){//同城自驾
-		url = "cartype/search.html";
-		if(sessionStorage.getItem("city_id")){
-			url = "cartype/search/"+sessionStorage.getItem("city_id")+".html";
-		}
-	}else{//异地还车
-		if(!checkInOffSite())
-			return;
-		url = "/cartype/offsite.html";
+	if($(".tc-nav-item:eq(0)").hasClass("nav-item-style")){		//同城自驾
+
+	}else{														//异地还车
+
 	}
 	window.location.href = url;
 }
@@ -421,7 +405,7 @@ function initRemmends(){
 }
 
 //通过城市获取对应的热门车型
-function initRecommendDetail(index,city_id,city_name){
+/*function initRecommendDetail(index,city_id,city_name){
 	var carList = $(".zc-recommend-carlist:eq("+index+")");
 	if(carList.html().trim() != '')
 		return;
@@ -482,4 +466,4 @@ function initRecommendDetail(index,city_id,city_name){
 			
 		}
 	});
-}
+}*/

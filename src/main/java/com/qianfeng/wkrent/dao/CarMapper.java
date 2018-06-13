@@ -26,4 +26,6 @@ public interface CarMapper {
     int updateByPrimaryKey(Car record);
 
     String selectCarNameById(Integer carId);
+
+    List<Car> selectByCityName(String cityName);
 }

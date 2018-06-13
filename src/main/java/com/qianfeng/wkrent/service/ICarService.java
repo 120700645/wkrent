@@ -8,4 +8,6 @@ import java.util.List;
 public interface ICarService {
 
     List<Car> findCarByTypeName(String typeName);
+
+    List<Car> selectByCityName(String cityName);
 }

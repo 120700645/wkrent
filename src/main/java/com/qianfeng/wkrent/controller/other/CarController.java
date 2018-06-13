@@ -19,11 +19,15 @@ public class CarController {
     private ICarService carService;
 
     @RequestMapping("/list")
-    private void carList(String carType,Model model){
+    public void carList(String carType,Model model){
         JsonResult jsonResult = null;
         List<Car> carList = carService.findCarByTypeName(carType);
         model.addAttribute("carList",carList);
     }
 
-
+    @RequestMapping("/selectByCity")
+    @ResponseBody
+    public List<Car> selectByCity(String cityName){
+        return carService.selectByCityName(cityName);
+    }
 }
