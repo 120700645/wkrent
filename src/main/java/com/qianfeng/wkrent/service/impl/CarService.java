@@ -21,7 +21,7 @@ public class CarService implements ICarService {
 
     @Override
     public List<Car> selectByCityName(String cityName) {
-        return null;
+        return carDao.selectByCityName(cityName);
     }
 
 

@@ -137,9 +137,9 @@ public class OracleTest {
 
     @Test
     public void testCase11(){
-        List<Car> cars = carMapper.selectByCityName("北京");
+        List<Car> cars = carMapper.selectByCityName("昆明");
         for (Car car : cars) {
-            System.out.println(car.getCarName());
+            System.out.println(car.getBrand().getBrandName() + " " +car.getCarName() + "/" + car.getCarImg());
         }
     }
 

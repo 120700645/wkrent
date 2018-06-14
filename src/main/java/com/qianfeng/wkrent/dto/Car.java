@@ -13,10 +13,20 @@ public class Car {
 
     private Integer brandId;
 
+    private Integer carPrice;
+
     //增加carType和brand
     private CarType carType;
 
     private Brand brand;
+
+    public Integer getCarPrice() {
+        return carPrice;
+    }
+
+    public void setCarPrice(Integer carPrice) {
+        this.carPrice = carPrice;
+    }
 
     public CarType getCarType() {
         return carType;

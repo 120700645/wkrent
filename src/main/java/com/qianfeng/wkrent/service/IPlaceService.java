@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IPlaceService {
     Integer findIdByName(String placeName);
+
+    List<Place> selectByAreaName(String areaName);
 }
