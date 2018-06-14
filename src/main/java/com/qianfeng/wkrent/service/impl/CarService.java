@@ -14,7 +14,6 @@ public class CarService implements ICarService {
 
     @Autowired
     private CarMapper carDao;
-
     @Override
     public List<Car> findCarByTypeName(String typeName) {
         return null;
@@ -30,4 +29,14 @@ public class CarService implements ICarService {
 //    public List<Car> findCarByTypeId(int typeId) {
 //        return carDao.selectCarByTypeId(typeId);
 //    }
+
+    @Override
+    public Car findCarById(Integer carId) {
+        return carDao.selectByPrimaryKey(carId);
+    }
+
+    @Override
+    public int saveSelective(Car car) {
+        return carDao.insertSelective(car);
+    }
 }

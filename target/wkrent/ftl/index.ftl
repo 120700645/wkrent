@@ -3,7 +3,7 @@
 <html lang="en">
 
 	<head>
-	<#assign base=rc.contextPath />
+	    <#assign base=rc.contextPath />
         <base id="base" href="${base}">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<script charset="utf-8" src="${base}/js/lxb.js"></script>
@@ -2266,6 +2266,12 @@
 						<li>
 							<a href="#">加盟悟空</a>
 						</li>
+                        <#--添加 后台管理模块-->
+                        <shiro:hasRole name = "admin">
+                            <li>
+                                <a href="${base}/manage/preIndex">后台管理系统</a>
+                            </li>
+                        </shiro:hasRole>
 					</ul>
 				</div>
 			</div>

@@ -63,9 +63,9 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">欢迎！<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">修改用户信息</a></li>
-                        <li><a href="#">修改密码</a></li>
+                        <li><a href="#">修改手机号</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">退出系统</a></li>
+                        <li><a href="${base}/user/preIndex">退出系统</a></li>
                     </ul>
                 </li>
             </ul>
@@ -103,8 +103,8 @@
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item"><a href="${base}/manage/orderList/1">订单列表</a></li>
-                        <li class="list-group-item"><a href="/manage/orderList/1">订单列表</a></li>
-                        <li class="list-group-item"><a href="/manage/orderList/1">订单列表</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">订单列表</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">订单列表</a></li>
                     </ul>
                 </div>
             </div>
@@ -120,16 +120,51 @@
             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item">加班审批</li>
-                        <li class="list-group-item">请假审批</li>
+                        <li class="list-group-item"><a href="${base}/car/add">添加车辆</a></li>
+                        <li class="list-group-item"></li>
                         <li class="list-group-item">补签审批</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        网点管理
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">服务网点列表</li>
+                        <li class="list-group-item">添加服务网点</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        用户管理
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">游客管理</li>
+                        <li class="list-group-item">会员管理</li>
+                        <li class="list-group-item">管理员管理</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
     <div class="jumbotron col-md-10">
-        <h1>Hello, world!</h1>
+        <h1 style="text-align: center;">Hello, welcome to wkrent Background management system!</h1>
     </div>
 </div>
 

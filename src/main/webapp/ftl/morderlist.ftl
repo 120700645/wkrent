@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>千锋教育OA系统</title>
+    <title>悟空租车OA系统</title>
 
     <!-- Bootstrap -->
     <link href="${base}/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">千锋教育OA系统</a>
+            <a class="navbar-brand" href="#">悟空租车OA系统</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -95,16 +95,15 @@
             <div class="panel-heading" role="tab" id="headingTwo">
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        考勤管理
+                        用户管理
                     </a>
                 </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item">我的考勤</li>
-                        <li class="list-group-item">请假加班</li>
-                        <li class="list-group-item">请假汇总</li>
+                        <li class="list-group-item">用户列表</li>
+                        <li class="list-group-item">添加用户</li>
                     </ul>
                 </div>
             </div>
@@ -160,7 +159,7 @@
                 <td>${page.orderDiscount}</td>
                 <td>${page.orderTotal}</td>
                 <td><span class="btn-success">${page.orderStatus}</td>
-                <td>删除&nbsp;更新</td>
+                <td><a href="">删除</a>&nbsp;<a href="">更新</a></td>
             </tr>
             </#list>
         </table>

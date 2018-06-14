@@ -30,6 +30,13 @@
     from TB_USER
     WHERE USER_TEL = #{userTel}
   </select>
+
+    <select id="selectRoles" resultType="java.lang.String">
+        select role_name from tb_user u
+        inner join tb_user_role ur on u.user_id=ur.user_id
+        inner join tb_role r on r.role_id=ur.role_id
+        and u.user_tel = #{userTel}
+    </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from TB_USER

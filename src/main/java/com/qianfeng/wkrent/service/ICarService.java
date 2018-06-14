@@ -9,5 +9,7 @@ public interface ICarService {
 
     List<Car> findCarByTypeName(String typeName);
 
-    List<Car> selectByCityName(String cityName);
+    Car findCarById(Integer carId);
+
+    int saveSelective(Car car);
 }

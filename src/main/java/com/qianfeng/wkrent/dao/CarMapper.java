@@ -17,8 +17,18 @@ public interface CarMapper {
 
     int insert(Car record);
 
+    /**
+     * 添加车辆(动态sql)
+     * @param record
+     * @return
+     */
     int insertSelective(Car record);
 
+    /**
+     * 通过car_id查找汽车
+     * @param carId
+     * @return
+     */
     Car selectByPrimaryKey(Integer carId);
 
     int updateByPrimaryKeySelective(Car record);

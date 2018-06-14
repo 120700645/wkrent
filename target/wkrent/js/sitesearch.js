@@ -129,6 +129,7 @@ function areaSelected(id,key,map,$this,e) {
         'color' '#fff':
     });
     e = e || window.event;
+    /*该方法将停止事件的传播，阻止它被分派到其他 Document 节点。*/
     e.stopPropagation();
 }
 

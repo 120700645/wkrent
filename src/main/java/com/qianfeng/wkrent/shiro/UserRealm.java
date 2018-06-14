@@ -1,14 +1,19 @@
 package com.qianfeng.wkrent.shiro;
 
 import com.qianfeng.wkrent.cache.IRedisCache;
+import com.qianfeng.wkrent.dao.UserMapper;
 import com.qianfeng.wkrent.dto.User;
 import com.qianfeng.wkrent.service.IUserService;
 import com.qianfeng.wkrent.utils.CodeGenerateUtil;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.HashSet;
+import java.util.List;
 
 public class UserRealm extends AuthorizingRealm {
     @Autowired
@@ -16,9 +21,25 @@ public class UserRealm extends AuthorizingRealm {
     @Autowired
     private IRedisCache redisCache;
 
+    @Autowired
+    private UserMapper userDao;
+
+    /**
+     * 获取授权信息（获取权限和角色信息）
+     * @param principal
+     * @return
+     */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principal) {
-        return null;
+        //查询角色信息
+        String pri = principal.getPrimaryPrincipal().toString();
+
+        List<String> roleList = userDao.selectRoles(pri);
+        HashSet<String> roles = new HashSet<>(roleList);
+        //将查询到角色信息封装到SimpleAuthorizationInfo对象中
+        SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
+        authorizationInfo.setRoles(roles);
+        return authorizationInfo;
     }
 
     @Override
