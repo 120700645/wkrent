@@ -9,26 +9,31 @@
         <result column="CAR_IMG" jdbcType="VARCHAR" property="carImg" />
         <result column="TYPE_ID" jdbcType="DECIMAL" property="typeId" />
         <result column="BRAND_ID" jdbcType="DECIMAL" property="brandId" />
+        <result column="CAR_PRICE" jdbcType="DECIMAL" property="carPrice" />
         <association property="carType" column="TYPE_ID" select="com.qianfeng.wkrent.dao.CarTypeMapper.selectByPrimaryKey"></association>
         <association property="brand" column="BRAND_ID" select="com.qianfeng.wkrent.dao.BrandMapper.selectByPrimaryKey"/>
 
     </resultMap>
 
     <sql id="Base_Column_List">
-        CAR_ID, CAR_NAME, CAR_DESC, CAR_IMG, TYPE_ID, BRAND_ID
+        CAR_ID, CAR_NAME, CAR_DESC, CAR_IMG, TYPE_ID, BRAND_ID,CAR_PRICE
      </sql>
 
     <select id="selectByCityName" resultMap="BaseResultMap">
+        select a.*
+        from(
         SELECT
-            c.CAR_ID, c.CAR_NAME, c.CAR_DESC, c.CAR_IMG, c.TYPE_ID, c.BRAND_ID
+        c.CAR_ID, c.CAR_NAME, c.CAR_DESC, c.CAR_IMG, c.TYPE_ID, c.BRAND_ID,c.CAR_PRICE,ROWNUM rn
         FROM
-            tb_car c
-            JOIN tb_place_car pc ON c.car_id = pc.car_id
-            JOIN tb_place p ON p.place_id = pc.place_id
-            JOIN tb_area a ON a.area_id = p.area_id
-            JOIN tb_city ci ON ci.city_id = a.city_id
+        tb_car c
+        JOIN tb_place_car pc ON c.car_id = pc.car_id
+        JOIN tb_place p ON p.place_id = pc.place_id
+        JOIN tb_area a ON a.area_id = p.area_id
+        JOIN tb_city ci ON ci.city_id = a.city_id
         WHERE
-            ci.city_name = #{cityName}
+        ci.city_name = #{cityName} and ROWNUM &lt;= 6
+        ) a
+        where rn &gt; 0
     </select>
 
     <select id="selectCarNameById" resultType="java.lang.String">

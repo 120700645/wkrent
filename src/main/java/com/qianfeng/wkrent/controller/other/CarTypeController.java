@@ -3,12 +3,10 @@ package com.qianfeng.wkrent.controller.other;
 import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import com.qianfeng.wkrent.dto.Brand;
 import com.qianfeng.wkrent.dto.CarType;
+import com.qianfeng.wkrent.dto.Place;
 import com.qianfeng.wkrent.dto.entity.PlaceCar;
 import com.qianfeng.wkrent.service.ICarTypeService;
-import com.qianfeng.wkrent.service.impl.BrandService;
-import com.qianfeng.wkrent.service.impl.CarService;
-import com.qianfeng.wkrent.service.impl.CarTypeService;
-import com.qianfeng.wkrent.service.impl.PlaceCarService;
+import com.qianfeng.wkrent.service.impl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +31,9 @@ public class CarTypeController {
     @Autowired
     private PlaceCarService placeCarService;
 
+    @Autowired
+    private PlaceService placeService;
+
     @RequestMapping("/search")
     public String list(String cityName,String placeName,String startTime,String endTime, Model model){
         List<CarType> carTypeList = carTypeService.findAllCarType();
@@ -40,11 +41,14 @@ public class CarTypeController {
         List<Brand> brandList = brandService.findAll();
         model.addAttribute("brandList",brandList);
         List<PlaceCar> placeCars = placeCarService.findCarById(placeName);
+        Place place = placeService.findByName(placeName);
         model.addAttribute("placeCars",placeCars);
         model.addAttribute("city",cityName);
         model.addAttribute("startTime",startTime);
         model.addAttribute("endTime",endTime);
-        return "/test";
+        model.addAttribute("placeName",placeName);
+        model.addAttribute("place",place);
+        return "/renting";
     }
 
     @RequestMapping("/carList")

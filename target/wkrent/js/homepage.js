@@ -329,9 +329,12 @@ function getNDaysLater(n) {
 
 function toSearchLocalCar() {
 	if($(".tc-nav-item:eq(0)").hasClass("nav-item-style")){		//同城自驾
-
+        var cityName = $("#fromCityName").val();
+        var placeName = $("#site_input").val();
+        alert(cityName)
+		alert(placeName)
 	}else{														//异地还车
-
+		alert(111)
 	}
 	window.location.href = url;
 }

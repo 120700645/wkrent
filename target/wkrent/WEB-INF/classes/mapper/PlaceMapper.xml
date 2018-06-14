@@ -30,6 +30,13 @@
     where PLACE_ID = #{placeId}
   </select>
 
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from TB_PLACE
+    where PLACE_NAME = #{placeName}
+  </select>
+
   <select id="selectIdByName" resultType="java.lang.Integer">
     SELECT PLACE_ID FROM TB_PLACE WHERE PLACE_NAME=#{placeName}
   </select>

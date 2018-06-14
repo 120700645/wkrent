@@ -2290,7 +2290,7 @@
 			<div class="city">
 				<div class="pinck_up_list" id="pinck_up_list">
 					<p>取车城市</p>
-					<ul name="dianji" style="position: relative;">北京</ul>
+					<ul name="dianji" style="position: relative;">${city}</ul>
 					<div id="popup_pane" class="popup_pane" style="display: none;">
 						<div class="city_classify">
 							<ul>
@@ -2504,7 +2504,7 @@
 				<div class="pinck_up_list" id="pinck_up_dot">
 					<p>取车网点</p>
 					<ul name="dot">
-						<li>大望路送车点</li>
+						<li>${placeName}</li>
 					</ul>
 					<div class="dot_query" no-close="dot_query" style="display: none;">
 						<div class="query" no-close="dot_query" style="display: block;">
@@ -2651,7 +2651,7 @@
 						<span class="lastWeek" id="start_week">周三</span>
 					</div>
 					<div class="time-box">
-						<input id="from_stamp" type="text" readonly="" value="10:00" class="time-box_input">
+						<input id="from_stamp" type="text" readonly="" value="${startTime}" class="time-box_input">
 					</div>
 				</div>
 				<div class="pinck_up_list date-box" day_id="to_time" stamp_id="to_stamp" style="width: 290px">
@@ -2661,7 +2661,7 @@
 						<span class="lastWeek" id="end_week">周五</span>
 					</div>
 					<div class="time-box">
-						<input id="to_stamp" type="text" readonly="" value="10:00" class="time-box_input">
+						<input id="to_stamp" type="text" readonly="" value="${endTime}" class="time-box_input">
 					</div>
 				</div>
 				<div class="now_choice_car">
@@ -2681,12 +2681,10 @@
 								<figcaption category="deselect" class="selected">不限</figcaption>
 							</figure>
                             <#list carTypeList as list>
-								<a href="${base}/car/list/${list.typeId}">
                                 <figure class="jinji_fig" >
                                     <img  src="${base}/img/jingji.jpg" class="jinji_fig_img" >
                                     <figcaption class="fig_type" category="${list.typeName}">${list.typeName}</figcaption>
                                 </figure>
-								</a>
                             </#list>
 						</div>
 						<div>
@@ -2695,7 +2693,7 @@
 								<tbody>
 									<tr>
 										<td class="carmodels-btn-style">全部</td>
-										<td brand="大众"></td>
+										<td brand="大众">大众</td>
 										<td brand="奥迪">奥迪</td>
 										<td brand="现代">现代</td>
 										<td brand="起亚">起亚</td>
@@ -2748,22 +2746,23 @@
 					<div class="dot_car_list_o_left"></div>
 					<div class="dot_car_list_o_right">
 						<div class="dot_car_list_o_right_top">
-							<p class="dot-address"><strong>大望路送车点 </strong><img style="vertical-align: middle;padding-right: 2px;margin-top:-3px;" src="${base}/img/brand.png"><i>营业时间 :</i> <em>09:00-19:00 </em><i>网点电话 :</i> <em>400-0515-507 </em> </p>
-							<p class="dot-map"><i>网点地址 : </i><em style="font-size: 14px">北京市朝阳区西大望路12号大望写字楼102室 </em><img style="vertical-align: middle;padding-right: 2px;" src="${base}/img/blue_map.png"><strong site_name="大望路送车点" site_time="09:00-19:00" site_address="北京市朝阳区西大望路12号大望写字楼102室" site_lng="116.486026" site_lat="39.911476" site_phone="400-0515-507">查看地图</strong></p>
+							<p class="dot-address"><strong>${place.placeName}</strong><img style="vertical-align: middle;padding-right: 2px;margin-top:-3px;" src="${base}/img/brand.png"><i>营业时间 :</i> <em>${place.placeStartTime}-${place.placeEndTime} </em><i>网点电话 :</i> <em>${place.placeTel}</em> </p>
+							<p class="dot-map"><i>网点地址 : </i><em style="font-size: 14px">${place.placeAddress}</em><img style="vertical-align: middle;padding-right: 2px;" src="${base}/img/blue_map.png"><strong site_name="大望路送车点" site_time="09:00-19:00" site_address="北京市朝阳区西大望路12号大望写字楼102室" site_lng="116.486026" site_lat="39.911476" site_phone="400-0515-507">查看地图</strong></p>
 							<div class="spring-festival-activity" style="height: auto;"><label>正在进行1</label>个活动 :
 								<div><i style="border:1px solid #ff534c;color:#ff534c">减</i><strong class="display-whole"><strong>悟空端午激情放纵，下单最高立减618</strong></strong>
 								</div><b index="0" style="display: none;"></b></div>
 							<div class="occupy"></div>
 						</div>
 						<ul>
-							<li class="dot_car_list_o_li"><img src="${base}/img/694d7f45-1a5b-4f97-8d13-43d306812937.jpg">
+							<#list placeCars as car>
+							<li class="dot_car_list_o_li"><img src="${base}/img/${car.car.carImg}">
 								<div class="dot_car_list_o_divo">
-									<h4 title="别克 凯越">别克 凯越</h4>
+									<h4 title="${car.car.carName}">${car.car.carName}</h4>
 									<ol style="width:186px">
-										<li>三厢车 |</li>
-										<li>1.5L |</li>
-										<li>自动 |</li>
-										<li>可载5人</li>
+										<li>${car.car.carDesc}</li>
+										<#--<li>1.5L |</li>-->
+										<#--<li>自动 |</li>-->
+										<#--<li>可载5人</li>-->
 									</ol><i style="border:1px solid undefined;color:undefined">减</i></div>
 								<div class="dot_car_list_o_divt price-box">
 									<p><span>￥</span><i>118</i><em>/日均</em></p>
@@ -2771,6 +2770,7 @@
 								</div>
 								<div id="list_reserve" class="dot_car_list_o_divth btn-style" onclick="toOrderPages(&#39;BUICK_EXCELLE_201515LAT01&#39;,&#39;11_site_064&#39;,&#39;北京&#39;,&#39;110000&#39;,&#39;null&#39;);">预订</div>
 							</li>
+							</#list>
 						</ul>
 						<div style="clear: both;" class="more_dot">更多其他网点</div>
 						<div class="dot_car_list_o_right_top">

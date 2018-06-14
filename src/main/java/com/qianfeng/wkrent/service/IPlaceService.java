@@ -8,4 +8,6 @@ public interface IPlaceService {
     Integer findIdByName(String placeName);
 
     List<Place> selectByAreaName(String areaName);
+
+    Place findByName(String placeName);
 }

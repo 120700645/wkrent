@@ -2345,6 +2345,7 @@
 
                                     var html = "";
                                     $.each(data,function (index,place) {
+                                        alert(111)
                                         if(index == 0){
                                             html+="<ol class=\"dot_query_add\" id=\"dot_query_add_" + place.area.areaName + "\" style=\"display: block;\">";
                                         }
@@ -2488,11 +2489,26 @@
 						</div>
 					</div>
 					<div class="home_rent_days">租期: <span>2天</span></div>
-					<input type="button" value="立即选车" id="home_select" class="s_btn" title="" onclick="toSearchLocalCar();">
+					<input type="button" value="立即选车" id="home_select" class="s_btn" title="" onclick="choose();">
 				</div>
 			</div>
 		</div>
-
+		<script>
+			function choose() {
+                if($(".tc-nav-item:eq(0)").hasClass("nav-item-style")){
+                    var cityName = $("#fromCityName").val();
+                    var placeName = $("#site_input").val();
+                    var startTime = $("#from_time").val() + " " + $("#from_stamp").val();
+                    var endTime = $("#to_time").val() + " " + $("#to_stamp").val();
+                    window.location.href="carType/search"
+                }else{
+                    var takeCityName = $("#takeCityName").val()
+					var stillCityName = $("#stillCityName").val();
+                    alert(takeCityName)
+					alert(stillCityName)
+				}
+            }
+		</script>
 		<!-- 改版新增 -->
 		<div class="zc-slogan">
 			<div>中国领先的自驾租车品牌</div>
@@ -2533,7 +2549,6 @@
 		</div>
 		<div class="zc-hot-recommend switch">
 			<ul id="recommend_citys">
-
 				<li class="switch" index="0" city_id="530100" city_name="昆明">昆明</li>
 				<li index="1" city_id="610100" city_name="西安">西安</li>
 				<li index="2" city_id="110000" city_name="北京">北京</li>
@@ -2542,8 +2557,39 @@
 				<li index="5" city_id="210200" city_name="大连">大连</li>
 			</ul>
 		</div>
-		<div class="zc-recommend-carlist" style="display: block;">
-			<div class="zc-car-detail avail-click" city_id="530100 " city_name="昆明 " site_id="53_site_088" brand_name="现代" series_name="朗动" car_type_id="HYUNDAI_LANGDONG_201316LAT01">
+		<script>
+			$(function () {
+				carList("昆明",0);
+            })
+			function carList(cityName,index) {
+				$.post("${base}/car/selectByCity",{"cityName":cityName},function (data) {
+				    var html = "";
+					$.each(data,function (index,car) {
+					    if(index == 1 || index == 4){
+                            html+="<div class=\"zc-car-detail avail-click zc-car-detail-difference\" city_name=\"" + cityName + " \" brand_name=\"" + car.brand.brandName + "\" series_name=\"" + car.carName + "\">"+
+                                    "<div><img img_src=\"//static.wkzuche.com/www/mages/search/jiazaizhong.png\" src=\"${base}/img/" + car.carImg + "\"></div>"+
+                                    "<div class=\"dot_car_list_o_divo\">"+
+                                    "<h4>" + car.carName +"</h4><ol><li>"+car.carDesc + "</li></ol></div><div class=\"dot_car_list_o_divt\">"+
+                                    "<p><span>￥</span><i>" + car.carPrice + "</i><em>/日均</em></p></div></div>";
+						}else{
+                            html+="<div class=\"zc-car-detail avail-click\" city_name=\"" + cityName + " \" brand_name=\"" + car.brand.brandName + "\" series_name=\"" + car.carName + "\">"+
+                                    "<div><img img_src=\"//static.wkzuche.com/www/mages/search/jiazaizhong.png\" src=\"${base}/img/" + car.carImg + "\"></div>"+
+                                    "<div class=\"dot_car_list_o_divo\">"+
+                                    "<h4>" + car.carName +"</h4><ol><li>"+car.carDesc + "</li></ol></div><div class=\"dot_car_list_o_divt\">"+
+                                    "<p><span>￥</span><i>" + car.carPrice + "</i><em>/日均</em></p></div></div>";
+						}
+                    });
+					$("#car_list" + index).html(html);
+                })
+            }
+			$("#recommend_citys li").click(function () {
+				var cityName = $(this).text();
+				var index = $(this).attr('index');
+				carList(cityName,index);
+            })
+		</script>
+		<div class="zc-recommend-carlist" id="car_list0" style="display: block;">
+			<#--<div class="zc-car-detail avail-click" city_id="530100 " city_name="昆明 " site_id="53_site_088" brand_name="现代" series_name="朗动" car_type_id="HYUNDAI_LANGDONG_201316LAT01">
 				<div><img img_src="//static.wkzuche.com/www/mages/search/jiazaizhong.png" src="${base}/img/97a78a9a-2675-4f56-8b37-d19ecc453224.jpg"></div>
 				<div class="dot_car_list_o_divo">
 					<h4>朗动</h4>
@@ -2556,8 +2602,8 @@
 				<div class="dot_car_list_o_divt">
 					<p><span>￥</span><i>79</i><em>/日均</em></p>
 				</div>
-			</div>
-			<div class="zc-car-detail avail-click zc-car-detail-difference" city_id="530100 " city_name="昆明 " site_id="53_site_088" brand_name="大众" series_name="桑塔纳" car_type_id="VW_SANTANA_201516LAT06">
+			</div>-->
+			<#--<div class="zc-car-detail avail-click zc-car-detail-difference" city_id="530100 " city_name="昆明 " site_id="53_site_088" brand_name="大众" series_name="桑塔纳" car_type_id="VW_SANTANA_201516LAT06">
 				<div><img img_src="//static.wkzuche.com/www/mages/search/jiazaizhong.png" src="${base}/img/22074000-8786-4344-822e-8048830c890d.jpg"></div>
 				<div class="dot_car_list_o_divo">
 					<h4>桑塔纳</h4>
@@ -2570,8 +2616,8 @@
 				<div class="dot_car_list_o_divt">
 					<p><span>￥</span><i>59</i><em>/日均</em></p>
 				</div>
-			</div>
-			<div class="zc-car-detail avail-click" city_id="530100 " city_name="昆明 " site_id="53_site_088" brand_name="别克" series_name="别克GL8" car_type_id="BUICK_GL8_201725LAT01">
+			</div>-->
+			<#--<div class="zc-car-detail avail-click" city_id="530100 " city_name="昆明 " site_id="53_site_088" brand_name="别克" series_name="别克GL8" car_type_id="BUICK_GL8_201725LAT01">
 				<div><img img_src="//static.wkzuche.com/www/mages/search/jiazaizhong.png" src="${base}/img/3b5979cf-abcc-4c36-b67e-1c0acc87aac4.jpg"></div>
 				<div class="dot_car_list_o_divo">
 					<h4>别克GL8</h4>
@@ -2584,8 +2630,8 @@
 				<div class="dot_car_list_o_divt">
 					<p><span>￥</span><i>309</i><em>/日均</em></p>
 				</div>
-			</div>
-			<div class="zc-car-detail avail-click" city_id="530100 " city_name="昆明 " site_id="53_site_034" brand_name="现代" series_name="悦动" car_type_id="HYUNDAI_ELANTRA-YD_201516LAT01">
+			</div>-->
+			<#--<div class="zc-car-detail avail-click" city_id="530100 " city_name="昆明 " site_id="53_site_034" brand_name="现代" series_name="悦动" car_type_id="HYUNDAI_ELANTRA-YD_201516LAT01">
 				<div><img img_src="//static.wkzuche.com/www/mages/search/jiazaizhong.png" src="${base}/img/14b236f6-ddf4-4548-8010-600931b5b700.jpg"></div>
 				<div class="dot_car_list_o_divo">
 					<h4>悦动</h4>
@@ -2598,8 +2644,8 @@
 				<div class="dot_car_list_o_divt">
 					<p><span>￥</span><i>179</i><em>/日均</em></p>
 				</div>
-			</div>
-			<div class="zc-car-detail avail-click zc-car-detail-difference" city_id="530100 " city_name="昆明 " site_id="53_site_034" brand_name="大众" series_name="捷达" car_type_id="VW_JETTA_201516LAT02">
+			</div>-->
+			<#--<div class="zc-car-detail avail-click zc-car-detail-difference" city_id="530100 " city_name="昆明 " site_id="53_site_034" brand_name="大众" series_name="捷达" car_type_id="VW_JETTA_201516LAT02">
 				<div><img img_src="//static.wkzuche.com/www/mages/search/jiazaizhong.png" src="${base}/img/ecbde9c6-364d-49d9-b1e3-40e76bf9b497.jpg"></div>
 				<div class="dot_car_list_o_divo">
 					<h4>捷达</h4>
@@ -2612,8 +2658,8 @@
 				<div class="dot_car_list_o_divt">
 					<p><span>￥</span><i>129</i><em>/日均</em></p>
 				</div>
-			</div>
-			<div class="zc-car-detail avail-click" city_id="530100 " city_name="昆明 " site_id="53_site_034" brand_name="别克" series_name="凯越" car_type_id="BUICK_EXCELLE_201515LAT01">
+			</div>-->
+			<#--<div class="zc-car-detail avail-click" city_id="530100 " city_name="昆明 " site_id="53_site_034" brand_name="别克" series_name="凯越" car_type_id="BUICK_EXCELLE_201515LAT01">
 				<div><img img_src="//static.wkzuche.com/www/mages/search/jiazaizhong.png" src="${base}/img/694d7f45-1a5b-4f97-8d13-43d306812937.jpg"></div>
 				<div class="dot_car_list_o_divo">
 					<h4>凯越</h4>
@@ -2626,13 +2672,13 @@
 				<div class="dot_car_list_o_divt">
 					<p><span>￥</span><i>169</i><em>/日均</em></p>
 				</div>
-			</div>
+			</div>-->
 		</div>
-		<div class="zc-recommend-carlist" style="display: none;"></div>
-		<div class="zc-recommend-carlist" style="display: none;"></div>
-		<div class="zc-recommend-carlist" style="display: none;"></div>
-		<div class="zc-recommend-carlist" style="display: none;"></div>
-		<div class="zc-recommend-carlist" style="display: none;"></div>
+		<div class="zc-recommend-carlist" id="car_list1" style="display: none;"></div>
+		<div class="zc-recommend-carlist" id="car_list2" style="display: none;"></div>
+		<div class="zc-recommend-carlist" id="car_list3" style="display: none;"></div>
+		<div class="zc-recommend-carlist" id="car_list4" style="display: none;"></div>
+		<div class="zc-recommend-carlist" id="car_list5" style="display: none;"></div>
 		<div class="zc-slogan">
 			<div>轻松租车</div>
 			<p></p>
@@ -2654,7 +2700,7 @@
 							<p>短租服务</p>
 						</div>
 						<div class="index-split"></div>
-						<div class="short-service" onclick="window.open(&#39;site.html&#39;)">
+						<div class="short-service" onclick="window.open(&#39;${base}/city/hotCityList&#39;)">
 							<img src="${base}/img/weizhi.png">
 							<p>查看网点</p>
 						</div>

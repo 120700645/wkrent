@@ -18,6 +18,11 @@ public class PlaceService implements IPlaceService {
     }
 
     @Override
+    public Place findByName(String placeName) {
+        return placeMapper.selectByName(placeName);
+    }
+
+    @Override
     public List<Place> selectByAreaName(String areaName) {
         return placeMapper.selectByArea(areaName);
     }

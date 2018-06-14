@@ -20,4 +20,6 @@ public interface PlaceMapper {
     List<Place> selectByArea(String areaName);
 
     Integer selectIdByName(String placeName);
+
+    Place selectByName(String placeName);
 }
