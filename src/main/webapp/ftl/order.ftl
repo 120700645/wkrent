@@ -104,7 +104,7 @@
                 <span class="span-type" id="car_type_name">别克 凯越 <a>或同组车型</a></span>
                 <span class="span-config" id="car_type_msg">自动|1.5L|可载5人|三厢车</span>
                 <!-- 					<span class="span-days" id="car_lease"></span> -->
-                <a href="${base}/carType/list" style="text-decoration: none"><span class="span-btn">重新选车</span></a>
+                <a href="${base}/carType/search" style="text-decoration: none"><span class="span-btn">重新选车</span></a>
             </p>
         </div>
         <div class="header-r">
@@ -154,13 +154,21 @@
         </div>
         <div class="cl"></div>
     </div>
-
+<script type="text/javascript">
+    $(function () {
+        var length = $("#di_1").html();
+        $("#che_1").click(function () {
+            $("#di_1").html(200);
+        })
+    })
+</script>
     <div class="zc-order-other">
         <div class="option-serve" id="optional_services">
+
             <p class="title-p">可选服务</p>
             <ul class="serve_ul">
-                <li type="type_2" value="INS_ADDITIONAL"><i></i><span>车损无忧服务<img class="prompt_img" src="${base}/img/explain-icon.png" alt="车损无忧服务说明"></span>
-                    <a>￥0</a>
+                <li type="type_2" value="INS_ADDITIONAL"><i id="che_1"></i><span>车损无忧服务<img class="prompt_img" src="${base}/img/explain-icon.png" alt="车损无忧服务说明"></span>
+                    <a id="di_1">￥0</a>
                     <div class="triangle_border">
                         <div class="popup" style="left: 140px;"><span><em></em></span>客户购买车损无忧服务后，无需承担保险理赔范围内的车辆维修损失。<br>￥50/天</div>
                     </div>

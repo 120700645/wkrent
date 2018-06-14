@@ -96,13 +96,13 @@
         var  s2 = $(".sss2").text();
         var s3 = $(".sss3").text();
         if(s == "1"){
-            $(".sss1").text("未完成");
+            $(".sss1").text("已取消");
         }
         if(s2 == "2"){
             $(".sss2").text("进行中");
         }
         if(s3 == "3"){
-            $(".sss3").text("待提交");
+            $(".sss3").text("已完成");
         }
     })
 
@@ -164,11 +164,11 @@
 
 
                         <tr>
-                            <td class="personal_order_ft"><img src="${base}/img/694d7f45-1a5b-4f97-8d13-43d306812937.jpg">
+                            <td class="personal_order_ft"><img src="${base}/img/${list.car.carImg}">
                                 <p>订单号 : ${list.orderNum}</p>
                             </td>
                             <td>
-                                <p><b>${list.carName}</b><span>或同组车型</span></p>
+                                <p><b>${list.car.carName}</b><span>或同组车型</span></p>
                                 <p><span>取</span><i></i><span>还</span></p>
                                 <div><strong>${list.orderTakeTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.takePlace.placeAddress}</em></b></div>
                                 <div><strong>${list.orderReturnTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.returnPlace.placeAddress}</em></b></div>
@@ -312,28 +312,28 @@
                         </tr>
                         </thead>
                         <tbody id="cancleTbody">
-                        <#list rentOrderList1 as list>
+                        <#--<#list rentOrderList1 as list>-->
 
 
-                        <tr>
-                            <td class="personal_order_ft"><img src="${base}/img/694d7f45-1a5b-4f97-8d13-43d306812937.jpg">
-                                <p>订单号 : ${list.orderNum}</p>
-                            </td>
-                            <td>
-                                <p><b>${list.carName}</b><span>或同组车型</span></p>
-                                <p><span>取</span><i></i><span>还</span></p>
-                                <div><strong>${list.orderTakeTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.takePlace.placeAddress}</em></b></div>
-                                <div><strong>${list.orderReturnTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.returnPlace.placeAddress}</em></b></div>
-                            </td>
-                            <td>
-                                <p>${list.orderTotal}</p><span orderid="10230421" uid="13212780854">费用明细</span></td>
-                            <td>
-                                <p  class="sss${list.orderStatus}">${list.orderStatus}</p>
-                            </td>
-                            <td style="padding-top:50px;">
-                                <p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>
-                        </tr>
-                        </#list>
+                        <#--<tr>-->
+                            <#--<td class="personal_order_ft"><img src="${base}/img/${list.car.carImg}">-->
+                                <#--<p>订单号 : ${list.orderNum}</p>-->
+                            <#--</td>-->
+                            <#--<td>-->
+                                <#--<p><b>${list.car.carName}</b><span>或同组车型</span></p>-->
+                                <#--<p><span>取</span><i></i><span>还</span></p>-->
+                                <#--<div><strong>${list.orderTakeTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.takePlace.placeAddress}</em></b></div>-->
+                                <#--<div><strong>${list.orderReturnTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.returnPlace.placeAddress}</em></b></div>-->
+                            <#--</td>-->
+                            <#--<td>-->
+                                <#--<p>${list.orderTotal}</p><span orderid="10230421" uid="13212780854">费用明细</span></td>-->
+                            <#--<td>-->
+                                <#--<p  class="sss${list.orderStatus}">${list.orderStatus}</p>-->
+                            <#--</td>-->
+                            <#--<td style="padding-top:50px;">-->
+                                <#--<p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>-->
+                        <#--</tr>-->
+                        <#--</#list>-->
                         </tbody>
                     </table>
                 </div>

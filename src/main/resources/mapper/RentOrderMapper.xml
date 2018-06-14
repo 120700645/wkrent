@@ -13,7 +13,7 @@
     <result column="ORDER_DISCOUNT" jdbcType="DECIMAL" property="orderDiscount" />
     <result column="ORDER_TOTAL" jdbcType="DECIMAL" property="orderTotal" />
     <result column="ORDER_STATUS" jdbcType="VARCHAR" property="orderStatus" />
-    <association property="carName" column="CAR_ID" select="com.qianfeng.wkrent.dao.CarMapper.selectCarNameById"/>
+    <association property="car" column="car_id" select="com.qianfeng.wkrent.dao.CarMapper.selectByPrimaryKey"/>
     <association property="takePlace" column="take_place_id" select="com.qianfeng.wkrent.dao.PlaceMapper.selectByPrimaryKey"/>
     <association property="returnPlace" column="return_place_id" select="com.qianfeng.wkrent.dao.PlaceMapper.selectByPrimaryKey"/>
   </resultMap>

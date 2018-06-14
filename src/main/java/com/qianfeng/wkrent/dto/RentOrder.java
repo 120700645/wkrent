@@ -25,11 +25,19 @@ public class RentOrder {
 
     private String orderStatus;
 
-    private String carName;
+    private Car car;
 
     private Place takePlace;
 
     private Place returnPlace;
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
 
     public Place getTakePlace() {
         return takePlace;
@@ -45,14 +53,6 @@ public class RentOrder {
 
     public void setReturnPlace(Place returnPlace) {
         this.returnPlace = returnPlace;
-    }
-
-    public String getCarName() {
-        return carName;
-    }
-
-    public void setCarName(String carName) {
-        this.carName = carName;
     }
 
     public Integer getOrderId() {
