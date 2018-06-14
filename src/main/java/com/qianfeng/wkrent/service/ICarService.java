@@ -12,4 +12,6 @@ public interface ICarService {
     Car findCarById(Integer carId);
 
     int saveSelective(Car car);
+
+    List<Car> selectByCityName(String cityName);
 }
