@@ -295,13 +295,13 @@ span.span-main {
     margin: 21px 14px 0 0;
     -webkit-background-size: cover;
     background-size: cover;
-    background-image: url("../../images/order/no-check-icon.png");
+    background-image: url("../img/no-check-icon.png");
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .option-serve ul li i.check-i, .option-beused ul li i.check-i {
-    background-image: url("../../images/order/check-icon.png");
+    background-image: url("../img/check-icon.png");
 }
 
 .option-serve div.tour-insurance-list {

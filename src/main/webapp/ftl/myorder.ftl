@@ -38,7 +38,7 @@
                     </div>
                     <div id="no-login" style="display:none;top:56px;border-top: 1PX solid #E4E6E9;">
                         <p>
-                            <a href="myorder.html">我的租车订单</a>
+                            <a href="${base}/renOrder/selectAll">我的租车订单</a>
                         </p>
                         <p>
                             <a href="${base}/coupon/selectAll">我的优惠券</a>
@@ -80,32 +80,49 @@
     </div>
 </div>
 <div class="simpleSpace"></div>
-<script charset="utf-8" src="js/lxb.js"></script>
-<script charset="utf-8" src="js/v.js"></script>
-<script type="text/javascript" async="" src="js/66c0b3fb.js"></script>
-<script src="js/hm.js"></script>
-<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
-<script type="text/javascript" src="js/header.js"></script>
+<script charset="utf-8" src="${base}/js/lxb.js"></script>
+<script charset="utf-8" src="${base}/js/v.js"></script>
+<script type="text/javascript" async="" src="${base}/js/66c0b3fb.js"></script>
+<script src="${base}/js/hm.js"></script>
+<script type="text/javascript" src="${base}/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="${base}/js/public.js"></script>
+<script type="text/javascript" src="${base}/js/header.js"></script>
 <script type="text/javascript">
     var CONTEXT_PATH = "";
     var HeaderUid = "13212780854";
     var userId = "11214904";
+    $(function () {
+        var s = $(".sss1").text();
+        var  s2 = $(".sss2").text();
+        var s3 = $(".sss3").text();
+        if(s == "1"){
+            $(".sss1").text("未完成");
+        }
+        if(s2 == "2"){
+            $(".sss2").text("进行中");
+        }
+        if(s3 == "3"){
+            $(".sss3").text("待提交");
+        }
+    })
+
+
+
 </script>
 <div style="clear: both;"></div>
 <div class="personal">
     <div class="personal_left">
-        <h4><a href="personal.html">个人中心</a></h4>
+        <h4><a href="${base}/rentOrder/personal">个人中心</a></h4>
         <ul>
             <li style="background: #f9f9f9 url(//static.wkzuche.com/www/images/personal/l.png) no-repeat left center;color: #d62b1f!important;">我的订单</li>
             <li>
-                <a href="mycoupon.html">我的优惠券</a>
+                <a href="${base}/coupon/selectAll"">我的优惠券</a>
             </li>
             <li>
-                <a href="auth.html">实名认证</a>
+                <a href="${base}/auth/list">实名认证</a>
             </li>
             <li>
-                <a href="feedback.html">投诉与建议</a>
+                <a href="${base}/auth/feedBack">投诉与建议</a>
             </li>
         </ul>
     </div>
@@ -153,18 +170,19 @@
                             <td>
                                 <p><b>${list.carName}</b><span>或同组车型</span></p>
                                 <p><span>取</span><i></i><span>还</span></p>
-                                <div><strong>${list.orderTakeTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.orderTakePlace}</em></b></div>
-                                <div><strong>${list.orderReturnTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.orderReturnPlace}</em></b></div>
+                                <div><strong>${list.orderTakeTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.takePlace.placeAddress}</em></b></div>
+                                <div><strong>${list.orderReturnTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.returnPlace.placeAddress}</em></b></div>
                             </td>
                             <td>
                                 <p>${list.orderTotal}</p><span orderid="10230421" uid="13212780854">费用明细</span></td>
                             <td>
-                                <p>${list.orderStatus}</p>
+                                <p  class="sss${list.orderStatus}">${list.orderStatus}</p>
                             </td>
                             <td style="padding-top:50px;">
                                 <p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>
                         </tr>
                         </#list>
+
                         <#--<tr>-->
                             <#--<td class="personal_order_ft"><img src="${base}/img/90c05af9-e892-4c76-9fbc-29e423aa2cd5.jpg">-->
                                 <#--<p>订单号 : 10229465</p>-->
@@ -294,6 +312,28 @@
                         </tr>
                         </thead>
                         <tbody id="cancleTbody">
+                        <#list rentOrderList1 as list>
+
+
+                        <tr>
+                            <td class="personal_order_ft"><img src="${base}/img/694d7f45-1a5b-4f97-8d13-43d306812937.jpg">
+                                <p>订单号 : ${list.orderNum}</p>
+                            </td>
+                            <td>
+                                <p><b>${list.carName}</b><span>或同组车型</span></p>
+                                <p><span>取</span><i></i><span>还</span></p>
+                                <div><strong>${list.orderTakeTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.takePlace.placeAddress}</em></b></div>
+                                <div><strong>${list.orderReturnTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.returnPlace.placeAddress}</em></b></div>
+                            </td>
+                            <td>
+                                <p>${list.orderTotal}</p><span orderid="10230421" uid="13212780854">费用明细</span></td>
+                            <td>
+                                <p  class="sss${list.orderStatus}">${list.orderStatus}</p>
+                            </td>
+                            <td style="padding-top:50px;">
+                                <p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>
+                        </tr>
+                        </#list>
                         </tbody>
                     </table>
                 </div>
@@ -350,16 +390,16 @@
 <div style="clear: both;"></div>
 
 <!-- 弹出层 -->
-<div class="mcover" style="display: none;"></div>
-<div class="dialog_order_timeout dialog_class" id="confirm">
-    <h1>温馨提示</h1>
-    <div class="dialog_info">
-        <span id="confirm_msg"></span>
-        <div>
-            <p id="confirm_fun" style="cursor:pointer;" class="btn-style">确定</p>
-        </div>
-    </div>
-</div>
+<#--<div class="mcover" style="display: none;"></div>-->
+<#--<div class="dialog_order_timeout dialog_class" id="confirm">-->
+    <#--<h1>温馨提示</h1>-->
+    <#--<div class="dialog_info">-->
+        <#--<span id="confirm_msg"></span>-->
+        <#--<div>-->
+            <#--<p id="confirm_fun" style="cursor:pointer;" class="btn-style">确定</p>-->
+        <#--</div>-->
+    <#--</div>-->
+<#--</div>-->
 <div class="dialog_order_timeout dialog_class" id="coupon_confirm">
     <h1>温馨提示</h1>
     <div class="dialog_coupon_refresh">
@@ -379,9 +419,9 @@
     </div>
 </div>
 
-<div class="loading_shuaxin" style="display: none;">
-    <img src="${base}/img/car.gif">
-</div>
+<#--<div class="loading_shuaxin" style="display: none;">-->
+    <#--<img src="${base}/img/car.gif">-->
+<#--</div>-->
 
 <div class="dialog_order_timeout dialog_class" id="dialog_order_timeout">
     <h1>订单超时 <span onclick="dialog_order_timeout_hide()"><img src="${base}/img/close_icon.png" alt=""></span></h1>
@@ -629,17 +669,17 @@
     </div>
 </div>
 
-<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
-<script type="text/javascript" src="js/mk-browsing.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
-<script type="text/javascript" src="js/baidu.js"></script>
-<script type="text/javascript" src="js/tingyun-rum.js"></script>
-<script type="text/javascript" src="js/174750.js" async="" defer=""></script>
-<script type="text/javascript" src="js/ssyh.js"></script>
-<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="${base}/js/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="${base}/js/mk-browsing.js"></script>
+<script type="text/javascript" src="${base}/js/public.js"></script>
+<script type="text/javascript" src="${base}/js/baidu.js"></script>
+<script type="text/javascript" src="${base}/js/tingyun-rum.js"></script>
+<script type="text/javascript" src="${base}/js/174750.js" async="" defer=""></script>
+<script type="text/javascript" src="${base}/js/ssyh.js"></script>
+<script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
 
-<script type="text/javascript" src="js/personal.js"></script>
-<script type="text/javascript" src="js/user_myorder.js"></script>
+<script type="text/javascript" src="${base}/js/personal.js"></script>
+<script type="text/javascript" src="${base}/js/user_myorder.js"></script>
 <script type="text/javascript">
     var user_id = '11214904';
     var uid = '13212780854';

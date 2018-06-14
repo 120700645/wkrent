@@ -37,10 +37,10 @@
                     </div>
                     <div id="no-login" style="display:none;top:56px;border-top: 1PX solid #E4E6E9;">
                         <p>
-                            <a href="myorder.html">我的租车订单</a>
+                            <a href="${base}/rentOrder/selectAll">我的租车订单</a>
                         </p>
                         <p>
-                            <a href="mycoupon.html">我的优惠券</a>
+                            <a href="${base}/coupon/selectAll">我的优惠券</a>
                         </p>
                     </div>
                     <div class="mian-wk" id="over-login" style="display:none;top:56px;border-top: 1PX solid #E4E6E9;">
@@ -94,17 +94,17 @@
 <div style="clear: both;"></div>
 <div class="personal">
     <div class="personal_left">
-        <h4><a href="personal.html">个人中心</a></h4>
+        <h4><a href="${base}/rentOrder/personal">个人中心</a></h4>
         <ul>
             <li>
                 <a href="${base}/rentOrder/selectAll">我的订单</a>
             </li>
             <li style="background: #f9f9f9 url(//static.wkzuche.com/www/images/personal/l.png) no-repeat left center;color: #f23732!important;">我的优惠券</li>
             <li>
-                <a href="auth.html">实名认证</a>
+                <a href="${base}/auth/list">实名认证</a>
             </li>
             <li>
-                <a href="feedback.html">投诉与建议</a>
+                <a href="${base}/auth/feedBack">投诉与建议</a>
             </li>
         </ul>
     </div>
@@ -120,8 +120,8 @@
                 <div>
                     <ul>
                         <li class="selected">未使用</li>
-                        <li>已使用</li>
-                        <li>已过期</li>
+                        <li class>已使用</li>
+                        <li class>已过期</li>
                     </ul>
                 </div>
             </div>
@@ -486,7 +486,7 @@
 <script type="text/javascript" src="${base}/js/ssyh.js"></script>
 <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
 
-<script type="text/javascript" src="${base}/js/user_mycoupon.js.下载"></script>
+<script type="text/javascript" src="${base}/js/user_mycoupon.js"></script>
 <script type="text/javascript">
     var user_id = '11214904';
     var uid = '13212780854';

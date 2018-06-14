@@ -11,10 +11,10 @@
 		<link rel="icon" href="https://static.wkzuche.com/sso/member/www/images/facicon.ico">
 		<link rel="stylesheet" href="${base}/css/common.css">
 		<link rel="stylesheet" href="${base}/css/login.css">
-		<script charset="utf-8" src="${base}/js/lxb.js.下载"></script>
-		<script charset="utf-8" src="${base}/js/v.js.下载"></script>
-		<script src="${base}/js/hm.js.下载"></script>
-		<script type="text/javascript" src="${base}/js/f245814f86e1be9165b628022d17d1ee.js.下载"></script>
+		<script charset="utf-8" src="${base}/js/lxb.js"></script>
+		<script charset="utf-8" src="${base}/js/v.js"></script>
+		<script src="${base}/js/hm.js"></script>
+		<script type="text/javascript" src="${base}/js/f245814f86e1be9165b628022d17d1ee.js"></script>
 		<style type="text/css">
 			#waf_nc_block {
 				position: fixed;
@@ -86,7 +86,7 @@
 				height36px;
 			}
 		</style>
-		<script src="${base}/js/nc.js.下载"></script>
+		<script src="${base}/js/nc.js"></script>
 		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 		<style>
 			@charset "utf-8";
@@ -1907,13 +1907,13 @@
 			</div>
 		</div>
 		<!-- 360统计分析 -->
-		<script type="text/javascript" src="${base}/login_files/174750.js.下载" async="" defer=""></script>
+		<script type="text/javascript" src="${base}/login_files/174750.js" async="" defer=""></script>
 		<!-- 百度统计分析 -->
-		<script type="text/javascript" src="${base}/login_files/baidu.js.下载"></script>
-		<script src="${base}/login_files/jquery-2.1.1.min.js.下载"></script>
-		<script src="${base}/login_files/jquery-form.min.js.下载"></script>
-		<script src="./login_files/address.js.下载"></script>
-		<script type="text/javascript" src="./login_files/login.js.下载"></script>
+		<script type="text/javascript" src="${base}/login_files/baidu.js"></script>
+		<script src="${base}/login_files/jquery-2.1.1.min.js"></script>
+		<script src="${base}/login_files/jquery-form.min.js"></script>
+		<script src="./login_files/address.js"></script>
+		<script type="text/javascript" src="./login_files/login.js"></script>
 
 		<div id="waf_nc_block" style="display: none;">
 			<div class="waf-nc-mask"></div>

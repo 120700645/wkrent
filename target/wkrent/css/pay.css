@@ -136,11 +136,11 @@ body {
 }
 
 .pay-type ul li a.usable_img {
-    background-image: url("../../images/pay/account-usable-icon.png");
+    background-image: url("../img/account-usable-icon.png");
 }
 
 .pay-type ul li a.cannot_img {
-    background-image: url("../../images/pay/account-cannot-icon.png");
+    background-image: url("../img/account-cannot-icon.png");
 }
 
 .pay-type ul li span {
@@ -176,7 +176,7 @@ body {
 
 .pay-type ul li.type_li_active {
     border: 1px solid #cb2a1f;
-    background: url(../../images/personal/y.png) no-repeat right bottom;
+    background: url(../img/y.png) no-repeat right bottom;
 }
 
 /*.pay-type ul li:last-child span {
