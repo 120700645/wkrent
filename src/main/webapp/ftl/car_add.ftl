@@ -166,7 +166,7 @@
         </div>
     </div>
     <div class="col-md-10">
-        <form action="${base}/car/main" method="post">
+        <form action="${base}/car/main" method="post" enctype="multipart/form-data">
         <table class="table table-bordered">
 
             <tr>
@@ -185,20 +185,23 @@
                         <li><a href="#" name="typeName">MPV</a></li>
                     </ul>-->
                     <select id="typeId" name="typeId">
-                        <option value ="1">经济型</option>
-                        <option value ="2">舒适型</option>
-                        <option value="3">商务型</option>
-                        <option value="4">豪华型</option>
-                        <option value="5">SUV</option>
-                        <option value="6">MPV</option>
+                    <#list types as type>
+                        <option value ="${type.typeId}">${type.typeName}</option>
+                    </#list>
                     </select>
+
                 </div></td>
             </tr>
             <tr>
                 <td>汽车品牌：</td>
                 <td>
                     <div class="form-inline">
-                        <div class="form-group"><input type="text" name="brandId"></div>
+                        <#--<div class="form-group"><input type="text" name="brandId"></div>-->
+                        <select id="brandId" name="brandId">
+                        <#list brands as brand>
+                            <option value ="${brand.brandId}">${brand.brandName}</option>
+                        </#list>
+                        </select>
                     </div>
                 </td>
             </tr>
@@ -223,7 +226,7 @@
                 <td>
                     <div class="form-inline">
                         <div class="form-group">
-                            <input name="file" type="file" placeholder="照片"/>
+                            <input name="carImg" type="file" placeholder="照片"/>
                         </div>
                     </div>
                 </td>
