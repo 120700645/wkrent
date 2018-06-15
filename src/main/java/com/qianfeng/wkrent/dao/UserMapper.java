@@ -23,8 +23,14 @@ public interface UserMapper {
 
     User selectByPrimaryKey(Integer userId);
 
+
     int updateByPrimaryKeySelective(User record);
 
+    /**
+     * 更新用户信息
+     * @param record
+     * @return
+     */
     int updateByPrimaryKey(User record);
 
     User selectByTel(String tel);

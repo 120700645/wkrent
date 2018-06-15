@@ -7,7 +7,9 @@ import com.qianfeng.wkrent.service.IBrandService;
 import com.qianfeng.wkrent.service.ICarService;
 import com.qianfeng.wkrent.service.ICarTypeService;
 import com.qianfeng.wkrent.utils.CodeGenerateUtil;
+import com.qianfeng.wkrent.utils.Constants;
 import com.qianfeng.wkrent.utils.UploadConfig;
+import jdk.internal.util.xml.impl.Input;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,8 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 import java.util.UUID;
 
@@ -59,14 +60,18 @@ public class CarsController {
      * @param file
      * @return
      */
-    @RequestMapping("/main")
-    public String addCar(Car car, @RequestParam("carImg") MultipartFile file){
+    @RequestMapping(value = "/main",method = RequestMethod.POST)
+    public String addCar(Car car,@RequestParam(value = "file") MultipartFile file) throws Exception{
+
         System.out.println("getCarName:"+car.getCarName());
         System.out.println("getCarName:"+car.getBrandId());
         System.out.println("fileName"+file.getOriginalFilename());
+
         String fileName = UUID.randomUUID().toString();
         File newFile = new File(uploadConfig.getFilePath()+fileName);
+
         try {
+
             file.transferTo(newFile);
         } catch (IOException e) {
             e.printStackTrace();
@@ -76,6 +81,7 @@ public class CarsController {
         car.setCarId(id);
         car.setCarImg(fileName);
         carService.saveSelective(car);
+
         return "main";
     }
 

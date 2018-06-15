@@ -1,17 +1,18 @@
 package com.qianfeng;
 
 import com.qianfeng.wkrent.dao.CarMapper;
-import com.qianfeng.wkrent.dto.Car;
-import com.qianfeng.wkrent.dto.CarType;
-import com.qianfeng.wkrent.dto.City;
+import com.qianfeng.wkrent.dao.RentOrderMapper;
+import com.qianfeng.wkrent.dto.*;
 import com.qianfeng.wkrent.service.ICarService;
 import com.qianfeng.wkrent.service.ICarTypeService;
 import com.qianfeng.wkrent.service.ICityService;
+import com.qianfeng.wkrent.service.IRentOrderService;
 import com.qianfeng.wkrent.service.impl.CarService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.*;
@@ -32,6 +33,18 @@ public class OtherTest {
     @Autowired
     private CarService carService;
 
+    @Autowired
+    private IRentOrderService rentOrderService;
+
+    @Autowired
+    private RentOrderMapper rentOrderDao;
+
+    @Test
+    public void estCase8(){
+        List<RentOrder> rentOrders = rentOrderDao.selectInPageByStatus(1, 10, "0");
+        System.out.println(rentOrders.size());
+    }
+
 
     @Test
     public void testCase5(){
@@ -39,7 +52,27 @@ public class OtherTest {
         System.out.println(car.getCarName());
     }
 
+    @Test
+    public void testCase6(){
+        List<RentOrder> rentOrders = rentOrderDao.selectInPage(1,4);
+        System.out.println(rentOrders.size());
 
+    }
+    @Test
+    public void testCase7(){
+        List<RentOrder> rentOrders = rentOrderDao.selectAll();
+        for (RentOrder rentOrder : rentOrders) {
+            System.out.println(rentOrder.getCar().getCarName());
+        }
+    }
+
+
+
+    @Test
+    public void testCase4(){
+        PageBean<RentOrder> inPageByStatus = rentOrderService.findInPageByStatus(1, "1");
+        System.out.println(inPageByStatus.getCount());
+    }
 
     @Test
     public void testCase1(){

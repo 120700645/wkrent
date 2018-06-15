@@ -120,6 +120,11 @@
 
     <bean name="userRealm" class="com.qianfeng.wkrent.shiro.UserRealm"/>
 
+    <!--配置照片上传路径-->
+    <bean id="uploadConfig" class="com.qianfeng.wkrent.utils.UploadConfig">
+        <property name="filePath" value="E:/images/wkrentd/"></property>
+    </bean>
+
     <!-- 配置通知（配置事务执行的方法定义的名称规则） -->
     <!--<tx:advice id="myAdvice" transaction-manager="transactionManager">-->
     <!--<tx:attributes>-->

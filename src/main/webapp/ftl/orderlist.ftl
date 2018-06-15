@@ -166,7 +166,7 @@
         </div>
     </div>
     <div class="col-md-10">
-        
+
         <table class="table table-bordered">
             <thead class="bg-primary">
             <td>id</td>
@@ -183,7 +183,7 @@
             <td>状态</td>
             <td>操作</td>
             </thead>
-            <#list pages.list as page>
+        <#list pages.list as page>
             <tr>
                 <td>${page.orderId}</td>
                 <td>${page.orderNum}</td>
@@ -199,7 +199,7 @@
                 <td><span class="btn-success">${page.orderStatus}</td>
                 <td><a href="">删除</a>&nbsp;<a href="">更新</a></td>
             </tr>
-            </#list>
+        </#list>
         </table>
         <a href="#">上一页</a>&nbsp;&nbsp;<a href="#">下一页</a>
     </div>

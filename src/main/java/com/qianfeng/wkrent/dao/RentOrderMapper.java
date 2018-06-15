@@ -3,6 +3,7 @@ package com.qianfeng.wkrent.dao;
 import com.qianfeng.wkrent.dto.Place;
 import com.qianfeng.wkrent.dto.RentOrder;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,10 +16,25 @@ public interface RentOrderMapper {
 
     int insertSelective(RentOrder record);
 
+    /**
+     * 通过id查询租车订单
+     * @param orderId
+     * @return
+     */
     RentOrder selectByPrimaryKey(Integer orderId);
 
+    /**
+     * 更新租车订单  动态sql
+     * @param record
+     * @return
+     */
     int updateByPrimaryKeySelective(RentOrder record);
 
+    /**
+     * 更新租车订单
+     * @param record
+     * @return
+     */
     int updateByPrimaryKey(RentOrder record);
 
     /**
@@ -40,4 +56,16 @@ public interface RentOrderMapper {
      * @return
      */
     long selectCount();
+
+    /**
+     * 通过订单状态分页查询
+     * @param start
+     * @param end
+     * @param orderStatus
+     * @return
+     */
+    List<RentOrder> selectInPageByStatus(@Param("start")int start,@Param("end")int end,@Param("orderStatus")String orderStatus);
+
+
+
 }

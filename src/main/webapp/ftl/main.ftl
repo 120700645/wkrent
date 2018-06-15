@@ -102,9 +102,13 @@
             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">订单列表</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">订单列表</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">订单列表</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">所有订单</a></li>
+                        <li class="list-group-item"><a href="${base}/rentOrder/status/1">未确认订单</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">缴纳押金项</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">已确认订单</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">提车管理</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">还车管理</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">违章管理</a></li>
                     </ul>
                 </div>
             </div>
@@ -121,8 +125,6 @@
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item"><a href="${base}/car/add">添加车辆</a></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item">补签审批</li>
                     </ul>
                 </div>
             </div>
@@ -164,7 +166,7 @@
         </div>
     </div>
     <div class="jumbotron col-md-10">
-        <h1 style="text-align: center;">Hello, welcome to wkrent Background management system!</h1>
+        <h1 style="text-align: center;">Hello, welcome to wkrent!</h1>
     </div>
 </div>
 

@@ -3,6 +3,8 @@ package com.qianfeng.wkrent.service;
 import com.qianfeng.wkrent.dto.User;
 import org.apache.shiro.authc.AuthenticationException;
 
+import java.util.List;
+
 public interface IUserService {
     User selectByTel(String tel);
 

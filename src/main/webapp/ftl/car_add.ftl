@@ -157,9 +157,9 @@
             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item">游客管理</li>
                         <li class="list-group-item">会员管理</li>
                         <li class="list-group-item">管理员管理</li>
+                        <li class="list-group-item"></li>
                     </ul>
                 </div>
             </div>
@@ -172,18 +172,6 @@
             <tr>
                 <td>车辆类型：</td>
                 <td><div class="dropdown">
-                    <#--<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        请选择
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#" name="typeName">经济型</a></li>
-                        <li><a href="#" name="typeName">舒适型</a></li>
-                        <li><a href="#" name="typeName">商务型</a></li>
-                        <li><a href="#" name="typeName">豪华型</a></li>
-                        <li><a href="#" name="typeName">SUV</a></li>
-                        <li><a href="#" name="typeName">MPV</a></li>
-                    </ul>-->
                     <select id="typeId" name="typeId">
                     <#list types as type>
                         <option value ="${type.typeId}">${type.typeName}</option>
@@ -226,7 +214,7 @@
                 <td>
                     <div class="form-inline">
                         <div class="form-group">
-                            <input name="carImg" type="file" placeholder="照片"/>
+                            <input type="file"  name="file" placeholder="照片"/>
                         </div>
                     </div>
                 </td>

@@ -17,6 +17,20 @@
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <style type="text/css">
+        .approved{
+            width:80px;
+            height:30px;
+            background:#dc0000;
+            cursor:not-allowed;
+        }
+        .unapprove{
+            width:80px;
+            height:30px;
+            background:#000000;
+            cursor:pointer;
+        }
+    </style>
     <![endif]-->
 </head>
 <body>
@@ -103,12 +117,11 @@
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item"><a href="${base}/manage/orderList/1">所有订单</a></li>
-                        <li class="list-group-item"><a href="${base}/rentOrder/status/1">未确认订单</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">缴纳押金项</a></li>
+                        <li class="list-group-item"><a href="${base}/rentOrder/status/1">未付款</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">已付款,未缴纳押金</a></li>
                         <li class="list-group-item"><a href="${base}/manage/orderList/1">已确认订单</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">提车管理</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">还车管理</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">违章管理</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1"></a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">已确认订单</a></li>
                     </ul>
                 </div>
             </div>
@@ -125,6 +138,8 @@
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item"><a href="${base}/car/add">添加车辆</a></li>
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item">补签审批</li>
                     </ul>
                 </div>
             </div>
@@ -166,7 +181,7 @@
         </div>
     </div>
     <div class="col-md-10">
-        
+
         <table class="table table-bordered">
             <thead class="bg-primary">
             <td>id</td>
@@ -183,9 +198,9 @@
             <td>状态</td>
             <td>操作</td>
             </thead>
-            <#list pages.list as page>
+        <#list pageByStatus.list as page>
             <tr>
-                <td>${page.orderId}</td>
+                <td class="order_id">${page.orderId}</td>
                 <td>${page.orderNum}</td>
                 <td>${page.takePlace.placeName}</td>
                 <td>${page.returnPlace.placeName}</td>
@@ -196,10 +211,11 @@
                 <td>${page.orderCharge}</span> </td>
                 <td>${page.orderDiscount}</td>
                 <td>${page.orderTotal}</td>
-                <td><span class="btn-success">${page.orderStatus}</td>
+                <td><button class="button-status">${page.orderStatus}</button></td>
+
                 <td><a href="">删除</a>&nbsp;<a href="">更新</a></td>
             </tr>
-            </#list>
+        </#list>
         </table>
         <a href="#">上一页</a>&nbsp;&nbsp;<a href="#">下一页</a>
     </div>
@@ -211,3 +227,33 @@
 <script src="${base}/js/bootstrap.min.js"></script>
 </body>
 </html>
+<script>
+    $(function(){
+        $(".button-status").each(function(){
+            var num = $(this).text();
+            if(num == 0){
+                $(this).text("未确认").addClass("unapprove");
+            }else if(num == 1){
+                $(this).text("已确认").addClass("approved");
+            }
+        })
+    })
+
+    $(".button-status").click(function(){
+        var num = $(this).text();
+        //alert(num);
+        var change = $(this);
+        var orderId = change.parent().parent().find(".order_id").text();
+        //alert(orderId);
+        if(confirm("请确认用户是否已缴纳押金,如已缴纳,请点击确定!")){
+            if(num == "未确认"){
+                $.post("${base}/rentOrder/check",{"num":num,"orderId":orderId},function(data){
+                    if(data.code == 0){
+                        alert(data);
+                        change.text("已确认").removeClass("unapprove").addClass("approved");
+                    }
+                })
+            }
+        }
+    })
+</script>
