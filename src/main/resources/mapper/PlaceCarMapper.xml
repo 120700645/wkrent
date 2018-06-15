@@ -10,5 +10,23 @@
     <select id="selectByPlaceId" resultMap="ResultMap">
         SELECT pc_id,place_id,car_id FROM tb_place_car WHERE place_id = #{placeId}
     </select>
+    
+    <select id="selectCarPlace" resultMap="ResultMap">
+        SELECT PC.*,C.*
+        FROM TB_PLACE_CAR PC
+        JOIN TB_CAR C ON PC.CAR_ID = C.CAR_ID
+        JOIN TB_BRAND B ON B.BRAND_ID = C.BRAND_ID
+        JOIN TB_CAR_TYPE CT ON CT.TYPE_ID = C.TYPE_ID
+        WHERE PC.PLACE_ID = #{placeId} AND B.BRAND_NAME
+        IN
+        <foreach collection="brandList" item="brand" index="index" open="(" separator="," close=")">
+            #{brand}
+        </foreach>
+        AND CT.TYPE_NAME
+        IN
+        <foreach collection="placeList" item="place" index="index" open="(" separator="," close=")">
+            #{place}
+        </foreach>
+    </select>
 
 </mapper>

@@ -2345,7 +2345,6 @@
 
                                     var html = "";
                                     $.each(data,function (index,place) {
-                                        alert(111)
                                         if(index == 0){
                                             html+="<ol class=\"dot_query_add\" id=\"dot_query_add_" + place.area.areaName + "\" style=\"display: block;\">";
                                         }
@@ -2498,14 +2497,32 @@
                 if($(".tc-nav-item:eq(0)").hasClass("nav-item-style")){
                     var cityName = $("#fromCityName").val();
                     var placeName = $("#site_input").val();
-                    var startTime = $("#from_time").val() + " " + $("#from_stamp").val();
-                    var endTime = $("#to_time").val() + " " + $("#to_stamp").val();
-                    window.location.href="carType/search"
+                    var startTime = $("#from_time").val();
+                    var	startStamp = $("#from_stamp").val();
+                    var endTime = $("#to_time").val();
+                    var endStamp = $("#to_stamp").val();
+                    /*var jsonStr = {
+                        "cityName":cityName,
+						"placeName":placeName,
+						"startTime":startTime,
+						"startStamp":startStamp,
+						"endTime":endTime,
+						"endStamp":endStamp
+					}
+					var json = JSON.stringify(jsonStr);
+					alert(json);
+					window.location.href="${base}/carType/search?json=" + json;*/
+                    window.location.href="${base}/carType/search?cityName=" + cityName + "&placeName=" + placeName + "&startTime=" + startTime +
+							"&startStamp=" + startStamp + "&endTime=" + endTime + "&endStamp=" + endStamp;
                 }else{
                     var takeCityName = $("#takeCityName").val()
 					var stillCityName = $("#stillCityName").val();
-                    alert(takeCityName)
-					alert(stillCityName)
+                    var startTime = $("#from_time").val();
+                    var	startStamp = $("#from_stamp").val();
+                    var endTime = $("#to_time").val();
+                    var endStamp = $("#to_stamp").val();
+                    window.location.href="${base}/carType/search?takeCityName=" + takeCityName + "&stillCityName=" + stillCityName + "&startTime=" + startTime +
+                            "&startStamp=" + startStamp + "&endTime=" + endTime + "&endStamp=" + endStamp;
 				}
             }
 		</script>

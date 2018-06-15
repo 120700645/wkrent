@@ -18,6 +18,11 @@ public class AreaController {
     @RequestMapping("/findAll")
     @ResponseBody
     public List<Area> findAll(String cityName){
+        /*List<Area> areas = areaService.selectByCityName(cityName);
+        for (Area area : areas) {
+            System.out.println(area.getAreaName());
+        }
+        return areas;*/
         return areaService.selectByCityName(cityName);
     }
 }

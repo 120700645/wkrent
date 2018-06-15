@@ -2682,6 +2682,7 @@
 							</figure>
                             <#list carTypeList as list>
                                 <figure class="jinji_fig" >
+									<p style="display: none;">${list_index}</p>
                                     <img  src="${base}/img/jingji.jpg" class="jinji_fig_img" >
                                     <figcaption class="fig_type" category="${list.typeName}">${list.typeName}</figcaption>
                                 </figure>
@@ -2892,16 +2893,28 @@
 		</div>
 		<script type="text/javascript">
             /*--------------选择类型 更换背景图片为红色---------------*/
-
+            var arr = new Array();
             $(".jinji_fig").click(function () {
                 var carType = $(this).find("figcaption").text();
-                alert(carType);
                 if($(this).find("img").attr('src') == "${base}/img/jingji.jpg"){
+                    var typeIndex = $(this).find("p").text();
+                    arr[typeIndex] = $(this).find("figcaption").text();
+					$(".buxian_fig").find("img").attr('src',"${base}/img/buxian.jpg");
                     $(this).find("img").attr('src',"${base}/img/jingji_selected.jpg");
                 }else{
                     $(this).find("img").attr('src',"${base}/img/jingji.jpg");
+                    var typeIndex = $(this).find("p").text();
+                    arr[typeIndex]=null;
                 }
-
+                var tag = true;
+                for(var i = 0;i<arr.length;i++){
+                    if(arr[i]!=null){
+                        tag = false;
+					}
+				}
+				if(tag==true){
+                    $(".buxian_fig").find("img").attr('src',"${base}/img/buxian_selected.jpg");
+				}
             });
 
             /*------------------ajax-----------------------*/

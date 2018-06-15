@@ -2,11 +2,9 @@ package com.qianfeng;
 
 import com.qianfeng.wkrent.cache.IRedisCache;
 import com.qianfeng.wkrent.cache.impl.RedisCache;
-import com.qianfeng.wkrent.dao.AreaMapper;
-import com.qianfeng.wkrent.dao.CarMapper;
-import com.qianfeng.wkrent.dao.PlaceMapper;
-import com.qianfeng.wkrent.dao.RoleMapper;
+import com.qianfeng.wkrent.dao.*;
 import com.qianfeng.wkrent.dto.*;
+import com.qianfeng.wkrent.dto.entity.PlaceCar;
 import com.qianfeng.wkrent.service.IAreaService;
 import com.qianfeng.wkrent.service.IUserService;
 import com.qianfeng.wkrent.utils.MessageUtil;
@@ -20,6 +18,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import sun.java2d.pipe.SpanIterator;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.regex.Matcher;
@@ -45,6 +44,8 @@ public class OracleTest {
     private AreaMapper areaMapper;
     @Autowired
     private CarMapper carMapper;
+    @Autowired
+    private PlaceCarMapper placeCarMapper;
 
     @Test
     public void testCase(){
@@ -149,5 +150,19 @@ public class OracleTest {
         System.out.println(car.getCarName());
         String name = carMapper.selectCarNameById(1);
         System.out.println(name);
+    }
+
+    @Test
+    public void testCase13(){
+        ArrayList<String> brandList = new ArrayList<>();
+        ArrayList<String> placeList = new ArrayList<>();
+        brandList.add("别克");
+        brandList.add("大众");
+        placeList.add("经济型");
+        placeList.add("舒适型");
+        List<PlaceCar> placeCars = placeCarMapper.selectCarPlace(1, brandList, placeList);
+        for (PlaceCar placeCar : placeCars) {
+            System.out.println(placeCar.getCar().getCarName() + "/////" + placeCar.getPlace().getPlaceName());
+        }
     }
 }
