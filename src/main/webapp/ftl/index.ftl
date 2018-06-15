@@ -2255,7 +2255,7 @@
 							<a href="${base}/user/preIndex">首页</a>
 						</li>
 						<li>
-							<a href="${base}/carType/list">租车自驾</a>
+							<a href="javascript:choose()">租车自驾</a>
 						</li>
 						<li>
 							<a href="${base}/city/hotCityList">全国网点</a>
@@ -2306,11 +2306,11 @@
 				<div class="search-contain">
 					<div class="zc_cell clickNo arrowClass city_self_driving">
 						<label class="zc_label">取车城市 : </label>
-						<input class="zc_input" id="fromCityName" name="fromCityName" onmouseover="fromOrtoOut=false" onmouseout="fromOrtoOut=true" readonly="true">
+						<input class="zc_input" id="fromCityName" name="fromCityName" value="北京" onmouseover="fromOrtoOut=false" onmouseout="fromOrtoOut=true" readonly="true">
 					</div>
 					<div class="zc_cell clickNo arrowClass takeSite city_self_driving">
 						<label class="zc_label">取车网点 : </label>
-						<input type="text" class="zc_input" id="site_input" onclick="getArea()" onmouseover="this.title=this.value">
+						<input type="text" class="zc_input" id="site_input" value="T3航站楼送车点-任我行" onclick="getArea()" onmouseover="this.title=this.value">
 					</div>
 					<div class="dot_query" no-close="dot_query" style="display: none;">
 						<div class="query" no-close="dot_query" style="display: block;">
@@ -2324,10 +2324,11 @@
 						</div>
                         <script>
                             function getArea() {
+                                $("#list_area").after("");
                                 var cityName = $("#fromCityName").val();
                                 $.post("${base}/area/findAll",{"cityName":cityName},function (data) {
                                     $("#list_area").text("");
-                                    $("#ol_place").text("");
+//                                    $("#ol_place").text("");
                                     $.each(data,function (index,area) {
                                         listArea(area);
                                     })
@@ -2468,7 +2469,7 @@
 							<div class="zc_cell clickNo lw_inp arrowClass">
 								<label class="zc_label">取车时间 : </label>
 								<input class="zc_input date" name="date-car" data-status="start" id="from_time" readonly="">
-								<span class="lastWeek">周三</span>
+								<span class="lastWeek" id="start_weekday">周三</span>
 							</div>
 							<div class="zc_cell clickNo rw_inp arrowClass time-box no-border">
 								<input type="text" readonly="" id="from_stamp">
@@ -2480,7 +2481,7 @@
 							<div class="zc_cell clickNo arrowClass">
 								<label class="zc_label">还车时间 : </label>
 								<input class="zc_input date" name="date-car" data-status="end" id="to_time" readonly="">
-								<span class="lastWeek">周五</span>
+								<span class="lastWeek" id="end_weekday">周五</span>
 							</div>
 							<div class="zc_cell clickNo rw_inp arrowClass time-box no-border">
 								<input type="text" id="to_stamp" readonly="">
@@ -2499,30 +2500,27 @@
                     var placeName = $("#site_input").val();
                     var startTime = $("#from_time").val();
                     var	startStamp = $("#from_stamp").val();
+                    var startWeekday = $("#start_weekday").text();
+                    var endWeekday = $("#end_weekday").text();
                     var endTime = $("#to_time").val();
                     var endStamp = $("#to_stamp").val();
-                    /*var jsonStr = {
-                        "cityName":cityName,
-						"placeName":placeName,
-						"startTime":startTime,
-						"startStamp":startStamp,
-						"endTime":endTime,
-						"endStamp":endStamp
-					}
-					var json = JSON.stringify(jsonStr);
-					alert(json);
-					window.location.href="${base}/carType/search?json=" + json;*/
+                    var brandList = new Array();
+                    var carTypeList = new Array();
                     window.location.href="${base}/carType/search?cityName=" + cityName + "&placeName=" + placeName + "&startTime=" + startTime +
-							"&startStamp=" + startStamp + "&endTime=" + endTime + "&endStamp=" + endStamp;
+							"&startStamp=" + startStamp + "&startWeekday=" + startWeekday + "&endTime=" + endTime + "&endStamp=" + endStamp + "&endWeekday=" + endWeekday + "&brandList=" + brandList + "&carTypeList=" + carTypeList;
                 }else{
                     var takeCityName = $("#takeCityName").val()
 					var stillCityName = $("#stillCityName").val();
                     var startTime = $("#from_time").val();
                     var	startStamp = $("#from_stamp").val();
+                    var startWeekday = $("#start_weekday").text();
+                    var endWeekday = $("#end_weekday").text();
                     var endTime = $("#to_time").val();
                     var endStamp = $("#to_stamp").val();
-                    window.location.href="${base}/carType/search?takeCityName=" + takeCityName + "&stillCityName=" + stillCityName + "&startTime=" + startTime +
-                            "&startStamp=" + startStamp + "&endTime=" + endTime + "&endStamp=" + endStamp;
+                    var brandList = new Array();
+                    var carTypeList = new Array();
+                    window.location.href="${base}/carType/search?cityName=" + cityName + "&placeName=" + placeName + "&startTime=" + startTime +
+                            "&startStamp=" + startStamp + "&startWeekday=" + startWeekday + "&endTime=" + endTime + "&endStamp=" + endStamp + "&endWeekday=" + endWeekday + "&brandList=" + brandList + "&carTypeList=" + carTypeList;
 				}
             }
 		</script>
@@ -2605,92 +2603,7 @@
 				carList(cityName,index);
             })
 		</script>
-		<div class="zc-recommend-carlist" id="car_list0" style="display: block;">
-			<#--<div class="zc-car-detail avail-click" city_id="530100 " city_name="昆明 " site_id="53_site_088" brand_name="现代" series_name="朗动" car_type_id="HYUNDAI_LANGDONG_201316LAT01">
-				<div><img img_src="//static.wkzuche.com/www/mages/search/jiazaizhong.png" src="${base}/img/97a78a9a-2675-4f56-8b37-d19ecc453224.jpg"></div>
-				<div class="dot_car_list_o_divo">
-					<h4>朗动</h4>
-					<ol>
-						<li> 1.6L自动|</li>
-						<li> 5座|</li>
-						<li> 紧凑型车 </li>
-					</ol>
-				</div>
-				<div class="dot_car_list_o_divt">
-					<p><span>￥</span><i>79</i><em>/日均</em></p>
-				</div>
-			</div>-->
-			<#--<div class="zc-car-detail avail-click zc-car-detail-difference" city_id="530100 " city_name="昆明 " site_id="53_site_088" brand_name="大众" series_name="桑塔纳" car_type_id="VW_SANTANA_201516LAT06">
-				<div><img img_src="//static.wkzuche.com/www/mages/search/jiazaizhong.png" src="${base}/img/22074000-8786-4344-822e-8048830c890d.jpg"></div>
-				<div class="dot_car_list_o_divo">
-					<h4>桑塔纳</h4>
-					<ol>
-						<li> 1.6L自动|</li>
-						<li> 5座|</li>
-						<li> 紧凑型车 </li>
-					</ol>
-				</div>
-				<div class="dot_car_list_o_divt">
-					<p><span>￥</span><i>59</i><em>/日均</em></p>
-				</div>
-			</div>-->
-			<#--<div class="zc-car-detail avail-click" city_id="530100 " city_name="昆明 " site_id="53_site_088" brand_name="别克" series_name="别克GL8" car_type_id="BUICK_GL8_201725LAT01">
-				<div><img img_src="//static.wkzuche.com/www/mages/search/jiazaizhong.png" src="${base}/img/3b5979cf-abcc-4c36-b67e-1c0acc87aac4.jpg"></div>
-				<div class="dot_car_list_o_divo">
-					<h4>别克GL8</h4>
-					<ol>
-						<li> 2.5L自动|</li>
-						<li> 7座|</li>
-						<li> MPV </li>
-					</ol>
-				</div>
-				<div class="dot_car_list_o_divt">
-					<p><span>￥</span><i>309</i><em>/日均</em></p>
-				</div>
-			</div>-->
-			<#--<div class="zc-car-detail avail-click" city_id="530100 " city_name="昆明 " site_id="53_site_034" brand_name="现代" series_name="悦动" car_type_id="HYUNDAI_ELANTRA-YD_201516LAT01">
-				<div><img img_src="//static.wkzuche.com/www/mages/search/jiazaizhong.png" src="${base}/img/14b236f6-ddf4-4548-8010-600931b5b700.jpg"></div>
-				<div class="dot_car_list_o_divo">
-					<h4>悦动</h4>
-					<ol>
-						<li> 1.6L自动|</li>
-						<li> 5座|</li>
-						<li> 紧凑型车 </li>
-					</ol>
-				</div>
-				<div class="dot_car_list_o_divt">
-					<p><span>￥</span><i>179</i><em>/日均</em></p>
-				</div>
-			</div>-->
-			<#--<div class="zc-car-detail avail-click zc-car-detail-difference" city_id="530100 " city_name="昆明 " site_id="53_site_034" brand_name="大众" series_name="捷达" car_type_id="VW_JETTA_201516LAT02">
-				<div><img img_src="//static.wkzuche.com/www/mages/search/jiazaizhong.png" src="${base}/img/ecbde9c6-364d-49d9-b1e3-40e76bf9b497.jpg"></div>
-				<div class="dot_car_list_o_divo">
-					<h4>捷达</h4>
-					<ol>
-						<li> 1.6L自动|</li>
-						<li> 5座|</li>
-						<li> 紧凑型车 </li>
-					</ol>
-				</div>
-				<div class="dot_car_list_o_divt">
-					<p><span>￥</span><i>129</i><em>/日均</em></p>
-				</div>
-			</div>-->
-			<#--<div class="zc-car-detail avail-click" city_id="530100 " city_name="昆明 " site_id="53_site_034" brand_name="别克" series_name="凯越" car_type_id="BUICK_EXCELLE_201515LAT01">
-				<div><img img_src="//static.wkzuche.com/www/mages/search/jiazaizhong.png" src="${base}/img/694d7f45-1a5b-4f97-8d13-43d306812937.jpg"></div>
-				<div class="dot_car_list_o_divo">
-					<h4>凯越</h4>
-					<ol>
-						<li> 1.5L自动|</li>
-						<li> 5座|</li>
-						<li> 紧凑型车 </li>
-					</ol>
-				</div>
-				<div class="dot_car_list_o_divt">
-					<p><span>￥</span><i>169</i><em>/日均</em></p>
-				</div>
-			</div>-->
-		</div>
+		<div class="zc-recommend-carlist" id="car_list0" style="display: block;"></div>
 		<div class="zc-recommend-carlist" id="car_list1" style="display: none;"></div>
 		<div class="zc-recommend-carlist" id="car_list2" style="display: none;"></div>
 		<div class="zc-recommend-carlist" id="car_list3" style="display: none;"></div>

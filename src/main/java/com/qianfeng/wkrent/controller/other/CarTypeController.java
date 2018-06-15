@@ -36,7 +36,7 @@ public class CarTypeController {
     private PlaceService placeService;
 
     @RequestMapping("/search")
-    public String list(String cityName,String placeName,String startTime,String startStamp,String endTime,String endStamp, Model model){
+    public String list(String cityName,String placeName,String startTime,String startStamp,String startWeekday,String endTime,String endStamp,String endWeekday, Model model){
         List<CarType> carTypeList = carTypeService.findAllCarType();
         model.addAttribute("carTypeList",carTypeList);
         List<Brand> brandList = brandService.findAll();
@@ -47,8 +47,10 @@ public class CarTypeController {
         model.addAttribute("city",cityName);
         model.addAttribute("startTime",startTime);
         model.addAttribute("startStamp",startStamp);
+        model.addAttribute("startWeekday",startWeekday);
         model.addAttribute("endTime",endTime);
         model.addAttribute("endStamp",endStamp);
+        model.addAttribute("endWeekday",endWeekday);
         model.addAttribute("placeName",placeName);
         model.addAttribute("place",place);
         return "/renting";

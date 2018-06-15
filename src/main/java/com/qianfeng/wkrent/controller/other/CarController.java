@@ -36,10 +36,11 @@ public class CarController {
     @RequestMapping("/selectByCity")
     @ResponseBody
     public List<Car> selectByCity(String cityName){
-        List<Car> cars = carService.selectByCityName(cityName);
+        /*List<Car> cars = carService.selectByCityName(cityName);
         for (Car car : cars) {
             System.out.println(car.getCarName());
         }
-        return cars;
+        return cars;*/
+        return carService.selectByCityName(cityName);
     }
 }

@@ -2290,7 +2290,7 @@
 			<div class="city">
 				<div class="pinck_up_list" id="pinck_up_list">
 					<p>取车城市</p>
-					<ul name="dianji" style="position: relative;">${city}</ul>
+					<ul name="dianji" id="city_input" style="position: relative;">${city}</ul>
 					<div id="popup_pane" class="popup_pane" style="display: none;">
 						<div class="city_classify">
 							<ul>
@@ -2308,7 +2308,6 @@
 								<li style="display: block">
 									<div class="city_b_c">
 										<div class="city_history" id="planHot">
-
 											<span id="hot_130100" title="北京" lat="40.048872" lng="116.441315" city_id="130100" onclick="changeCity(&quot;北京&quot;,{&quot;lng&quot;:&quot;116.441315&quot;,&quot;lat&quot;:&quot;40.048872&quot;},110000, this)">北京</span>
                                             <span id="hot_130700" title="海口" lat="19.945615" lng="110.466106" city_id="130700" onclick="changeCity(&quot;海口&quot;,{&quot;lng&quot;:&quot;110.466106&quot;,&quot;lat&quot;:&quot;19.945615&quot;},460100, this)">海口</span>
                                             <span id="hot_110000" title="广州" lat="23.135308" lng="113.270793" city_id="110000" onclick="changeCity(&quot;广州&quot;,{&quot;lng&quot;:&quot;113.270793&quot;,&quot;lat&quot;:&quot;23.135308&quot;},440100, this)">广州</span>
@@ -2503,102 +2502,55 @@
 				</div>
 				<div class="pinck_up_list" id="pinck_up_dot">
 					<p>取车网点</p>
-					<ul name="dot">
+					<ul name="dot"  onclick="getArea()">
 						<li>${placeName}</li>
 					</ul>
-					<div class="dot_query" no-close="dot_query" style="display: none;">
+					<div class="dot_query" id="dot_query" no-close="dot_query" style="display: none;">
 						<div class="query" no-close="dot_query" style="display: block;">
 							<p index="1">行政区</p>
 							<p index="2">根据地址查找</p>
 						</div>
 						<div id="siteSelect" style="display: block;">
-							<ul>
-								<li id="TRAINSTATION_AIRPORT" onclick="areaSelected(&#39;dot_query_add_TRAINSTATION_AIRPORT&#39;,&#39;TRAINSTATION_AIRPORT&#39;,&#39;[object Object]&#39;,this,event);">机场/火车站/汽车站</li>
-								<li id="朝阳区" onclick="areaSelected(&#39;dot_query_add_朝阳区&#39;,&#39;朝阳区&#39;,&#39;[object Object]&#39;,this,event);" style="background: rgb(242, 55, 50); color: rgb(255, 255, 255);">朝阳区</li>
-								<li id="海淀区" onclick="areaSelected(&#39;dot_query_add_海淀区&#39;,&#39;海淀区&#39;,&#39;[object Object]&#39;,this,event);">海淀区</li>
-								<li id="丰台区" onclick="areaSelected(&#39;dot_query_add_丰台区&#39;,&#39;丰台区&#39;,&#39;[object Object]&#39;,this,event);">丰台区</li>
-								<li id="东城区" onclick="areaSelected(&#39;dot_query_add_东城区&#39;,&#39;东城区&#39;,&#39;[object Object]&#39;,this,event);">东城区</li>
-								<li id="顺义区" onclick="areaSelected(&#39;dot_query_add_顺义区&#39;,&#39;顺义区&#39;,&#39;[object Object]&#39;,this,event);">顺义区</li>
+							<ul id="list_area">
 							</ul>
-							<ol class="dot_query_add" id="dot_query_add_朝阳区" style="display: block;">
-								<li area="110105" site_id="11_site_064" id="11_site_064" lat="39.911476" lng="116.486026" class="11_site_064" style="color: rgb(242, 55, 50);">大望路送车点</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/brand.png">
-								<p class="address"><span>北京市朝阳区西大望路12号大望写字楼102室</span><span>营业时间:09:00—19:00</span></p>
-								<li area="110105" site_id="11_site_081" id="11_site_081" lat="40.016228" lng="116.474032" class="11_site_081" style="color: rgb(96, 96, 108);">东湖渠地铁站送车点</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/brand.png">
-								<p class="address"><span>北京市朝阳区东湖渠</span><span>营业时间:09:00—18:30</span></p>
-								<li area="110105" site_id="11_site_068" id="11_site_068" lat="40.036821" lng="116.424525" class="11_site_068" style="color: rgb(96, 96, 108);">北苑路北送车点</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/brand.png">
-								<p class="address"><span>北京市北京市朝阳区北苑路</span><span>营业时间:09:00—18:30</span></p>
-								<li area="110105" site_id="11_site_043" id="11_site_043" lat="40.032913" lng="116.447644" class="11_site_043" style="color: rgb(96, 96, 108);">来广营店</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/brand.png">
-								<p class="address"><span>北京市朝阳区北苑东路华阳奥通4S店</span><span>营业时间:08:30—19:00</span></p>
-								<li area="110105" site_id="11_site_105" id="11_site_105" lat="39.940801" lng="116.461072" class="11_site_105" style="color: rgb(96, 96, 108);">三里屯太古里送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
-								<p class="address"><span>北京市朝阳区三里屯路19号</span><span>营业时间:08:00—20:00</span></p>
-								<li area="110105" site_id="11_site_159" id="11_site_159" lat="39.901269" lng="116.483679" class="11_site_159" style="color: rgb(96, 96, 108);">大望路送车点-任我行</li>
-								<p class="address"><span>大望路15号院农业银行</span><span>营业时间:09:00—21:00</span></p>
-								<li area="110105" site_id="11_site_151" id="11_site_151" lat="39.908841" lng="116.515378" class="11_site_151" style="color: rgb(96, 96, 108);">高碑店店-任我行</li>
-								<p class="address"><span>北京市朝阳区高碑店通惠河畔国粹苑C座任我行集团</span><span>营业时间:09:00—21:00</span></p>
-								<li area="110105" site_id="11_site_130" id="11_site_130" lat="39.913413" lng="116.47756" class="11_site_130" style="color: rgb(96, 96, 108);">国贸送车点-CUCO ONCE</li>
-								<p class="address"><span>朝阳区建国路甲92号世茂大厦</span><span>营业时间:08:00—20:00</span></p>
-								<li area="110105" site_id="11_site_127" id="11_site_127" lat="40.048872" lng="116.441315" class="11_site_127" style="color: rgb(96, 96, 108);">北苑地铁站送车点</li>
-								<p class="address"><span>北京市朝阳区地铁13号线北苑站</span><span>营业时间:09:00—18:30</span></p>
-								<li area="110105" site_id="11_site_104" id="11_site_104" lat="39.87493" lng="116.545086" class="11_site_104" style="color: rgb(96, 96, 108);">亚之杰店--海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
-								<p class="address"><span>北京朝阳区王四营乡（亚之杰）</span><span>营业时间:08:00—20:00</span></p>
-								<li area="110105" site_id="11_site_158" id="11_site_158" lat="40.072776" lng="116.619758" class="11_site_158" style="color: rgb(96, 96, 108);">T3航站楼送车点-任我行</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/plane.png">
-								<p class="address"><span>T3航站楼</span><span>营业时间:09:00—21:00</span></p>
-								<li area="110105" site_id="11_site_157" id="11_site_157" lat="40.002174" lng="116.487257" class="11_site_157" style="color: rgb(96, 96, 108);">望京soho送车点-任我行</li>
-								<p class="address"><span>望京SOHO地铁站</span><span>营业时间:09:00—21:00</span></p>
-								<li area="110105" site_id="11_site_129" id="11_site_129" lat="39.993081" lng="116.48643" class="11_site_129" style="color: rgb(96, 96, 108);">东煌酒店送车点-CUCO ONCE</li>
-								<p class="address"><span>朝阳区广顺南大街16号东煌酒店</span><span>营业时间:09:00—20:00</span></p>
-								<li area="110105" site_id="11_site_126" id="11_site_126" lat="40.032913" lng="116.447644" class="11_site_126" style="color: rgb(96, 96, 108);">来广营奥通店</li>
-								<p class="address"><span>北京市朝阳区北苑东路华阳奥通4S店</span><span>营业时间:08:30—18:30</span></p>
-								<li area="110105" site_id="11_site_107" id="11_site_107" lat="40.0026" lng="116.487806" class="11_site_107" style="color: rgb(96, 96, 108);">望京soho送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
-								<p class="address"><span>北京市朝阳区望京SOHO</span><span>营业时间:08:00—20:00</span></p>
-								<li area="110105" site_id="11_site_077" id="11_site_077" lat="39.91709" lng="116.604759" class="11_site_077" style="color: rgb(96, 96, 108);">管庄店-CUCO ONCE</li>
-								<p class="address"><span>北京市北京市朝阳区朝阳路8号</span><span>营业时间:09:00—21:00</span></p>
-								<li area="110105" site_id="11_site_155" id="11_site_155" lat="40.016106" lng="116.56079" class="11_site_155" style="color: rgb(96, 96, 108);">金盏嘉园店-方圆</li>
-								<p class="address"><span>北京市朝阳区金盏嘉园C区2号楼底商111室</span><span>营业时间:08:00—19:00</span></p>
-								<li area="110105" site_id="11_site_117" id="11_site_117" lat="39.913267" lng="116.504917" class="11_site_117" style="color: rgb(96, 96, 108);">四惠客运站送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
-								<p class="address"><span>北京市朝阳区建国路68号</span><span>营业时间:08:00—21:00</span></p>
-							</ol>
-							<ol class="dot_query_add" id="dot_query_add_海淀区" style="display: none;">
-								<li area="110108" site_id="11_site_049" id="11_site_049" lat="39.951101" lng="116.35678" class="11_site_049" style="color: rgb(96, 96, 108);">西直门店</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/brand.png">
-								<p class="address"><span>北京海淀区西直门钻河中心底商1-125</span><span>营业时间:09:00—20:00</span></p>
-							</ol>
-							<ol class="dot_query_add" id="dot_query_add_丰台区" style="display: none;">
-								<li area="110106" site_id="11_site_099" id="11_site_099" lat="39.851064" lng="116.435492" class="11_site_099" style="color: rgb(96, 96, 108);">宋家庄送车点-中汽雷日</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
-								<p class="address"><span>丰台区宋庄路宋家庄交通枢纽站</span><span>营业时间:09:30—16:30</span></p>
-								<li area="110106" site_id="1100000001" id="1100000001" lat="39.83204" lng="116.419705" class="1100000001" style="color: rgb(96, 96, 108);">永乐工业园店-百路通</li>
-								<p class="address"><span>北京市丰台区大红门永乐工业园C16号</span><span>营业时间:08:40—17:40</span></p>
-								<li area="110106" site_id="11_site_100" id="11_site_100" lat="39.851803" lng="116.404916" class="11_site_100" style="color: rgb(96, 96, 108);">大红门送车点-中汽雷日</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
-								<p class="address"><span>大红门</span><span>营业时间:09:30—16:30</span></p>
-								<li area="110106" site_id="11_site_160" id="11_site_160" lat="39.841244" lng="116.386926" class="11_site_160" style="color: rgb(96, 96, 108);">大红门店-金泰</li>
-								<p class="address"><span>北京市丰台区大红门三星庄34号</span><span>营业时间:08:30—17:30</span></p>
-								<li area="110106" site_id="11_site_065" id="11_site_065" lat="39.838526" lng="116.429535" class="11_site_065" style="color: rgb(96, 96, 108);">丰台市区店-中汽雷日</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png">
-								<p class="address"><span>北京市丰台区南四环中路20号</span><span>营业时间:08:30—17:30</span></p>
-								<li area="110106" site_id="11_site_128" id="11_site_128" lat="39.871374" lng="116.391989" class="11_site_128" style="color: rgb(96, 96, 108);">北京南站送车点-CUCO ONCE</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/tail.png">
-								<p class="address"><span>北京南站路2号院1号楼供销弘泰大厦</span><span>营业时间:09:00—20:00</span></p>
-							</ol>
-							<ol class="dot_query_add" id="dot_query_add_东城区" style="display: none;">
-								<li area="110101" site_id="11_site_070" id="11_site_070" lat="39.911474" lng="116.435484" class="11_site_070" style="color: rgb(96, 96, 108);">宝辰饭店送车点-CUCO ONCE</li>
-								<p class="address"><span>宝辰饭店地上停车场出口处</span><span>营业时间:09:00—20:00</span></p>
-								<li area="110101" site_id="11_site_133" id="11_site_133" lat="39.94616" lng="116.441991" class="11_site_133" style="color: rgb(96, 96, 108);">东直门送车点-CUCO ONCE</li>
-								<p class="address"><span>北京市北京市东城区东直门外大街48</span><span>营业时间:09:00—20:00</span></p>
-							</ol>
-							<ol class="dot_query_add" id="dot_query_add_顺义区" style="display: none;">
-								<li area="110113" site_id="11_site_109" id="11_site_109" lat="40.082601" lng="116.595772" class="11_site_109" style="color: rgb(96, 96, 108);">首都机场送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png"><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/plane.png">
-								<p class="address"><span>北京市顺义区机场西路</span><span>营业时间:08:00—20:00</span></p>
-								<li area="110113" site_id="11_site_134" id="11_site_134" lat="40.061664" lng="116.623233" class="11_site_134" style="color: rgb(96, 96, 108);">机场T3送车点-CUCO ONCE</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/plane.png">
-								<p class="address"><span>北京市北京市顺义区</span><span>营业时间:09:00—20:00</span></p>
-							</ol>
-							<ol class="dot_query_add" id="dot_query_add_TRAINSTATION_AIRPORT" style="display: none;">
-								<li area="110113" site_id="11_site_109" id="11_site_109" lat="40.082601" lng="116.595772" class="11_site_109" style="color: rgb(96, 96, 108);">首都机场送车点-海尔极车公社</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/lightning.png"><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/plane.png">
-								<p class="address"><span>北京市顺义区机场西路</span><span>营业时间:08:00—20:00</span></p>
-								<li area="110105" site_id="11_site_158" id="11_site_158" lat="40.072776" lng="116.619758" class="11_site_158" style="color: rgb(96, 96, 108);">T3航站楼送车点-任我行</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/plane.png">
-								<p class="address"><span>T3航站楼</span><span>营业时间:09:00—21:00</span></p>
-								<li area="110113" site_id="11_site_134" id="11_site_134" lat="40.061664" lng="116.623233" class="11_site_134" style="color: rgb(96, 96, 108);">机场T3送车点-CUCO ONCE</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/plane.png">
-								<p class="address"><span>北京市北京市顺义区</span><span>营业时间:09:00—20:00</span></p>
-								<li area="110106" site_id="11_site_128" id="11_site_128" lat="39.871374" lng="116.391989" class="11_site_128" style="color: rgb(96, 96, 108);">北京南站送车点-CUCO ONCE</li><img style="vertical-align: middle;padding-left: 3px;" src="${base}/img/tail.png">
-								<p class="address"><span>北京南站路2号院1号楼供销弘泰大厦</span><span>营业时间:09:00—20:00</span></p>
-							</ol>
 						</div>
+                        <script>
+                            function getArea() {
+                                var cityName = $("#city_input").text();
+                                $.post("${base}/area/findAll",{"cityName":cityName},function (data) {
+                                    $("#list_area").text("");
+                                    $("#ol_place").text("");
+                                    $.each(data,function (index,area) {
+                                        listArea(area);
+                                    })
+                                })
+                            }
+
+                            function listArea(area) {
+                                $("#list_area").append("<li id=\"" + area.areaName + "\" onclick='listPlace(this)'>" + area.areaName + "</li>" );
+                            }
+
+                            function listPlace(obj) {
+                                var areaName = $(obj).text();
+                                $.post("${base}/place/findAll",{"areaName":areaName},function (data) {
+                                    $(".dot_query_add").remove();
+                                    var html = "";
+                                    $.each(data,function (index,place) {
+                                        if(index == 0){
+                                            html+="<ol class=\"dot_query_add\" id=\"dot_query_add_" + place.area.areaName + "\" style=\"display: block;\">";
+                                        }
+                                        html+="<li style=\"color: rgb(0, 0, 0);\">" + place.placeName + "</li><img style=\"vertical-align: middle;padding-left: 3px;\" src=\"${base}/img/brand.png\"><p class=\"address\"><span>"+
+                                                place.placeAddress + "</span><span>营业时间:" + place.placeStartTime + "—" + place.placeEndTime + "</span></p>";
+                                        if(index == data.length - 1){
+                                            html+="</ol>";
+                                        }
+                                    });
+//                                    var html1 = $("#siteSelect").html();
+                                    $("#list_area").after(html);
+                                })
+                                $("#dot_query").attr('style',"display: block;");
+                            }
+                        </script>
 						<div class="address_query" id="address_query" no-close="dot_query" style="display: none;">
 							<input no-close="dot_query" type="text" id="suggestId" name="111" value="请输入目的地/位置/关键词" onblur="if (value==&#39;&#39;) {value=&#39;请输入目的地/位置/关键词&#39;}" autocomplete="off">
 							<div id="l-map" style="display: none; overflow: hidden; position: relative; z-index: 0; background-color: rgb(243, 241, 236); color: rgb(0, 0, 0); text-align: left;">
@@ -2647,21 +2599,21 @@
 				<div class="pinck_up_list date-box" day_id="from_time" stamp_id="from_stamp">
 					<p>取车时间</p>
 					<div class="pinck_up_list_div">
-						<input id="from_time" class="zc_input date" jd="judge" name="date-car" value="请输入目的地/位置/关键词" data-status="start" readonly="">
-						<span class="lastWeek" id="start_week">周三</span>
+						<input id="from_time" class="zc_input date" jd="judge" name="date-car" value="${startTime}" data-status="start" readonly="">
+						<span class="lastWeek" id="start_week">${startWeekday}</span>
 					</div>
 					<div class="time-box">
-						<input id="from_stamp" type="text" readonly="" value="${startTime}" class="time-box_input">
+						<input id="from_stamp" type="text" readonly="" value="${startStamp}" class="time-box_input">
 					</div>
 				</div>
 				<div class="pinck_up_list date-box" day_id="to_time" stamp_id="to_stamp" style="width: 290px">
 					<p>还车时间</p>
 					<div class="pinck_up_list_div">
-						<input id="to_time" class="zc_input date" jd="judge" name="date-car" value="" data-status="start" readonly="">
-						<span class="lastWeek" id="end_week">周五</span>
+						<input id="to_time" class="zc_input date" jd="judge" name="date-car" value="${endTime}" data-status="start" readonly="">
+						<span class="lastWeek" id="end_week">${endWeekday}</span>
 					</div>
 					<div class="time-box">
-						<input id="to_stamp" type="text" readonly="" value="${endTime}" class="time-box_input">
+						<input id="to_stamp" type="text" readonly="" value="${endStamp}" class="time-box_input">
 					</div>
 				</div>
 				<div class="now_choice_car">

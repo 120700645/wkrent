@@ -170,7 +170,6 @@ $(function() {
         $('#popup_pane').hide();
         $('.contents').hide();
         $('.price').hide();     	
-        $('.dot_query').hide();
         $('.yd-still-city').hide();
         $('#pinck_up_list ul[name=dianji]').css('border','');
         $('#pinck_up_dot ul[name=dot]').css('border','');
