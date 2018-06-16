@@ -3,21 +3,24 @@ package com.qianfeng.wkrent.controller.manage;
 import com.qianfeng.wkrent.dto.Brand;
 import com.qianfeng.wkrent.dto.Car;
 import com.qianfeng.wkrent.dto.CarType;
+import com.qianfeng.wkrent.dto.PageBean;
+import com.qianfeng.wkrent.info.JsonResult;
 import com.qianfeng.wkrent.service.IBrandService;
 import com.qianfeng.wkrent.service.ICarService;
 import com.qianfeng.wkrent.service.ICarTypeService;
 import com.qianfeng.wkrent.utils.CodeGenerateUtil;
 import com.qianfeng.wkrent.utils.Constants;
+import com.qianfeng.wkrent.utils.ParamUtil;
 import com.qianfeng.wkrent.utils.UploadConfig;
 import jdk.internal.util.xml.impl.Input;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.List;
 import java.util.UUID;
@@ -38,7 +41,6 @@ public class CarsController {
     @Autowired
 
     private UploadConfig uploadConfig;
-
     /**
      * 预添加
      * @param model
@@ -62,14 +64,9 @@ public class CarsController {
      */
     @RequestMapping(value = "/main",method = RequestMethod.POST)
     public String addCar(Car car,@RequestParam(value = "file") MultipartFile file) throws Exception{
-
-        System.out.println("getCarName:"+car.getCarName());
-        System.out.println("getCarName:"+car.getBrandId());
-        System.out.println("fileName"+file.getOriginalFilename());
-
+        //上传照片
         String fileName = UUID.randomUUID().toString();
         File newFile = new File(uploadConfig.getFilePath()+fileName);
-
         try {
 
             file.transferTo(newFile);
@@ -81,8 +78,36 @@ public class CarsController {
         car.setCarId(id);
         car.setCarImg(fileName);
         carService.saveSelective(car);
-
         return "main";
+    }
+
+    /**
+     * 分页显示订单数据
+     * @param page
+     * @param model
+     * @return
+     */
+    @RequestMapping("/carList/{page}")
+    public String carList(@PathVariable int page, Model model){
+        PageBean<Car> carList = carService.findAllCarByPage(page);
+        model.addAttribute("carList",carList);
+        model.addAttribute("page",page);
+        return "mcarlist";
+    }
+
+    /**
+     * 删除汽车
+     * @param carId
+     * @return
+     */
+    @RequestMapping("/deleteCar")
+    @ResponseBody
+    public JsonResult deleteCar(Integer carId){
+        System.out.println("11111");
+        JsonResult jsonResult = new JsonResult();
+        carService.deleteByPrimaryKey(carId);
+        jsonResult.setCode(ParamUtil.SUCCESS_CODE);
+        return jsonResult;
     }
 
 }

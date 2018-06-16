@@ -7,6 +7,10 @@ public class RentOrder {
 
     private Integer carId;
 
+    private Integer takePlaceId;
+
+    private Integer returnPlaceId;
+
     private String orderNum;
 
     private Date orderTakeTime;
@@ -30,6 +34,22 @@ public class RentOrder {
     private Place takePlace;
 
     private Place returnPlace;
+
+    public Integer getTakePlaceId() {
+        return takePlaceId;
+    }
+
+    public void setTakePlaceId(Integer takePlaceId) {
+        this.takePlaceId = takePlaceId;
+    }
+
+    public Integer getReturnPlaceId() {
+        return returnPlaceId;
+    }
+
+    public void setReturnPlaceId(Integer returnPlaceId) {
+        this.returnPlaceId = returnPlaceId;
+    }
 
     public Car getCar() {
         return car;

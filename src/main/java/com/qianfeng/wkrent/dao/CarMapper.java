@@ -1,6 +1,7 @@
 package com.qianfeng.wkrent.dao;
 
 import com.qianfeng.wkrent.dto.Car;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,6 +14,11 @@ public interface CarMapper {
      */
     List<Car> selectCarByTypeName(String typeName);
 
+    /**
+     * 根据carId删除车辆
+     * @param carId
+     * @return
+     */
     int deleteByPrimaryKey(Integer carId);
 
     int insert(Car record);
@@ -30,6 +36,18 @@ public interface CarMapper {
      * @return
      */
     Car selectByPrimaryKey(Integer carId);
+
+    /**
+     * 查询所有车辆
+     * @return
+     */
+    List<Car> selectAllCarByPage(@Param("start")int start,@Param("end")int end);
+
+    /**
+     * 查询总记录数
+     * @return
+     */
+    long selectCount();
 
     int updateByPrimaryKeySelective(Car record);
 

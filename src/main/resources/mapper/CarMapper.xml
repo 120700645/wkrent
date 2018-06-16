@@ -19,6 +19,13 @@
         CAR_ID, CAR_NAME, CAR_DESC, CAR_IMG, TYPE_ID, BRAND_ID,CAR_PRICE
      </sql>
 
+    <select id="selectAllCarByPage" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM (SELECT rownum rn,o.* FROM TB_CAR o where rownum &lt;=#{end})ua
+        where ua.rn &gt;= #{start}
+    </select>
+
     <select id="selectByCityName" resultMap="BaseResultMap">
         select a.*
         from(
@@ -56,6 +63,9 @@
         where type_id = #{typeId}
     </select>
 
+    <select id="selectCount" resultType="java.lang.Long">
+        SELECT COUNT(1) FROM TB_CAR
+    </select>
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         delete from TB_CAR

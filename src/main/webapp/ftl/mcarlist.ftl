@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>悟空租车后台系统</title>
+    <title>悟空租车OA系统</title>
 
     <!-- Bootstrap -->
     <link href="${base}/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">悟空租车后台系统</a>
+            <a class="navbar-brand" href="#">悟空租车OA系统</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,12 +60,12 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">系统公告</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">欢迎！<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">杨景文QF000255 <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">修改用户信息</a></li>
-                        <li><a href="#">修改手机号</a></li>
+                        <li><a href="#">修改密码</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="${base}/user/preIndex">退出系统</a></li>
+                        <li><a href="#">退出系统</a></li>
                     </ul>
                 </li>
             </ul>
@@ -78,11 +78,11 @@
             <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        悟空租车后台系统
+                        OA系统
                     </a>
                 </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item">系统首页</li>
@@ -119,32 +119,16 @@
                     </a>
                 </h4>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item"><a href="${base}/car/carList/1">所有车辆</a></li>
-                        <li class="list-group-item"><a href="${base}/car/add">添加车辆</a></li>
-                    </ul>
-                </div>
+            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="${base}/car/carList/1">所有车辆</a></li>
+                    <li class="list-group-item"><a href="${base}/car/add">添加车辆</a></li>
+                </ul>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingThree">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        网点管理
-                    </a>
-                </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">服务网点列表</li>
-                        <li class="list-group-item">添加服务网点</li>
-                    </ul>
-                </div>
-            </div>
         </div>
+
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingThree">
                 <h4 class="panel-title">
@@ -158,14 +142,48 @@
                     <ul class="list-group">
                         <li class="list-group-item">游客管理</li>
                         <li class="list-group-item">会员管理</li>
-                        <li class="list-group-item">管理员管理</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <div class="jumbotron col-md-10">
-        <h1 style="text-align: center;">Hello, welcome to wkrent!</h1>
+    <div class="col-md-10">
+
+        <table class="table table-bordered">
+            <thead class="bg-primary">
+            <td>汽车编号</td>
+            <td>汽车名称</td>
+            <td>汽车描述</td>
+            <td>汽车类型</td>
+            <td>汽车品牌</td>
+            <td>租用价格</td>
+            <td>其他操作</td>
+            </thead>
+        <#list carList.list as car>
+            <tr>
+                <td class="ms_carId">${car.carId}</td>
+                <td>${car.carName}</td>
+                <td>${car.carDesc}</td>
+                <td>${car.carType.typeName}</td>
+                <td>${car.brand.brandName}</td>
+                <td>${car.carPrice}</td>
+                <td style="text-align: center;">
+                    <button class="delete_car">删除</button>&nbsp;&nbsp;<a href="">更新</a></td>
+            </tr>
+        </#list>
+        </table>
+        <#if page==1>
+            <a href="${base}/car/carList/${page}">上一页</a>
+        <#else>
+            <a href="${base}/car/carList/${page-1}">上一页</a>
+        </#if>
+        ${page}/${carList.pages}
+        <#if page==carList.pages >
+            <a href="${base}/car/carList/${page}">下一页</a>
+        <#else>
+            <a href="${base}/car/carList/${page+1}">下一页</a>
+        </#if>
+
     </div>
 </div>
 
@@ -173,5 +191,27 @@
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="${base}/js/bootstrap.min.js"></script>
+
 </body>
 </html>
+<script type="text/javascript">
+
+    $(function () {
+        $(".delete_car").click(function () {
+            var carId = $(this).parent().parent().find(".ms_carId").text();
+            if(confirm("确认要删除吗?")){
+                $.post("${base}/car/deleteCar",{"carId":carId},function(data){
+                    if(data.code == 0){
+                        alert("删除成功!");
+                        window.location.href="${base}/car/carList/1";
+                    }
+                })
+            }
+        })
+
+    })
+
+
+
+
+</script>

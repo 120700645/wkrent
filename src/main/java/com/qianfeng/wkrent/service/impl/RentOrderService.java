@@ -30,8 +30,11 @@ public class RentOrderService implements IRentOrderService {
      */
     @Override
     public PageBean<RentOrder> findInPage(int page) {
+        //总记录数
         Long count = rentOrderDAO.selectCount();
+        //总页数
         Long pageCount = count % Constants.PAGE_SIZE == 0? count/Constants.PAGE_SIZE : count/Constants.PAGE_SIZE + 1;
+        //订单记录
         List<RentOrder> rentOrders = rentOrderDAO.selectInPage((page - 1)*Constants.PAGE_SIZE + 1,page * Constants.PAGE_SIZE);
         PageBean pageBean = new PageBean();
         pageBean.setCount(count);
@@ -45,10 +48,19 @@ public class RentOrderService implements IRentOrderService {
         return rentOrderDAO.selectCount();
     }
 
+    /**
+     * 根据状态
+     * @param page
+     * @param orderStatus
+     * @return
+     */
     @Override
     public PageBean<RentOrder> findInPageByStatus(int page, String orderStatus) {
+        //总记录数
         Long count = rentOrderDAO.selectCount();
+        //共多少页
         Long pageCount = count % Constants.PAGE_SIZE == 0? count/Constants.PAGE_SIZE:count/Constants.PAGE_SIZE + 1;
+        //当前页面显示的记录
         List<RentOrder> rentOrders = rentOrderDAO.selectInPageByStatus((page - 1)*Constants.PAGE_SIZE + 1,page * Constants.PAGE_SIZE,orderStatus);
         PageBean pageBean = new PageBean();
         pageBean.setCount(count);
@@ -64,7 +76,6 @@ public class RentOrderService implements IRentOrderService {
 
     @Override
     public int updateByPrimaryKeySelective(RentOrder rentOrder) {
-        rentOrderDAO.updateByPrimaryKeySelective(rentOrder);
         return rentOrderDAO.updateByPrimaryKeySelective(rentOrder);
     }
 

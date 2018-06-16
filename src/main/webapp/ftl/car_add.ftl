@@ -84,7 +84,7 @@
                     </a>
                 </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item">系统首页</li>
@@ -119,7 +119,7 @@
                     </a>
                 </h4>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item">添加车辆</li>
@@ -206,6 +206,14 @@
                 <td>
                     <div class="form-inline">
                         <div class="form-group"><input type="text" name="carDesc"></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>租用价格：</td>
+                <td>
+                    <div class="form-inline">
+                        <div class="form-group"><input type="text" name="carPrice"></div>
                     </div>
                 </td>
             </tr>

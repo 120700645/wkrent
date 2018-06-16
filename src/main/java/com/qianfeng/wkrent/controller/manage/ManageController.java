@@ -60,8 +60,9 @@ public class ManageController {
      */
     @RequestMapping("/orderList/{page}")
     public String orderListInPage(@PathVariable int page,Model model){
-        PageBean<RentOrder> page1 = rentOrderService.findInPage(page);
-        model.addAttribute("pages",page1);
+        PageBean<RentOrder> pages = rentOrderService.findInPage(page);
+        model.addAttribute("pages",pages);
+        model.addAttribute("page",page);
         return "morderlist";
     }
 

@@ -96,7 +96,7 @@
                     </a>
                 </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item">系统首页</li>
@@ -113,13 +113,13 @@
                     </a>
                 </h4>
             </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item"><a href="${base}/manage/orderList/1">所有订单</a></li>
-                        <li class="list-group-item"><a href="${base}/rentOrder/status/1">未付款</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">已付款,未缴纳押金</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">已确认订单</a></li>
+                        <li class="list-group-item"><a href="${base}/rentOrder/status/1">管理订单</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1"></a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1"></a></li>
                         <li class="list-group-item"><a href="${base}/manage/orderList/1"></a></li>
                         <li class="list-group-item"><a href="${base}/manage/orderList/1">已确认订单</a></li>
                     </ul>
@@ -134,12 +134,11 @@
                     </a>
                 </h4>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body">
                     <ul class="list-group">
+                        <li class="list-group-item"><a href="${base}/car/carList/1">所有车辆</a></li>
                         <li class="list-group-item"><a href="${base}/car/add">添加车辆</a></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item">补签审批</li>
                     </ul>
                 </div>
             </div>
@@ -212,12 +211,20 @@
                 <td>${page.orderDiscount}</td>
                 <td>${page.orderTotal}</td>
                 <td><button class="button-status">${page.orderStatus}</button></td>
-
-                <td><a href="">删除</a>&nbsp;<a href="">更新</a></td>
             </tr>
         </#list>
         </table>
-        <a href="#">上一页</a>&nbsp;&nbsp;<a href="#">下一页</a>
+            <#if page==1>
+                <a href="${base}/rentOrder/status/${page}">上一页</a>
+            <#else>
+                <a href="${base}/rentOrder/status/${page-1}">上一页</a>
+            </#if>
+            ${page}/${pageByStatus.pages}
+            <#if page==pageByStatus.pages >
+                <a href="${base}/rentOrder/status/${page}">下一页</a>
+            <#else>
+                <a href="${base}/rentOrder/status/${page+1}">下一页</a>
+            </#if>
     </div>
 </div>
 
@@ -248,9 +255,9 @@
         if(confirm("请确认用户是否已缴纳押金,如已缴纳,请点击确定!")){
             if(num == "未确认"){
                 $.post("${base}/rentOrder/check",{"num":num,"orderId":orderId},function(data){
+                    //alert(data.code)
                     if(data.code == 0){
-                        alert(data);
-                        change.text("已确认").removeClass("unapprove").addClass("approved");
+                        window.location.href="${base}/rentOrder/status/${page}";
                     }
                 })
             }

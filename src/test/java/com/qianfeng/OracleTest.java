@@ -13,6 +13,7 @@ import org.apache.ibatis.annotations.Param;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -46,9 +47,19 @@ public class OracleTest {
     private CarMapper carMapper;
     @Autowired
     private PlaceCarMapper placeCarMapper;
+    @Autowired
+    private RentOrderMapper rentOrderMapper;
+
+    @Test
+    public void test(){
+        RentOrder rentOrder = new RentOrder();
+        rentOrder.setOrderPrice(1000);
+        rentOrderMapper.updateByPrimaryKeySelective(rentOrder);
+    }
 
     @Test
     public void testCase(){
+
         Role role = roleMapper.selectByPrimaryKey(1);
         System.out.println(role.getRoleId()+role.getRoleName());
     }

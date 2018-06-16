@@ -165,7 +165,10 @@
         </div>
     </div>
     <div class="jumbotron col-md-10">
-        <h1 style="text-align: center;">Hello, welcome to wkrent!</h1>
+        <h5 style="text-align: center;">
+            说明:
+        </h5>
+        <h6>订单</h6>
     </div>
 </div>
 

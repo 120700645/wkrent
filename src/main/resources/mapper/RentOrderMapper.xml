@@ -13,6 +13,8 @@
     <result column="ORDER_DISCOUNT" jdbcType="DECIMAL" property="orderDiscount" />
     <result column="ORDER_TOTAL" jdbcType="DECIMAL" property="orderTotal" />
     <result column="ORDER_STATUS" jdbcType="VARCHAR" property="orderStatus" />
+      <result column="take_place_id" jdbcType="DECIMAL" property="takePlaceId"/>
+      <result column="return_place_id" jdbcType="DECIMAL" property="returnPlaceId"/>
     <association property="car" column="car_id" select="com.qianfeng.wkrent.dao.CarMapper.selectByPrimaryKey"/>
     <association property="takePlace" column="take_place_id" select="com.qianfeng.wkrent.dao.PlaceMapper.selectByPrimaryKey"/>
     <association property="returnPlace" column="return_place_id" select="com.qianfeng.wkrent.dao.PlaceMapper.selectByPrimaryKey"/>
@@ -157,48 +159,50 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.RentOrder">
-    update TB_RENT_ORDER
-    <set>
-      <if test="carId != null">
-        CAR_ID = #{carId},
-      </if>
-      <if test="orderNum != null">
-        ORDER_NUM = #{orderNum},
-      </if>
-      <if test="orderTakeTime != null">
-        ORDER_TAKE_TIME = #{orderTakeTime},
-      </if>
-      <if test="orderTakePlace != null">
-        ORDER_TAKE_PLACE = #{orderTakePlace},
-      </if>
-      <if test="orderReturnTime != null">
-        ORDER_RETURN_TIME = #{orderReturnTime},
-      </if>
-      <if test="orderReturnPlace != null">
-        ORDER_RETURN_PLACE = #{orderReturnPlace},
-      </if>
-      <if test="orderPrice != null">
-        ORDER_PRICE = #{orderPrice},
-      </if>
-      <if test="orderInsurance != null">
-        ORDER_INSURANCE = #{orderInsurance},
-      </if>
-      <if test="orderCharge != null">
-        ORDER_CHARGE = #{orderCharge},
-      </if>
-      <if test="orderDiscount != null">
-        ORDER_DISCOUNT = #{orderDiscount},
-      </if>
-      <if test="orderTotal != null">
-        ORDER_TOTAL = #{orderTotal},
-      </if>
-      <if test="orderStatus != null">
-        ORDER_STATUS = #{orderStatus},
-      </if>
-    </set>
-    where ORDER_ID = #{orderId}
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.qianfeng.wkrent.dto.RentOrder">
+        update TB_RENT_ORDER
+        <set>
+          <if test="carId != null">
+            CAR_ID = #{carId},
+          </if>
+          <if test="orderNum != null">
+            ORDER_NUM = #{orderNum},
+          </if>
+          <if test="orderTakeTime != null">
+            ORDER_TAKE_TIME = #{orderTakeTime},
+          </if>
+          <if test="takePlaceId != null">
+              take_place_id = #{takePlaceId},
+          </if>
+          <if test="orderReturnTime != null">
+            ORDER_RETURN_TIME = #{orderReturnTime},
+          </if>
+          <if test="returnPlaceId != null">
+              return_place_id = #{returnPlaceId},
+          </if>
+          <if test="orderPrice != null">
+            ORDER_PRICE = #{orderPrice},
+          </if>
+          <if test="orderInsurance != null">
+            ORDER_INSURANCE = #{orderInsurance},
+          </if>
+          <if test="orderCharge != null">
+            ORDER_CHARGE = #{orderCharge},
+          </if>
+          <if test="orderDiscount != null">
+            ORDER_DISCOUNT = #{orderDiscount},
+          </if>
+          <if test="orderTotal != null">
+            ORDER_TOTAL = #{orderTotal},
+          </if>
+          <if test="orderStatus != null">
+            ORDER_STATUS = #{orderStatus},
+          </if>
+        </set>
+        where ORDER_ID = #{orderId}
   </update>
+
   <update id="updateByPrimaryKey" parameterType="com.qianfeng.wkrent.dto.RentOrder">
     update TB_RENT_ORDER
     set CAR_ID = #{carId},

@@ -39,6 +39,13 @@ public class OtherTest {
     @Autowired
     private RentOrderMapper rentOrderDao;
 
+
+    @Test
+    public void testcar(){
+        int i = carDao.deleteByPrimaryKey(47638773);
+        System.out.println(i);
+    }
+
     @Test
     public void estCase8(){
         List<RentOrder> rentOrders = rentOrderDao.selectInPageByStatus(1, 10, "0");

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>悟空租车后台系统</title>
+    <title>悟空租车OA系统</title>
 
     <!-- Bootstrap -->
     <link href="${base}/css/bootstrap.min.css" rel="stylesheet">
@@ -17,6 +17,20 @@
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <style type="text/css">
+        .approved{
+            width:80px;
+            height:30px;
+            background:#dc0000;
+            cursor:not-allowed;
+        }
+        .unapprove{
+            width:80px;
+            height:30px;
+            background:#000000;
+            cursor:pointer;
+        }
+    </style>
     <![endif]-->
 </head>
 <body>
@@ -30,7 +44,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">悟空租车后台系统</a>
+            <a class="navbar-brand" href="#">悟空租车OA系统</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,12 +74,12 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">系统公告</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">欢迎！<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">杨景文QF000255 <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">修改用户信息</a></li>
-                        <li><a href="#">修改手机号</a></li>
+                        <li><a href="#">修改密码</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="${base}/user/preIndex">退出系统</a></li>
+                        <li><a href="#">退出系统</a></li>
                     </ul>
                 </li>
             </ul>
@@ -78,7 +92,7 @@
             <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        悟空租车后台系统
+                        OA系统
                     </a>
                 </h4>
             </div>
@@ -103,10 +117,11 @@
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item"><a href="${base}/manage/orderList/1">所有订单</a></li>
-                        <li class="list-group-item"><a href="${base}/rentOrder/status/1">未确认订单</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">提车管理</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">还车管理</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">违章管理</a></li>
+                        <li class="list-group-item"><a href="${base}/rentOrder/status/1">管理订单</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1"></a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1"></a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1"></a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">已确认订单</a></li>
                     </ul>
                 </div>
             </div>
@@ -122,8 +137,9 @@
             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item"><a href="${base}/car/carList/1">所有车辆</a></li>
                         <li class="list-group-item"><a href="${base}/car/add">添加车辆</a></li>
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item">补签审批</li>
                     </ul>
                 </div>
             </div>
@@ -164,8 +180,53 @@
             </div>
         </div>
     </div>
-    <div class="jumbotron col-md-10">
-        <h1 style="text-align: center;">Hello, welcome to wkrent!</h1>
+    <div class="col-md-10">
+
+        <table class="table table-bordered">
+            <thead class="bg-primary">
+            <td>id</td>
+            <td>订单号</td>
+            <td>取车点</td>
+            <td>还车点</td>
+            <td>取车时间</td>
+            <td>还车时间</td>
+            <td>租金</td>
+            <td>保险</td>
+            <td>手续费</td>
+            <td>抵扣</td>
+            <td>总计</td>
+            <td>状态</td>
+            </thead>
+        <#list pageByStatus.list as page>
+            <tr>
+                <td class="order_id">${page.orderId}</td>
+                <td>${page.orderNum}</td>
+                <td>${page.takePlace.placeName}</td>
+                <td>${page.returnPlace.placeName}</td>
+                <td>${page.orderTakeTime?string("yyyy年MM月dd日")}</td>
+                <td>${page.orderReturnTime?string("yyyy年MM月dd日")}</td>
+                <td>${page.orderPrice}</td>
+                <td>${page.orderInsurance}</td>
+                <td>${page.orderCharge}</span> </td>
+                <td>${page.orderDiscount}</td>
+                <td>${page.orderTotal}</td>
+                <td><button class="button-status">${page.orderStatus}</button></td>
+            </tr>
+        </#list>
+        </table>
+        <#if page==1>
+            <a href="${base}/manage/orderList/${page}">上一页</a>
+        <#else>
+            <a href="${base}/manage/orderList/${page-1}">上一页</a>
+        </#if>
+        ${page}/${pageByStatus.pages}
+        <#if page==pageByStatus.pages >
+            <a href="${base}/manage/orderList/${page}">下一页</a>
+        <#else>
+            <a href="${base}/manage/orderList/${page+1}">下一页</a>
+        </#if>
+
+        <a href="${base}/manage/orderList/${page-1}">上一页</a>&nbsp;&nbsp;<a href="#">下一页</a>
     </div>
 </div>
 
@@ -175,3 +236,32 @@
 <script src="${base}/js/bootstrap.min.js"></script>
 </body>
 </html>
+<script>
+    $(function(){
+        $(".button-status").each(function(){
+            var num = $(this).text();
+            if(num == 0){
+                $(this).text("未确认").addClass("unapprove");
+            }else if(num == 1){
+                $(this).text("已确认").addClass("approved");
+            }
+        })
+    })
+
+    $(".button-status").click(function(){
+        var num = $(this).text();
+        //alert(num);
+        var change = $(this);
+        var orderId = change.parent().parent().find(".order_id").text();
+        //alert(orderId);
+        if(confirm("请确认用户是否已付款,如已付款,请及时查询是否有该种车辆,如有请通知用户来网点提车!")){
+            if(num == "未确认"){
+                $.post("${base}/rentOrder/check",{"num":num,"orderId":orderId},function(data){
+                    if(data.code == 0){
+                        window.location.href="${base}/rentOrder/status/1";
+                    }
+                })
+            }
+        }
+    })
+</script>

@@ -181,7 +181,6 @@
             <td>抵扣</td>
             <td>总计</td>
             <td>状态</td>
-            <td>操作</td>
             </thead>
             <#list pages.list as page>
             <tr>
@@ -197,11 +196,21 @@
                 <td>${page.orderDiscount}</td>
                 <td>${page.orderTotal}</td>
                 <td><span class="btn-success">${page.orderStatus}</td>
-                <td><a href="">删除</a>&nbsp;<a href="">更新</a></td>
             </tr>
             </#list>
         </table>
-        <a href="#">上一页</a>&nbsp;&nbsp;<a href="#">下一页</a>
+        <#if page==1>
+            <a href="${base}/car/orderList/${page}">上一页</a>
+        <#else>
+            <a href="${base}/manage/orderList/${page-1}">上一页</a>
+        </#if>
+        ${page}/${pages.pages}
+        <#if page==pages.pages >
+            <a href="${base}/manage/orderList/${page}">下一页</a>
+        <#else>
+            <a href="${base}/manage/orderList/${page+1}">下一页</a>
+        </#if>
+        <#--这是所有订单的页面-->
     </div>
 </div>
 
@@ -211,3 +220,4 @@
 <script src="${base}/js/bootstrap.min.js"></script>
 </body>
 </html>
+
