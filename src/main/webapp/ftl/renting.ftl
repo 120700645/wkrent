@@ -2175,6 +2175,16 @@
 				border: 0;
 				cursor: pointer
 			}
+
+            .dot_car_list_o_right > .prompt {
+                height: 312px;
+                width: 100%;
+                overflow: hidden;
+                float: inherit;
+                text-align: center;
+                margin-bottom: 20px;
+                padding-top: 48px;
+            }
 		</style>
 	</head>
 
@@ -2632,7 +2642,7 @@
 								<img src="${base}/img/buxian_selected.jpg">
 								<figcaption category="deselect" class="selected">不限</figcaption>
 							</figure>
-                            <#list carTypeList as list>
+                            <#list types as list>
                                 <figure class="jinji_fig" >
 									<p style="display: none;">${list_index}</p>
                                     <img  src="${base}/img/jingji.jpg" class="jinji_fig_img" >
@@ -2706,8 +2716,9 @@
 								</div><b index="0" style="display: none;"></b></div>
 							<div class="occupy"></div>
 						</div>
+						<#if placeCars?exists>
+						<#list placeCars as car>
 						<ul>
-							<#list placeCars as car>
 							<li class="dot_car_list_o_li"><img src="${base}/img/${car.car.carImg}">
 								<div class="dot_car_list_o_divo">
 									<h4 title="${car.car.carName}">${car.car.carName}</h4>
@@ -2723,8 +2734,11 @@
 								</div>
 								<div id="list_reserve" class="dot_car_list_o_divth btn-style" onclick="toOrderPages(&#39;BUICK_EXCELLE_201515LAT01&#39;,&#39;11_site_064&#39;,&#39;北京&#39;,&#39;110000&#39;,&#39;null&#39;);">预订</div>
 							</li>
-							</#list>
 						</ul>
+						</#list>
+						<#else>
+                        <div class="dot_car_list_o_right"><div class="prompt"><img src="//static.wkzuche.com/www/images/search/prompt-icon.png"><p>您的取还车时间不在该网点营业时间内，试试看其他时间哦</p></div></div>
+						</#if>
 						<div style="clear: both;" class="more_dot">更多其他网点</div>
 						<div class="dot_car_list_o_right_top">
 							<p class="dot-address"><strong>东湖渠地铁站送车点 </strong><img style="vertical-align: middle;padding-right: 2px;margin-top:-3px;" src="${base}/img/brand.png"><i>营业时间 :</i> <em>09:00-18:30 </em><i>网点电话 :</i> <em>400-0515-507 </em> </p>
@@ -2846,18 +2860,18 @@
 		<script type="text/javascript">
             /*--------------选择类型 更换背景图片为红色---------------*/
             var arr = new Array();
-            $(".jinji_fig").click(function () {
-                var carType = $(this).find("figcaption").text();
-                if($(this).find("img").attr('src') == "${base}/img/jingji.jpg"){
-                    var typeIndex = $(this).find("p").text();
-                    arr[typeIndex] = $(this).find("figcaption").text();
-					$(".buxian_fig").find("img").attr('src',"${base}/img/buxian.jpg");
-                    $(this).find("img").attr('src',"${base}/img/jingji_selected.jpg");
-                }else{
-                    $(this).find("img").attr('src',"${base}/img/jingji.jpg");
-                    var typeIndex = $(this).find("p").text();
-                    arr[typeIndex]=null;
-                }
+                $(".jinji_fig").click(function () {
+                    var carType = $(this).find("figcaption").text();
+                    if($(this).find("img").attr('src') == "${base}/img/jingji.jpg"){
+                        var typeIndex = $(this).find("p").text();
+                        arr[typeIndex] = $(this).find("figcaption").text();
+                        $(".buxian_fig").find("img").attr('src',"${base}/img/buxian.jpg");
+                        $(this).find("img").attr('src',"${base}/img/jingji_selected.jpg");
+                    }else{
+                        $(this).find("img").attr('src',"${base}/img/jingji.jpg");
+                        var typeIndex = $(this).find("p").text();
+                        arr[typeIndex]=null;
+                    }
                 var tag = true;
                 for(var i = 0;i<arr.length;i++){
                     if(arr[i]!=null){

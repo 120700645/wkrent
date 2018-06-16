@@ -156,13 +156,16 @@ public class OracleTest {
     public void testCase13(){
         ArrayList<String> brandList = new ArrayList<>();
         ArrayList<String> placeList = new ArrayList<>();
-        brandList.add("别克");
-        brandList.add("大众");
-        placeList.add("经济型");
+//        int size = brandList.size();
+//        System.out.println(size);
+//        brandList.add("别克");
+//        brandList.add("大众");
+//        placeList.add("经济型");
         placeList.add("舒适型");
-        List<PlaceCar> placeCars = placeCarMapper.selectCarPlace(1, brandList, placeList);
+        List<PlaceCar> placeCars = placeCarMapper.selectCarPlace(1,brandList,placeList);
         for (PlaceCar placeCar : placeCars) {
             System.out.println(placeCar.getCar().getCarName() + "/////" + placeCar.getPlace().getPlaceName());
         }
     }
+
 }

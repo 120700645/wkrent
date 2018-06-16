@@ -2491,6 +2491,7 @@
 					<div class="home_rent_days">租期: <span>2天</span></div>
 					<input type="button" value="立即选车" id="home_select" class="s_btn" title="" onclick="choose();">
 				</div>
+
 			</div>
 		</div>
 		<script>
