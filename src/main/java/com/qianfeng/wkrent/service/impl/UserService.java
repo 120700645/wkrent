@@ -5,6 +5,7 @@ import com.qianfeng.wkrent.dto.PageBean;
 import com.qianfeng.wkrent.dto.User;
 import com.qianfeng.wkrent.service.IUserService;
 import com.qianfeng.wkrent.shiro.TelephoneToken;
+import com.qianfeng.wkrent.utils.Constants;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.subject.Subject;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Random;
 
 @Service
@@ -54,8 +56,19 @@ public class UserService implements IUserService {
 
     @Override
     public PageBean<User> findAllUserByPage(int page) {
+        long count = userMapper.selectNum();
+        long pageCount = count % Constants.PAGE_SIZE_BACK==0?count%Constants.PAGE_SIZE_BACK:count%Constants.PAGE_SIZE_BACK;
+        //订单记录
+        List<User> rentOrders = userMapper.selectAllUserByPage((page - 1)*Constants.PAGE_SIZE_BACK + 1,page * Constants.PAGE_SIZE_BACK);
+        PageBean pageBean = new PageBean();
+        pageBean.setCount(count);
+        pageBean.setList(rentOrders);
+        pageBean.setPages(pageCount);
+        return pageBean;
+    }
 
-
-        return null;
+    @Override
+    public long findNumber() {
+        return userMapper.selectNum();
     }
 }

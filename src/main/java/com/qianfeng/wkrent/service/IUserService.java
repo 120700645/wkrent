@@ -21,4 +21,6 @@ public interface IUserService {
     void login(String tel,String code) throws AuthenticationException;
 
     PageBean<User> findAllUserByPage(int page);
+
+    long findNumber();
 }

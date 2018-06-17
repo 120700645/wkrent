@@ -36,7 +36,19 @@ public interface UserMapper {
 
     User selectByTel(String tel);
 
+    /**
+     * 分页查询所有用户
+     * @param start
+     * @param end
+     * @return
+     */
     List<User> selectAllUserByPage(@Param("start")int start,@Param("end")int end);
+
+    /**
+     * 查询总数量
+     * @return
+     */
+    long selectNum();
 
 
 }

@@ -31,7 +31,7 @@
         where ua.rn &gt;= #{start}
     </select>
 
-    <select id="selectCount" resultType="java.lang.Long">
+    <select id="selectNum" resultType="java.lang.Long">
         SELECT COUNT(1) FROM TB_USER
     </select>
   

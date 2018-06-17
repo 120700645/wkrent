@@ -18,17 +18,9 @@
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <style type="text/css">
-        .approved{
-            width:80px;
-            height:30px;
-            background:#dc0000;
-            cursor:not-allowed;
-        }
-        .unapprove{
-            width:80px;
-            height:30px;
-            background:#000000;
-            cursor:pointer;
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle!important;
         }
     </style>
     <![endif]-->
@@ -92,7 +84,7 @@
             <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        OA系统
+                        悟空租车OA系统
                     </a>
                 </h4>
             </div>
@@ -113,18 +105,14 @@
                     </a>
                 </h4>
             </div>
-            <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item"><a href="${base}/manage/orderList/1">所有订单</a></li>
-                        <li class="list-group-item"><a order_id="0" href="${base}/rentOrder/status/?page=1&status=0">已下单,未付款</a></li>
-                        <li class="list-group-item"><a order_id="1" href="${base}/rentOrder/status/?page=1&status=1">已付款</a></li>
-                        <li class="list-group-item"><a order_id="2" href="${base}/rentOrder/status/?page=1&status=2">确认订单</a></li>
-                        <li class="list-group-item"><a order_id="3" href="${base}/rentOrder/status/?page=1&status=3">缴纳押金</a></li>
-                        <li class="list-group-item"><a order_id="4" href="${base}/rentOrder/status/?page=1&status=4">提车管理</a></li>
-                        <li class="list-group-item"><a order_id="5" href="${base}/rentOrder/status/?page=1&status=5">已还车,退租车押金</a></li>
-                        <li class="list-group-item"><a order_id="6" href="${base}/rentOrder/status/?page=1&status=6">未违章,退违章押金</a></li>
-                        <li class="list-group-item"><a order_id="7" href="${base}/rentOrder/status/?page=1&status=7">已取消订单</a></li>
+                        <li class="list-group-item"><a href="${base}/rentOrder/status/1">未确认订单</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">提车管理</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">还车管理</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">违章管理</a></li>
                     </ul>
                 </div>
             </div>
@@ -146,37 +134,19 @@
                 </div>
             </div>
         </div>
+
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingThree">
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        网点管理
+                        员工管理
                     </a>
                 </h4>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item">服务网点列表</li>
-                        <li class="list-group-item">添加服务网点</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingThree">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        用户管理
-                    </a>
-                </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">游客管理</li>
-                        <li class="list-group-item">会员管理</li>
-                        <li class="list-group-item">管理员管理</li>
+                        <li class="list-group-item"><a href="${base}/users/lists/1">用户列表</a></li>
                     </ul>
                 </div>
             </div>
@@ -186,47 +156,46 @@
 
         <table class="table table-bordered">
             <thead class="bg-primary">
-            <td>id</td>
-            <td>订单号</td>
-            <td>取车点</td>
-            <td>还车点</td>
-            <td>取车时间</td>
-            <td>还车时间</td>
-            <td>租金</td>
-            <td>保险</td>
-            <td>手续费</td>
-            <td>抵扣</td>
-            <td>总计</td>
-            <td>状态</td>
+            <td class="text-center">用户编号</td>
+            <td class="text-center">联系方式</td>
+            <td class="text-center">真实姓名</td>
+            <td class="text-center">身份证号</td>
+            <td class="text-center">是否冻结</td>
+            <td class="text-center">可用余额</td>
+            <td class="text-center">悟空币</td>
+            <td class="text-center">积分</td>
+            <td class="text-center">会员等级</td>
             </thead>
-        <#list pageByStatus.list as page>
+        <#list allUserByPage.list as user>
             <tr>
-                <td class="order_id">${page.orderId}</td>
-                <td>${page.orderNum}</td>
-                <td>${page.takePlace.placeName}</td>
-                <td>${page.returnPlace.placeName}</td>
-                <td>${page.orderTakeTime?string("yyyy年MM月dd日")}</td>
-                <td>${page.orderReturnTime?string("yyyy年MM月dd日")}</td>
-                <td>${page.orderPrice}</td>
-                <td>${page.orderInsurance}</td>
-                <td>${page.orderCharge}</span> </td>
-                <td>${page.orderDiscount}</td>
-                <td>${page.orderTotal}</td>
-                <td><button  class="button-status" value="${page.orderStatus}">未确认</button></td>
+                <td class="text-center ms_carId">${user.userId}</td>
+                <td class="text-center">${user.userTel}</td>
+                <td class="text-center">${user.userName}</td>
+                <td class="text-center">${user.userCard}</td>
+                <td class="text-center">${user.userCount}</td>
+                <td class="text-center">${user.userFreeze}</td>
+                <td class="text-center">${user.userUseable}</td>
+                <td class="text-center">${user.userWkb}</td>
+                <td class="text-center">${user.userNum}</td>
+                <td class="text-center">${user.userLeavel}</td>
+                <td style="text-align: center;">
+                    <button class="delete_car">删除</button>
+                </td>
             </tr>
         </#list>
         </table>
-            <#if page==1>
-                <a href="${base}/rentOrder/status/?page=${page}&status=${status}">上一页</a>
-            <#else>
-                <a href="${base}/rentOrder/status/?page=${page-1}&status=${status}">上一页</a>
-            </#if>
-            ${page}/${pageByStatus.pages}
-            <#if page == pageByStatus.pages>
-                <a href="${base}/rentOrder/status/?page=${page}&status=${status}">下一页</a>
-            <#else>
-                <a href="${base}/rentOrder/status/?page=${page+1}&status=${status}">下一页</a>
-            </#if>
+    <#if page==1>
+        <a href="${base}/car/carList/${page}">上一页</a>
+    <#else>
+        <a href="${base}/car/carList/${page-1}">上一页</a>
+    </#if>
+    ${page}/${allUserByPage.pages}
+    <#if page==allUserByPage.pages >
+        <a href="${base}/car/carList/${page}">下一页</a>
+    <#else>
+        <a href="${base}/car/carList/${page+1}">下一页</a>
+    </#if>
+
     </div>
 </div>
 
@@ -234,39 +203,27 @@
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="${base}/js/bootstrap.min.js"></script>
+
 </body>
 </html>
-<script>
-    $(function(){
-        /*$(".button-status").each(function(){
-            var num = $(this).text("未确认");
-            if(num == 0){
-                $(this).text("未确认").addClass("unapprove");
-            }else if(num == 1){
-                $(this).text("已确认").addClass("approved");
-            }
-        })*/
-    })
+<script type="text/javascript">
 
-
-
-    $(".button-status").click(function(){
-        var num = $(this).text();
-        //alert(num);
-        var orderStatus = $(this).val();
-        //alert(orderStatus);
-        var change = $(this);
-        var orderId = change.parent().parent().find(".order_id").text();
-        //alert(orderId);
-        if(confirm("请确认无误后操作!")){
-            if(num == "未确认"){
-                $.post("${base}/rentOrder/check",{"num":num,"orderId":orderId,"orderStatus":orderStatus},function(data){
-                    //alert(data.code)
+    $(function () {
+        $(".delete_car").click(function () {
+            var carId = $(this).parent().parent().find(".ms_carId").text();
+            if(confirm("确认要删除吗?")){
+                $.post("${base}/car/deleteCar",{"carId":carId},function(data){
                     if(data.code == 0){
-                        window.location.href="${base}/rentOrder/status/?page=${page}&status=${status}";
+                        alert("删除成功!");
+                        window.location.href="${base}/car/carList/${page}";
                     }
                 })
             }
-        }
+        })
+
     })
+
+
+
+
 </script>

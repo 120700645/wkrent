@@ -133,35 +133,17 @@
             </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingThree">
+            <div class="panel-heading" role="tab" id="headingFive">
                 <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        网点管理
-                    </a>
-                </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">服务网点列表</li>
-                        <li class="list-group-item">添加服务网点</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingThree">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                         用户管理
                     </a>
                 </h4>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item">用户列表</li>
-                        <li class="list-group-item">管理员管理</li>
+                        <li class="list-group-item"><a href="${base}/users/lists/1">用户列表</a></li>
                     </ul>
                 </div>
             </div>
