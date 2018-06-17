@@ -1,6 +1,7 @@
 package com.qianfeng.wkrent.service.impl;
 
 import com.qianfeng.wkrent.dao.UserMapper;
+import com.qianfeng.wkrent.dto.PageBean;
 import com.qianfeng.wkrent.dto.User;
 import com.qianfeng.wkrent.service.IUserService;
 import com.qianfeng.wkrent.shiro.TelephoneToken;
@@ -49,5 +50,12 @@ public class UserService implements IUserService {
         token.setRememberMe(true);
         // 登陆
         subject.login(token);
+    }
+
+    @Override
+    public PageBean<User> findAllUserByPage(int page) {
+
+
+        return null;
     }
 }

@@ -17,6 +17,12 @@
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <style type="text/css">
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle!important;
+        }
+    </style>
     <![endif]-->
 </head>
 <body>
@@ -133,7 +139,7 @@
             <div class="panel-heading" role="tab" id="headingThree">
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        用户管理
+                        员工管理
                     </a>
                 </h4>
             </div>
@@ -151,24 +157,25 @@
 
         <table class="table table-bordered">
             <thead class="bg-primary">
-            <td>汽车编号</td>
-            <td>汽车名称</td>
-            <td>汽车描述</td>
-            <td>汽车类型</td>
-            <td>汽车品牌</td>
-            <td>租用价格</td>
-            <td>其他操作</td>
+            <td class="text-center">汽车编号</td>
+            <td class="text-center">汽车名称</td>
+            <td class="text-center">汽车描述</td>
+            <td class="text-center">汽车类型</td>
+            <td class="text-center">汽车品牌</td>
+            <td class="text-center">租用价格</td>
+            <td class="text-center">其他操作</td>
             </thead>
         <#list carList.list as car>
             <tr>
-                <td class="ms_carId">${car.carId}</td>
-                <td>${car.carName}</td>
-                <td>${car.carDesc}</td>
-                <td>${car.carType.typeName}</td>
-                <td>${car.brand.brandName}</td>
-                <td>${car.carPrice}</td>
+                <td class="text-center ms_carId">${car.carId}</td>
+                <td class="text-center">${car.carName}</td>
+                <td class="text-center">${car.carDesc}</td>
+                <td class="text-center">${car.carType.typeName}</td>
+                <td class="text-center">${car.brand.brandName}</td>
+                <td class="text-center">${car.carPrice}</td>
                 <td style="text-align: center;">
-                    <button class="delete_car">删除</button>&nbsp;&nbsp;<a href="">更新</a></td>
+                    <button class="delete_car">删除</button>
+                </td>
             </tr>
         </#list>
         </table>
@@ -203,7 +210,7 @@
                 $.post("${base}/car/deleteCar",{"carId":carId},function(data){
                     if(data.code == 0){
                         alert("删除成功!");
-                        window.location.href="${base}/car/carList/1";
+                        window.location.href="${base}/car/carList/${page}";
                     }
                 })
             }

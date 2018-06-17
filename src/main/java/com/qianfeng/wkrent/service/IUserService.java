@@ -1,5 +1,6 @@
 package com.qianfeng.wkrent.service;
 
+import com.qianfeng.wkrent.dto.PageBean;
 import com.qianfeng.wkrent.dto.User;
 import org.apache.shiro.authc.AuthenticationException;
 
@@ -18,4 +19,6 @@ public interface IUserService {
      * @throws AuthenticationException
      */
     void login(String tel,String code) throws AuthenticationException;
+
+    PageBean<User> findAllUserByPage(int page);
 }

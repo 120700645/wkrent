@@ -94,6 +94,9 @@
       <if test="carImg != null">
         CAR_IMG,
       </if>
+        <if test="carPrice != null">
+            CAR_PRICE,
+        </if>
       <if test="typeId != null">
         TYPE_ID,
       </if>
@@ -114,6 +117,9 @@
       <if test="carImg != null">
         #{carImg},
       </if>
+        <if test="carPrice != null">
+            #{carPrice},
+        </if>
       <if test="typeId != null">
         #{typeId},
       </if>
@@ -134,6 +140,9 @@
       <if test="carImg != null">
         CAR_IMG = #{carImg},
       </if>
+        <if test="carPrice != null">
+            CAR_PRICE = #{carPrice},
+        </if>
       <if test="typeId != null">
         TYPE_ID = #{typeId},
       </if>
@@ -148,6 +157,7 @@
     set CAR_NAME = #{carName},
       CAR_DESC = #{carDesc},
       CAR_IMG = #{carImg},
+      CAR_PRICE = #{carPrice},
       TYPE_ID = #{typeId},
       BRAND_ID = #{brandId}
     where CAR_ID = #{carId}

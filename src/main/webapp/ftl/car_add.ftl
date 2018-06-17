@@ -104,9 +104,15 @@
             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">订单列表</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">订单列表</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">订单列表</a></li>
+                        <li class="list-group-item"><a href="${base}/manage/orderList/1">所有订单</a></li>
+                        <li class="list-group-item"><a order_id="0" href="${base}/rentOrder/status/?page=1&status=0">已下单,未付款</a></li>
+                        <li class="list-group-item"><a order_id="1" href="${base}/rentOrder/status/?page=1&status=1">已付款</a></li>
+                        <li class="list-group-item"><a order_id="2" href="${base}/rentOrder/status/?page=1&status=2">确认订单</a></li>
+                        <li class="list-group-item"><a order_id="3" href="${base}/rentOrder/status/?page=1&status=3">缴纳押金</a></li>
+                        <li class="list-group-item"><a order_id="4" href="${base}/rentOrder/status/?page=1&status=4">提车管理</a></li>
+                        <li class="list-group-item"><a order_id="5" href="${base}/rentOrder/status/?page=1&status=5">已还车,退租车押金</a></li>
+                        <li class="list-group-item"><a order_id="6" href="${base}/rentOrder/status/?page=1&status=6">未违章,退违章押金</a></li>
+                        <li class="list-group-item"><a order_id="7" href="${base}/rentOrder/status/?page=1&status=7">已取消订单</a></li>
                     </ul>
                 </div>
             </div>
@@ -119,12 +125,11 @@
                     </a>
                 </h4>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item">添加车辆</li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item">补签审批</li>
+                        <li class="list-group-item"><a href="${base}/car/carList/1">所有车辆</a></li>
+                        <li class="list-group-item"><a href="${base}/car/add">添加车辆</a></li>
                     </ul>
                 </div>
             </div>

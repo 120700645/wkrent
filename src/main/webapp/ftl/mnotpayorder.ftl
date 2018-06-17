@@ -117,11 +117,14 @@
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item"><a href="${base}/manage/orderList/1">所有订单</a></li>
-                        <li class="list-group-item"><a href="${base}/rentOrder/status/1">管理订单</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1"></a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1"></a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1"></a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">已确认订单</a></li>
+                        <li class="list-group-item"><a order_id="0" href="${base}/rentOrder/status/?page=1&status=0">已下单,未付款</a></li>
+                        <li class="list-group-item"><a order_id="1" href="${base}/rentOrder/status/?page=1&status=1">已付款</a></li>
+                        <li class="list-group-item"><a order_id="2" href="${base}/rentOrder/status/?page=1&status=2">确认订单</a></li>
+                        <li class="list-group-item"><a order_id="3" href="${base}/rentOrder/status/?page=1&status=3">缴纳押金</a></li>
+                        <li class="list-group-item"><a order_id="4" href="${base}/rentOrder/status/?page=1&status=4">提车管理</a></li>
+                        <li class="list-group-item"><a order_id="5" href="${base}/rentOrder/status/?page=1&status=5">已还车,退租车押金</a></li>
+                        <li class="list-group-item"><a order_id="6" href="${base}/rentOrder/status/?page=1&status=6">未违章,退违章押金</a></li>
+                        <li class="list-group-item"><a order_id="7" href="${base}/rentOrder/status/?page=1&status=7">已取消订单</a></li>
                     </ul>
                 </div>
             </div>
@@ -195,7 +198,6 @@
             <td>抵扣</td>
             <td>总计</td>
             <td>状态</td>
-            <td>操作</td>
             </thead>
         <#list pageByStatus.list as page>
             <tr>
@@ -210,20 +212,20 @@
                 <td>${page.orderCharge}</span> </td>
                 <td>${page.orderDiscount}</td>
                 <td>${page.orderTotal}</td>
-                <td><button class="button-status">${page.orderStatus}</button></td>
+                <td><button  class="button-status" value="${page.orderStatus}">未确认</button></td>
             </tr>
         </#list>
         </table>
             <#if page==1>
-                <a href="${base}/rentOrder/status/${page}">上一页</a>
+                <a href="${base}/rentOrder/status/?page=${page}&status=${status}">上一页</a>
             <#else>
-                <a href="${base}/rentOrder/status/${page-1}">上一页</a>
+                <a href="${base}/rentOrder/status/?page=${page-1}&status=${status}">上一页</a>
             </#if>
             ${page}/${pageByStatus.pages}
-            <#if page==pageByStatus.pages >
-                <a href="${base}/rentOrder/status/${page}">下一页</a>
+            <#if page == pageByStatus.pages>
+                <a href="${base}/rentOrder/status/?page=${page}&status=${status}">下一页</a>
             <#else>
-                <a href="${base}/rentOrder/status/${page+1}">下一页</a>
+                <a href="${base}/rentOrder/status/?page=${page+1}&status=${status}">下一页</a>
             </#if>
     </div>
 </div>
@@ -236,28 +238,32 @@
 </html>
 <script>
     $(function(){
-        $(".button-status").each(function(){
-            var num = $(this).text();
+        /*$(".button-status").each(function(){
+            var num = $(this).text("未确认");
             if(num == 0){
                 $(this).text("未确认").addClass("unapprove");
             }else if(num == 1){
                 $(this).text("已确认").addClass("approved");
             }
-        })
+        })*/
     })
+
+
 
     $(".button-status").click(function(){
         var num = $(this).text();
         //alert(num);
+        var orderStatus = $(this).val();
+        //alert(orderStatus);
         var change = $(this);
         var orderId = change.parent().parent().find(".order_id").text();
         //alert(orderId);
-        if(confirm("请确认用户是否已缴纳押金,如已缴纳,请点击确定!")){
+        if(confirm("请确认无误后操作!")){
             if(num == "未确认"){
-                $.post("${base}/rentOrder/check",{"num":num,"orderId":orderId},function(data){
+                $.post("${base}/rentOrder/check",{"num":num,"orderId":orderId,"orderStatus":orderStatus},function(data){
                     //alert(data.code)
                     if(data.code == 0){
-                        window.location.href="${base}/rentOrder/status/${page}";
+                        window.location.href="${base}/rentOrder/status/?page=${page}&status=${status}";
                     }
                 })
             }

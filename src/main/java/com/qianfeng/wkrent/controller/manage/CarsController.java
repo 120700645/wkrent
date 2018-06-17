@@ -73,12 +73,12 @@ public class CarsController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String code = CodeGenerateUtil.getCode(8);
+        String code = CodeGenerateUtil.getCode(3);
         int id = Integer.parseInt(code);
         car.setCarId(id);
         car.setCarImg(fileName);
         carService.saveSelective(car);
-        return "main";
+        return "mcarlist";
     }
 
     /**
@@ -103,7 +103,6 @@ public class CarsController {
     @RequestMapping("/deleteCar")
     @ResponseBody
     public JsonResult deleteCar(Integer carId){
-        System.out.println("11111");
         JsonResult jsonResult = new JsonResult();
         carService.deleteByPrimaryKey(carId);
         jsonResult.setCode(ParamUtil.SUCCESS_CODE);

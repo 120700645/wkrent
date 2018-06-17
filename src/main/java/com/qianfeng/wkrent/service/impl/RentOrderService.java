@@ -49,7 +49,7 @@ public class RentOrderService implements IRentOrderService {
     }
 
     /**
-     * 根据状态
+     * 根据状态查询
      * @param page
      * @param orderStatus
      * @return
@@ -57,7 +57,7 @@ public class RentOrderService implements IRentOrderService {
     @Override
     public PageBean<RentOrder> findInPageByStatus(int page, String orderStatus) {
         //总记录数
-        Long count = rentOrderDAO.selectCount();
+        Long count = rentOrderDAO.selectCountByStatus(orderStatus);
         //共多少页
         Long pageCount = count % Constants.PAGE_SIZE == 0? count/Constants.PAGE_SIZE:count/Constants.PAGE_SIZE + 1;
         //当前页面显示的记录

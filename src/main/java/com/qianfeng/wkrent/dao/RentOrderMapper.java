@@ -67,5 +67,11 @@ public interface RentOrderMapper {
     List<RentOrder> selectInPageByStatus(@Param("start")int start,@Param("end")int end,@Param("orderStatus")String orderStatus);
 
 
+    /**
+     * 通过状态查询条数
+     * @param status
+     * @return
+     */
+    long selectCountByStatus(@Param("status") String status);
 
 }

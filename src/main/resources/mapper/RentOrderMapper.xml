@@ -42,8 +42,8 @@
 
     <select id="selectInPageByStatus" resultMap="BaseResultMap">
         SELECT *
-        FROM (SELECT rownum rn,o.* FROM TB_RENT_ORDER o where rownum &lt;= #{end})ua
-        where ua.rn &gt;= #{start} and order_status=#{orderStatus}
+        FROM (SELECT rownum rn,o.* FROM TB_RENT_ORDER o where rownum &lt;= #{end} and order_status=#{orderStatus})ua
+        where ua.rn &gt;= #{start}
 
     </select>
 
@@ -51,6 +51,10 @@
   <select id="selectCount" resultType="java.lang.Long">
     SELECT COUNT(1) FROM TB_RENT_ORDER
   </select>
+
+    <select id="selectCountByStatus" resultType="java.lang.Long">
+        SELECT COUNT(1) FROM TB_RENT_ORDER where order_status=#{status}
+    </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

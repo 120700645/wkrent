@@ -14,6 +14,7 @@ public interface IRentOrderService {
     List<RentOrder> selectAll();
 
     PageBean<RentOrder> findInPage(int page);
+
     long count();
 
     /**

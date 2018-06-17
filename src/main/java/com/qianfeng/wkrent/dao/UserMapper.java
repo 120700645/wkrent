@@ -1,6 +1,7 @@
 package com.qianfeng.wkrent.dao;
 
 import com.qianfeng.wkrent.dto.User;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -34,6 +35,8 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     User selectByTel(String tel);
+
+    List<User> selectAllUserByPage(@Param("start")int start,@Param("end")int end);
 
 
 }

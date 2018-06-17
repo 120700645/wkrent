@@ -24,8 +24,12 @@ public class ManageController {
     @Autowired
     private RentOrderService rentOrderService;
 
+
+
     @RequestMapping("/preIndex")
     public String preIndex(){
+        //查询订单状态,将状态存入session
+
         return "main";
     }
 

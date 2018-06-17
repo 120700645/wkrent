@@ -39,6 +39,11 @@ public class OtherTest {
     @Autowired
     private RentOrderMapper rentOrderDao;
 
+    @Test
+    public void list(){
+        PageBean<RentOrder> inPageByStatus = rentOrderService.findInPageByStatus(1, "2");
+        System.out.println(inPageByStatus.getCount());
+    }
 
     @Test
     public void testcar(){

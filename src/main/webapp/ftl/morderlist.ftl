@@ -82,7 +82,7 @@
                     </a>
                 </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item">系统首页</li>
@@ -99,16 +99,18 @@
                     </a>
                 </h4>
             </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item"><a href="${base}/manage/orderList/1">所有订单</a></li>
-                        <li class="list-group-item"><a href="${base}/rentOrder/status/1">未确认订单</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">缴纳押金项</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">已确认订单</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">提车管理</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">还车管理</a></li>
-                        <li class="list-group-item"><a href="${base}/manage/orderList/1">违章管理</a></li>
+                        <li class="list-group-item"><a order_id="0" href="${base}/rentOrder/status/?page=1&status=0">已下单,未付款</a></li>
+                        <li class="list-group-item"><a order_id="1" href="${base}/rentOrder/status/?page=1&status=1">已付款</a></li>
+                        <li class="list-group-item"><a order_id="2" href="${base}/rentOrder/status/?page=1&status=2">确认订单</a></li>
+                        <li class="list-group-item"><a order_id="3" href="${base}/rentOrder/status/?page=1&status=3">缴纳押金</a></li>
+                        <li class="list-group-item"><a order_id="4" href="${base}/rentOrder/status/?page=1&status=4">提车管理</a></li>
+                        <li class="list-group-item"><a order_id="5" href="${base}/rentOrder/status/?page=1&status=5">已还车,退租车押金</a></li>
+                        <li class="list-group-item"><a order_id="6" href="${base}/rentOrder/status/?page=1&status=6">未违章,退违章押金</a></li>
+                        <li class="list-group-item"><a order_id="7" href="${base}/rentOrder/status/?page=1&status=7">已取消订单</a></li>
                     </ul>
                 </div>
             </div>
@@ -200,7 +202,7 @@
             </#list>
         </table>
         <#if page==1>
-            <a href="${base}/car/orderList/${page}">上一页</a>
+            <a href="${base}/manage/orderList/${page}">上一页</a>
         <#else>
             <a href="${base}/manage/orderList/${page-1}">上一页</a>
         </#if>
