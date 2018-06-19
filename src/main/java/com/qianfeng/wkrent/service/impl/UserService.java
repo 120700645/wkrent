@@ -57,9 +57,9 @@ public class UserService implements IUserService {
     @Override
     public PageBean<User> findAllUserByPage(int page) {
         long count = userMapper.selectNum();
-        long pageCount = count % Constants.PAGE_SIZE_BACK==0?count%Constants.PAGE_SIZE_BACK:count%Constants.PAGE_SIZE_BACK;
+        long pageCount = count % Constants.PAGE_SIZE==0?count%Constants.PAGE_SIZE:count%Constants.PAGE_SIZE;
         //订单记录
-        List<User> rentOrders = userMapper.selectAllUserByPage((page - 1)*Constants.PAGE_SIZE_BACK + 1,page * Constants.PAGE_SIZE_BACK);
+        List<User> rentOrders = userMapper.selectAllUserByPage((page - 1)*Constants.PAGE_SIZE + 1,page * Constants.PAGE_SIZE);
         PageBean pageBean = new PageBean();
         pageBean.setCount(count);
         pageBean.setList(rentOrders);

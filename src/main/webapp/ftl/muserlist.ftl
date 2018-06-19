@@ -164,6 +164,7 @@
             <td class="text-center">联系方式</td>
             <td class="text-center">真实姓名</td>
             <td class="text-center">身份证号</td>
+            <td class="text-center">余额</td>
             <td class="text-center">是否冻结</td>
             <td class="text-center">可用余额</td>
             <td class="text-center">悟空币</td>
@@ -182,22 +183,19 @@
                 <td class="text-center">${user.userWkb}</td>
                 <td class="text-center">${user.userNum}</td>
                 <td class="text-center">${user.userLeavel}</td>
-                <td style="text-align: center;">
-                    <button class="delete_car">删除</button>
-                </td>
             </tr>
         </#list>
         </table>
     <#if page==1>
-        <a href="${base}/car/carList/${page}">上一页</a>
+        <a href="${base}/users/lists/${page}">上一页</a>
     <#else>
-        <a href="${base}/car/carList/${page-1}">上一页</a>
+        <a href="${base}/users/lists/${page-1}">上一页</a>
     </#if>
     ${page}/${allUserByPage.pages}
     <#if page==allUserByPage.pages >
-        <a href="${base}/car/carList/${page}">下一页</a>
+        <a href="${base}/users/lists/${page}">下一页</a>
     <#else>
-        <a href="${base}/car/carList/${page+1}">下一页</a>
+        <a href="${base}/users/lists/${page+1}">下一页</a>
     </#if>
 
     </div>

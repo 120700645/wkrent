@@ -244,6 +244,7 @@
                 $.post("${base}/rentOrder/check",{"num":num,"orderId":orderId,"orderStatus":orderStatus},function(data){
                     //alert(data.code)
                     if(data.code == 0){
+                        alert("操作成功！");
                         window.location.href="${base}/rentOrder/status/?page=${page}&status=${status}";
                     }
                 })
