@@ -3912,7 +3912,9 @@
 				</li>
 			</ul>
 		</div>
-        <script src="https://qiyukf.com/script/0442b7bd3684a6890427e5bd55b94070.js?hidden=true'"></script>
+        <#--<script src="https://qiyukf.com/script/0442b7bd3684a6890427e5bd55b94070.js?hidden=true'"></script>-->
+
+        <script src="https://qiyukf.com/script/ba69f1c5a6e9e0def27e8e56778b37b0.js?hidden=true"></script>
 
         <script type="text/javascript">
             function online(){

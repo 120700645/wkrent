@@ -760,7 +760,7 @@
 					<div class="nav">
 						<ul>
 							<li class="active">
-								<a href="driving.ftl" class="">首页</a>
+								<a href="${base}/combo/comboList" class="">首页</a>
 							</li>
 							<li>
 								<a href="${base}/combo/home" class="router-link-exact-active router-link-active">自助自驾</a>
@@ -775,7 +775,7 @@
 								<a href="../freedesign.ftl" class="">自由定制</a>
 							</li>
 							<li>
-								<a href="renting.ftl" target="_blank">自驾租车</a>
+								<a href="${base}/user/preIndex" target="_blank">自驾租车</a>
 							</li>
 						</ul> <span hidden="hidden"></span>
 						<div class="user">

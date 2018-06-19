@@ -139,13 +139,13 @@
                 <#list couponList as c>
                 <div class="coupon_item">
                     <div>
-                        <p class="amount"><span>￥</span><span>${c.couponDiscount}100</span></p>
+                        <p class="amount"><span>￥</span><span>${c.couponDiscount}</span></p>
                         <div class="effective_time">
                             <p>有效期</p>
                             <p>${c.couponStartTime?string('yyyy-MM-dd')}至${c.couponEndTime?string('yyyy-MM-dd')}</p>
                         </div>
                     </div>
-                    <p title="租期两天以上可享，不能同其他类型优惠券共同使用">${c.couponRule}租期两天以上可享，不能同其他类型优惠券共同使用</p>
+                    <p title="{c.couponRule}">${c.couponRule}</p>
                 </div>
                 </#list>
                 <#--<div class="coupon_item">-->

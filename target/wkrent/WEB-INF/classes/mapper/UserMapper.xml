@@ -23,6 +23,17 @@
     from TB_USER
     where USER_ID = #{userId}
   </select>
+
+    <select id="selectAllUserByPage" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM (SELECT rownum rn,o.* FROM TB_USER o where rownum &lt;=#{end})ua
+        where ua.rn &gt;= #{start}
+    </select>
+
+    <select id="selectNum" resultType="java.lang.Long">
+        SELECT COUNT(1) FROM TB_USER
+    </select>
   
   <select id="selectByTel" resultMap="BaseResultMap">
     select
