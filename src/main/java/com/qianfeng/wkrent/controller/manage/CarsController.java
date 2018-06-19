@@ -78,7 +78,7 @@ public class CarsController {
         car.setCarId(id);
         car.setCarImg(fileName);
         carService.saveSelective(car);
-        return "mcarlist";
+        return "redirect:/car/carList/1";
     }
 
     /**

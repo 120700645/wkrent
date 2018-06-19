@@ -36,7 +36,7 @@ public class UserController {
             userService.login(tel,code);
             // 登录成功,将对应的user记录从数据库查询出来,保存在session中
             User user = userService.selectByTel(tel);
-            model.addAttribute(user);
+            model.addAttribute("currentUser",user);
             jsonResult.setCode(ParamUtil.SUCCESS_CODE);
             jsonResult.setMsg(ParamUtil.SUCCESS_MSG);
         } catch (IncorrectCredentialsException e) {

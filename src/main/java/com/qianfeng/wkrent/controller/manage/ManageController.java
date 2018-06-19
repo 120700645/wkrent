@@ -3,6 +3,7 @@ package com.qianfeng.wkrent.controller.manage;
 import com.qianfeng.wkrent.dto.PageBean;
 import com.qianfeng.wkrent.dto.Place;
 import com.qianfeng.wkrent.dto.RentOrder;
+import com.qianfeng.wkrent.dto.User;
 import com.qianfeng.wkrent.service.impl.PlaceService;
 import com.qianfeng.wkrent.service.impl.RentOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -27,9 +29,11 @@ public class ManageController {
 
 
     @RequestMapping("/preIndex")
-    public String preIndex(){
+    public String preIndex(HttpSession session,Model model){
         //查询订单状态,将状态存入session
-
+//        User user = (User) session.getAttribute("user");
+//        String username=user.getUserTel();
+//        model.addAttribute("username",username);
         return "main";
     }
 
