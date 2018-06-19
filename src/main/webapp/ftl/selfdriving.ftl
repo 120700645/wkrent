@@ -760,7 +760,7 @@
 					<div class="nav">
 						<ul>
 							<li class="active">
-								<a href="driving.ftl" class="">首页</a>
+								<a href="${base}/combo/comboList" class="">首页</a>
 							</li>
 							<li>
 								<a href="${base}/combo/home" class="router-link-exact-active router-link-active">自助自驾</a>
