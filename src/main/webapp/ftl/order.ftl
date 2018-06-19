@@ -19,7 +19,6 @@
 </head>
 
 <body style="zoom: 1;">
-
 <link rel="stylesheet" href="${base}/css/common.css">
 <link rel="stylesheet" href="${base}/css/network.css">
 <link rel="stylesheet" href="${base}/css/pay.css">
@@ -154,27 +153,122 @@
         </div>
         <div class="cl"></div>
     </div>
-<script type="text/javascript">
-    $(function () {
-        var length = $("#di_1").html();
-        $("#che_1").click(function () {
-            $("#di_1").html(200);
+    <script type="text/javascript">
+        $(function () {
+//            var length = $("#di_1").html();
+            var clickNumber = 0;
+            $("#che_1").click(function () {
+
+                if (clickNumber % 2 == 0) {
+                    $(this).addClass("check-i");
+                    $("#di_1").text(200);
+                    totalPrice();
+                } else {
+                    $(this).removeClass("check-i");
+                    $("#di_1").text(0);
+                    totalPrice();
+                }
+                clickNumber++;
+            })
         })
-    })
-</script>
+    </script>
+    <script type="text/javascript">
+        function totalPrice() {
+            var sum=336;
+            $(".che").each(function () {
+                sum += parseInt($(this).text());
+
+            })
+            $(".total_amount").text(sum);
+        }
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var clickNumber=0;
+            $("#che_2").click(function () {
+
+                if(clickNumber%2==0){
+                    $(this).addClass("check-i");
+                    $("#di_2").text(50);
+                    totalPrice();
+
+                }else{
+                    $(this).removeClass("check-i");
+                    $("#di_2").text(0);
+                    totalPrice();
+                }
+                clickNumber ++;
+            })
+        })
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var clickNumber=0;
+            $("#che_3").click(function () {
+
+                if(clickNumber%2==0){
+                    $(this).addClass("check-i");
+                    totalPrice();
+                }else{
+                    $(this).removeClass("check-i");
+                    totalPrice();
+                }
+                clickNumber ++;
+            })
+        })
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var clickNumber=0;
+            $("#che_4").click(function () {
+
+                if(clickNumber%2==0){
+                    $(this).addClass("check-i");
+                    $("#di_4").text(20);
+                    $(".tour-insurance-list").show();
+                    totalPrice();
+                }else{
+                    $(this).removeClass("check-i");
+                    $("#di_4").text(0);
+                    $(".tour-insurance-list").hide();
+                    totalPrice();
+                }
+                clickNumber ++;
+            })
+        })
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var clickNumber=0;
+            $("#che_5").click(function () {
+
+                if(clickNumber%2==0){
+                    $(this).addClass("check-i");
+                    $(".coupon-cover").show();
+
+                }else{
+                    $(this).removeClass("check-i");
+                    $(".coupon-cover").hide();
+                }
+                clickNumber ++;
+            })
+        })
+    </script>
     <div class="zc-order-other">
         <div class="option-serve" id="optional_services">
 
             <p class="title-p">可选服务</p>
             <ul class="serve_ul">
-                <li type="type_2" value="INS_ADDITIONAL"><i id="che_1"></i><span>车损无忧服务<img class="prompt_img" src="${base}/img/explain-icon.png" alt="车损无忧服务说明"></span>
-                    <a id="di_1">￥0</a>
+                <li type="type_2" value="INS_ADDITIONAL">
+                    <i id="che_1"></i>
+                    <span>车损无忧服务<img class="prompt_img" src="${base}/img/explain-icon.png" alt="车损无忧服务说明"></span>
+                    <a id="di_1" class="che">0</a>
                     <div class="triangle_border">
                         <div class="popup" style="left: 140px;"><span><em></em></span>客户购买车损无忧服务后，无需承担保险理赔范围内的车辆维修损失。<br>￥50/天</div>
                     </div>
                 </li>
-                <li type="type_1" value="undefined"><i></i><span>第三者责任险补充险<img class="prompt_img" src="${base}/img/explain-icon.png" alt="第三者责任险补充险说明"></span>
-                    <a>￥0</a>
+                <li type="type_1" value="undefined"><i id="che_2"></i><span>第三者责任险补充险<img class="prompt_img" src="${base}/img/explain-icon.png" alt="第三者责任险补充险说明"></span>
+                    <a id="di_2" class="che">0</a>
                     <div class="triangle_border">
                         <div class="popup" style="left: 182px;"><span><em></em></span>车辆因意外事故致使他人身亡或财产直接损失，50万/100万元以内保险公司核定理赔100%<br>￥25/天</div>
                     </div>
@@ -183,14 +277,14 @@
                     <p><i value="INS_THIRDPARTY_50"></i><span>第三者责任险补充险增至50万￥25/天</span></p>
                     <p><i value="INS_THIRDPARTY_100"></i><span>第三者责任险补充险增至100万￥50/天</span></p>
                 </div>
-                <li type="type_2" value="INS_PASSENGER"><i></i><span>车上人员责任险补充险<img class="prompt_img" src="${base}/img/explain-icon.png" alt="车上人员责任险补充险说明"></span>
-                    <a>￥0</a>
+                <li type="type_2" value="INS_PASSENGER"><i id="che_3"></i><span>车上人员责任险补充险<img class="prompt_img" src="${base}/img/explain-icon.png" alt="车上人员责任险补充险说明"></span>
+                    <a id="di_3" class="che">0</a>
                     <div class="triangle_border">
                         <div class="popup" style="left: 196px;"><span><em></em></span>车辆因意外事故造成车上人员人身伤亡，最高赔付10万元/人/座<br>￥25/天</div>
                     </div>
                 </li>
-                <li type="type_3" value="INS_TRAVEL_ACCIDENT"><i></i><span>旅游人身意外险<img class="prompt_img" src="${base}/img/explain-icon.png" alt="旅游人身意外险说明"></span>
-                    <a>￥0</a>
+                <li type="type_3" value="INS_TRAVEL_ACCIDENT"><i id="che_4"></i><span>旅游人身意外险<img class="prompt_img" src="${base}/img/explain-icon.png" alt="旅游人身意外险说明"></span>
+                    <a id="di_4" class="che">0</a>
                     <div class="triangle_border">
                         <div class="popup" style="left: 154px;"><span><em></em></span>旅游途中若遭受意外伤害，最高赔付意外医疗5万元/人，若发生意外身故、伤残最高赔付10万元/人<br>￥10/人/天</div>
                     </div>
@@ -213,49 +307,64 @@
         <div class="option-beused" id="wkcon_coupon">
             <p class="title-p">可使用优惠<img class="beused_img" onclick="imgClickShow(&#39;.beused_img&#39;)" src="${base}/img/input_up.png" alt=""><span id="wkcon_coupon_total" class="beused-fee"></span></p>
             <ul class="beused-ul">
-                <li><i class="coupon_i" style="margin-top: 14px;"></i><span>使用优惠券(<font id="coupon_num">4</font>张可用)</span></li>
+                <li><i class="coupon_i" style="margin-top: 14px;"  id="che_5"></i><span>使用优惠券(<font id="coupon_num">4</font>张可用)</span></li>
                 <div class="coupon-cover">
                     <p class="prev" style="display: block;"></p>
-                    <div id="20503002" class="coupon-model mr check-status">
+                <#list couponList as c>
+                <#--coupon-model mr check-status-->
+                    <div id="20503002" class="coupon-model mr">
                         <div>
-                            <p class="amount"><span>￥</span><span>100</span></p>
+                            <p class="amount"><span>￥</span><span>${c.couponDiscount}</span></p>
                             <div class="effective_time">
                                 <p>有效期</p>
-                                <p>2018-6-2至2018-8-31</p>
+                                <p>${c.couponStartTime?string('yyyy-MM-dd')}至${c.couponEndTime?string('yyyy-MM-dd')}</p>
                             </div>
                         </div>
-                        <p title="租期两天以上可享，不能同其他类型优惠券共同使用">租期两天以上可享，不能同其他类型优惠券共同使用</p>
+                        <p title="${c.couponRule}">${c.couponRule}</p>
                     </div>
-                    <div id="20503003" class="coupon-model mr">
-                        <div>
-                            <p class="amount"><span>￥</span><span>50</span></p>
-                            <div class="effective_time">
-                                <p>有效期</p>
-                                <p>2018-6-2至2018-8-31</p>
-                            </div>
-                        </div>
-                        <p title="仅限抵用租金,不与套餐等其他优惠同时使用">仅限抵用租金,不与套餐等其他优惠同时使用</p>
-                    </div>
-                    <div id="20503004" class="coupon-model mr">
-                        <div>
-                            <p class="amount"><span>￥</span><span>30</span></p>
-                            <div class="effective_time">
-                                <p>有效期</p>
-                                <p>2018-6-2至2018-8-31</p>
-                            </div>
-                        </div>
-                        <p title="仅限抵用租金,不与套餐等其他优惠同时使用">仅限抵用租金,不与套餐等其他优惠同时使用</p>
-                    </div>
-                    <div id="20503005" class="coupon-model mr">
-                        <div>
-                            <p class="amount"><span>￥</span><span>20</span></p>
-                            <div class="effective_time">
-                                <p>有效期</p>
-                                <p>2018-6-2至2018-8-31</p>
-                            </div>
-                        </div>
-                        <p title="仅限抵用租金,不与套餐等其他优惠同时使用">仅限抵用租金,不与套餐等其他优惠同时使用</p>
-                    </div>
+                </#list>
+                <#--<#list couponList as c>-->
+                <#--<div class="coupon_item">-->
+                <#--<div>-->
+                <#--<p class="amount"><span>￥</span><span>${c.couponDiscount}100</span></p>-->
+                <#--<div class="effective_time">-->
+                <#--<p>有效期</p>-->
+                <#--<p>${c.couponStartTime?string('yyyy-MM-dd')}至${c.couponEndTime?string('yyyy-MM-dd')}</p>-->
+                <#--</div>-->
+                <#--</div>-->
+                <#--<p title="租期两天以上可享，不能同其他类型优惠券共同使用">${c.couponRule}租期两天以上可享，不能同其他类型优惠券共同使用</p>-->
+                <#--</div>-->
+                <#--</#list>-->
+                <#--<div id="20503003" class="coupon-model mr">-->
+                <#--<div>-->
+                <#--<p class="amount"><span>￥</span><span>50</span></p>-->
+                <#--<div class="effective_time">-->
+                <#--<p>有效期</p>-->
+                <#--<p>2018-6-2至2018-8-31</p>-->
+                <#--</div>-->
+                <#--</div>-->
+                <#--<p title="仅限抵用租金,不与套餐等其他优惠同时使用">仅限抵用租金,不与套餐等其他优惠同时使用</p>-->
+                <#--</div>-->
+                <#--<div id="20503004" class="coupon-model mr">-->
+                <#--<div>-->
+                <#--<p class="amount"><span>￥</span><span>30</span></p>-->
+                <#--<div class="effective_time">-->
+                <#--<p>有效期</p>-->
+                <#--<p>2018-6-2至2018-8-31</p>-->
+                <#--</div>-->
+                <#--</div>-->
+                <#--<p title="仅限抵用租金,不与套餐等其他优惠同时使用">仅限抵用租金,不与套餐等其他优惠同时使用</p>-->
+                <#--</div>-->
+                <#--<div id="20503005" class="coupon-model mr">-->
+                <#--<div>-->
+                <#--<p class="amount"><span>￥</span><span>20</span></p>-->
+                <#--<div class="effective_time">-->
+                <#--<p>有效期</p>-->
+                <#--<p>2018-6-2至2018-8-31</p>-->
+                <#--</div>-->
+                <#--</div>-->
+                <#--<p title="仅限抵用租金,不与套餐等其他优惠同时使用">仅限抵用租金,不与套餐等其他优惠同时使用</p>-->
+                <#--</div>-->
                     <p class="next" style="display: block;"></p>
                 </div>
             </ul>
@@ -264,10 +373,10 @@
             <p class="title-p">费用明细</p>
             <ul>
                 <li><span>车辆租金</span>
-                    <a id="car_price">￥236</a>
+                    <a id="car_price">236</a>
                 </li>
                 <li><span>基本保险(必选) <img class="prompt_img" src="${base}/img/explain-icon.png" alt="基本保险说明"></span>
-                    <a id="basic_insurance">￥80</a>
+                    <a id="basic_insurance">80</a>
                     <div class="triangle_border">
                         <div class="popup left1">
                             <span><em></em></span>车辆损失险;第三者责任险(20万元);车上人员责任险(1万/人/座)
@@ -276,12 +385,12 @@
                 </li>
                 <li>
                     <span>其他费用 <img class="other_fee_img" onclick="imgClickShow(&#39;.other_fee_img&#39;)" src="${base}/img/input_down.png" alt=""></span>
-                    <a id="other_amount_all">￥20</a>
+                    <a id="other_amount_all">20</a>
                 </li>
                 <div class="other-fee">
                     <p>
                         <span>手续费</span>
-                        <a id="poundage_amount">￥20</a>
+                        <a id="poundage_amount">20</a>
                     </p>
                     <p>
                         <span>夜间服务费 ( 21:00至次日早上8:00之间取车或还车需支付50元/次夜间服务费 )</span>
@@ -289,15 +398,15 @@
                     </p>
                     <p>
                         <span>送车上门费</span>
-                        <a id="send_service_amount">￥0</a>
+                        <a id="send_service_amount">0</a>
                     </p>
                     <p>
                         <span>上门取车费</span>
-                        <a id="return_service_amount">￥0</a>
+                        <a id="return_service_amount">0</a>
                     </p>
                     <p>
                         <span>异地还车费</span>
-                        <a id="crosscity_service_amount">￥0</a>
+                        <a id="crosscity_service_amount">0</a>
                     </p>
                     <!-- 						<p> -->
                     <!-- 							<span>退改费</span><a id="penalty_amount">￥</a> -->
@@ -307,7 +416,7 @@
                     <!-- 						</p> -->
                 </div>
                 <li id="discount_li" style="display: none;"><span>活动优惠</span>
-                    <a id="discount_amount">￥0</a>
+                    <a id="discount_amount">0</a>
                 </li>
                 <div class="cl"></div>
             </ul>
@@ -316,13 +425,13 @@
         <div class="gray-space"></div>
         <div class="order-submit-info scroll-class">
             <p class="share-p">
-                订单合计 <span id="total_amount">￥336</span>
+                订单合计 <span class="total_amount">336</span>
             </p>
             <p class="share-p">
-                可使用优惠 <span id="coupon_pay_co">￥0</span>
+                可使用优惠 <span id="coupon_pay_co">0</span>
             </p>
             <p class="share-p">
-                应付金额 <span id="more_pay">￥336</span>
+                应付金额 <span class="total_amount">336</span>
             </p>
             <a href="${base}/rentOrder/submit" style="text-decoration: none"><p class="submit-btn btn-style" id="pcsubmit">提交订单</p></a>
         </div>
@@ -341,7 +450,7 @@
 
         </ol>
     </div>
-    <#--<div class="mcover close_box" style="display: none;"></div>-->
+<#--<div class="mcover close_box" style="display: none;"></div>-->
     <!--<div class="dialog_order_timeout dialog_class" id="confirm">
         <h1>温馨提示 <span onclick="$(&quot;.mcover&quot;).hide();$(&quot;#confirm&quot;).hide();"><img src="${base}/img/close_icon.png" alt=""></span></h1>
         <div class="dialog_info">
@@ -351,9 +460,9 @@
             </div>
         </div>
     </div>-->
-    <#--<div class="loading_shuaxin" style="display: none;">-->
-        <#--<img src="${base}/img/car.gif">-->
-    <#--</div>-->
+<#--<div class="loading_shuaxin" style="display: none;">-->
+<#--<img src="${base}/img/car.gif">-->
+<#--</div>-->
     <div class="dialog_order_timeout dialog_class" id="confirm_cancel">
         <h1>温馨提示 <span onclick="$(&quot;.mcover&quot;).hide();$(&quot;#confirm_cancel&quot;).hide();toSearchPage();"><img class="close_box" src="${base}/img/close_icon.png" alt=""></span></h1>
         <div class="dialog_info">

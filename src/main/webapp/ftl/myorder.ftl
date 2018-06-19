@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <#assign base=rc.contextPath />
+<#assign base=rc.contextPath />
     <base id="base" href="${base}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -92,23 +92,76 @@
     var HeaderUid = "13212780854";
     var userId = "11214904";
     $(function () {
-        var s = $(".sss1").text();
-        var  s2 = $(".sss2").text();
-        var s3 = $(".sss3").text();
-        if(s == "1"){
-            $(".sss1").text("已取消");
-        }
-        if(s2 == "2"){
-            $(".sss2").text("进行中");
-        }
-        if(s3 == "3"){
-            $(".sss3").text("已完成");
-        }
+        $(".sss").each(function () {
+            if($(this).text()== 0){
+                $(this).text("待支付");
+            }else if($(this).text()>0&&$(this).text()<7){
+                $(this).text("已完成");
+            }else {
+                $(this).text("已取消")
+            }
+        })
     })
 
 
 
 </script>
+<#--<script type="text/javascript">-->
+    <#--$(".gengduocaozuo").hover(function () {-->
+        <#--alert(111);-->
+        <#--$(this).find(".sanma").show();-->
+    <#--},function () {-->
+        <#--$(this).find(".saoma").hide();-->
+    <#--});-->
+<#--</script>-->
+<#--<script type="text/javascript">&ndash;&gt;-->
+    <#--$(".cancels").click(function () {-->
+        <#--alert(3);-->
+        <#--var orderId = $(this).parent().find(".orderNumber").child().find("p").text();-->
+            <#--$.post("${base}/rentOrder/check",{"orderId":orderId},function (data) {-->
+                <#--if(data==0){-->
+                    <#--window.location.href="${base}/rentOrder/selectAll";-->
+                <#--}-->
+            <#--})-->
+<#--//        }-->
+    <#--})-->
+<#--</script>-->
+
+<#--<script type="text/javascript">-->
+    <#--$(function () {-->
+        <#--$(".sss").each(function () {-->
+            <#--var num = $(this).text();-->
+            <#--if (num == "待支付") {-->
+                <#--$(".div2").show();-->
+                <#--$(".div1").hide();-->
+            <#--} else {-->
+                <#--$(".div1").show();-->
+                <#--$(".div2").hide();-->
+            <#--}-->
+        <#--})-->
+    <#--})-->
+<#--</script>-->
+
+<#--<script type="text/javascript">-->
+    <#--$(function () {-->
+<#--//        var num = $(".sss").text();-->
+<#--//        alert(num);-->
+        <#--$(".sss").each(function () {-->
+            <#--var num = $(this).text();-->
+            <#--if (num == "待支付") {-->
+
+                <#--$(".div2").show();-->
+<#--//                                                                                $(".div1").show();-->
+                <#--$(".div1").hide();-->
+<#--//                alert(1)-->
+            <#--} else {-->
+<#--//                alert(2)-->
+                <#--$(".div1").show();-->
+                <#--$(".div2").hide();-->
+            <#--}-->
+        <#--})-->
+    <#--})-->
+<#--</script>-->
 <div style="clear: both;"></div>
 <div class="personal">
     <div class="personal_left">
@@ -164,8 +217,10 @@
 
 
                         <tr>
-                            <td class="personal_order_ft"><img src="${base}/img/${list.car.carImg}">
-                                <p>订单号 : ${list.orderNum}</p>
+                            <td class="personal_order_ft">
+                                <img src="${base}/img/${list.car.carImg}">
+                                <p>订单号：${list.orderNum}</p>
+                                <p style="visibility: hidden" class="order_num">${list.orderId}</p>
                             </td>
                             <td>
                                 <p><b>${list.car.carName}</b><span>或同组车型</span></p>
@@ -174,68 +229,78 @@
                                 <div><strong>${list.orderReturnTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.returnPlace.placeAddress}</em></b></div>
                             </td>
                             <td>
-                                <p>${list.orderTotal}</p><span orderid="10230421" uid="13212780854">费用明细</span></td>
-                            <td>
-                                <p  class="sss${list.orderStatus}">${list.orderStatus}</p>
+                                <p>${list.orderTotal}</p><span orderid="10230421" uid="13212780854">费用明细</span>
                             </td>
-                            <td style="padding-top:50px;">
-                                <p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>
+                            <td>
+                                <p class="sss">${list.orderStatus}</p>
+                            </td>
+                            <td class="div2">
+                                <a style="text-decoration: none" href="${base}/rentOrder/submit"><b>支付预租金</b></a>
+                                <p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none">
+                                </p>
+                                <br>
+                                <span class="cancels">取消订单</span>
+                            </td>
+                        <#--<td style="padding-top:50px;" class="div1">-->
+                        <#--<p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br>-->
+                        <#--</td>-->
+
                         </tr>
                         </#list>
 
                         <#--<tr>-->
-                            <#--<td class="personal_order_ft"><img src="${base}/img/90c05af9-e892-4c76-9fbc-29e423aa2cd5.jpg">-->
-                                <#--<p>订单号 : 10229465</p>-->
-                            <#--</td>-->
-                            <#--<td>-->
-                                <#--<p><b>标致 308</b><span>或同组车型</span></p>-->
-                                <#--<p><span>取</span><i></i><span>还</span></p>-->
-                                <#--<div><strong>2018-06-04 17:00</strong><b><em>望京SOHO地铁站</em></b></div>-->
-                                <#--<div><strong>2018-06-06 17:00</strong><b><em>望京SOHO地铁站</em></b></div>-->
-                            <#--</td>-->
-                            <#--<td>-->
-                                <#--<p>￥436</p><span orderid="10229465" uid="13212780854">费用明细</span></td>-->
-                            <#--<td>-->
-                                <#--<p>已取消</p>-->
-                            <#--</td>-->
-                            <#--<td style="padding-top:50px;">-->
-                                <#--<p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>-->
+                        <#--<td class="personal_order_ft"><img src="${base}/img/90c05af9-e892-4c76-9fbc-29e423aa2cd5.jpg">-->
+                        <#--<p>订单号 : 10229465</p>-->
+                        <#--</td>-->
+                        <#--<td>-->
+                        <#--<p><b>标致 308</b><span>或同组车型</span></p>-->
+                        <#--<p><span>取</span><i></i><span>还</span></p>-->
+                        <#--<div><strong>2018-06-04 17:00</strong><b><em>望京SOHO地铁站</em></b></div>-->
+                        <#--<div><strong>2018-06-06 17:00</strong><b><em>望京SOHO地铁站</em></b></div>-->
+                        <#--</td>-->
+                        <#--<td>-->
+                        <#--<p>￥436</p><span orderid="10229465" uid="13212780854">费用明细</span></td>-->
+                        <#--<td>-->
+                        <#--<p>已取消</p>-->
+                        <#--</td>-->
+                        <#--<td style="padding-top:50px;">-->
+                        <#--<p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>-->
                         <#--</tr>-->
                         <#--<tr>-->
-                            <#--<td class="personal_order_ft"><img src="${base}/img/90c05af9-e892-4c76-9fbc-29e423aa2cd5.jpg">-->
-                                <#--<p>订单号 : 10229416</p>-->
-                            <#--</td>-->
-                            <#--<td>-->
-                                <#--<p><b>标致 308</b><span>或同组车型</span></p>-->
-                                <#--<p><span>取</span><i></i><span>还</span></p>-->
-                                <#--<div><strong>2018-06-04 17:00</strong><b><em>望京SOHO地铁站</em></b></div>-->
-                                <#--<div><strong>2018-06-06 17:00</strong><b><em>望京SOHO地铁站</em></b></div>-->
-                            <#--</td>-->
-                            <#--<td>-->
-                                <#--<p>￥456</p><span orderid="10229416" uid="13212780854">费用明细</span></td>-->
-                            <#--<td>-->
-                                <#--<p>已取消</p>-->
-                            <#--</td>-->
-                            <#--<td style="padding-top:50px;">-->
-                                <#--<p class="gengduocaozuo" style="position: relative;">更多操作<img src="img/gengduo.png" class="saoma" style="display: none"></p><br></td>-->
+                        <#--<td class="personal_order_ft"><img src="${base}/img/90c05af9-e892-4c76-9fbc-29e423aa2cd5.jpg">-->
+                        <#--<p>订单号 : 10229416</p>-->
+                        <#--</td>-->
+                        <#--<td>-->
+                        <#--<p><b>标致 308</b><span>或同组车型</span></p>-->
+                        <#--<p><span>取</span><i></i><span>还</span></p>-->
+                        <#--<div><strong>2018-06-04 17:00</strong><b><em>望京SOHO地铁站</em></b></div>-->
+                        <#--<div><strong>2018-06-06 17:00</strong><b><em>望京SOHO地铁站</em></b></div>-->
+                        <#--</td>-->
+                        <#--<td>-->
+                        <#--<p>￥456</p><span orderid="10229416" uid="13212780854">费用明细</span></td>-->
+                        <#--<td>-->
+                        <#--<p>已取消</p>-->
+                        <#--</td>-->
+                        <#--<td style="padding-top:50px;">-->
+                        <#--<p class="gengduocaozuo" style="position: relative;">更多操作<img src="img/gengduo.png" class="saoma" style="display: none"></p><br></td>-->
                         <#--</tr>-->
                         <#--<tr>-->
-                            <#--<td class="personal_order_ft"><img src="${base}/img/b5e4512a-359f-40b0-943a-54842fb6a3f4.jpg">-->
-                                <#--<p>订单号 : 10228840</p>-->
-                            <#--</td>-->
-                            <#--<td>-->
-                                <#--<p><b>现代 瑞纳</b><span>或同组车型</span></p>-->
-                                <#--<p><span>取</span><i></i><span>还</span></p>-->
-                                <#--<div><strong>2018-06-03 12:00</strong><b><em>新疆维吾尔自治区昌吉回族自治州昌吉市</em></b></div>-->
-                                <#--<div><strong>2018-06-05 12:00</strong><b><em>新疆维吾尔自治区昌吉回族自治州昌吉市</em></b></div>-->
-                            <#--</td>-->
-                            <#--<td>-->
-                                <#--<p>￥556</p><span orderid="10228840" uid="13212780854">费用明细</span></td>-->
-                            <#--<td>-->
-                                <#--<p>已取消</p>-->
-                            <#--</td>-->
-                            <#--<td style="padding-top:50px;">-->
-                                <#--<p class="gengduocaozuo" style="position: relative;">更多操作<img src="img/gengduo.png" class="saoma" style="display: none"></p><br></td>-->
+                        <#--<td class="personal_order_ft"><img src="${base}/img/b5e4512a-359f-40b0-943a-54842fb6a3f4.jpg">-->
+                        <#--<p>订单号 : 10228840</p>-->
+                        <#--</td>-->
+                        <#--<td>-->
+                        <#--<p><b>现代 瑞纳</b><span>或同组车型</span></p>-->
+                        <#--<p><span>取</span><i></i><span>还</span></p>-->
+                        <#--<div><strong>2018-06-03 12:00</strong><b><em>新疆维吾尔自治区昌吉回族自治州昌吉市</em></b></div>-->
+                        <#--<div><strong>2018-06-05 12:00</strong><b><em>新疆维吾尔自治区昌吉回族自治州昌吉市</em></b></div>-->
+                        <#--</td>-->
+                        <#--<td>-->
+                        <#--<p>￥556</p><span orderid="10228840" uid="13212780854">费用明细</span></td>-->
+                        <#--<td>-->
+                        <#--<p>已取消</p>-->
+                        <#--</td>-->
+                        <#--<td style="padding-top:50px;">-->
+                        <#--<p class="gengduocaozuo" style="position: relative;">更多操作<img src="img/gengduo.png" class="saoma" style="display: none"></p><br></td>-->
                         <#--</tr>-->
                         </tbody>
                     </table>
@@ -262,6 +327,28 @@
                         </tr>
                         </thead>
                         <tbody id="ingTbody">
+                        <#list rentOrderList0.list as list>
+
+
+                        <tr>
+                            <td class="personal_order_ft"><img src="${base}/img/${list.car.carImg}">
+                                <p>订单号 :  <span>${list.orderNum}</span></p>
+                            </td>
+                            <td>
+                                <p><b>${list.car.carName}</b><span>或同组车型</span></p>
+                                <p><span>取</span><i></i><span>还</span></p>
+                                <div><strong>${list.orderTakeTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.takePlace.placeAddress}</em></b></div>
+                                <div><strong>${list.orderReturnTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.returnPlace.placeAddress}</em></b></div>
+                            </td>
+                            <td>
+                                <p>${list.orderTotal}</p><span orderid="10230421" uid="13212780854">费用明细</span></td>
+                            <td>
+                                <p  class="sss">${list.orderStatus}</p>
+                            </td>
+                            <td style="padding-top:50px;">
+                                <p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>
+                        </tr>
+                        </#list>
                         </tbody>
                     </table>
                 </div>
@@ -287,6 +374,28 @@
                         </tr>
                         </thead>
                         <tbody id="endTbody">
+                        <#list rentOrderList1.list as list>
+
+
+                        <tr>
+                            <td class="personal_order_ft"><img src="${base}/img/${list.car.carImg}">
+                                <p>订单号 :  <span>${list.orderNum}</span></p>
+                            </td>
+                            <td>
+                                <p><b>${list.car.carName}</b><span>或同组车型</span></p>
+                                <p><span>取</span><i></i><span>还</span></p>
+                                <div><strong>${list.orderTakeTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.takePlace.placeAddress}</em></b></div>
+                                <div><strong>${list.orderReturnTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.returnPlace.placeAddress}</em></b></div>
+                            </td>
+                            <td>
+                                <p>${list.orderTotal}</p><span orderid="10230421" uid="13212780854">费用明细</span></td>
+                            <td>
+                                <p  class="sss">${list.orderStatus}</p>
+                            </td>
+                            <td style="padding-top:50px;">
+                                <p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>
+                        </tr>
+                        </#list>
                         </tbody>
                     </table>
                 </div>
@@ -312,28 +421,29 @@
                         </tr>
                         </thead>
                         <tbody id="cancleTbody">
-                        <#--<#list rentOrderList1 as list>-->
+                        <#list rentOrderList7.list as list>
 
 
-                        <#--<tr>-->
-                            <#--<td class="personal_order_ft"><img src="${base}/img/${list.car.carImg}">-->
-                                <#--<p>订单号 : ${list.orderNum}</p>-->
-                            <#--</td>-->
-                            <#--<td>-->
-                                <#--<p><b>${list.car.carName}</b><span>或同组车型</span></p>-->
-                                <#--<p><span>取</span><i></i><span>还</span></p>-->
-                                <#--<div><strong>${list.orderTakeTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.takePlace.placeAddress}</em></b></div>-->
-                                <#--<div><strong>${list.orderReturnTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.returnPlace.placeAddress}</em></b></div>-->
-                            <#--</td>-->
-                            <#--<td>-->
-                                <#--<p>${list.orderTotal}</p><span orderid="10230421" uid="13212780854">费用明细</span></td>-->
-                            <#--<td>-->
-                                <#--<p  class="sss${list.orderStatus}">${list.orderStatus}</p>-->
-                            <#--</td>-->
-                            <#--<td style="padding-top:50px;">-->
-                                <#--<p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>-->
-                        <#--</tr>-->
-                        <#--</#list>-->
+                        <tr>
+                            <td class="personal_order_ft">
+                                <img src="${base}/img/${list.car.carImg}">
+                                <p>订单号 : <span>${list.orderNum}</span></p>
+                            </td>
+                            <td>
+                                <p><b>${list.car.carName}</b><span>或同组车型</span></p>
+                                <p><span>取</span><i></i><span>还</span></p>
+                                <div><strong>${list.orderTakeTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.takePlace.placeAddress}</em></b></div>
+                                <div><strong>${list.orderReturnTime?string('yyyy-MM-dd hh:mm:ss')}</strong><b><em>${list.returnPlace.placeAddress}</em></b></div>
+                            </td>
+                            <td>
+                                <p>${list.orderTotal}</p><span orderid="10230421" uid="13212780854">费用明细</span></td>
+                            <td>
+                                <p  class="sss">${list.orderStatus}</p>
+                            </td>
+                            <td style="padding-top:50px;">
+                                <p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>
+                        </tr>
+                        </#list>
                         </tbody>
                     </table>
                 </div>
@@ -392,13 +502,13 @@
 <!-- 弹出层 -->
 <#--<div class="mcover" style="display: none;"></div>-->
 <#--<div class="dialog_order_timeout dialog_class" id="confirm">-->
-    <#--<h1>温馨提示</h1>-->
-    <#--<div class="dialog_info">-->
-        <#--<span id="confirm_msg"></span>-->
-        <#--<div>-->
-            <#--<p id="confirm_fun" style="cursor:pointer;" class="btn-style">确定</p>-->
-        <#--</div>-->
-    <#--</div>-->
+<#--<h1>温馨提示</h1>-->
+<#--<div class="dialog_info">-->
+<#--<span id="confirm_msg"></span>-->
+<#--<div>-->
+<#--<p id="confirm_fun" style="cursor:pointer;" class="btn-style">确定</p>-->
+<#--</div>-->
+<#--</div>-->
 <#--</div>-->
 <div class="dialog_order_timeout dialog_class" id="coupon_confirm">
     <h1>温馨提示</h1>
@@ -420,7 +530,7 @@
 </div>
 
 <#--<div class="loading_shuaxin" style="display: none;">-->
-    <#--<img src="${base}/img/car.gif">-->
+<#--<img src="${base}/img/car.gif">-->
 <#--</div>-->
 
 <div class="dialog_order_timeout dialog_class" id="dialog_order_timeout">
@@ -448,6 +558,23 @@
         <span class="keep_span" id="dialog_return_pay_success_fun">再想想</span>
     </p>
 </div>
+<script type="text/javascript">
+    $(".cancels").click(function () {
+        var orderId = $(this).parent().prev("td").prev("td").prev("td").prev("td").find(".order_num").text();
+//        alert(orderId);
+//        if(confirm("真的要取消吗？")){
+        $.post("${base}/rentOrder/checks",{"orderId":orderId},function (data) {
+            if(data.code==0){
+                window.location.href="${base}/rentOrder/selectAll";
+            }
+        })
+//        var content = $(this).text();
+//        alert(222);
+//        var orderId=
+//        }
+    })
+</script>
+
 <script type="text/javascript">
     function confirm(msg, successFun) {
         $('.mcover').show();

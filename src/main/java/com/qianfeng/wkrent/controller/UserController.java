@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Controller
@@ -30,13 +31,14 @@ public class UserController {
 
     @RequestMapping("/login")
     @ResponseBody
-    public JsonResult login(String tel, String code,Model model){
+    public JsonResult login(String tel, String code, Model model,HttpSession session){
         JsonResult jsonResult = new JsonResult();
         try {
             userService.login(tel,code);
             // 登录成功,将对应的user记录从数据库查询出来,保存在session中
             User user = userService.selectByTel(tel);
-            model.addAttribute("currentUser",user);
+            session.setAttribute("user",user);
+//            model.addAttribute("currentUser",user);
             jsonResult.setCode(ParamUtil.SUCCESS_CODE);
             jsonResult.setMsg(ParamUtil.SUCCESS_MSG);
         } catch (IncorrectCredentialsException e) {

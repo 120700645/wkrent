@@ -23,4 +23,6 @@ public interface IUserService {
     PageBean<User> findAllUserByPage(int page);
 
     long findNumber();
+
+    int updateByPrimaryKeySelective(User user);
 }

@@ -92,6 +92,7 @@
     var HeaderUid = "15207167086";
     var userId = "11231065";
 </script>
+
 <div style="clear: both;"></div>
 <div class="personal">
 
@@ -184,27 +185,28 @@
                         </li>
                     </ul>
                 </div>
-                <form>
+                <form action="${base}/auth/begin" method="post">
                     <table cellpadding="0" cellspacing="0">
                         <tbody>
                         <tr>
                             <td>真实姓名:</td>
-                            <td>
-                                <input type="text" id="name" onblur="nameValidator();is_Validator()" onkeyup="nameValidator();is_Validator()">
+                            <td id="truename">
+                                <input type="text" id="name" name="name" onblur="nameValidator();is_Validator()" onkeyup="nameValidator();is_Validator()">
                             </td>
                             <td id="name_check" style="display: none;"></td>
                         </tr>
                         <tr>
                             <td>身份证号:</td>
-                            <td>
-                                <input type="text" id="id_no" onblur="id_noValidator();is_Validator()" onkeyup="id_noValidator();is_Validator()" maxlength="18">
+                            <td id="truenumber">
+                                <input type="text" id="id_no" name="number" onblur="id_noValidator();is_Validator()" onkeyup="id_noValidator();is_Validator()" maxlength="18">
                             </td>
                             <td id="identity_check" style="display: none;"></td>
                         </tr>
                         <tr class="first-there-tr">
                             <td></td>
                             <td>
-                                <button id="auth_button" type="button">提交认证</button>
+                                <button id="auth_button" type="submit">提交认证</button>
+                                <#--<input type="submit" value="提交认证">-->
                             </td>
                         </tr>
                         <tr class="identify-remind">
@@ -229,13 +231,13 @@
 <!-- 弹出层 -->
 <#--<div class="mcover"></div>-->
 <#--<div class="dialog_order_timeout dialog_class" id="confirm">-->
-    <#--<h1>温馨提示</h1>-->
-    <#--<div class="dialog_info">-->
-        <#--<span id="confirm_msg"></span>-->
-        <#--<div>-->
-            <#--<p id="confirm_fun" style="cursor:pointer;" class="btn-style">确定</p>-->
-        <#--</div>-->
-    <#--</div>-->
+<#--<h1>温馨提示</h1>-->
+<#--<div class="dialog_info">-->
+<#--<span id="confirm_msg"></span>-->
+<#--<div>-->
+<#--<p id="confirm_fun" style="cursor:pointer;" class="btn-style">确定</p>-->
+<#--</div>-->
+<#--</div>-->
 <#--</div>-->
 <div class="dialog_order_timeout dialog_class" id="coupon_confirm">
     <h1>温馨提示</h1>
@@ -257,7 +259,7 @@
 </div>
 
 <#--<div class="loading_shuaxin" style="display: none">-->
-    <#--<img src="${base}/img/car.gif">-->
+<#--<img src="${base}/img/car.gif">-->
 <#--</div>-->
 
 <div class="dialog_order_timeout dialog_class" id="dialog_order_timeout">
@@ -285,6 +287,22 @@
         <span class="keep_span" id="dialog_return_pay_success_fun">再想想</span>
     </p>
 </div>
+
+<#--<script type="text/javascript">-->
+    <#--$("#auth_button").click(function () {-->
+        <#--alert(1);-->
+        <#--var updateName=$(this).parent().parent().prev("tr").prev("tr").find("#truename").find(".thisname").text();-->
+        <#--var updateCard=$(this).parent().parent().prev("tr").find("#truenumber").find(".thisnumber").text();-->
+        <#--alert(updateName);-->
+        <#--alert(updateCard);-->
+    <#--&lt;#&ndash;$.post("${base}/auth/begin",{"updateNumber":updateNumber},function (data) {&ndash;&gt;-->
+    <#--&lt;#&ndash;if(data.code==0){}&ndash;&gt;-->
+    <#--&lt;#&ndash;//            window.location.href="认证";&ndash;&gt;-->
+    <#--&lt;#&ndash;alert("认证成功");&ndash;&gt;-->
+
+    <#--&lt;#&ndash;})&ndash;&gt;-->
+    <#--})-->
+<#--</script>-->
 <script type="text/javascript">
     function confirm(msg, successFun) {
         $('.mcover').show();

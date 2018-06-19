@@ -71,4 +71,9 @@ public class UserService implements IUserService {
     public long findNumber() {
         return userMapper.selectNum();
     }
+
+    @Override
+    public int updateByPrimaryKeySelective(User user) {
+        return userMapper.updateByPrimaryKeySelective(user);
+    }
 }

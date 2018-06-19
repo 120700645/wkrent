@@ -91,18 +91,15 @@
     var HeaderUid = "13212780854";
     var userId = "11214904";
     $(function () {
-        var s = $(".sss1").text();
-        var  s2 = $(".sss2").text();
-        var s3 = $(".sss3").text();
-        if(s == "1"){
-            $(".sss1").text("已取消");
-        }
-        if(s2 == "2"){
-            $(".sss2").text("进行中");
-        }
-        if(s3 == "3"){
-            $(".sss3").text("已完成");
-        }
+        $(".sss").each(function () {
+            if($(this).text()== 0){
+                $(this).text("待支付");
+            }else if($(this).text()>0&&$(this).text()<7){
+                $(this).text("已完成");
+            }else {
+                $(this).text("已取消")
+            }
+        })
     })
 </script>
 <div style="clear: both;"></div>
@@ -134,10 +131,9 @@
 
                     <em>V5</em>
                     <div>
+                        <p>${username?if_exists}</p>
 
-                        <p>王磊</p>
-
-                        <span>13212780854</span>
+                        <span>${telphone?if_exists}</span>
                         <i class="personal_right_yrz">已认证</i>
                     </div>
                 </div>
@@ -236,47 +232,47 @@
                                 <td>
                                     <p>${list.orderTotal}</p><span orderid="10230421" uid="13212780854">费用明细</span></td>
                                 <td>
-                                    <p  class="sss${list.orderStatus}">${list.orderStatus}</p>
+                                    <p  class="sss">${list.orderStatus}</p>
                                 </td>
                                 <td style="padding-top:50px;">
                                     <p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>
                             </tr>
                             </#list>
                             <#--<tr>-->
-                                <#--<td class="personal_order_ft"><img src="${base}/img/694d7f45-1a5b-4f97-8d13-43d306812937.jpg">-->
-                                    <#--<p>订单号 : 10230421</p>-->
-                                <#--</td>-->
-                                <#--<td>-->
-                                    <#--<p><b>别克 凯越</b><span>或同组车型</span></p>-->
-                                    <#--<p><span>取</span><i></i><span>还</span></p>-->
-                                    <#--<div><strong>2018-06-06 13:00</strong><b><em>北京海淀区西直门钻河中心底商1-125</em></b></div>-->
-                                    <#--<div><strong>2018-06-08 13:00</strong><b><em>北京海淀区西直门钻河中心底商1-125</em></b></div>-->
-                                <#--</td>-->
-                                <#--<td>-->
-                                    <#--<p>￥336</p><span orderid="10230421" uid="13212780854">费用明细</span></td>-->
-                                <#--<td>-->
-                                    <#--<p>已取消</p>-->
-                                <#--</td>-->
-                                <#--<td style="padding-top:50px;">-->
-                                    <#--<p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>-->
+                            <#--<td class="personal_order_ft"><img src="${base}/img/694d7f45-1a5b-4f97-8d13-43d306812937.jpg">-->
+                            <#--<p>订单号 : 10230421</p>-->
+                            <#--</td>-->
+                            <#--<td>-->
+                            <#--<p><b>别克 凯越</b><span>或同组车型</span></p>-->
+                            <#--<p><span>取</span><i></i><span>还</span></p>-->
+                            <#--<div><strong>2018-06-06 13:00</strong><b><em>北京海淀区西直门钻河中心底商1-125</em></b></div>-->
+                            <#--<div><strong>2018-06-08 13:00</strong><b><em>北京海淀区西直门钻河中心底商1-125</em></b></div>-->
+                            <#--</td>-->
+                            <#--<td>-->
+                            <#--<p>￥336</p><span orderid="10230421" uid="13212780854">费用明细</span></td>-->
+                            <#--<td>-->
+                            <#--<p>已取消</p>-->
+                            <#--</td>-->
+                            <#--<td style="padding-top:50px;">-->
+                            <#--<p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>-->
                             <#--</tr>-->
                             <#--<tr>-->
-                                <#--<td class="personal_order_ft"><img src="${base}/img/90c05af9-e892-4c76-9fbc-29e423aa2cd5.jpg">-->
-                                    <#--<p>订单号 : 10229465</p>-->
-                                <#--</td>-->
-                                <#--<td>-->
-                                    <#--<p><b>标致 308</b><span>或同组车型</span></p>-->
-                                    <#--<p><span>取</span><i></i><span>还</span></p>-->
-                                    <#--<div><strong>2018-06-04 17:00</strong><b><em>望京SOHO地铁站</em></b></div>-->
-                                    <#--<div><strong>2018-06-06 17:00</strong><b><em>望京SOHO地铁站</em></b></div>-->
-                                <#--</td>-->
-                                <#--<td>-->
-                                    <#--<p>￥436</p><span orderid="10229465" uid="13212780854">费用明细</span></td>-->
-                                <#--<td>-->
-                                    <#--<p>已取消</p>-->
-                                <#--</td>-->
-                                <#--<td style="padding-top:50px;">-->
-                                    <#--<p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>-->
+                            <#--<td class="personal_order_ft"><img src="${base}/img/90c05af9-e892-4c76-9fbc-29e423aa2cd5.jpg">-->
+                            <#--<p>订单号 : 10229465</p>-->
+                            <#--</td>-->
+                            <#--<td>-->
+                            <#--<p><b>标致 308</b><span>或同组车型</span></p>-->
+                            <#--<p><span>取</span><i></i><span>还</span></p>-->
+                            <#--<div><strong>2018-06-04 17:00</strong><b><em>望京SOHO地铁站</em></b></div>-->
+                            <#--<div><strong>2018-06-06 17:00</strong><b><em>望京SOHO地铁站</em></b></div>-->
+                            <#--</td>-->
+                            <#--<td>-->
+                            <#--<p>￥436</p><span orderid="10229465" uid="13212780854">费用明细</span></td>-->
+                            <#--<td>-->
+                            <#--<p>已取消</p>-->
+                            <#--</td>-->
+                            <#--<td style="padding-top:50px;">-->
+                            <#--<p class="gengduocaozuo" style="position: relative;">更多操作<img src="${base}/img/gengduo.png" class="saoma" style="display: none"></p><br></td>-->
                             <#--</tr>-->
                             </tbody>
                         </table>

@@ -47,6 +47,13 @@ public class OtherTest {
     }
 
     @Test
+    public void test12(){
+        RentOrder byPrimaryKey = rentOrderService.findByPrimaryKey(5645644);
+        System.out.println(byPrimaryKey);
+    }
+
+
+    @Test
     public void list(){
         PageBean<RentOrder> inPageByStatus = rentOrderService.findInPageByStatus(1, "2");
         System.out.println(inPageByStatus.getCount());
